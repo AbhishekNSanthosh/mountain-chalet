@@ -45,8 +45,8 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Jost', sans-serif; background-color: #f0ebe3; color: #2d2d2d; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Jost', sans-serif; background-color: #f0ebe3; color: #2d2d2d; overflow-x: hidden; }
 
     /* ---- Reveal on scroll ---- */
     .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -98,8 +98,7 @@
       #about .grid { min-height: auto !important; }
       /* Experience center card — no lift on mobile */
       .exp-center { transform: none !important; }
-      /* Navbar height mobile */
-      #navbar > div { height: 64px; }
+
     }
 
     /* ---- Testimonial dots ---- */
@@ -139,16 +138,51 @@
       /* CTA button width on mobile */
       #gallery .text-center a { padding-left: 1.5rem !important; padding-right: 1.5rem !important; width: 100%; display: block; }
       /* Guest dropdown — don't overflow viewport */
-      #guest-dropdown { width: calc(100vw - 2rem) !important; left: 0 !important; }
+      #guest-dropdown { width: calc(100vw - 2rem) !important; left: 0 !important; right: auto; }
       /* Rooms heading */
       #rooms h2 { font-size: clamp(1.8rem, 7vw, 2.8rem) !important; }
       /* About center panel inner padding */
       #about .relative.z-10 { padding-left: 1rem; padding-right: 1rem; }
-      /* Booking bar: remove gap between stacked items, add dividers via padding */
-      #booking .grid { gap: 0 !important; }
-      #booking .grid > div { padding-top: 16px !important; padding-bottom: 16px !important; border-bottom: 1px solid rgba(209,191,157,0.35) !important; border-right: none !important; }
-      #booking .grid > div:last-child { border-bottom: none !important; }
+      /* Booking bar border color on mobile dividers */
+      #booking .border-b { border-color: rgba(209,191,157,0.4); }
+      /* Rooms mobile: flex carousel so translateX works */
+      #rooms-grid { display: flex; flex-wrap: nowrap; transition: transform 0.4s ease; }
+      #rooms-grid .room-card { min-width: 100%; flex-shrink: 0; }
+      /* Back to top — smaller margin on mobile */
+      #back-top { bottom: 1.25rem; right: 0.75rem; }
+      /* Testimonial quote — readable on small screens */
+      #testimonial-quote { font-size: clamp(1rem, 4.5vw, 1.4rem); }
+      /* Hero subtitle */
+      #hero .text-lg { font-size: clamp(0.875rem, 3.5vw, 1rem); max-width: 90vw; }
+      /* Booking bar — reduce offset on small screens */
+      #booking { margin-top: -10px; }
+      /* Footer word break for long email/address */
+      footer .text-sm { word-break: break-word; overflow-wrap: break-word; }
+      /* Gallery heading */
+      #gallery h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
     }
+
+    /* ---- Tablet sm (640–767px) ---- */
+    @media (min-width: 640px) and (max-width: 767px) {
+      .exp-center { height: 460px !important; }
+      /* Center card in experience grid spans full width when grid is 2-col */
+      .exp-center { grid-column: 1 / -1; }
+    }
+
+    /* ---- Very small phones (< 375px) ---- */
+    @media (max-width: 374px) {
+      #hero h1 { font-size: 1.6rem !important; }
+      #hero a { padding-left: 1.5rem !important; padding-right: 1.5rem !important; font-size: 11px; }
+      .loader-logo { font-size: 1.2rem; }
+      #booking .px-6 { padding-left: 0.875rem; padding-right: 0.875rem; }
+      #guest-dropdown { width: calc(100vw - 1rem) !important; }
+    }
+
+    /* ---- Back to top hover scale (transform-origin: bottom right to stay in viewport) ---- */
+    #back-top:hover { transform: scale(1.1); }
+
+    /* ---- Contain reveal-right overflow so it never creates a horizontal scrollbar ---- */
+    section, footer, nav { overflow-x: clip; }
 
     /* ---- Booking bar date inputs ---- */
     input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0; }
@@ -315,11 +349,11 @@
 
 <!-- ==================== BOOKING BAR ==================== -->
 <section id="booking" class="relative z-20 max-w-[1100px] mx-auto px-[4vw] xl:px-0 mt-[-20px] md:mt-[-60px]">
-  <div class="bg-[#f6f4ed] shadow-[0_15px_40px_rgba(0,0,0,0.12)] py-0 md:py-9 w-full">
+  <div class="bg-[#f6f4ed] shadow-[0_15px_40px_rgba(0,0,0,0.12)] py-0 md:py-9 w-full" style="--tw-border-opacity:0.35;">
     <div class="grid grid-cols-1 md:grid-cols-4 items-center gap-0">
       
       <!-- Check In -->
-      <div class="flex items-center gap-4 px-6 lg:px-8 border-[#d1bf9d]/60 md:border-r relative h-full">
+      <div class="flex items-center gap-4 px-6 lg:px-8 py-5 md:py-0 border-[#d1bf9d]/60 md:border-r border-b md:border-b-0 relative h-full">
         <div class="text-[#b89a6a] shrink-0 mb-1">
           <svg class="w-[26px] h-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -335,7 +369,7 @@
       </div>
       
       <!-- Check Out -->
-      <div class="flex items-center gap-4 px-6 lg:px-8 border-[#d1bf9d]/60 md:border-r relative h-full">
+      <div class="flex items-center gap-4 px-6 lg:px-8 py-5 md:py-0 border-[#d1bf9d]/60 md:border-r border-b md:border-b-0 relative h-full">
         <div class="text-[#b89a6a] shrink-0 mb-1">
           <svg class="w-[26px] h-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -351,7 +385,7 @@
       </div>
       
       <!-- Guests -->
-      <div class="flex items-center px-6 lg:px-8 relative h-full group">
+      <div class="flex items-center px-6 lg:px-8 py-5 md:py-0 border-b md:border-b-0 border-[#d1bf9d]/60 relative h-full group">
         <!-- The trigger wrapper -->
         <div class="flex items-center gap-4 cursor-pointer w-full" id="guest-toggle">
           <div class="text-[#b89a6a] shrink-0 mb-1 group-hover:scale-105 transition-transform duration-300">
@@ -405,7 +439,7 @@
       </div>
       
       <!-- CTA Button -->
-      <div class="px-6 lg:px-8 flex items-center justify-center h-full">
+      <div class="px-6 lg:px-8 py-5 md:py-0 flex items-center justify-center h-full">
         <button id="check-avail-btn" class="bg-[#566557] hover:bg-[#3f4b40] text-white font-serif text-[16px] xl:text-[17px] tracking-wide w-full py-4 transition-all duration-300">
           Check Availability
         </button>
@@ -416,7 +450,7 @@
 </section>
 
 <!-- ==================== ABOUT / SPLIT SECTION ==================== -->
-<section id="about" class="py-0 bg-[#e8e3db] mt-12 md:mt-20 px-[5vw] lg:px-[7vw]">
+<section id="about" class="py-0 bg-[#e8e3db] mt-12 md:mt-20">
   <div class="grid md:grid-cols-3 min-h-[320px] md:min-h-[820px]">
     <!-- Left Image -->
     <div class="gallery-item h-64 md:h-auto reveal-left">
@@ -476,6 +510,7 @@
     </div>
 
     <!-- Room Cards -->
+    <div class="overflow-hidden">
     <div class="grid md:grid-cols-3 gap-8 stagger" id="rooms-grid">
       <!-- Card 1 -->
       <div class="room-card bg-transparent reveal group cursor-pointer">
@@ -564,13 +599,14 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- ==================== SERVICES ==================== -->
 <section id="services" class="py-16 md:py-24 bg-forest">
   <div class="px-[5vw] lg:px-[7vw]">
-    <div class="grid md:grid-cols-3 gap-x-12 gap-y-14 stagger">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-14 stagger">
 
       <!-- Service 1 -->
       <div class="reveal flex gap-5">
@@ -668,7 +704,7 @@
     </div>
 
     <!-- 3-card activity grid -->
-    <div class="grid md:grid-cols-3 gap-6 items-end">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 items-end">
 
       <!-- Card 1: Mountain Hiking (left) -->
       <div class="reveal bg-white border border-[#d8d0c4] overflow-hidden group hover:shadow-lg transition-shadow duration-300">
@@ -909,7 +945,7 @@
 
 <!-- ==================== BACK TO TOP ==================== -->
 <button id="back-top" aria-label="Back to top"
-  class="fixed bottom-8 right-8 z-50 w-11 h-11 bg-forest text-white rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none hover:bg-forest-dark hover:scale-110 transition-all duration-300">
+  class="fixed bottom-8 right-8 z-50 w-11 h-11 bg-forest text-white rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none hover:bg-forest-dark transition-all duration-300" style="transform-origin: bottom right;">
   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
   </svg>
@@ -1015,6 +1051,8 @@
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  // Close mobile menu when any link inside it is clicked
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
   // ------- Back to top -------
   const backTop = document.getElementById('back-top');
