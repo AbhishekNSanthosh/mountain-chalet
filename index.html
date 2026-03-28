@@ -25,521 +25,7 @@
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
 
-    <style>
-      :root {
-        --forest: #3a5241;
-        --forest-dark: #2c3f32;
-        --forest-light: #4d6b57;
-        --gold: #b89a6a;
-        --gold-light: #d4b98a;
-        --gold-dark: #9a7d52;
-        --cream: #f0ebe3;
-        --cream-dark: #e5ddd2;
-        --charcoal: #2d2d2d;
-        --bs-body-font-family: "Jost", sans-serif;
-        --bs-body-bg: var(--cream);
-        --bs-body-color: var(--charcoal);
-      }
-
-      html {
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-      }
-      body {
-        overflow-x: hidden;
-      }
-
-      /* Custom Color Utilities */
-      .text-forest {
-        color: var(--forest) !important;
-      }
-      .bg-forest {
-        background-color: var(--forest) !important;
-      }
-      .hover-bg-forest:hover {
-        background-color: var(--forest-dark) !important;
-      }
-      .hover-text-forest:hover {
-        color: var(--forest) !important;
-      }
-
-      .text-gold {
-        color: var(--gold) !important;
-      }
-      .bg-gold {
-        background-color: var(--gold) !important;
-      }
-      .hover-text-gold:hover {
-        color: var(--gold-dark) !important;
-      }
-      .border-gold {
-        border-color: var(--gold) !important;
-      }
-
-      .text-cream {
-        color: var(--cream) !important;
-      }
-      .bg-cream {
-        background-color: var(--cream) !important;
-      }
-
-      .text-charcoal {
-        color: var(--charcoal) !important;
-      }
-      .bg-charcoal {
-        background-color: var(--charcoal) !important;
-      }
-
-      /* Typography */
-      .font-serif {
-        font-family: "Marcellus", Georgia, serif !important;
-      }
-      .font-sans {
-        font-family: "Jost", sans-serif !important;
-      }
-
-      .tracking-widest {
-        letter-spacing: 0.18em !important;
-      }
-      .tracking-wider {
-        letter-spacing: 0.1em !important;
-      }
-      .tracking-wide {
-        letter-spacing: 0.05em !important;
-      }
-
-      /* Custom Animations */
-      @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-      @keyframes slideLeft {
-        0% {
-          opacity: 0;
-          transform: translateX(60px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      @keyframes slideRight {
-        0% {
-          opacity: 0;
-          transform: translateX(-60px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      @keyframes floatAnim {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-      @keyframes kenBurns {
-        0% {
-          transform: scale(1) translate(0, 0);
-        }
-        100% {
-          transform: scale(1.08) translate(-2%, -1%);
-        }
-      }
-
-      .animate-fade-up {
-        animation: fadeUp 0.8s ease forwards;
-      }
-      .animate-fade-in {
-        animation: fadeIn 1s ease forwards;
-      }
-      .animate-float {
-        animation: floatAnim 6s ease-in-out infinite;
-      }
-      .hero-bg {
-        animation: kenBurns 20s ease-in-out infinite alternate;
-      }
-
-      /* Reveal */
-      .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .reveal-left {
-        opacity: 0;
-        transform: translateX(-60px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
-      }
-      .reveal-left.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      .reveal-right {
-        opacity: 0;
-        transform: translateX(60px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
-      }
-      .reveal-right.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .stagger > *:nth-child(1) {
-        transition-delay: 0s;
-      }
-      .stagger > *:nth-child(2) {
-        transition-delay: 0.15s;
-      }
-      .stagger > *:nth-child(3) {
-        transition-delay: 0.3s;
-      }
-      .stagger > *:nth-child(4) {
-        transition-delay: 0.45s;
-      }
-
-      /* Navbar */
-      .nav-inner-height {
-        height: 64px;
-      }
-      @media (min-width: 992px) {
-        .nav-inner-height {
-          height: 100px;
-        }
-      }
-      #navbar {
-        transition:
-          transform 0.35s ease,
-          box-shadow 0.4s ease;
-        background: #fff;
-        border-bottom: 1px solid #ede9e3;
-      }
-      #navbar.scrolled {
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-      }
-      #navbar.nav-hidden {
-        transform: translateY(-100%);
-      }
-      .nav-active {
-        position: relative;
-        display: inline-block;
-      }
-      .nav-active::after {
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        right: 0;
-        height: 1.5px;
-        background: #2d2d2d;
-      }
-
-      /* Hero */
-      .hero-slide {
-        opacity: 0;
-        transition: opacity 1.2s ease;
-      }
-      .hero-slide.active {
-        opacity: 1;
-      }
-      @keyframes heroZoom {
-        from {
-          transform: scale(1);
-        }
-        to {
-          transform: scale(1.1);
-        }
-      }
-      .hero-slide.active {
-        animation: heroZoom 7s ease-in-out forwards;
-      }
-      .hero-slide.active.is-video {
-        animation: none;
-      }
-      .hero-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.45);
-        transition:
-          background 0.3s,
-          width 0.3s;
-        cursor: pointer;
-        border: none;
-        padding: 0;
-      }
-      .hero-dot.active {
-        background: #fff;
-        width: 24px;
-        border-radius: 9999px;
-      }
-      .hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      #hero {
-        margin-top: 64px;
-        height: calc(100vh - 64px);
-      }
-      @media (min-width: 992px) {
-        #hero {
-          margin-top: 90px;
-          height: calc(100vh - 90px);
-        }
-      }
-
-      /* Page Loader */
-      #page-loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 99999;
-        background: #f0ebe3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 0;
-        transition: opacity 0.8s ease;
-      }
-      #page-loader.fade-out {
-        opacity: 0;
-        pointer-events: none;
-      }
-      .loader-logo {
-        font-family: "Marcellus", Georgia, serif;
-        font-size: 1.6rem;
-        letter-spacing: 0.22em;
-        color: #2d2d2d;
-        margin-bottom: 6px;
-      }
-      .loader-stars {
-        font-size: 10px;
-        letter-spacing: 0.3em;
-        color: #b89a6a;
-        margin-bottom: 22px;
-      }
-      .loader-track {
-        width: 64px;
-        height: 1.5px;
-        background: #ddd6cb;
-        border-radius: 99px;
-        overflow: hidden;
-      }
-      .loader-fill {
-        height: 100%;
-        width: 30%;
-        background: #b89a6a;
-        border-radius: 99px;
-        animation: loaderSlide 1.3s ease-in-out infinite;
-      }
-      @keyframes loaderSlide {
-        0% {
-          transform: translateX(-120%);
-        }
-        100% {
-          transform: translateX(420%);
-        }
-      }
-
-      /* Dropdowns */
-      .custom-dropdown-menu {
-        transform-origin: top;
-        transform: scaleY(0);
-        opacity: 0;
-        transition:
-          transform 0.25s ease,
-          opacity 0.25s ease;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: #fff;
-        min-width: 160px;
-        z-index: 1000;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-      }
-      .custom-dropdown:hover .custom-dropdown-menu {
-        transform: scaleY(1);
-        opacity: 1;
-      }
-
-      /* Mobile Menu */
-      #mobile-menu {
-        transition:
-          max-height 0.4s ease,
-          opacity 0.4s ease;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-      }
-      #mobile-menu.open {
-        max-height: 400px;
-        opacity: 1;
-      }
-
-      /* Various Fixes */
-      input[type="date"]::-webkit-calendar-picker-indicator {
-        opacity: 0;
-      }
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f0ebe3;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #3a5241;
-        border-radius: 3px;
-      }
-      #back-top {
-        transition:
-          opacity 0.3s,
-          transform 0.3s;
-        transform-origin: bottom right;
-      }
-      #back-top:hover {
-        transform: scale(1.1);
-      }
-      section,
-      footer,
-      nav {
-        overflow-x: clip;
-      }
-
-      /* Specific components formatting inherited from Tailwind */
-      .exp-center {
-        height: 400px;
-      }
-      @media (min-width: 640px) {
-        .exp-center {
-          height: 460px;
-        }
-      }
-      @media (min-width: 768px) {
-        .exp-center {
-          height: 580px;
-        }
-      }
-      .room-card img {
-        transition: transform 0.6s ease;
-      }
-      .room-card:hover img {
-        transform: scale(1.06);
-      }
-      .gallery-item img {
-        transition: transform 0.6s ease;
-      }
-      .gallery-item:hover img {
-        transform: scale(1.08);
-      }
-      .testi-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(255, 255, 255, 0.5);
-        background: transparent;
-        cursor: pointer;
-        transition:
-          background 0.3s,
-          border-color 0.3s;
-        padding: 0;
-      }
-      .testi-dot.active {
-        background: #fff;
-        border-color: #fff;
-      }
-
-      /* Fix utility class missing from BS5 */
-      .z-10 {
-        z-index: 10;
-      }
-      .z-20 {
-        z-index: 20;
-      }
-      .z-50 {
-        z-index: 50;
-      }
-      .inset-0 {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-      .border-white-70 {
-        border-color: rgba(255, 255, 255, 0.7) !important;
-      }
-
-      /* Utilities */
-      .py-16 {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-      .py-24 {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-      }
-      .group:hover .group-hover-scale-105 {
-        transform: scale(1.05);
-      }
-      .group:hover .group-hover-text-forest {
-        color: var(--forest) !important;
-      }
-      .transition-colors {
-        transition:
-          color 0.15s ease-in-out,
-          background-color 0.15s ease-in-out;
-      }
-      .transition-transform {
-        transition: transform 0.3s ease-in-out;
-      }
-      .transition-all {
-        transition: all 0.3s ease-in-out;
-      }
-      .duration-300 {
-        transition-duration: 300ms;
-      }
-      .duration-200 {
-        transition-duration: 200ms;
-      }
-      .duration-400 {
-        transition-duration: 400ms;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="overflow-x-hidden">
     <!-- ==================== PAGE LOADER ==================== -->
@@ -552,17 +38,15 @@
     <!-- ==================== NAVBAR ==================== -->
     <nav id="navbar" class="fixed-top w-100 z-50 bg-white">
       <div
-        class="d-flex align-items-center justify-content-between nav-inner-height"
-        style="padding-left: 6vw; padding-right: 6vw"
+        class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding"
       >
         <div class="d-flex justify-content-start flex-grow-1">
           <a
             href="#"
             class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative"
-            style="user-select: none"
           >
             COZYSTAY
-            <span class="text-gold tracking-widest mt-1" style="font-size: 10px"
+            <span class="text-gold tracking-widest mt-1 navbar-logo-stars"
               >★ ★ ★ ★ ★</span
             >
           </a>
@@ -573,8 +57,7 @@
           class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5"
         >
           <ul
-            class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase"
-            style="font-size: 12px; letter-spacing: 0.12em"
+            class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list"
           >
             <li class="custom-dropdown position-relative">
               <a
@@ -583,7 +66,7 @@
               >
                 <span class="nav-active pb-1">HOME</span>
                 <svg
-                  style="width: 12px; height: 12px; margin-left: -2px"
+                  class="nav-dropdown-chevron"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.5"
@@ -599,14 +82,12 @@
               <div class="custom-dropdown-menu">
                 <a
                   href="#"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Home v1</a
                 >
                 <a
                   href="#"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Home v2</a
                 >
               </div>
@@ -618,7 +99,7 @@
               >
                 <span class="pb-1">ROOMS</span>
                 <svg
-                  style="width: 12px; height: 12px; margin-left: -2px"
+                  class="nav-dropdown-chevron"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.5"
@@ -634,20 +115,17 @@
               <div class="custom-dropdown-menu">
                 <a
                   href="#rooms"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Family Suite</a
                 >
                 <a
                   href="#rooms"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Deluxe Room</a
                 >
                 <a
                   href="#rooms"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Double Suite</a
                 >
               </div>
@@ -659,7 +137,7 @@
               >
                 <span class="pb-1">PAGES</span>
                 <svg
-                  style="width: 12px; height: 12px; margin-left: -2px"
+                  class="nav-dropdown-chevron"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.5"
@@ -675,20 +153,17 @@
               <div class="custom-dropdown-menu">
                 <a
                   href="#about"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >About</a
                 >
                 <a
                   href="#services"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Services</a
                 >
                 <a
                   href="#gallery"
-                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors"
-                  style="font-size: 12px; letter-spacing: 0.1em"
+                  class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
                   >Gallery</a
                 >
               </div>
@@ -701,13 +176,7 @@
               >
             </li>
             <li
-              class="fw-normal text-charcoal ms-2"
-              style="
-                font-size: 12px;
-                opacity: 0.6;
-                letter-spacing: 0.05em;
-                text-transform: none;
-              "
+              class="fw-normal text-charcoal ms-2 nav-phone"
             >
               Tel: +41 22 345 67 88
             </li>
@@ -715,13 +184,7 @@
 
           <a
             href="#booking"
-            class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3"
-            style="
-              font-size: 9px;
-              background-color: var(--forest);
-              border-color: var(--forest);
-              align-self: center;
-            "
+            class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn"
           >
             Enquire Now
           </a>
@@ -734,7 +197,7 @@
           aria-label="Open menu"
         >
           <svg
-            style="width: 24px; height: 24px"
+            class="nav-hamburger-icon"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -752,8 +215,7 @@
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
         <div
-          class="px-4 py-3 d-flex flex-column gap-2"
-          style="font-size: 14px; font-weight: 500"
+          class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner"
         >
           <a
             href="#"
@@ -793,20 +255,16 @@
     <section id="hero" class="position-relative overflow-hidden w-100">
       <div class="position-absolute inset-0 w-100 h-100">
         <div
-          class="hero-slide active position-absolute inset-0"
-          style="background: url(&quot;images/hero.png&quot;) center/cover"
+          class="hero-slide active position-absolute inset-0 hero-slide-hero"
         ></div>
         <div
-          class="hero-slide position-absolute inset-0"
-          style="background: url(&quot;images/lake.png&quot;) center/cover"
+          class="hero-slide position-absolute inset-0 hero-slide-lake"
         ></div>
         <div
-          class="hero-slide position-absolute inset-0"
-          style="background: url(&quot;images/chalet.png&quot;) center/cover"
+          class="hero-slide position-absolute inset-0 hero-slide-chalet"
         ></div>
         <div
-          class="hero-slide position-absolute inset-0"
-          style="background: url(&quot;images/canoe.png&quot;) center/cover"
+          class="hero-slide position-absolute inset-0 hero-slide-canoe"
         ></div>
         <div class="hero-slide is-video position-absolute inset-0">
           <video
@@ -828,15 +286,7 @@
 
       <!-- Overlay -->
       <div
-        class="position-absolute inset-0 z-1"
-        style="
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.65)
-          );
-        "
+        class="position-absolute inset-0 z-1 hero-overlay"
       ></div>
 
       <!-- Content -->
@@ -844,27 +294,23 @@
         class="position-relative z-20 d-flex flex-column align-items-center justify-content-center h-100 text-center text-white px-3"
       >
         <p
-          class="text-gold text-uppercase mb-4 animate-fade-in"
-          style="font-size: 12px; letter-spacing: 0.3em; animation-delay: 0.3s"
+          class="text-gold text-uppercase mb-4 animate-fade-in hero-tagline"
         >
           Boutique Alpine Resort
         </p>
         <h1
-          class="font-serif display-4 display-md-2 display-lg-1 fw-medium mb-4 animate-fade-up"
-          style="animation-delay: 0.5s"
+          class="font-serif display-4 display-md-2 display-lg-1 fw-medium mb-4 animate-fade-up hero-title"
         >
           Boutique Mountain Chalet
         </h1>
         <p
-          class="text-white-50 fs-5 mb-5 mx-auto animate-fade-up"
-          style="max-width: 600px; animation-delay: 0.8s"
+          class="text-white-50 fs-5 mb-5 mx-auto animate-fade-up hero-subtitle"
         >
           The forest paradise of warmth, tranquility and restoration
         </p>
         <a
           href="#booking"
-          class="btn border border-white-70 text-white rounded-0 px-5 py-3 text-uppercase animate-fade-up transition-all hover-bg-forest hover-text-white"
-          style="font-size: 14px; letter-spacing: 0.1em; animation-delay: 1s"
+          class="btn border border-white-70 text-white rounded-0 px-5 py-3 text-uppercase animate-fade-up transition-all hover-bg-forest hover-text-white hero-cta-btn"
         >
           Enquire Now
         </a>
@@ -872,8 +318,7 @@
 
       <!-- Indicators -->
       <div
-        class="position-absolute bottom-0 start-50 translate-middle-x z-20 d-flex gap-2"
-        style="margin-bottom: 4rem"
+        class="position-absolute bottom-0 start-50 translate-middle-x z-20 d-flex gap-2 hero-indicators"
       >
         <button class="hero-dot active"></button>
         <button class="hero-dot"></button>
@@ -884,11 +329,10 @@
 
       <!-- Scroll Down -->
       <div
-        class="position-absolute bottom-0 start-50 translate-middle-x z-20 text-white-50 animate-float"
-        style="margin-bottom: 1.5rem"
+        class="position-absolute bottom-0 start-50 translate-middle-x z-20 text-white-50 animate-float hero-scroll-down"
       >
         <svg
-          style="width: 24px; height: 24px"
+          class="hero-scroll-icon"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -902,33 +346,30 @@
         </svg>
       </div>
     </section>
+
     <!-- ==================== BOOKING BAR ==================== -->
     <section
       id="booking"
-      class="position-relative px-3 px-md-4"
-      style="max-width: 1200px; margin: 0 auto; margin-top: -45px; z-index: 30;"
+      class="position-relative px-3 px-md-4 booking-bar-section"
     >
-      <div class="w-100 shadow-lg" style="background-color: #eee9df;">
+      <div class="w-100 shadow-lg booking-bar-wrapper">
         <div class="row g-0 align-items-md-stretch">
           <!-- Check In -->
           <div
-            class="col-12 col-md-3 d-flex align-items-center justify-content-center py-4 position-relative group transition-colors hover-bg-light"
-            style="border-right: 1px solid rgba(133, 114, 80, 0.2) !important; border-bottom: 1px solid rgba(133, 114, 80, 0.2); border-bottom-width: 0px; cursor: pointer; min-height: 90px;"
-            onclick="document.getElementById('checkin').focus(); document.getElementById('checkin').click();"
+            id="checkin-cell"
+            class="col-12 col-md-3 d-flex align-items-center justify-content-center py-4 position-relative group transition-colors hover-bg-light booking-bar-cell"
           >
             <div class="d-flex align-items-center justify-content-start w-100 px-4 px-lg-5">
-              <div class="flex-shrink-0 me-3 me-lg-4 transition-transform group-hover-scale-105" style="color: #b89a6a;">
-                <svg style="width: 28px; height: 28px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+              <div class="flex-shrink-0 me-3 me-lg-4 transition-transform group-hover-scale-105 booking-bar-icon">
+                <svg class="booking-bar-calendar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
               </div>
               <div class="d-flex flex-column text-start overflow-hidden">
-                <p class="font-serif mb-0 lh-1 transition-colors group-hover-text-forest" style="font-size: 19px; color: #2c2c2c;">Check In</p>
+                <p class="font-serif mb-0 lh-1 transition-colors group-hover-text-forest booking-bar-label">Check In</p>
                 <input
                   type="text"
                   id="checkin"
-                  value="25-03-2026"
-                  class="form-control-plaintext tracking-wide p-0 mt-2 shadow-none bg-transparent"
-                  style="font-size: 12px; cursor: pointer; color: #4a4a4a !important;"
-                  placeholder="Select Date"
+                  class="form-control-plaintext tracking-wide p-0 mt-2 shadow-none bg-transparent booking-bar-input"
+                  placeholder="Select date"
                   readonly
                 />
               </div>
@@ -937,23 +378,20 @@
 
           <!-- Check Out -->
           <div
-            class="col-12 col-md-3 d-flex align-items-center justify-content-center py-4 position-relative group transition-colors hover-bg-light"
-            style="border-right: 1px solid rgba(133, 114, 80, 0.2) !important; border-bottom: 1px solid rgba(133, 114, 80, 0.2); border-bottom-width: 0px; cursor: pointer; min-height: 90px;"
-            onclick="document.getElementById('checkout').focus(); document.getElementById('checkout').click();"
+            id="checkout-cell"
+            class="col-12 col-md-3 d-flex align-items-center justify-content-center py-4 position-relative group transition-colors hover-bg-light booking-bar-cell"
           >
             <div class="d-flex align-items-center justify-content-start w-100 px-4 px-lg-5">
-              <div class="flex-shrink-0 me-3 me-lg-4 transition-transform group-hover-scale-105" style="color: #b89a6a;">
-                <svg style="width: 28px; height: 28px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+              <div class="flex-shrink-0 me-3 me-lg-4 transition-transform group-hover-scale-105 booking-bar-icon">
+                <svg class="booking-bar-calendar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
               </div>
               <div class="d-flex flex-column text-start overflow-hidden">
-                <p class="font-serif mb-0 lh-1 transition-colors group-hover-text-forest" style="font-size: 19px; color: #2c2c2c;">Check Out</p>
+                <p class="font-serif mb-0 lh-1 transition-colors group-hover-text-forest booking-bar-label">Check Out</p>
                 <input
                   type="text"
                   id="checkout"
-                  value="26-03-2026"
-                  class="form-control-plaintext tracking-wide p-0 mt-2 shadow-none bg-transparent"
-                  style="font-size: 12px; cursor: pointer; color: #4a4a4a !important;"
-                  placeholder="Select Date"
+                  class="form-control-plaintext tracking-wide p-0 mt-2 shadow-none bg-transparent booking-bar-input"
+                  placeholder="Select date"
                   readonly
                 />
               </div>
@@ -963,51 +401,50 @@
           <!-- Guests -->
           <div
             id="guest-toggle"
-            class="col-12 col-md-3 d-flex align-items-center justify-content-center py-4 position-relative group transition-colors hover-bg-light"
-            style="border-right: 1px solid rgba(133, 114, 80, 0.2) !important; cursor: pointer; min-height: 90px;"
+            class="col-12 col-md-3 d-flex align-items-center justify-content-center py-4 position-relative group transition-colors hover-bg-light booking-bar-cell-last"
           >
             <div class="d-flex align-items-center justify-content-start w-100 px-4 px-lg-5">
-              <div class="flex-shrink-0 me-3 me-lg-4 transition-transform group-hover-scale-105" style="color: #b89a6a;">
-                <svg style="width: 28px; height: 28px" fill="none" stroke="currentColor" viewBox="0 -1 24 24" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
+              <div class="flex-shrink-0 me-3 me-lg-4 transition-transform group-hover-scale-105 booking-bar-icon">
+                <svg class="booking-bar-calendar-icon" fill="none" stroke="currentColor" viewBox="0 -1 24 24" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
               </div>
               <div class="d-flex flex-column text-start overflow-hidden">
-                <p class="font-serif mb-0 lh-1 transition-colors group-hover-text-forest" style="font-size: 19px; color: #2c2c2c;">Guests</p>
-                <p id="guest-display" class="tracking-wide text-truncate m-0 mt-2 bg-transparent" style="font-size: 12px; user-select: none; color: #4a4a4a;">
+                <p class="font-serif mb-0 lh-1 transition-colors group-hover-text-forest booking-bar-label">Guests</p>
+                <p id="guest-display" class="tracking-wide text-truncate m-0 mt-2 bg-transparent booking-bar-input">
                   1 Room, 1 Adult, 0 Children
                 </p>
               </div>
             </div>
 
             <!-- Dropdown -->
-            <div id="guest-dropdown" class="position-absolute bg-white p-4 border d-none shadow-lg rounded-0" style="top: 100%; left: -1px; width: calc(100% + 1px); min-width: 280px; z-index: 1050; background-color: #fdfdfa !important; border-color: rgba(209, 191, 157, 0.3) !important; border-top: none !important;">
+            <div id="guest-dropdown" class="position-absolute bg-white p-4 border d-none shadow-lg rounded-0 booking-dropdown-wrapper">
               <div class="d-flex flex-column gap-3">
                 <div class="d-flex align-items-center justify-content-between">
-                  <span class="text-charcoal fw-medium" style="font-size: 14px">Rooms</span>
+                  <span class="text-charcoal fw-medium booking-counter-label">Rooms</span>
                   <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px" onclick="updateGuests('room', -1)">-</button>
-                    <span id="room-count" class="text-center" style="font-size: 14px; width: 16px">1</span>
-                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px" onclick="updateGuests('room', 1)">+</button>
+                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center booking-counter-btn" onclick="updateGuests('room', -1)">-</button>
+                    <span id="room-count" class="text-center booking-counter-display">1</span>
+                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center booking-counter-btn" onclick="updateGuests('room', 1)">+</button>
                   </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
-                  <span class="text-charcoal fw-medium" style="font-size: 14px">Adults</span>
+                  <span class="text-charcoal fw-medium booking-counter-label">Adults</span>
                   <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px" onclick="updateGuests('adult', -1)">-</button>
-                    <span id="adult-count" class="text-center" style="font-size: 14px; width: 16px">1</span>
-                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px" onclick="updateGuests('adult', 1)">+</button>
+                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center booking-counter-btn" onclick="updateGuests('adult', -1)">-</button>
+                    <span id="adult-count" class="text-center booking-counter-display">1</span>
+                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center booking-counter-btn" onclick="updateGuests('adult', 1)">+</button>
                   </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
-                  <span class="text-charcoal fw-medium" style="font-size: 14px">Children</span>
+                  <span class="text-charcoal fw-medium booking-counter-label">Children</span>
                   <div class="d-flex align-items-center gap-2">
-                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px" onclick="updateGuests('child', -1)">-</button>
-                    <span id="child-count" class="text-center" style="font-size: 14px; width: 16px">0</span>
-                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px" onclick="updateGuests('child', 1)">+</button>
+                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center booking-counter-btn" onclick="updateGuests('child', -1)">-</button>
+                    <span id="child-count" class="text-center booking-counter-display">0</span>
+                    <button class="btn btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center booking-counter-btn" onclick="updateGuests('child', 1)">+</button>
                   </div>
                 </div>
               </div>
-              <p class="text-muted mt-4 mb-3 lh-sm" style="font-size: 11px">* Children ages 2-12. Infants stay free.</p>
-              <button id="guest-apply" class="btn text-white text-uppercase w-100 rounded-0 tracking-widest border-0 transition-opacity hover-opacity-90" style="background: #394b3a; font-size: 13px; padding: 12px 0">Apply</button>
+              <p class="text-muted mt-4 mb-3 lh-sm booking-children-note">* Children ages 2-12. Infants stay free.</p>
+              <button id="guest-apply" class="btn text-white text-uppercase w-100 rounded-0 tracking-widest border-0 transition-opacity hover-opacity-90 booking-apply-btn">Apply</button>
             </div>
           </div>
 
@@ -1015,13 +452,7 @@
           <div class="col-12 col-md-3 d-flex align-items-stretch">
             <button
               id="check-avail-btn"
-              class="btn text-white font-serif rounded-0 border-0 transition-all hover-opacity-90"
-              style="
-                background: #394b3a;
-                font-size: 16px;
-                letter-spacing: 0.05em;
-                width: 100%;
-              "
+              class="btn text-white font-serif rounded-0 border-0 transition-all hover-opacity-90 booking-cta-btn"
             >
               Check Availability
             </button>
@@ -1031,21 +462,10 @@
     </section>
 
     <!-- ==================== ABOUT / SPLIT SECTION ==================== -->
-    <style>
-      .about-hover-img { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-      .about-img-box:hover .about-hover-img { transform: scale(1.08); }
-      .about-center-panel { cursor: pointer; }
-      .about-center-border { transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(184, 154, 106, 0.35); }
-      .about-center-panel:hover .about-center-border { top: 24px !important; bottom: 24px !important; left: 24px !important; right: 24px !important; border-color: rgba(184, 154, 106, 0.85); background: rgba(0,0,0,0.03); }
-      .about-link { color: #b89a6a; border-bottom: 1px solid transparent; transition: all 0.3s ease; }
-      .about-link span { transition: transform 0.3s ease; display: inline-block; }
-      .about-link:hover { color: #ffffff !important; border-bottom-color: #ffffff; }
-      .about-link:hover span { transform: translateX(5px); }
-    </style>
     <section id="about" class="mt-4 mt-md-5 pt-4 pt-md-5 bg-transparent">
-      <div class="row g-0 align-items-stretch" style="min-height: max(600px, 75vh);">
+      <div class="row g-0 align-items-stretch about-section-row">
         <!-- Left Image -->
-        <div class="col-12 col-md-4 gallery-item position-relative p-0 overflow-hidden about-img-box" style="min-height: 320px; cursor: pointer;">
+        <div class="col-12 col-md-4 gallery-item position-relative p-0 overflow-hidden about-img-box about-image-col">
           <img
             src="images/chalet.png"
             alt="Red alpine chalet house"
@@ -1054,60 +474,41 @@
         </div>
 
         <!-- Center Text Panel -->
-        <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden px-4 py-5 px-xl-5 about-center-panel" style="min-height: 400px;">
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden px-4 py-5 px-xl-5 about-center-panel about-center-col">
           <div
-            class="position-absolute inset-0 z-0 about-hover-img"
-            style="background: url('images/hero.png') center/cover; opacity: 0.85;"
+            class="position-absolute inset-0 z-0 about-hover-img about-bg-image"
           ></div>
           <div
-            class="position-absolute inset-0 z-1"
-            style="
-              background: #394b3a;
-              opacity: 0.96;
-              backdrop-filter: blur(8px);
-            "
+            class="position-absolute inset-0 z-1 about-bg-overlay"
           ></div>
           <div
-            class="position-absolute z-2 pointer-events-none about-center-border"
-            style="
-              top: 14px;
-              bottom: 14px;
-              left: 14px;
-              right: 14px;
-            "
+            class="position-absolute z-2 pointer-events-none about-center-border about-border-inset"
           ></div>
 
-          <div class="position-relative z-10 w-100 py-3" style="pointer-events: none;">
+          <div class="position-relative z-10 w-100 py-3 about-content-inner">
             <p
-              class="text-gold text-uppercase mb-3 tracking-widest fw-semibold"
-              style="font-size: 11px; letter-spacing: 0.25em; color: #b89a6a;"
+              class="text-gold text-uppercase mb-3 tracking-widest fw-semibold about-welcome-label"
             >
               Welcome to CozyStay Resort
             </p>
             <h2 class="font-serif text-white lh-base mb-4 fs-2 fs-lg-1 px-lg-3">
               In the Heart of<br />Banff Park,<br />Outstanding Views
             </h2>
-            <p class="text-white mx-auto mb-5 opacity-75 fw-light" style="max-width: 280px; font-size: 15px; line-height: 1.6;">
+            <p class="text-white mx-auto mb-5 opacity-75 fw-light about-description">
               Immerse yourself in the restorative qualities of nature, far from the hustle and bustle.
             </p>
             <a
               href="#rooms"
-              class="text-decoration-none text-uppercase fw-medium d-inline-block about-link"
-              style="
-                font-size: 13px;
-                letter-spacing: 0.1em;
-                padding-bottom: 4px;
-                pointer-events: auto;
-              "
+              class="text-decoration-none text-uppercase fw-medium d-inline-block about-link about-explore-link"
             >
-              Explore the hotel 
+              Explore the hotel
               <span class="ms-1 fs-5 align-middle">&rarr;</span>
             </a>
           </div>
         </div>
 
         <!-- Right Image -->
-        <div class="col-12 col-md-4 gallery-item position-relative p-0 overflow-hidden about-img-box" style="min-height: 320px; cursor: pointer;">
+        <div class="col-12 col-md-4 gallery-item position-relative p-0 overflow-hidden about-img-box about-image-col">
           <img
             src="images/lake.png"
             alt="Serene mountain lake view"
@@ -1120,15 +521,13 @@
     <!-- ==================== ROOMS ==================== -->
     <section
       id="rooms"
-      class="py-16 py-md-24 overflow-hidden"
-      style="background: #eae5dd"
+      class="py-16 py-md-24 overflow-hidden rooms-section"
     >
       <div class="container-fluid px-4 px-lg-5">
         <!-- Section Header -->
         <div class="mb-5 reveal">
           <p
-            class="text-gold text-uppercase mb-2"
-            style="font-size: 12px; letter-spacing: 0.3em"
+            class="text-gold text-uppercase mb-2 rooms-section-label"
           >
             Enjoy World-Class Stay Experience
           </p>
@@ -1138,8 +537,7 @@
                 Select Your Chalet
               </h2>
               <p
-                class="text-muted lh-base"
-                style="font-size: 15px; max-width: 650px"
+                class="text-muted lh-base rooms-description"
               >
                 Escape to the beautiful mountains and valleys where dreams come
                 true. Culture, nature, streams and gastronomy. Immerse yourself
@@ -1152,11 +550,10 @@
             >
               <button
                 id="prev-room"
-                class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center transition-transform hover-scale-110 border-gray-400 text-charcoal"
-                style="width: 44px; height: 44px"
+                class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center transition-transform hover-scale-110 border-gray-400 text-charcoal rooms-nav-btn"
               >
                 <svg
-                  style="width: 16px; height: 16px"
+                  class="rooms-nav-icon"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -1171,11 +568,10 @@
               </button>
               <button
                 id="next-room"
-                class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center transition-transform hover-scale-110 border-gray-400 text-charcoal"
-                style="width: 44px; height: 44px"
+                class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center transition-transform hover-scale-110 border-gray-400 text-charcoal rooms-nav-btn"
               >
                 <svg
-                  style="width: 16px; height: 16px"
+                  class="rooms-nav-icon"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -1200,36 +596,27 @@
           >
             <!-- Card 1 -->
             <div
-              class="col-12 col-md-4 room-card bg-transparent reveal group"
-              style="cursor: pointer"
+              class="col-12 col-md-4 room-card bg-transparent reveal group room-card-pointer"
             >
               <div class="overflow-hidden position-relative">
                 <span
-                  class="position-absolute bg-white text-charcoal fw-semibold px-3 py-2 z-10"
-                  style="
-                    top: 16px;
-                    left: 16px;
-                    font-size: 12px;
-                    letter-spacing: 0.1em;
-                  "
+                  class="position-absolute bg-white text-charcoal fw-semibold px-3 py-2 z-10 room-price-badge"
                   >$299 / NIGHT</span
                 >
                 <img
                   src="images/room-family.png"
                   alt="Family Suite"
-                  class="w-100 object-fit-cover"
-                  style="height: 256px"
+                  class="w-100 object-fit-cover room-card-img"
                 />
               </div>
               <div class="pt-4">
                 <h3 class="font-serif fs-3 text-charcoal mb-3">Family Suite</h3>
                 <div
-                  class="d-flex align-items-center gap-4 text-secondary mb-3"
-                  style="font-size: 14px"
+                  class="d-flex align-items-center gap-4 text-secondary mb-3 room-amenity-list"
                 >
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1248,7 +635,7 @@
                   </span>
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1263,7 +650,7 @@
                   </span>
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1276,24 +663,18 @@
                     2 Beds
                   </span>
                 </div>
-                <p class="text-secondary lh-base mb-3" style="font-size: 14px">
+                <p class="text-secondary lh-base mb-3 room-card-description">
                   The dark wood panelling and furnishings, red-draped fourposter
                   bed, and black stone bathroom evoke the charm of a secluded
                   Sierra Nevada.
                 </p>
                 <a
                   href="#"
-                  class="text-decoration-none text-charcoal fw-medium d-flex align-items-center gap-1 group-hover-text-forest transition-colors"
-                  style="font-size: 14px; letter-spacing: 0.05em"
+                  class="text-decoration-none text-charcoal fw-medium d-flex align-items-center gap-1 group-hover-text-forest transition-colors room-discover-link"
                 >
                   Discover More
                   <svg
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      transition: transform 0.2s;
-                    "
-                    class="group-hover:-translate-y-1"
+                    class="room-discover-arrow group-hover:-translate-y-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -1311,36 +692,27 @@
 
             <!-- Card 2 -->
             <div
-              class="col-12 col-md-4 room-card bg-transparent reveal group"
-              style="cursor: pointer; transition-delay: 0.15s"
+              class="col-12 col-md-4 room-card bg-transparent reveal group room-card-stagger-2"
             >
               <div class="overflow-hidden position-relative">
                 <span
-                  class="position-absolute bg-white text-charcoal fw-semibold px-3 py-2 z-10"
-                  style="
-                    top: 16px;
-                    left: 16px;
-                    font-size: 12px;
-                    letter-spacing: 0.1em;
-                  "
+                  class="position-absolute bg-white text-charcoal fw-semibold px-3 py-2 z-10 room-price-badge"
                   >$199 / NIGHT</span
                 >
                 <img
                   src="images/room-deluxe.png"
                   alt="Deluxe Room"
-                  class="w-100 object-fit-cover"
-                  style="height: 256px"
+                  class="w-100 object-fit-cover room-card-img"
                 />
               </div>
               <div class="pt-4">
                 <h3 class="font-serif fs-3 text-charcoal mb-3">Deluxe Room</h3>
                 <div
-                  class="d-flex align-items-center gap-4 text-secondary mb-3"
-                  style="font-size: 14px"
+                  class="d-flex align-items-center gap-4 text-secondary mb-3 room-amenity-list"
                 >
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1359,7 +731,7 @@
                   </span>
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1374,7 +746,7 @@
                   </span>
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1387,24 +759,18 @@
                     2 Beds
                   </span>
                 </div>
-                <p class="text-secondary lh-base mb-3" style="font-size: 14px">
+                <p class="text-secondary lh-base mb-3 room-card-description">
                   The dark wood panelling and furnishings, red-draped fourposter
                   bed, and black stone bathroom evoke the charm of a secluded
                   Sierra Nevada.
                 </p>
                 <a
                   href="#"
-                  class="text-decoration-none text-charcoal fw-medium d-flex align-items-center gap-1 group-hover-text-forest transition-colors"
-                  style="font-size: 14px; letter-spacing: 0.05em"
+                  class="text-decoration-none text-charcoal fw-medium d-flex align-items-center gap-1 group-hover-text-forest transition-colors room-discover-link"
                 >
                   Discover More
                   <svg
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      transition: transform 0.2s;
-                    "
-                    class="group-hover:-translate-y-1"
+                    class="room-discover-arrow group-hover:-translate-y-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -1422,36 +788,27 @@
 
             <!-- Card 3 -->
             <div
-              class="col-12 col-md-4 room-card bg-transparent reveal group"
-              style="cursor: pointer; transition-delay: 0.3s"
+              class="col-12 col-md-4 room-card bg-transparent reveal group room-card-stagger-3"
             >
               <div class="overflow-hidden position-relative">
                 <span
-                  class="position-absolute bg-white text-charcoal fw-semibold px-3 py-2 z-10"
-                  style="
-                    top: 16px;
-                    left: 16px;
-                    font-size: 12px;
-                    letter-spacing: 0.1em;
-                  "
+                  class="position-absolute bg-white text-charcoal fw-semibold px-3 py-2 z-10 room-price-badge"
                   >$299 / NIGHT</span
                 >
                 <img
                   src="images/room-double.png"
                   alt="Double Suite"
-                  class="w-100 object-fit-cover"
-                  style="height: 256px"
+                  class="w-100 object-fit-cover room-card-img"
                 />
               </div>
               <div class="pt-4">
                 <h3 class="font-serif fs-3 text-charcoal mb-3">Double Suite</h3>
                 <div
-                  class="d-flex align-items-center gap-4 text-secondary mb-3"
-                  style="font-size: 14px"
+                  class="d-flex align-items-center gap-4 text-secondary mb-3 room-amenity-list"
                 >
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1470,7 +827,7 @@
                   </span>
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1485,7 +842,7 @@
                   </span>
                   <span class="d-flex align-items-center gap-2">
                     <svg
-                      style="width: 16px; height: 16px; color: var(--gold)"
+                      class="room-amenity-icon"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -1498,24 +855,18 @@
                     2 Beds
                   </span>
                 </div>
-                <p class="text-secondary lh-base mb-3" style="font-size: 14px">
+                <p class="text-secondary lh-base mb-3 room-card-description">
                   The dark wood panelling and furnishings, red-draped fourposter
                   bed, and black stone bathroom evoke the charm of a secluded
                   Sierra Nevada.
                 </p>
                 <a
                   href="#"
-                  class="text-decoration-none text-charcoal fw-medium d-flex align-items-center gap-1 group-hover-text-forest transition-colors"
-                  style="font-size: 14px; letter-spacing: 0.05em"
+                  class="text-decoration-none text-charcoal fw-medium d-flex align-items-center gap-1 group-hover-text-forest transition-colors room-discover-link"
                 >
                   Discover More
                   <svg
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      transition: transform 0.2s;
-                    "
-                    class="group-hover:-translate-y-1"
+                    class="room-discover-arrow group-hover:-translate-y-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -1534,6 +885,7 @@
         </div>
       </div>
     </section>
+
     <!-- ==================== SERVICES ==================== -->
     <section id="services" class="py-16 py-md-24 bg-forest">
       <div class="container-fluid px-4 px-lg-5">
@@ -1542,7 +894,7 @@
           <div class="col-12 col-sm-6 col-md-4 reveal d-flex gap-4">
             <div class="text-gold flex-shrink-0 mt-1">
               <svg
-                style="width: 48px; height: 48px"
+                class="service-icon"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1558,7 +910,7 @@
               <h4 class="text-white font-serif fs-5 mb-2">
                 Airport Pick-up Service
               </h4>
-              <p class="text-white-50 lh-base" style="font-size: 14px">
+              <p class="text-white-50 lh-base service-description">
                 Lorem ipsum proin gravida velit auctor alueut aenean sollicitu
                 din, lorem auci elit consequat ipsutissem niuis sed odio sit
                 amet a sit amet.
@@ -1570,7 +922,7 @@
           <div class="col-12 col-sm-6 col-md-4 reveal d-flex gap-4">
             <div class="text-gold flex-shrink-0 mt-1">
               <svg
-                style="width: 48px; height: 48px"
+                class="service-icon"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1584,7 +936,7 @@
               <h4 class="text-white font-serif fs-5 mb-2">
                 Housekeeper Services
               </h4>
-              <p class="text-white-50 lh-base" style="font-size: 14px">
+              <p class="text-white-50 lh-base service-description">
                 Lorem ipsum proin gravida velit auctor alueut aenean sollicitu
                 din, lorem auci elit consequat ipsutissem niuis sed odio sit
                 amet a sit amet.
@@ -1596,7 +948,7 @@
           <div class="col-12 col-sm-6 col-md-4 reveal d-flex gap-4">
             <div class="text-gold flex-shrink-0 mt-1">
               <svg
-                style="width: 48px; height: 48px"
+                class="service-icon"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1612,7 +964,7 @@
               <h4 class="text-white font-serif fs-5 mb-2">
                 Wifi &amp; Internet
               </h4>
-              <p class="text-white-50 lh-base" style="font-size: 14px">
+              <p class="text-white-50 lh-base service-description">
                 Lorem ipsum proin gravida velit auctor alueut aenean sollicitu
                 din, lorem auci elit consequat ipsutissem niuis sed odio sit
                 amet a sit amet.
@@ -1624,7 +976,7 @@
           <div class="col-12 col-sm-6 col-md-4 reveal d-flex gap-4">
             <div class="text-gold flex-shrink-0 mt-1">
               <svg
-                style="width: 48px; height: 48px"
+                class="service-icon"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1639,7 +991,7 @@
             </div>
             <div>
               <h4 class="text-white font-serif fs-5 mb-2">Laundry Services</h4>
-              <p class="text-white-50 lh-base" style="font-size: 14px">
+              <p class="text-white-50 lh-base service-description">
                 Lorem ipsum proin gravida velit auctor alueut aenean sollicitu
                 din, lorem auci elit consequat ipsutissem niuis sed odio sit
                 amet a sit amet.
@@ -1651,7 +1003,7 @@
           <div class="col-12 col-sm-6 col-md-4 reveal d-flex gap-4">
             <div class="text-gold flex-shrink-0 mt-1">
               <svg
-                style="width: 48px; height: 48px"
+                class="service-icon"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1667,7 +1019,7 @@
             </div>
             <div>
               <h4 class="text-white font-serif fs-5 mb-2">Breakfast in Bed</h4>
-              <p class="text-white-50 lh-base" style="font-size: 14px">
+              <p class="text-white-50 lh-base service-description">
                 Lorem ipsum proin gravida velit auctor alueut aenean sollicitu
                 din, lorem auci elit consequat ipsutissem niuis sed odio sit
                 amet a sit amet.
@@ -1679,7 +1031,7 @@
           <div class="col-12 col-sm-6 col-md-4 reveal d-flex gap-4">
             <div class="text-gold flex-shrink-0 mt-1">
               <svg
-                style="width: 48px; height: 48px"
+                class="service-icon"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1695,7 +1047,7 @@
               <h4 class="text-white font-serif fs-5 mb-2">
                 Private Parking Space
               </h4>
-              <p class="text-white-50 lh-base" style="font-size: 14px">
+              <p class="text-white-50 lh-base service-description">
                 Lorem ipsum proin gravida velit auctor alueut aenean sollicitu
                 din, lorem auci elit consequat ipsutissem niuis sed odio sit
                 amet a sit amet.
@@ -1707,20 +1059,13 @@
     </section>
 
     <!-- ==================== UNFORGETTABLE EXPERIENCE ==================== -->
-    <section class="py-16 py-md-24 pb-5 pb-md-5" style="background: #eae5dd">
+    <section class="py-16 py-md-24 pb-5 pb-md-5 experiences-section">
       <div
         class="container-fluid px-4 px-lg-5"
-        style="
-          padding-bottom: 2rem;
-          @media (min-width: 768px) {
-            padding-bottom: 5rem;
-          }
-        "
       >
         <div class="text-center mb-5 reveal">
           <p
-            class="text-gold text-uppercase mb-3"
-            style="font-size: 12px; letter-spacing: 0.3em"
+            class="text-gold text-uppercase mb-3 experiences-section-label"
           >
             More Than Just Mountain View
           </p>
@@ -1734,12 +1079,10 @@
           <!-- Card 1: Mountain Hiking (left) -->
           <div class="col-12 col-sm-6 col-md-4">
             <div
-              class="reveal bg-white border overflow-hidden group hover-shadow transition-all"
-              style="border-color: #d8d0c4"
+              class="reveal bg-white border overflow-hidden group hover-shadow transition-all exp-card-border"
             >
               <div
-                class="position-relative overflow-hidden"
-                style="height: 260px"
+                class="position-relative overflow-hidden exp-card-img-wrapper"
               >
                 <img
                   src="images/lake.png"
@@ -1747,33 +1090,29 @@
                   class="w-100 h-100 object-fit-cover transition-transform group-hover-scale-105"
                 />
                 <span
-                  class="position-absolute top-0 start-0 bg-white text-charcoal fw-medium px-3 py-2"
-                  style="font-size: 11px; letter-spacing: 0.18em"
+                  class="position-absolute top-0 start-0 bg-white text-charcoal fw-medium px-3 py-2 exp-price-badge"
                   >$120 / PERSON</span
                 >
               </div>
               <div class="px-4 pt-4 pb-5">
                 <p
-                  class="text-gold text-uppercase mb-2"
-                  style="font-size: 10px; letter-spacing: 0.28em"
+                  class="text-gold text-uppercase mb-2 exp-category-label"
                 >
                   Outdoors
                 </p>
                 <h3
-                  class="font-serif text-charcoal lh-snug mb-3"
-                  style="font-size: 1.6rem"
+                  class="font-serif text-charcoal lh-snug mb-3 exp-card-title"
                 >
                   Mountain Hiking
                 </h3>
-                <p class="text-muted lh-base mb-4" style="font-size: 14px">
+                <p class="text-muted lh-base mb-4 exp-card-description">
                   With over 1,600 kilometres (994 miles) of trails, Banff
                   National Park offers adventurers some of the best hiking on
                   the planet.
                 </p>
                 <a
                   href="#"
-                  class="text-decoration-none text-uppercase text-charcoal hover-text-gold transition-colors fw-semibold"
-                  style="font-size: 11px; letter-spacing: 0.2em"
+                  class="text-decoration-none text-uppercase text-charcoal hover-text-gold transition-colors fw-semibold exp-discover-link"
                   >Discover Trip &rsaquo;</a
                 >
               </div>
@@ -1783,13 +1122,7 @@
           <!-- Card 2: Paddling Tour (center — featured) -->
           <div class="col-12 col-sm-6 col-md-4">
             <div
-              class="reveal exp-center position-relative overflow-hidden group border shadow-lg"
-              style="
-                border-color: #c8bfb0;
-                @media (min-width: 768px) {
-                  transform: translateY(-2.5rem);
-                }
-              "
+              class="reveal exp-center position-relative overflow-hidden group border shadow-lg exp-featured-border"
             >
               <img
                 src="images/canoe.png"
@@ -1798,20 +1131,11 @@
               />
               <!-- dark gradient overlay -->
               <div
-                class="position-absolute inset-0"
-                style="
-                  background: linear-gradient(
-                    to top,
-                    rgba(8, 18, 12, 0.92) 0%,
-                    rgba(8, 18, 12, 0.35) 55%,
-                    transparent 100%
-                  );
-                "
+                class="position-absolute inset-0 exp-featured-overlay"
               ></div>
               <!-- Price badge -->
               <span
-                class="position-absolute top-0 start-0 bg-white text-charcoal fw-medium px-3 py-2"
-                style="font-size: 11px; letter-spacing: 0.18em"
+                class="position-absolute top-0 start-0 bg-white text-charcoal fw-medium px-3 py-2 exp-price-badge"
                 >$120 / PERSON</span
               >
               <!-- Text at bottom -->
@@ -1819,25 +1143,22 @@
                 class="position-absolute bottom-0 start-0 end-0 px-4 pt-4 pb-5"
               >
                 <p
-                  class="text-gold text-uppercase mb-2"
-                  style="font-size: 10px; letter-spacing: 0.28em"
+                  class="text-gold text-uppercase mb-2 exp-category-label"
                 >
                   Nature
                 </p>
                 <h3
-                  class="font-serif text-white lh-snug mb-3"
-                  style="font-size: 1.6rem"
+                  class="font-serif text-white lh-snug mb-3 exp-card-title"
                 >
                   Paddling Tour
                 </h3>
-                <p class="text-white-50 lh-base mb-4" style="font-size: 14px">
+                <p class="text-white-50 lh-base mb-4 exp-card-description">
                   Banff National Park's biggest lake allows you to paddle for
                   miles and enjoy breathtaking views.
                 </p>
                 <a
                   href="#"
-                  class="text-decoration-none text-uppercase text-white hover-text-gold transition-colors fw-semibold"
-                  style="font-size: 11px; letter-spacing: 0.2em"
+                  class="text-decoration-none text-uppercase text-white hover-text-gold transition-colors fw-semibold exp-discover-link"
                   >Discover Trip &rsaquo;</a
                 >
               </div>
@@ -1847,12 +1168,10 @@
           <!-- Card 3: Camping Tour (right) -->
           <div class="col-12 col-sm-6 col-md-4">
             <div
-              class="reveal bg-white border overflow-hidden group hover-shadow transition-all"
-              style="border-color: #d8d0c4"
+              class="reveal bg-white border overflow-hidden group hover-shadow transition-all exp-card-border"
             >
               <div
-                class="position-relative overflow-hidden"
-                style="height: 260px"
+                class="position-relative overflow-hidden exp-card-img-wrapper"
               >
                 <img
                   src="images/hero.png"
@@ -1860,32 +1179,28 @@
                   class="w-100 h-100 object-fit-cover transition-transform group-hover-scale-105"
                 />
                 <span
-                  class="position-absolute top-0 start-0 bg-white text-charcoal fw-medium px-3 py-2"
-                  style="font-size: 11px; letter-spacing: 0.18em"
+                  class="position-absolute top-0 start-0 bg-white text-charcoal fw-medium px-3 py-2 exp-price-badge"
                   >$120 / PERSON</span
                 >
               </div>
               <div class="px-4 pt-4 pb-5">
                 <p
-                  class="text-gold text-uppercase mb-2"
-                  style="font-size: 10px; letter-spacing: 0.28em"
+                  class="text-gold text-uppercase mb-2 exp-category-label"
                 >
                   Outdoors
                 </p>
                 <h3
-                  class="font-serif text-charcoal lh-snug mb-3"
-                  style="font-size: 1.6rem"
+                  class="font-serif text-charcoal lh-snug mb-3 exp-card-title"
                 >
                   Camping Tour
                 </h3>
-                <p class="text-muted lh-base mb-4" style="font-size: 14px">
+                <p class="text-muted lh-base mb-4 exp-card-description">
                   Banff offers a range of camping spots allowing you to
                   experience all of this most gorgeous park's outdoor splendour.
                 </p>
                 <a
                   href="#"
-                  class="text-decoration-none text-uppercase text-charcoal hover-text-gold transition-colors fw-semibold"
-                  style="font-size: 11px; letter-spacing: 0.2em"
+                  class="text-decoration-none text-uppercase text-charcoal hover-text-gold transition-colors fw-semibold exp-discover-link"
                   >Discover Trip &rsaquo;</a
                 >
               </div>
@@ -1908,16 +1223,13 @@
   </div>
 </section> -->
     <section
-      class="position-relative overflow-hidden d-flex flex-column align-items-center justify-content-center"
-      style="min-height: 520px"
+      class="position-relative overflow-hidden d-flex flex-column align-items-center justify-content-center stats-banner-section"
     >
       <div
-        class="position-absolute inset-0"
-        style="background: url(&quot;images/lake.png&quot;) center/cover"
+        class="position-absolute inset-0 stats-bg-image"
       ></div>
       <div
-        class="position-absolute inset-0"
-        style="background: rgba(15, 22, 18, 0.68)"
+        class="position-absolute inset-0 stats-bg-overlay"
       ></div>
 
       <div
@@ -1931,8 +1243,7 @@
         <!-- Quote -->
         <blockquote
           id="testimonial-quote"
-          class="font-serif fs-4 fs-md-3 fs-lg-2 lh-base mx-auto mb-5 transition-all"
-          style="max-width: 900px; transition-duration: 700ms"
+          class="font-serif fs-4 fs-md-3 fs-lg-2 lh-base mx-auto mb-5 transition-all testimonial-quote"
         >
           "A great deal for the space and location. The restaurants available
           were all very good. Friendly staff, helpful disposition made our
@@ -1944,19 +1255,13 @@
         <div>
           <p
             id="testimonial-author"
-            class="font-serif fs-6 fs-md-5 mb-1 transition-all"
-            style="transition-duration: 700ms"
+            class="font-serif fs-6 fs-md-5 mb-1 transition-all testimonial-author"
           >
             Joseph Hart
           </p>
           <p
             id="testimonial-source"
-            class="text-white-50 text-uppercase transition-all"
-            style="
-              font-size: 11px;
-              letter-spacing: 0.3em;
-              transition-duration: 700ms;
-            "
+            class="text-white-50 text-uppercase transition-all testimonial-source"
           >
             TripAdvisor
           </p>
@@ -1974,35 +1279,24 @@
     </section>
 
     <!-- ==================== GALLERY ==================== -->
-    <style>
-      .insta-overlay { background: rgba(58, 82, 65, 0.45); opacity: 0; transition: opacity 0.4s ease; }
-      .insta-icon { transform: translateY(15px) scale(0.9); opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
-      .insta-box:hover .insta-overlay { opacity: 1; }
-      .insta-box:hover .insta-icon { transform: translateY(0) scale(1); opacity: 1; }
-      .insta-img { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-      .insta-box:hover .insta-img { transform: scale(1.08); }
-      .insta-btn { border: 1px solid rgba(0, 0, 0, 0.2); color: #555; background: transparent; transition: all 0.4s ease; }
-      .insta-btn:hover { background: #f8f9fa; color: #111; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-    </style>
     <section id="gallery" class="py-5 py-md-6 bg-white overflow-hidden">
       <div class="container px-3 px-lg-4 pt-4 pt-md-5">
         <div class="text-center mb-5 reveal">
           <p
-            class="text-uppercase mb-3 fw-medium tracking-widest"
-            style="font-size: 11px; letter-spacing: 0.3em; color: #b89a6a;"
+            class="text-uppercase mb-3 fw-medium tracking-widest gallery-insta-label"
           >
             Instagram
           </p>
           <h2 class="font-serif text-charcoal display-6 mb-2">
             Life at CozyStay
           </h2>
-          <p class="text-muted mt-2 mb-0" style="font-size: 13px; font-weight: 500;">@cozystayresort</p>
+          <p class="text-muted mt-2 mb-0 gallery-handle">@cozystayresort</p>
         </div>
 
         <!-- 4-photo grid -->
         <div class="row g-2 g-md-3 mb-5 stagger mx-0">
           <div class="col-6 col-md-3 gallery-item reveal">
-            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden" style="cursor: pointer;">
+            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden gallery-item-cursor">
               <img
                 src="images/canoe.png"
                 alt="Canoe on lake"
@@ -2010,13 +1304,13 @@
               />
               <div class="position-absolute inset-0 insta-overlay pointer-events-none z-1"></div>
               <div class="position-absolute inset-0 d-flex align-items-center justify-content-center pointer-events-none z-2 text-white insta-icon">
-                <svg style="width: 30px; height: 30px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
+                <svg class="gallery-insta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
               </div>
             </div>
           </div>
-          
+
           <div class="col-6 col-md-3 gallery-item reveal">
-            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden" style="cursor: pointer;">
+            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden gallery-item-cursor">
               <img
                 src="images/chalet.png"
                 alt="Chalet house"
@@ -2024,13 +1318,13 @@
               />
               <div class="position-absolute inset-0 insta-overlay pointer-events-none z-1"></div>
               <div class="position-absolute inset-0 d-flex align-items-center justify-content-center pointer-events-none z-2 text-white insta-icon">
-                <svg style="width: 30px; height: 30px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
+                <svg class="gallery-insta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
               </div>
             </div>
           </div>
-          
+
           <div class="col-6 col-md-3 gallery-item reveal">
-            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden" style="cursor: pointer;">
+            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden gallery-item-cursor">
               <img
                 src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80"
                 alt="Resort pool"
@@ -2038,13 +1332,13 @@
               />
               <div class="position-absolute inset-0 insta-overlay pointer-events-none z-1"></div>
               <div class="position-absolute inset-0 d-flex align-items-center justify-content-center pointer-events-none z-2 text-white insta-icon">
-                <svg style="width: 30px; height: 30px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
+                <svg class="gallery-insta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
               </div>
             </div>
           </div>
-          
+
           <div class="col-6 col-md-3 gallery-item reveal">
-            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden" style="cursor: pointer;">
+            <div class="ratio ratio-1x1 position-relative insta-box overflow-hidden gallery-item-cursor">
               <img
                 src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&q=80"
                 alt="Cozy lounge"
@@ -2052,7 +1346,7 @@
               />
               <div class="position-absolute inset-0 insta-overlay pointer-events-none z-1"></div>
               <div class="position-absolute inset-0 d-flex align-items-center justify-content-center pointer-events-none z-2 text-white insta-icon">
-                <svg style="width: 30px; height: 30px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
+                <svg class="gallery-insta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.6" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg>
               </div>
             </div>
           </div>
@@ -2062,32 +1356,23 @@
         <div class="text-center reveal pb-2 pb-md-5">
           <a
             href="#"
-            class="d-inline-flex align-items-center justify-content-center text-uppercase rounded-0 px-5 py-3 text-decoration-none fw-medium tracking-widest insta-btn"
-            style="font-size: 13px; letter-spacing: 0.12em;"
+            class="d-inline-flex align-items-center justify-content-center text-uppercase rounded-0 px-5 py-3 text-decoration-none fw-medium tracking-widest insta-btn gallery-follow-btn"
           >
             Follow Us on Instagram
           </a>
         </div>
       </div>
     </section>
+
     <!-- ==================== FOOTER ==================== -->
     <footer class="position-relative text-white overflow-hidden">
       <!-- Full background image -->
       <div
-        class="position-absolute inset-0 pointer-events-none"
-        style="background: url(&quot;images/lake.png&quot;) center/cover"
+        class="position-absolute inset-0 pointer-events-none footer-bg-image"
       ></div>
       <!-- Dark gradient overlay -->
       <div
-        class="position-absolute inset-0 pointer-events-none"
-        style="
-          background: linear-gradient(
-            135deg,
-            rgba(20, 35, 25, 0.93) 0%,
-            rgba(30, 50, 35, 0.88) 50%,
-            rgba(20, 35, 25, 0.93) 100%
-          );
-        "
+        class="position-absolute inset-0 pointer-events-none footer-bg-overlay"
       ></div>
 
       <div class="position-relative px-4 px-lg-5 pt-5 pt-md-5 pb-0">
@@ -2096,12 +1381,11 @@
           <!-- Brand — spans 2 cols on md, 1 on lg -->
           <div class="col-12 col-md-12 col-lg-3">
             <p class="font-serif fs-4 tracking-widest mb-1">COZYSTAY</p>
-            <p class="text-gold tracking-widest mb-4" style="font-size: 12px">
+            <p class="text-gold tracking-widest mb-4 footer-stars">
               ★ ★ ★ ★ ★
             </p>
             <p
-              class="text-white-50 lh-base mb-4"
-              style="font-size: 14px; max-width: 320px"
+              class="text-white-50 lh-base mb-4 footer-description"
             >
               Founded in 1998, CozyStay Resort is located on the hills of
               Zermatt, immersing you in the wonder of the Swiss Alps against the
@@ -2111,11 +1395,10 @@
             <div class="d-flex gap-2">
               <a
                 href="#"
-                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold"
-                style="width: 36px; height: 36px"
+                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link"
               >
                 <svg
-                  style="width: 16px; height: 16px"
+                  class="footer-social-icon"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -2126,11 +1409,10 @@
               </a>
               <a
                 href="#"
-                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold"
-                style="width: 36px; height: 36px"
+                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link"
               >
                 <svg
-                  style="width: 16px; height: 16px"
+                  class="footer-social-icon"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -2141,11 +1423,10 @@
               </a>
               <a
                 href="#"
-                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold"
-                style="width: 36px; height: 36px"
+                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link"
               >
                 <svg
-                  style="width: 16px; height: 16px"
+                  class="footer-social-icon"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -2156,11 +1437,10 @@
               </a>
               <a
                 href="#"
-                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold"
-                style="width: 36px; height: 36px"
+                class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link"
               >
                 <svg
-                  style="width: 16px; height: 16px"
+                  class="footer-social-icon"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -2186,14 +1466,12 @@
           <!-- About Us -->
           <div class="col-12 col-md-6 col-lg-3">
             <h5
-              class="text-white fw-semibold mb-4 text-uppercase"
-              style="font-size: 12px; letter-spacing: 0.2em"
+              class="text-white fw-semibold mb-4 text-uppercase footer-heading"
             >
               About Us
             </h5>
             <ul
-              class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0"
-              style="font-size: 14px"
+              class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0 footer-nav-list"
             >
               <li>
                 <a
@@ -2236,14 +1514,12 @@
           <!-- Experiences -->
           <div class="col-12 col-md-6 col-lg-3">
             <h5
-              class="text-white fw-semibold mb-4 text-uppercase"
-              style="font-size: 12px; letter-spacing: 0.2em"
+              class="text-white fw-semibold mb-4 text-uppercase footer-heading"
             >
               Experiences
             </h5>
             <ul
-              class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0"
-              style="font-size: 14px"
+              class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0 footer-nav-list"
             >
               <li>
                 <a
@@ -2286,19 +1562,16 @@
           <!-- Reach Out -->
           <div class="col-12 col-md-12 col-lg-3">
             <h5
-              class="text-white fw-semibold mb-4 text-uppercase"
-              style="font-size: 12px; letter-spacing: 0.2em"
+              class="text-white fw-semibold mb-4 text-uppercase footer-heading"
             >
               Reach Out
             </h5>
             <ul
-              class="list-unstyled d-flex flex-column gap-3 text-white-50 m-0"
-              style="font-size: 14px"
+              class="list-unstyled d-flex flex-column gap-3 text-white-50 m-0 footer-contact-list"
             >
               <li class="d-flex align-items-start gap-2">
                 <svg
-                  style="width: 16px; height: 16px"
-                  class="text-gold flex-shrink-0 mt-1"
+                  class="footer-contact-icon text-gold flex-shrink-0 mt-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -2313,8 +1586,7 @@
               </li>
               <li class="d-flex align-items-center gap-2">
                 <svg
-                  style="width: 16px; height: 16px"
-                  class="text-gold flex-shrink-0"
+                  class="footer-contact-icon text-gold flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -2333,8 +1605,7 @@
               </li>
               <li class="d-flex align-items-center gap-2">
                 <svg
-                  style="width: 16px; height: 16px"
-                  class="text-gold flex-shrink-0"
+                  class="footer-contact-icon text-gold flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -2353,12 +1624,11 @@
               <li class="pt-2">
                 <a
                   href="#"
-                  class="text-decoration-none text-gold hover-text-gold d-inline-flex align-items-center gap-1 transition-colors fw-medium"
-                  style="font-size: 14px"
+                  class="text-decoration-none text-gold hover-text-gold d-inline-flex align-items-center gap-1 transition-colors fw-medium footer-directions-link"
                 >
                   Get Directions
                   <svg
-                    style="width: 14px; height: 14px"
+                    class="footer-directions-arrow"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -2378,11 +1648,7 @@
 
         <!-- Bottom bar -->
         <div
-          class="border-top py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50"
-          style="
-            border-color: rgba(255, 255, 255, 0.1) !important;
-            font-size: 12px;
-          "
+          class="border-top py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50 footer-bottom-bar"
         >
           <p class="text-center text-md-start mb-0">
             © 2026 CozyStay Resort. All rights reserved.
@@ -2416,22 +1682,10 @@
     <button
       id="back-top"
       aria-label="Back to top"
-      class="btn bg-forest text-white rounded-circle d-flex align-items-center justify-content-center shadow"
-      style="
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 50;
-        width: 44px;
-        height: 44px;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s;
-        transform-origin: center;
-      "
+      class="btn bg-forest text-white rounded-circle d-flex align-items-center justify-content-center shadow back-top-btn"
     >
       <svg
-        style="width: 20px; height: 20px"
+        class="back-top-icon"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -2446,305 +1700,8 @@
     </button>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script>
-      // ------- Hero Carousel -------
-      (function () {
-        const slides = document.querySelectorAll(".hero-slide");
-        const dots = document.querySelectorAll(".hero-dot");
-        const vid = document.getElementById("hero-video");
-        let current = 0;
-        let timer;
-
-        function goTo(n) {
-          if (!slides.length) return;
-          if (slides[current].classList.contains("is-video") && vid) {
-            vid.pause();
-            vid.currentTime = 0;
-          }
-          slides[current].classList.remove("active");
-          dots[current].classList.remove("active");
-          current = (n + slides.length) % slides.length;
-          const s = slides[current];
-          if (!s.classList.contains("is-video")) {
-            s.style.animation = "none";
-            s.offsetHeight;
-            s.style.animation = "";
-          }
-          s.classList.add("active");
-          dots[current].classList.add("active");
-          if (s.classList.contains("is-video") && vid) {
-            vid.play().catch(() => {});
-          }
-        }
-
-        dots.forEach((dot, i) =>
-          dot.addEventListener("click", () => {
-            clearInterval(timer);
-            goTo(i);
-            timer = setInterval(() => goTo(current + 1), 6500);
-          }),
-        );
-        timer = setInterval(() => goTo(current + 1), 6500);
-      })();
-
-      // ------- Testimonials Carousel -------
-      (function () {
-        const testimonials = [
-          {
-            quote:
-              '"A great deal for the space and location. The restaurants available were all very good. Friendly staff, helpful disposition made our overall experience wonderful, a great deal for the space and location. We will be going again next year."',
-            author: "Joseph Hart",
-            source: "TripAdvisor",
-          },
-          {
-            quote:
-              '"Absolutely breathtaking views and impeccable service. The chalet exceeded every expectation — cosy interiors, gourmet meals, and a team that genuinely cares. A once-in-a-lifetime stay."',
-            author: "Amélie Dubois",
-            source: "Booking.com",
-          },
-          {
-            quote:
-              '"The most peaceful retreat I have ever experienced. Waking up to snow-capped peaks, fresh mountain air and a crackling fireplace is something I will never forget. Cannot recommend highly enough."',
-            author: "Marcus Lehner",
-            source: "Google Reviews",
-          },
-        ];
-        const quoteEl = document.getElementById("testimonial-quote");
-        const authorEl = document.getElementById("testimonial-author");
-        const sourceEl = document.getElementById("testimonial-source");
-        const tdots = document.querySelectorAll(".testi-dot");
-        let tCurrent = 0;
-        let tTimer;
-
-        function tGoTo(n) {
-          if (!testimonials.length) return;
-          tCurrent = (n + testimonials.length) % testimonials.length;
-          const t = testimonials[tCurrent];
-          [quoteEl, authorEl, sourceEl].forEach(
-            (el) => (el.style.opacity = "0"),
-          );
-          setTimeout(() => {
-            quoteEl.textContent = t.quote;
-            authorEl.textContent = t.author;
-            sourceEl.textContent = t.source;
-            [quoteEl, authorEl, sourceEl].forEach(
-              (el) => (el.style.opacity = "1"),
-            );
-          }, 400);
-          tdots.forEach((d, i) => d.classList.toggle("active", i === tCurrent));
-        }
-
-        tdots.forEach((dot, i) =>
-          dot.addEventListener("click", () => {
-            clearInterval(tTimer);
-            tGoTo(i);
-            tTimer = setInterval(() => tGoTo(tCurrent + 1), 7000);
-          }),
-        );
-        tTimer = setInterval(() => tGoTo(tCurrent + 1), 7000);
-      })();
-
-      // ------- Page Loader -------
-      (function () {
-        const loader = document.getElementById("page-loader");
-        function dismiss() {
-          if (!loader) return;
-          loader.classList.add("fade-out");
-          setTimeout(() => loader.remove(), 900);
-        }
-        if (document.readyState === "complete") {
-          setTimeout(dismiss, 300);
-        } else {
-          window.addEventListener("load", () => setTimeout(dismiss, 300));
-        }
-      })();
-
-      // ------- Navbar hide on scroll down, show on scroll up -------
-      const navbar = document.getElementById("navbar");
-      let lastScrollY = window.scrollY;
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!navbar) return;
-          const currentY = window.scrollY;
-          if (currentY > lastScrollY && currentY > 80) {
-            navbar.classList.add("nav-hidden");
-          } else {
-            navbar.classList.remove("nav-hidden");
-          }
-          navbar.classList.toggle("scrolled", currentY > 10);
-          lastScrollY = currentY;
-        },
-        { passive: true },
-      );
-
-      // ------- Mobile menu -------
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () =>
-          mobileMenu.classList.toggle("open"),
-        );
-        mobileMenu
-          .querySelectorAll("a")
-          .forEach((a) =>
-            a.addEventListener("click", () =>
-              mobileMenu.classList.remove("open"),
-            ),
-          );
-      }
-
-      // ------- Back to top -------
-      const backTop = document.getElementById("back-top");
-      if (backTop) {
-        window.addEventListener(
-          "scroll",
-          () => {
-            if (window.scrollY > 400) {
-              backTop.style.opacity = "1";
-              backTop.style.pointerEvents = "auto";
-            } else {
-              backTop.style.opacity = "0";
-              backTop.style.pointerEvents = "none";
-            }
-          },
-          { passive: true },
-        );
-        backTop.addEventListener("click", () =>
-          window.scrollTo({ top: 0, behavior: "smooth" }),
-        );
-      }
-
-      // ------- Scroll reveal -------
-      const revealEls = document.querySelectorAll(
-        ".reveal, .reveal-left, .reveal-right",
-      );
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 },
-      );
-      revealEls.forEach((el) => observer.observe(el));
-
-      // ------- Room carousel (slide) -------
-      let roomOffset = 0;
-      const roomsGrid = document.getElementById("rooms-grid");
-      if (roomsGrid) {
-        const roomCards = roomsGrid.querySelectorAll(".room-card");
-        document.getElementById("prev-room")?.addEventListener("click", () => {
-          if (window.innerWidth < 768) {
-            roomOffset = Math.max(roomOffset - 1, 0);
-            roomsGrid.style.transform = `translateX(-${roomOffset * 100}%)`;
-          }
-        });
-        document.getElementById("next-room")?.addEventListener("click", () => {
-          if (window.innerWidth < 768) {
-            roomOffset = Math.min(roomOffset + 1, roomCards.length - 1);
-            roomsGrid.style.transform = `translateX(-${roomOffset * 100}%)`;
-          }
-        });
-      }
-
-      // ------- Flatpickr Init -------
-      if (typeof flatpickr !== "undefined") {
-        flatpickr("#checkin", {
-          dateFormat: "d-m-Y",
-          minDate: "today",
-          onChange: function (selectedDates) {
-            const co = document.getElementById("checkout")?._flatpickr;
-            if (co) co.set("minDate", selectedDates[0] || "today");
-          },
-        });
-        flatpickr("#checkout", {
-          dateFormat: "d-m-Y",
-          minDate: "today",
-        });
-      }
-
-      // ------- Guests Dropdown -------
-      let guestState = { room: 1, adult: 1, child: 0 };
-      const guestToggle = document.getElementById("guest-toggle");
-      const guestDropdown = document.getElementById("guest-dropdown");
-      const guestDisplay = document.getElementById("guest-display");
-      const guestApply = document.getElementById("guest-apply");
-
-      if (guestToggle && guestDropdown) {
-        guestToggle.addEventListener("click", (e) => {
-          e.stopPropagation();
-          guestDropdown.classList.toggle("d-none");
-        });
-
-        guestApply.addEventListener("click", (e) => {
-          e.stopPropagation();
-          guestDropdown.classList.add("d-none");
-        });
-
-        document.addEventListener("click", (e) => {
-          if (
-            !guestDropdown.contains(e.target) &&
-            !guestToggle.contains(e.target)
-          ) {
-            guestDropdown.classList.add("d-none");
-          }
-        });
-      }
-
-      window.updateGuests = function (type, delta) {
-        if (type === "room") {
-          guestState.room = Math.max(1, guestState.room + delta);
-          document.getElementById("room-count").innerText = guestState.room;
-        } else if (type === "adult") {
-          guestState.adult = Math.max(1, guestState.adult + delta);
-          document.getElementById("adult-count").innerText = guestState.adult;
-        } else if (type === "child") {
-          guestState.child = Math.max(0, guestState.child + delta);
-          document.getElementById("child-count").innerText = guestState.child;
-        }
-
-        // Update display text
-        const rText =
-          guestState.room === 1 ? "1 Room" : `${guestState.room} Rooms`;
-        const aText =
-          guestState.adult === 1 ? "1 Adult" : `${guestState.adult} Adults`;
-        const cText =
-          guestState.child === 1 ? "1 Child" : `${guestState.child} Children`;
-        if (guestDisplay)
-          guestDisplay.innerText = `${rText}, ${aText}, ${cText}`;
-      };
-
-      // ------- Check Availability -------
-      const checkAvailBtn = document.getElementById("check-avail-btn");
-      if (checkAvailBtn) {
-        checkAvailBtn.addEventListener("click", () => {
-          const ci = document.getElementById("checkin").value;
-          const co = document.getElementById("checkout").value;
-          const fpIn = document.getElementById("checkin")._flatpickr;
-          const fpOut = document.getElementById("checkout")._flatpickr;
-
-          if (
-            fpIn &&
-            fpOut &&
-            fpIn.selectedDates[0] &&
-            fpOut.selectedDates[0]
-          ) {
-            if (fpOut.selectedDates[0] > fpIn.selectedDates[0]) {
-              alert(
-                `Checking availability from ${ci} to ${co} for ${guestDisplay.innerText}. We'll be in touch shortly!`,
-              );
-            } else {
-              alert("Check Out date must be after Check In date.");
-            }
-          } else {
-            alert("Please select valid check-in and check-out dates.");
-          }
-        });
-      }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
