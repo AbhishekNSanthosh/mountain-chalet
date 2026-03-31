@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CozyStay – Boutique Private Island Resort</title>
+    <meta
+      name="description"
+      content="CozyStay – Boutique Private Island Resort. The seaside haven of warmth, tranquility and restoration."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Our V3 Style -->
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+
+    <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
+    <div id="v3-overlay-menu" aria-hidden="true">
+      <!-- Overlay BG (blurred hero behind) -->
+      <div class="v3-overlay-bg"></div>
+
+      <!-- Top controls -->
+      <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between" style="padding: 26px 36px;">
+        <button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center" style="transition: color 0.2s, transform 0.2s;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 28px; height: 28px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="#" class="v3-overlay-lang">EN / FR</a>
+      </div>
+
+      <!-- Centered Links — 3 rows -->
+      <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
+          <a href="#" class="v3-overlay-link">Home</a>
+          <a href="#" class="v3-overlay-link">Stay</a>
+          <a href="#" class="v3-overlay-link">About the hotel</a>
+          <a href="#" class="v3-overlay-link">Restaurants &amp; Bars</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
+          <a href="#" class="v3-overlay-link">Spa &amp; Wellness</a>
+          <a href="#" class="v3-overlay-link">Events &amp; Meetings</a>
+          <a href="#" class="v3-overlay-link">Local Activities</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
+          <a href="#" class="v3-overlay-link">News</a>
+          <a href="#" class="v3-overlay-link">Contact</a>
+          <a href="#booking-v3" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
+        </div>
+      </nav>
+
+      <!-- Footer -->
+      <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3" style="height: 110px; border-bottom: 1px solid rgba(255, 255, 255, 0.18);">
+      <!-- Hamburger (always visible) -->
+      <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3" style="transition: color 0.2s ease, transform 0.2s ease;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Left Nav Links -->
+      <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1" id="v3-nav-links-left">
+        <li class="v3-dropdown">
+          <a href="#" class="v3-nav-link v3-active-link">
+            HOME
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="v3-dropdown-menu">
+            <a href="#">Home v1</a>
+            <a href="#">Home v2</a>
+            <a href="#">Home v3</a>
+          </div>
+        </li>
+        <li class="v3-dropdown">
+          <a href="#" class="v3-nav-link">
+            STAY
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="v3-dropdown-menu">
+            <a href="#">Island Villas</a>
+            <a href="#">Beach Bungalows</a>
+            <a href="#">Overwater Suites</a>
+          </div>
+        </li>
+        <li class="v3-dropdown">
+          <a href="#" class="v3-nav-link">
+            PAGES
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="v3-dropdown-menu">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="v3-nav-link">NEWS</a>
+        </li>
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
+        <a href="#" class="v3-logo-link">
+          COZYSTAY
+          <span class="v3-logo-stars">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right Nav -->
+      <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
+        <span class="v3-phone">Tel: +41 22 345 67 88</span>
+        <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
+        <a href="#booking-v3" class="v3-book-btn">Book Now</a>
+      </div>
+
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero-v3" class="position-relative vh-100 d-flex flex-column" style="min-height: 600px; z-index: 2;">
+      <!-- Background Wrapper -->
+      <div class="position-absolute w-100 h-100 overflow-hidden z-n1">
+        <div class="hero-v3-bg"></div>
+      </div>
+      <!-- Overlay -->
+      <div class="hero-v3-overlay"></div>
+
+      <!-- Hero Content -->
+      <div class="hero-v3-content position-relative z-2 d-flex flex-column align-items-center justify-content-center text-center flex-grow-1 text-white" style="padding: 110px 24px 80px;">
+        <div class="container">
+          <h1 class="hero-v3-title">Boutique Private<br>Island Resort</h1>
+          <p class="hero-v3-subtitle">The seaside haven of warmth, tranquility and restoration</p>
+        </div>
+      </div>
+      <!-- ==================== BOOKING BAR ==================== -->
+      <div class="container position-absolute z-3 w-100 v3-booking-wrapper" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);">
+        <div class="booking-v3-bar p-3 p-lg-4 w-100 mx-auto">
+          <div class="row g-3">
+          <!-- Check In -->
+          <div class="col-6 col-md-6 col-lg">
+            <div class="booking-v3-box d-flex justify-content-between align-items-center" id="v3-checkin-cell">
+              <span class="booking-v3-label">Check In</span>
+              <div class="d-flex align-items-center w-50 justify-content-end">
+                <input type="text" id="v3-checkin" class="booking-v3-input text-end" placeholder="2026-03-30" readonly />
+                <svg class="booking-v3-chevron ms-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Check Out -->
+          <div class="col-6 col-md-6 col-lg">
+            <div class="booking-v3-box d-flex justify-content-between align-items-center" id="v3-checkout-cell">
+              <span class="booking-v3-label">Check Out</span>
+              <div class="d-flex align-items-center w-50 justify-content-end">
+                <input type="text" id="v3-checkout" class="booking-v3-input text-end" placeholder="2026-03-31" readonly />
+                <svg class="booking-v3-chevron ms-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Rooms -->
+          <div class="col-6 col-md-4 col-lg">
+            <div class="booking-v3-box d-flex justify-content-between align-items-center" id="v3-rooms-cell">
+              <span class="booking-v3-label">Rooms</span>
+              <div class="d-flex align-items-center w-50 justify-content-end">
+                <span class="booking-v3-value text-end" id="v3-rooms-display">1 Room</span>
+                <svg class="booking-v3-chevron ms-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Guests -->
+          <div class="col-6 col-md-8 col-lg-3">
+            <div class="booking-v3-box d-flex justify-content-between align-items-center v3-guests-trigger position-relative" id="v3-guests-cell">
+              <span class="booking-v3-label">Guests</span>
+              <div class="d-flex align-items-center w-75 justify-content-end">
+                <span class="booking-v3-value text-end" id="v3-guests-display">1 Adult, 0 Children</span>
+                <svg class="booking-v3-chevron ms-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+              <!-- Guests Dropdown -->
+              <div id="v3-guests-dropdown" class="v3-guests-dropdown">
+                <div class="v3-counter-row">
+                  <span class="v3-counter-label">Rooms</span>
+                  <div class="v3-counter-controls">
+                    <button class="v3-counter-btn" onclick="v3UpdateGuests('room', -1)">−</button>
+                    <span id="v3-room-count" class="v3-counter-num">1</span>
+                    <button class="v3-counter-btn" onclick="v3UpdateGuests('room', 1)">+</button>
+                  </div>
+                </div>
+                <div class="v3-counter-row">
+                  <span class="v3-counter-label">Adults</span>
+                  <div class="v3-counter-controls">
+                    <button class="v3-counter-btn" onclick="v3UpdateGuests('adult', -1)">−</button>
+                    <span id="v3-adult-count" class="v3-counter-num">1</span>
+                    <button class="v3-counter-btn" onclick="v3UpdateGuests('adult', 1)">+</button>
+                  </div>
+                </div>
+                <div class="v3-counter-row">
+                  <span class="v3-counter-label">Children</span>
+                  <div class="v3-counter-controls">
+                    <button class="v3-counter-btn" onclick="v3UpdateGuests('child', -1)">−</button>
+                    <span id="v3-child-count" class="v3-counter-num">0</span>
+                    <button class="v3-counter-btn" onclick="v3UpdateGuests('child', 1)">+</button>
+                  </div>
+                </div>
+                <p class="v3-dropdown-note">* Children ages 2–12. Infants stay free.</p>
+                <button id="v3-guest-apply" class="v3-apply-btn">Apply</button>
+              </div>
+            </div>
+          </div>
+          <!-- CTA -->
+          <div class="col-12 col-lg-auto d-flex">
+            <button class="booking-v3-cta w-100 flex-grow-1" id="v3-check-avail">Check Availability</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- ==================== WELCOME / ABOUT INTRO ==================== -->
+    <section id="welcome-intro">
+      <div class="container d-flex flex-column align-items-center text-center">
+      <!-- Hotel icon -->
+      <div class="wi-icon">
+        <svg viewBox="0 0 64 72" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Building body -->
+          <rect x="10" y="22" width="44" height="44" rx="0"/>
+          <!-- Roof / overhang -->
+          <polyline points="4,22 32,4 60,22"/>
+          <!-- Door -->
+          <rect x="25" y="46" width="14" height="20" rx="0"/>
+          <!-- Windows row 1 -->
+          <rect x="14" y="30" width="8" height="8"/>
+          <rect x="42" y="30" width="8" height="8"/>
+          <!-- Windows row 2 -->
+          <rect x="14" y="44" width="8" height="8"/>
+          <rect x="42" y="44" width="8" height="8"/>
+          <!-- Trees/palms -->
+          <line x1="4" y1="66" x2="4" y2="52"/>
+          <path d="M4,52 C4,52 0,46 4,44 C8,42 8,48 4,52" fill="currentColor" stroke="none"/>
+          <line x1="60" y1="66" x2="60" y2="52"/>
+          <path d="M60,52 C60,52 56,46 60,44 C64,42 64,48 60,52" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+
+      <!-- Eyebrow -->
+      <p class="wi-eyebrow">Welcome to CozyStay Resort</p>
+
+      <!-- Heading -->
+      <h2 class="wi-heading">
+        <span class="d-inline-block">In the Heart of the South Pacific,</span><br>
+        <span class="d-inline-block">Outstanding Views</span>
+      </h2>
+
+      <!-- Body text -->
+      <p class="wi-body">
+        Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island,
+        CozyStay is a haven of warmth, tranquility and rejuvenation. Bathed in brilliant sunshine and clear skies, it
+        offers stunning views of palm-lined beaches and gorgeous coral reefs.
+      </p>
+      </div>
+    </section>
+
+    <!-- ==================== IMAGE SHOWCASE ==================== -->
+    <section id="resort-carousel" class="position-relative" style="background: linear-gradient(to bottom, #f8f7f5 50%, #ffffff 50%); padding: 40px 0 100px; overflow: hidden;">
+      <div class="container-fluid px-0 position-relative z-1">
+        
+        <!-- Track (Scrollable) -->
+        <div id="v3-carousel-track" class="d-flex gap-3 gap-xl-4 px-3 px-lg-5 pb-2 w-100 h-100 overflow-auto hide-scrollbar" style="scroll-snap-type: x mandatory; scroll-behavior: smooth;">
+          <div class="v3-carousel-slide flex-shrink-0 bg-secondary" style="width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start;">
+            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=600&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Resort image">
+          </div>
+          <div class="v3-carousel-slide flex-shrink-0 bg-secondary" style="width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start;">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=600&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="River canoe">
+          </div>
+          <div class="v3-carousel-slide flex-shrink-0 bg-secondary" style="width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start;">
+            <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?q=80&w=600&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Garden path">
+          </div>
+          <div class="v3-carousel-slide flex-shrink-0 bg-secondary" style="width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start;">
+            <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=600&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Ocean view">
+          </div>
+          <div class="v3-carousel-slide flex-shrink-0 bg-secondary" style="width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start;">
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=600&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Beach setup">
+          </div>
+          <div class="v3-carousel-slide flex-shrink-0 bg-secondary" style="width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start;">
+            <img src="https://images.unsplash.com/photo-1563911302283-d2bc129e7570?q=80&w=600&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Hotel Bed">
+          </div>
+        </div>
+
+        <!-- Handwritten text & Navigation below track -->
+        <div class="mt-4 px-3 px-lg-5 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
+          <div style="max-width: 580px;">
+            <p class="v3-handwriting-text m-0" style="font-family: 'Zeyada', cursive; font-size: 34px; line-height: 1.1; color: #4a4a4a; letter-spacing: 0.05em;">
+              Inspired by our history, surrounded by nature and designed to offer a different experience
+            </p>
+          </div>
+          <!-- Carousel Arrows -->
+          <div class="d-flex gap-3 px-lg-2">
+            <button id="v3-btn-prev" class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow-sm" style="width: 48px; height: 48px; border: 1px solid #e1e1e1; color: #7a7060; cursor: pointer; outline: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f8f8'" onmouseout="this.style.background='#fff'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="v3-btn-next" class="rounded-circle bg-white d-flex align-items-center justify-content-center shadow-sm" style="width: 48px; height: 48px; border: 1px solid #e1e1e1; color: #7a7060; cursor: pointer; outline: none; transition: background 0.2s;" onmouseover="this.style.background='#f8f8f8'" onmouseout="this.style.background='#fff'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== VIDEO PLACEHOLDER SECTION ==================== -->
+    <section id="resort-video" class="position-relative w-100" style="height: 75vh; min-height: 500px; max-height: 800px;">
+      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2000&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Resort Pool Experience">
+      <!-- Dark overlay -->
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.25);"></div>
+      
+      <!-- Center Play Button -->
+      <button class="v3-play-btn position-absolute top-50 start-50 translate-middle bg-transparent rounded-circle d-flex align-items-center justify-content-center" aria-label="Play Video">
+        <svg viewBox="0 0 24 24" fill="none" class="text-white" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5v14l11-7z"/></svg>
+      </button>
+
+      <!-- Return to top-->
+      <button class="position-absolute border border-white bg-transparent d-flex align-items-center justify-content-center text-white" aria-label="Return to top" style="bottom: 30px; right: 40px; width: 44px; height: 44px; border-color: rgba(255,255,255,0.4) !important; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+      </button>
+    </section>
+
+    <!-- ==================== ACCOMMODATIONS SECTION ==================== -->
+    <section id="accommodations" class="bg-white py-5 mt-4 mb-0">
+      <div class="container py-4">
+        
+        <!-- Header Row -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-4">
+          <div>
+            <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #7a7060; text-transform: uppercase;">
+              Enjoy World-Class Stay Experience
+            </span>
+            <h2 class="m-0" style="font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 4vw, 3rem); color: #2a2620;">
+              The Accommodations
+            </h2>
+          </div>
+          <button class="v3-book-btn border-0 py-3 px-4 btn-discover-suites text-uppercase" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em;">
+            Discover All Suites
+          </button>
+        </div>
+
+        <!-- Cards Row -->
+        <div class="row g-4 g-lg-5 pb-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="acc-card h-100 d-flex flex-column text-start">
+              <div class="acc-img-wrap position-relative mb-4 w-100 overflow-hidden" style="aspect-ratio: 4/4.5;">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Premier Oceanview Villa">
+                <div class="position-absolute bg-white px-3 py-2 shadow-sm" style="top: 24px; left: 24px; z-index: 2;">
+                  <span style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: #2a2620;">FROM $599</span>
+                </div>
+              </div>
+              <h3 style="font-family: 'Marcellus', serif; font-size: 1.65rem; color: #2a2620; margin-bottom: 14px;">Premier Oceanview Villa</h3>
+              
+              <!-- Icons -->
+              <div class="d-flex flex-wrap align-items-center gap-4 mb-3" style="font-family: 'Jost', sans-serif; font-size: 13px; color: #7a7060;">
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> 84 m&sup2;</span>
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 2 Guests</span>
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><path d="M3 7v11m18-11v11M5 11h14M3 14h18"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/></svg> 1 King Bed</span>
+              </div>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">
+                Stunning beachfront location with 60 square meters / 646 square feet of interior space, located on the west side of the resort in a private tropical garden with a plunge pool and a private outdoor shower.
+              </p>
+              <a href="#" class="acc-link mt-auto d-inline-flex align-items-center gap-1 text-decoration-none" style="font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; color: #2a2620; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(42,38,32,0.3); padding-bottom: 2px; width: fit-content;">
+                Discover More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="12"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="acc-card h-100 d-flex flex-column text-start">
+              <div class="acc-img-wrap position-relative mb-4 w-100 overflow-hidden" style="aspect-ratio: 4/4.5;">
+                <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Deluxe Hilltop Residence">
+                <div class="position-absolute bg-white px-3 py-2 shadow-sm" style="top: 24px; left: 24px; z-index: 2;">
+                  <span style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: #2a2620;">$999 / NIGHT</span>
+                </div>
+              </div>
+              <h3 style="font-family: 'Marcellus', serif; font-size: 1.65rem; color: #2a2620; margin-bottom: 14px;">Deluxe Hilltop Residence</h3>
+              
+              <!-- Icons -->
+              <div class="d-flex flex-wrap align-items-center gap-4 mb-3" style="font-family: 'Jost', sans-serif; font-size: 13px; color: #7a7060;">
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> 200 m&sup2;</span>
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 6 Guests</span>
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><path d="M3 7v11m18-11v11M5 11h14M3 14h18"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/></svg> 3 King Beds</span>
+              </div>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">
+                Stunning beachfront location with 60 square meters / 646 square feet of interior space, located on the west side of the resort in a private tropical garden with a plunge pool and a private outdoor shower.
+              </p>
+              <a href="#" class="acc-link mt-auto d-inline-flex align-items-center gap-1 text-decoration-none" style="font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; color: #2a2620; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(42,38,32,0.3); padding-bottom: 2px; width: fit-content;">
+                Discover More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="12"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="acc-card h-100 d-flex flex-column text-start">
+              <div class="acc-img-wrap position-relative mb-4 w-100 overflow-hidden" style="aspect-ratio: 4/4.5;">
+                <img src="https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Premier Beachfront Suite">
+                <div class="position-absolute bg-white px-3 py-2 shadow-sm" style="top: 24px; left: 24px; z-index: 2;">
+                  <span style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; color: #2a2620;">FROM $399</span>
+                </div>
+              </div>
+              <h3 style="font-family: 'Marcellus', serif; font-size: 1.65rem; color: #2a2620; margin-bottom: 14px;">Premier Beachfront Suite</h3>
+              
+              <!-- Icons -->
+              <div class="d-flex flex-wrap align-items-center gap-4 mb-3" style="font-family: 'Jost', sans-serif; font-size: 13px; color: #7a7060;">
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> 60 m&sup2;</span>
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 2 Guests</span>
+                <span class="d-flex align-items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="16"><path d="M3 7v11m18-11v11M5 11h14M3 14h18"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/></svg> 1 King Bed</span>
+              </div>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">
+                Stunning beachfront location with 60 square meters / 646 square feet of interior space, located on the west side of the resort in a private tropical garden with a plunge pool and a private outdoor shower.
+              </p>
+              <a href="#" class="acc-link mt-auto d-inline-flex align-items-center gap-1 text-decoration-none" style="font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; color: #2a2620; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(42,38,32,0.3); padding-bottom: 2px; width: fit-content;">
+                Discover More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="12"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pagination Dots -->
+        <div class="d-flex justify-content-center gap-2 mt-2">
+          <div class="rounded-circle" style="width: 5px; height: 5px; background: #2a2620;"></div>
+          <div class="rounded-circle" style="width: 5px; height: 5px; background: #d4cdc5;"></div>
+          <div class="rounded-circle" style="width: 5px; height: 5px; background: #d4cdc5;"></div>
+          <div class="rounded-circle" style="width: 5px; height: 5px; background: #d4cdc5;"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== DESIRABLE LOCATIONS SECTION ==================== -->
+    <section id="locations-section" class="position-relative text-center bg-white pb-5 mb-0">
+      <!-- Background Top Half -->
+      <div class="position-absolute top-0 start-0 w-100" style="height: 65%; z-index: 0;">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="w-100 h-100 object-fit-cover" alt="Coastal view">
+        <!-- Dark Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(8, 28, 32, 0.35);"></div>
+      </div>
+
+      <div class="container position-relative z-1" style="padding-top: 100px;">
+        <!-- Heading Block -->
+        <div class="text-white mb-5 mx-auto" style="max-width: 800px;">
+          <!-- Icon -->
+          <div class="mb-4 d-flex justify-content-center opacity-75">
+             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+               <circle cx="12" cy="8" r="3" />
+               <path d="M12 2v2M12 12v2M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M22 12h-2M4 12H2M19.07 19.07l-1.41-1.41M6.34 6.34L4.93 4.93" />
+               <path d="M2 18h20M4 22h16" />
+             </svg>
+          </div>
+          <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase;">
+            Unforgettable Experience
+          </span>
+          <h2 class="mb-3" style="font-family: 'Marcellus', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1.2;">
+            One of the World's Most<br>Desirable Locations
+          </h2>
+          <p style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: 0.04em; color: rgba(255,255,255,0.9);">
+            A superior, 5-star resort embodying the very best of Fiji Islands<br>luxury, tranquility &amp; sophistication.
+          </p>
+        </div>
+
+        <!-- 3 Cards Row -->
+        <div class="row px-lg-4 mt-5 pt-4 g-4 w-100 mx-0">
+          
+          <!-- Card 1 -->
+          <div class="col-12 col-md-4 mb-5 px-3">
+            <div class="d-flex flex-column align-items-center p-2">
+              <div class="offset-img-container offset-bl position-relative mb-4 w-100" style="max-width: 340px;">
+                <img src="https://images.unsplash.com/photo-1515362778563-6a8d0e44bc0b?q=80&w=600&auto=format&fit=crop" class="w-100 position-relative z-1 object-fit-cover shadow-sm bg-white" style="aspect-ratio: 3/4;" alt="Spa">
+              </div>
+              <h3 style="font-family: 'Marcellus', serif; font-size: 1.8rem; color: #2a2620; margin-bottom: 16px; position: relative; z-index: 2;">Spa &amp; Wellness</h3>
+              <p class="px-2" style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 20px; position: relative; z-index: 2;">
+                Set in lush jungle, our modern spa embodies the calm of nature, offering extraordinary visual and auditory experiences that pamper and heal.
+              </p>
+              <a href="#" class="text-decoration-none" style="position: relative; z-index: 2; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; color: #5c5549; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(42,38,32,0.3); padding-bottom: 2px;">Discover More</a>
+            </div>
+          </div>
+          
+          <!-- Card 2 (Staggered) -->
+          <div class="col-12 col-md-4 mb-5 px-3 v3-stagger-card">
+            <div class="d-flex flex-column align-items-center p-2">
+              <div class="offset-img-container offset-tl position-relative mb-4 w-100" style="max-width: 340px;">
+                <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=600&auto=format&fit=crop" class="w-100 position-relative z-1 object-fit-cover shadow-sm bg-white" style="aspect-ratio: 3/4;" alt="Surfing">
+              </div>
+              <h3 style="font-family: 'Marcellus', serif; font-size: 1.8rem; color: #2a2620; margin-bottom: 16px; position: relative; z-index: 2;">Island Activities</h3>
+              <p class="px-2" style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 20px; position: relative; z-index: 2;">
+                A playground for the over-and-underwater world adventurers. Surfing, diving, snorkeling, fishing, sailing, nature trails &amp; villages to explore.
+              </p>
+              <a href="#" class="text-decoration-none" style="position: relative; z-index: 2; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; color: #5c5549; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(42,38,32,0.3); padding-bottom: 2px;">Discover More</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-4 mb-5 px-3">
+            <div class="d-flex flex-column align-items-center p-2">
+              <div class="offset-img-container offset-bl position-relative mb-4 w-100" style="max-width: 340px;">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop" class="w-100 position-relative z-1 object-fit-cover shadow-sm bg-white" style="aspect-ratio: 3/4;" alt="Gastronomic">
+              </div>
+              <h3 style="font-family: 'Marcellus', serif; font-size: 1.8rem; color: #2a2620; margin-bottom: 16px; position: relative; z-index: 2;">Gastronomic Dine</h3>
+              <p class="px-2" style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 20px; position: relative; z-index: 2;">
+                Our restaurants use fresh, organic ingredients that are locally produced and sourced. Delicious flavors and a warm atmosphere are the perfect way to unwind.
+              </p>
+              <a href="#" class="text-decoration-none" style="position: relative; z-index: 2; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; color: #5c5549; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(42,38,32,0.3); padding-bottom: 2px;">Discover More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section id="testimonials" class="position-relative w-100 text-center text-white py-5 d-flex align-items-center justify-content-center" style="min-height: 75vh; max-height: 900px; padding-top: 100px; padding-bottom: 120px;">
+      <!-- Background Image -->
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position: center 20%;" alt="Testimonial background">
+      <!-- Overlay blur/dark -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(40, 30, 20, 0.45); backdrop-filter: brightness(0.9);"></div>
+      
+      <!-- Content box -->
+      <div class="container position-relative z-1 d-flex flex-column align-items-center">
+        <!-- Gold icon SVG (Spa cups/products) -->
+        <div class="mb-4" style="color: #bb9e72;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <!-- decorative teacups & spa products -->
+            <path d="M5 14h6M5 14a2 2 0 01-2-2v-2h10v2a2 2 0 01-2 2M5 14v1a2 2 0 002 2h2a2 2 0 002-2v-1"/>
+            <path d="M14 10h1a1 1 0 011 1v1a1 1 0 01-1 1h-1M13 6a2 2 0 012-2c1.1 0 1.5.8 2 1.2M9 5v1M7 5v1M11 5v1"/>
+          </svg>
+        </div>
+
+        <span class="d-block mb-4 text-white" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase;">
+          Voice From Our Guests
+        </span>
+
+        <h2 class="mb-5" style="font-family: 'Marcellus', serif; font-size: clamp(2rem, 3.5vw, 2.6rem); line-height: 1.4; max-width: 800px; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+          &ldquo;Everything here was great: the staff, the room layout, the property amenities with indoor pool, and the quality of the food. But the high point is the view from the mountains.&rdquo;
+        </h2>
+
+        <div class="text-white mt-2">
+          <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
+            Anna Williams &mdash; Tripadvisor
+          </span>
+          <div class="d-flex justify-content-center gap-2" style="color: #bb9e72;">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="services-section" class="bg-white py-5 my-0">
+      <div class="container py-lg-5">
+        <div class="row gx-5">
+          <!-- Left Column (Tall Image + Handwriting) -->
+          <div class="col-12 col-lg-5 mb-5 mb-lg-0">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop" class="w-100 object-fit-cover shadow-sm" style="aspect-ratio: 4/5.5;" alt="Resort view">
+            <div class="mt-4 px-2 text-center text-md-end text-lg-start">
+              <p style="font-family: 'Zeyada', cursive; font-size: 32px; line-height: 1.1; color: #4a4a4a; letter-spacing: 0.05em; margin: 0; max-width: 400px;" class="ms-lg-auto me-lg-0 mx-auto">
+                Inspired by our history, surrounded by nature to offer a different experience
+              </p>
+            </div>
+          </div>
+          
+          <!-- Right Column -->
+          <div class="col-12 col-lg-7 ps-lg-5">
+            <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: #7a7060;">
+              Discover the Services We Offered
+            </span>
+            <h2 class="mb-5" style="font-family: 'Marcellus', serif; font-size: clamp(2.2rem, 3.5vw, 3rem); line-height: 1.25; color: #2a2620; max-width: 500px;">
+              All the Essentials for a Cozy and Comfortable Stay
+            </h2>
+
+            <!-- Grid 2x3 -->
+            <div class="row g-4 mb-5 pb-3">
+              <!-- Grid item 1 (Airport) -->
+              <div class="col-12 col-sm-6 d-flex gap-3">
+                <div style="color: #bb9e72;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                     <path d="M5 18H3a2 2 0 01-2-2v-4l2-5h12l2 5v4a2 2 0 01-2 2h-2m-8 0h6M5 18a2 2 0 11-4 0m16 0a2 2 0 11-4 0M1 12h16"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; color: #2a2620; margin-bottom: 8px;">Airport Pick-up Service</h4>
+                  <p style="font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0;">Lorem ipsum proin gravida velit auctor sde re sit amet space.</p>
+                </div>
+              </div>
+              <!-- Grid item 2 (Housekeeper) -->
+              <div class="col-12 col-sm-6 d-flex gap-3">
+                <div style="color: #bb9e72;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; color: #2a2620; margin-bottom: 8px;">Housekeeper Services</h4>
+                  <p style="font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0;">Lorem ipsum proin gravida velit auctor sde re sit amet space.</p>
+                </div>
+              </div>
+              <!-- Grid item 3 (Wifi) -->
+              <div class="col-12 col-sm-6 d-flex gap-3">
+                <div style="color: #bb9e72;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; color: #2a2620; margin-bottom: 8px;">Wifi &amp; Internet</h4>
+                  <p style="font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0;">Lorem ipsum proin gravida velit auctor sde re sit amet space.</p>
+                </div>
+              </div>
+              <!-- Grid item 4 (Laundry) -->
+              <div class="col-12 col-sm-6 d-flex gap-3">
+                <div style="color: #bb9e72;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                    <circle cx="12" cy="14" r="4"/>
+                    <path d="M8 6h.01M16 6h.01M12 6h.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; color: #2a2620; margin-bottom: 8px;">Laundry Services</h4>
+                  <p style="font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0;">Lorem ipsum proin gravida velit auctor sde re sit amet space.</p>
+                </div>
+              </div>
+              <!-- Grid item 5 (Breakfast) -->
+              <div class="col-12 col-sm-6 d-flex gap-3">
+                <div style="color: #bb9e72;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M12 8a3 3 0 100-6 3 3 0 000 6zM2 14h20M4 14v7h16v-7M9 14v4M15 14v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; color: #2a2620; margin-bottom: 8px;">Breakfast in Bed</h4>
+                  <p style="font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0;">Lorem ipsum proin gravida velit auctor sde re sit amet space.</p>
+                </div>
+              </div>
+              <!-- Grid item 6 (Swimming Pool) -->
+              <div class="col-12 col-sm-6 d-flex gap-3">
+                <div style="color: #bb9e72;">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; color: #2a2620; margin-bottom: 8px;">Swimming Pool</h4>
+                  <p style="font-family: 'Jost', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0;">Lorem ipsum proin gravida velit auctor sde re sit amet space.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column Bottom Landscape Image -->
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop" class="w-100 object-fit-cover shadow-sm" style="aspect-ratio: 16/9;" alt="Resort Pool">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="text-white">
+      <!-- Newsletter Section -->
+      <div class="position-relative py-5" style="min-height: 380px;">
+        <!-- BG -->
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position: center 60%;" alt="Footer bg">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(10, 20, 15, 0.25);"></div>
+        
+        <div class="container position-relative z-1 py-5">
+          <div class="row align-items-center">
+            
+            <!-- Left -->
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
+                Stay Tuned With CozyStay
+              </span>
+              <h2 style="font-family: 'Marcellus', serif; font-size: clamp(2rem, 3.2vw, 2.7rem); line-height: 1.35; max-width: 540px;">
+                Sign up for our newsletter to receive our news, deals and special offers.
+              </h2>
+            </div>
+
+            <!-- Right -->
+            <div class="col-12 col-lg-6 ps-lg-5">
+              <form class="d-flex flex-column gap-3">
+                <style>.v3-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }</style>
+                <div class="position-relative mb-2">
+                  <input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3" style="border: 0; border-bottom: 2px solid rgba(255,255,255,0.8); font-family: 'Jost', sans-serif; font-size: 15px; outline: none; padding-right: 110px;" required>
+                  <button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0" style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500;">
+                    Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="checkbox" id="v3-privacy-chk" style="width: 14px; height: 14px; accent-color: #bb9e72;">
+                  <label for="v3-privacy-chk" style="font-family: 'Jost', sans-serif; font-size: 13.5px; font-weight: 400; cursor: pointer;">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div style="background-color: #161513; padding-top: 80px; padding-bottom: 40px; position: relative;">
+        <!-- Return to top button in the footer itself -->
+        <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center" aria-label="Return to top" style="top: -22px; right: 40px; width: 44px; height: 44px; cursor: pointer; border-color: #d4cdc5 !important; color: #d4cdc5; background: #161513 !important;" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+        </button>
+
+        <div class="container">
+          <div class="row text-center text-md-start text-lg-center mb-5 pb-5" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Address</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">73120 Courchevel 1850, France</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Phone</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">+41 22 345 67 88</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Email</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">reservation@cozystay.com</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Social</span>
+              <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; color: #a3a3a3;">
+            <p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            <div class="d-flex gap-4">
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">PRIVACY</a>
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">TERMS OF USE</a>
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">POLICY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="main3.js"></script>
+  </body>
+</html>
