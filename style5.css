@@ -1,0 +1,514 @@
+/* ============================================================
+   CozyStay – V5 Stylesheet (index5.html)
+   ============================================================ */
+
+/* Base & Typography */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  color: #fff;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+:root {
+  --gold: #c8a96e;
+  --gold-hover: #b89458;
+  --olive: #3b4a3b;
+}
+
+/* ==================== NAVBAR ==================== */
+#navbar5 {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  z-index: 1000;
+}
+
+.nav-left5 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.nav-center5 {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.nav-right5 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+}
+
+/* Hamburger */
+.nav-hamburger5 {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 28px;
+  line-height: 0;
+}
+
+/* Nav links */
+.nav-links5 {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex;
+  gap: 28px;
+}
+.nav-link5 {
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav-link5:hover,
+.nav-link5.active {
+  border-bottom-color: #fff;
+  color: #fff;
+}
+
+/* Logo */
+.logo-link5 {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Marcellus", serif;
+  font-size: 26px;
+  letter-spacing: 0.22em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+.logo-stars5 {
+  font-size: 8px;
+  color: var(--gold);
+  letter-spacing: 0.4em;
+  margin-top: 6px;
+}
+
+/* Nav right items */
+.nav-tel5 {
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-right: 28px;
+  white-space: nowrap;
+}
+.nav-tel5:hover { color: var(--gold); }
+
+.nav-lang5 {
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin-right: 28px;
+}
+.nav-lang5:hover { color: var(--gold); }
+
+.nav-reserve-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 22px;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  white-space: nowrap;
+}
+.nav-reserve-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1a1a1a;
+}
+
+/* ==================== HERO SECTION ==================== */
+#hero5 {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero5-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('./images/index5.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero5-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero5-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  gap: 40px;
+}
+
+/* Left Text */
+.hero5-text {
+  flex: 1;
+  max-width: 520px;
+  padding-top: 30px;
+}
+
+.hero5-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 24px 0;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hero5-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 440px;
+}
+
+/* Right Booking Card */
+.hero5-booking-card {
+  background: var(--olive);
+  width: 340px;
+  flex-shrink: 0;
+  padding: 40px 36px 44px;
+}
+
+.booking-card-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.booking-card-title {
+  font-family: "Marcellus", serif;
+  font-size: 1.9rem;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 30px 0;
+  letter-spacing: 0.05em;
+}
+
+/* Form fields */
+.booking-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 13px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  background: transparent;
+}
+.booking-field:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-field-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.booking-field-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-field-value {
+  font-size: 13px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+  width: 90px;
+  text-align: right;
+}
+.booking-field-value::placeholder { color: rgba(255,255,255,0.8); }
+
+.booking-chev {
+  width: 14px;
+  height: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+}
+
+/* Adults / Children row */
+.booking-row-split {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.booking-row-split .booking-field {
+  flex: 1;
+  margin-bottom: 0;
+}
+.booking-field-value-sm {
+  font-size: 13px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: default;
+  font-family: "Jost", sans-serif;
+  width: 24px;
+  text-align: right;
+}
+
+/* CTA Button */
+.booking-cta {
+  display: block;
+  width: 100%;
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 16px 20px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: background 0.3s;
+}
+.booking-cta:hover {
+  background: var(--gold-hover);
+}
+
+/* ==================== ABOUT SECTION ==================== */
+#about5 {
+  background: #f8f6f2;
+  padding: 110px 6vw;
+}
+
+.about5-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Left Text */
+.about5-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about5-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 22px;
+}
+
+.about5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 26px 0;
+}
+
+.about5-desc {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #555;
+  margin: 0 0 40px 0;
+}
+
+.about5-cta {
+  display: inline-block;
+  background: var(--olive);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 16px 40px;
+  transition: background 0.3s;
+}
+.about5-cta:hover {
+  background: #2e3a2e;
+  color: #fff;
+}
+
+/* Right Images */
+.about5-images {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-end;
+}
+
+.about5-img-top {
+  width: 88%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.about5-img-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.about5-img-top:hover img { transform: scale(1.04); }
+
+.about5-img-bottom {
+  position: relative;
+  width: 58%;
+  aspect-ratio: 4/3;
+  margin-top: -60px;
+  margin-right: 12%;
+  overflow: visible;
+}
+.about5-img-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.about5-img-bottom:hover img { transform: scale(1.04); }
+
+/* Badge */
+.about5-badge {
+  position: absolute;
+  bottom: -28px;
+  left: -44px;
+  background: var(--gold);
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.about5-badge-num {
+  font-family: "Marcellus", serif;
+  font-size: 2.8rem;
+  color: #fff;
+  line-height: 1;
+}
+.about5-badge-text {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 991px) {
+  .hero5-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+    height: calc(100vh - 90px);
+    padding-top: 90px;
+  }
+  .hero5-text {
+    max-width: 100%;
+  }
+  .hero5-booking-card {
+    width: 100%;
+    max-width: 500px;
+  }
+  .nav-links5 { display: none; }
+  .nav-tel5 { display: none; }
+
+  .about5-inner {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .about5-text {
+    max-width: 100%;
+    text-align: center;
+  }
+  .about5-images {
+    width: 100%;
+    align-items: center;
+  }
+  .about5-img-bottom {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .nav-lang5 { display: none; }
+  .booking-card-title { font-size: 1.5rem; }
+  .hero5-booking-card { padding: 28px 24px 32px; }
+}

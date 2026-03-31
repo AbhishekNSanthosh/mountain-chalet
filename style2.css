@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* Prevent horizontal scroll without breaking fixed elements */
-html { overflow-x: hidden; }
+body { overflow-x: hidden; width: 100%; position: relative; }
 
 /* ===== V2 TOP BAR ===== */
 #top-bar {

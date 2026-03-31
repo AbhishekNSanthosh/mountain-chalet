@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CozyStay – Perfect Countryside Vacation</title>
+    <meta name="description" content="CozyStay Lodge – A luxury boutique hotel in Napa Valley wine country." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="style5.css" />
+  </head>
+  <body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar5">
+      <!-- Left: hamburger + nav links -->
+      <div class="nav-left5">
+        <button class="nav-hamburger5" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h12" />
+          </svg>
+        </button>
+        <ul class="nav-links5 d-none d-xl-flex">
+          <li>
+            <a href="#" class="nav-link5 active">
+              HOME
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link5">
+              ROOMS
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link5">
+              PAGES
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link5">BLOG</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center5">
+        <a href="index5.html" class="logo-link5">
+          COZYSTAY
+          <span class="logo-stars5">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right: Tel, Language, Reserve Now -->
+      <div class="nav-right5">
+        <a href="tel:+41223456788" class="nav-tel5 d-none d-lg-block">Tel: +41 22 345 67 88</a>
+        <a href="#" class="nav-lang5 d-none d-lg-block">EN / FR</a>
+        <a href="#booking5" class="nav-reserve-btn">Reserve Now</a>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero5">
+      <div class="hero5-bg"></div>
+      <div class="hero5-overlay"></div>
+
+      <div class="hero5-inner">
+        <!-- Left: Text Content -->
+        <div class="hero5-text">
+          <span class="hero5-eyebrow">Best Place For Relax</span>
+          <h1 class="hero5-heading">Perfect Countryside Vacation<br>at CozyStay Lodge</h1>
+          <p class="hero5-desc">
+            Nestled in Napa Valley, CozyStay Lodge is a luxury boutique hotel in the heart of wine
+            country, conveniently located in the historic Napa Mill neighbourhood, just steps from
+            some of the best wineries and restaurants.
+          </p>
+        </div>
+
+        <!-- Right: Booking Card -->
+        <div class="hero5-booking-card" id="booking5">
+          <p class="booking-card-label">Choose Date To Search</p>
+          <h2 class="booking-card-title">BOOK YOUR STAY</h2>
+
+          <!-- Check In -->
+          <div class="booking-field" id="field-checkin">
+            <span class="booking-field-label">Check In</span>
+            <div class="booking-field-right">
+              <input type="text" id="checkin5" class="booking-field-value" placeholder="Select date" readonly />
+              <svg class="booking-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Check Out -->
+          <div class="booking-field" id="field-checkout">
+            <span class="booking-field-label">Check Out</span>
+            <div class="booking-field-right">
+              <input type="text" id="checkout5" class="booking-field-value" placeholder="Select date" readonly />
+              <svg class="booking-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Rooms -->
+          <div class="booking-field" id="field-rooms">
+            <span class="booking-field-label">Rooms</span>
+            <div class="booking-field-right">
+              <span id="rooms5-display" class="booking-field-value" style="cursor:default;">1 Room</span>
+              <svg class="booking-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Adults & Children -->
+          <div class="booking-row-split">
+            <!-- Adults -->
+            <div class="booking-field">
+              <span class="booking-field-label">Adults</span>
+              <div class="booking-field-right">
+                <span id="adults5-count" class="booking-field-value-sm">1</span>
+                <svg class="booking-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
+            </div>
+            <!-- Children -->
+            <div class="booking-field">
+              <span class="booking-field-label">Children</span>
+              <div class="booking-field-right">
+                <span id="children5-count" class="booking-field-value-sm">0</span>
+                <svg class="booking-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <button class="booking-cta">Check Availability</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about5">
+      <div class="about5-inner">
+
+        <!-- Left: Text -->
+        <div class="about5-text">
+          <span class="about5-eyebrow">Welcome to CozyStay Lodge</span>
+          <h2 class="about5-heading">Exceptional Chalets, tailored services and the experience of unique holidays</h2>
+          <p class="about5-desc">
+            The CozyStay Lodge consists of exceptional hotels chalets forming a harmonious and refined environment.
+            Each room is unique, with colourful décor, Victorian furniture and claw-foot bathtubs. We welcome guests
+            with authentic wine country hospitality. Stay, sip, and savor the best of Napa wine country at CozyStay.
+          </p>
+          <a href="#" class="about5-cta">Explore Our Story</a>
+        </div>
+
+        <!-- Right: Images -->
+        <div class="about5-images">
+          <div class="about5-img-top">
+            <img
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=560&q=80"
+              alt="Cozy chalet interior"
+            />
+          </div>
+          <div class="about5-img-bottom">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=420&q=80"
+              alt="Luxury room view"
+            />
+            <div class="about5-badge">
+              <span class="about5-badge-num">20</span>
+              <span class="about5-badge-text">Years of<br>Excellence</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      (function () {
+        if (typeof flatpickr !== 'undefined') {
+          var today = new Date();
+          var tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
+
+          flatpickr('#checkin5', {
+            minDate: 'today',
+            dateFormat: 'Y-m-d',
+            defaultDate: today,
+            onChange: function (d) {
+              if (d[0]) {
+                var next = new Date(d[0]);
+                next.setDate(next.getDate() + 1);
+                checkoutPicker.set('minDate', next);
+                if (checkoutPicker.selectedDates[0] <= d[0]) {
+                  checkoutPicker.setDate(next);
+                }
+              }
+            }
+          });
+
+          var checkoutPicker = flatpickr('#checkout5', {
+            minDate: tomorrow,
+            dateFormat: 'Y-m-d',
+            defaultDate: tomorrow
+          });
+        }
+
+        // Rooms counter (simple toggle)
+        var rooms = 1;
+        document.getElementById('field-rooms').addEventListener('click', function () {
+          rooms = rooms < 5 ? rooms + 1 : 1;
+          document.getElementById('rooms5-display').textContent = rooms + ' Room' + (rooms > 1 ? 's' : '');
+        });
+
+        // Adults counter
+        var adults = 1;
+        var adultsEl = document.getElementById('adults5-count');
+        document.querySelector('.booking-row-split .booking-field:first-child').addEventListener('click', function () {
+          adults = adults < 10 ? adults + 1 : 1;
+          adultsEl.textContent = adults;
+        });
+
+        // Children counter
+        var children = 0;
+        var childrenEl = document.getElementById('children5-count');
+        document.querySelector('.booking-row-split .booking-field:last-child').addEventListener('click', function () {
+          children = children < 10 ? children + 1 : 0;
+          childrenEl.textContent = children;
+        });
+      })();
+    </script>
+  </body>
+</html>
