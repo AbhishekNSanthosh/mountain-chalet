@@ -214,7 +214,20 @@ body {
 #v3-overlay-menu.open .v3-overlay-row:nth-child(3) .v3-overlay-link:nth-child(2) { transition-delay: 0.44s; }
 #v3-overlay-menu.open .v3-overlay-row:nth-child(3) .v3-overlay-link:nth-child(3) { transition-delay: 0.50s; }
 
-.v3-overlay-link:hover { color: #ffffff; }
+.v3-overlay-link {
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+#v3-overlay-menu.open .v3-overlay-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+.v3-overlay-link:hover { color: #ffffff; text-decoration: none; }
 
 /* Book Your Stay — slightly distinguished */
 .v3-overlay-book {
