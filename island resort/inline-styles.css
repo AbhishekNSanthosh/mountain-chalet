@@ -1,0 +1,107 @@
+/* Auto-generated utility classes from inline styles */
+.vl-inline-1 { padding: 26px 36px; }
+.vl-inline-2 { transition: color 0.2s, transform 0.2s; }
+.vl-inline-3 { width: 28px; height: 28px; }
+.vl-inline-4 { gap: 10px 52px; }
+.vl-inline-5 { height: 110px; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+.vl-inline-6 { transition: color 0.2s ease, transform 0.2s ease; }
+.vl-inline-7 { width: 22px; height: 22px; }
+.vl-inline-8 { min-height: 600px; z-index: 2; }
+.vl-inline-9 { padding: 110px 24px 80px; }
+.vl-inline-10 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.vl-inline-11 { background: linear-gradient(to bottom, #f8f7f5 50%, #ffffff 50%); padding: 40px 0 100px; overflow: hidden; }
+.vl-inline-12 { outline: none; }
+.vl-inline-13 { width: clamp(280px, 22vw, 400px); aspect-ratio: 0.65; scroll-snap-align: start; }
+.vl-inline-14 { max-width: 580px; }
+.vl-inline-15 { font-family:; }
+.vl-inline-16 { width: 48px; height: 48px; border: 1px solid #e1e1e1; color: #7a7060; cursor: pointer; outline: none; transition: background 0.2s; }
+.vl-inline-17 { height: 75vh; min-height: 500px; max-height: 800px; }
+.vl-inline-18 { background: rgba(0,0,0,0.25); }
+.vl-inline-19 { bottom: 30px; right: 40px; width: 44px; height: 44px; border-color: rgba(255,255,255,0.4) !important; cursor: pointer; transition: background 0.3s; }
+.vl-inline-20 { aspect-ratio: 4/4.5; }
+.vl-inline-21 { top: 24px; left: 24px; z-index: 2; }
+.vl-inline-22 { width: 5px; height: 5px; background: #2a2620; }
+.vl-inline-23 { width: 5px; height: 5px; background: #d4cdc5; }
+.vl-inline-24 { height: 65%; z-index: 0; }
+.vl-inline-25 { background: rgba(8, 28, 32, 0.35); }
+.vl-inline-26 { padding-top: 100px; }
+.vl-inline-27 { max-width: 800px; }
+.vl-inline-28 { max-width: 340px; }
+.vl-inline-29 { aspect-ratio: 3/4; }
+.vl-inline-30 { position: relative; z-index: 2; font-family:; }
+.vl-inline-31 { min-height: 75vh; max-height: 900px; padding-top: 100px; padding-bottom: 120px; }
+.vl-inline-32 { object-position: center 20%; }
+.vl-inline-33 { background: rgba(40, 30, 20, 0.45); backdrop-filter: brightness(0.9); }
+.vl-inline-34 { color: #bb9e72; }
+.vl-inline-35 { aspect-ratio: 4/5.5; }
+.vl-inline-36 { aspect-ratio: 16/9; }
+.vl-inline-37 { min-height: 380px; }
+.vl-inline-38 { object-position: center 60%; }
+.vl-inline-39 { background: rgba(10, 20, 15, 0.25); }
+.vl-inline-40 { border: 0; border-bottom: 2px solid rgba(255,255,255,0.8); font-family:; }
+.vl-inline-41 { width: 14px; height: 14px; accent-color: #bb9e72; }
+.vl-inline-42 { background-color: #161513; padding-top: 80px; padding-bottom: 40px; position: relative; }
+.vl-inline-43 { top: -22px; right: 40px; width: 44px; height: 44px; cursor: pointer; border-color: #d4cdc5 !important; color: #d4cdc5; background: #161513 !important; }
+.vl-inline-44 { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.vl-inline-45 { width:1px; height: 40px; background: rgba(255,255,255,0.08); }
+.vl-inline-46 { letter-spacing: 0.1em; font-weight: 500; font-size: 11px; }
+.vl-inline-47 { width:28px;height:28px; }
+.vl-inline-48 { height:110px; border-bottom:1px solid rgba(255,255,255,0.18); }
+.vl-inline-49 { width:22px;height:22px; }
+.vl-inline-50 { background:#f8f7f5; }
+.vl-inline-51 { min-height:380px; }
+.vl-inline-52 { object-position:center 60%; }
+.vl-inline-53 { background:rgba(10,20,15,0.25); }
+.vl-inline-54 { border:0;border-bottom:2px solid rgba(255,255,255,0.8);font-family:; }
+.vl-inline-55 { width:14px;height:14px;accent-color:#bb9e72; }
+.vl-inline-56 { background-color:#161513;padding-top:80px;padding-bottom:40px;position:relative; }
+.vl-inline-57 { top:-22px;right:40px;width:44px;height:44px;cursor:pointer;border-color:#d4cdc5!important;color:#d4cdc5;background:#161513!important; }
+.vl-inline-58 { border-bottom:1px solid rgba(255,255,255,0.08); }
+.vl-inline-59 { width:1px;height:40px;background:rgba(255,255,255,0.08); }
+.vl-inline-60 { letter-spacing:0.1em;font-weight:500;font-size:11px; }
+.vl-inline-61 { padding:26px 36px; }
+.vl-inline-62 { transition:color .2s,transform .2s; }
+.vl-inline-63 { gap:10px 52px; }
+.vl-inline-64 { height:110px;border-bottom:1px solid rgba(255,255,255,.18); }
+.vl-inline-65 { transition:color .2s ease,transform .2s ease; }
+.vl-inline-66 { overflow:hidden; }
+.vl-inline-67 { background:rgba(10,20,15,.35); }
+.vl-inline-68 { border:0;border-bottom:2px solid rgba(255,255,255,.8);font-family:; }
+.vl-inline-69 { border-bottom:1px solid rgba(255,255,255,.08); }
+.vl-inline-70 { width:1px;height:40px;background:rgba(255,255,255,.08); }
+.vl-inline-71 { letter-spacing:.1em;font-weight:500;font-size:11px; }
+.vl-inline-72 { height:380px; z-index:-1; margin-top:-100px; }
+.vl-inline-73 { margin-top: 40px; }
+.vl-inline-74 { min-height:60vh; background-image:url(; }
+.vl-inline-75 { background:rgba(0,0,0,0.5); }
+.vl-inline-76 { min-height: 40vh; }
+.vl-inline-77 { height: 450px; overflow: hidden; }
+.vl-inline-78 { height: 55vh; min-height: 480px; overflow: hidden; }
+.vl-inline-79 { background: rgba(40, 30, 20, 0.45); }
+.vl-inline-80 { padding: 120px 20px 140px; }
+.vl-inline-81 { background-color: #bb9e72; color: #fff; font-family:; }
+.vl-inline-82 { background: rgba(10, 20, 15, 0.45); }
+.vl-inline-83 { background-image:url(; }
+.vl-inline-84 { width:1px;background:#ddd8d0;align-self:stretch; }
+.vl-inline-85 { color:#2a2620; }
+.vl-inline-86 { background:rgba(10,20,15,0.35); }
+.vl-inline-87 { height:460px;object-fit:cover;display:block; }
+.vl-inline-88 { background:#f8f7f5;padding:90px 0; }
+.vl-inline-89 { padding: 90px 20px 110px; }
+.vl-inline-90 { max-width: 960px; }
+.vl-inline-91 { max-width: 100%; }
+.vl-inline-92 { padding-right: 46px; }
+.vl-inline-93 { width: 14px; height: 14px; accent-color: #bb9e72; cursor: pointer; }
+.vl-inline-94 { min-height: 100vh; background-image: url(; }
+.vl-inline-95 { background: rgba(0,0,0,0.48); }
+.vl-inline-96 { max-width: 1100px; }
+.vl-inline-97 { min-height:460px; }
+.vl-inline-98 { margin-top: 0; }
+.vl-inline-99 { margin-top: 24px; }
+.vl-inline-100 { margin-top: 32px; }
+.vl-inline-101 { position: relative; width: 100%; height: 62vh; min-height: 480px; overflow: hidden; background: #000; }
+.vl-inline-102 { right: 11%; }
+.vl-inline-103 { left: 11%; }
+.vl-inline-104 { bottom: 0; left: 50%; transform: translate(-50%, 50%); padding: 0 5vw; }
+.vl-inline-105 { object-position:center 40%; }
+.vl-inline-106 { background:rgba(10,20,15,0.28); }

@@ -1,39 +1,66 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Activities – CozyStay Resort</title>
-    <meta
-      name="description"
-      content="CozyStay – Boutique Private Island Resort. The seaside haven of warmth, tranquility and restoration."
-    />
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Activity Detail – CozyStay Resort</title>
+  <meta name="description" content="Discover the Diving & Snorkelling experience at CozyStay Resort."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+  <style>
+    /* Hero */
+    .act-detail-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+    .act-detail-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;animation:v3KenBurns 26s ease-in-out infinite alternate;will-change:transform;}
+    .act-detail-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.4) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.5) 100%);}
+    .act-detail-hero-content{position:relative;z-index:2;padding-top:80px;}
+    .act-detail-eyebrow{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.9);display:block;margin-bottom:14px;}
+    .act-detail-title{font-family:'Marcellus',serif;font-size:clamp(3rem,6vw,5.5rem);color:#fff;line-height:1.06;margin-bottom:18px;}
+    .act-detail-sub{font-family:'Jost',sans-serif;font-size:15px;font-weight:400;color:rgba(255,255,255,.95);max-width:680px;margin:0 auto;}
+    
+    /* Main Content */
+    #act-detail-main{background:#fff;padding:100px 0;}
+    
+    /* Left Column */
+    .ad-eyebrow{font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:#7a7060;display:block;margin-bottom:14px;}
+    .ad-title{font-family:'Marcellus',serif;font-size:clamp(2.5rem,4vw,3.5rem);color:#222;margin-bottom:24px;}
+    .ad-text{font-family:'Jost',sans-serif;font-size:15px;color:#666;line-height:1.8;margin-bottom:24px;}
+    
+    .ad-img-grid { display: flex; gap: 15px; margin-top: 50px; }
+    .ad-img-box { flex: 1; height: 450px; overflow: hidden; }
+    .ad-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .ad-img-box:hover img { transform: scale(1.05); }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap"
-      rel="stylesheet"
-    />
+    /* Right Column Sidebar */
+    .ad-sidebar{background:#f8f7f5;padding:45px 40px;}
+    .ad-sidebar-title{font-family:'Marcellus',serif;font-size:1.6rem;color:#222;margin-bottom:24px;}
+    
+    .ad-info-list { list-style: none; padding: 0; margin: 0 0 35px 0; }
+    .ad-info-list li { font-family:'Jost',sans-serif; font-size:14px; color:#555; position: relative; padding: 16px 0 16px 16px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .ad-info-list li:last-child { border-bottom: none; }
+    .ad-info-list li::before { content: "■"; color: #bb9e72; font-size: 6px; position: absolute; left: 0; top: 22px; }
 
-    <!-- Flatpickr -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
+    .ad-phone-box { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
+    .ad-phone-icon { color: #bb9e72; }
+    .ad-phone-text { display: flex; flex-direction: column; }
+    .ad-phone-label { font-family:'Jost',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#777; margin-bottom:4px; }
+    .ad-phone-number { font-family:'Marcellus',serif; font-size:1.3rem; color:#222; }
 
-    <!-- Bootstrap 5 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
+    .ad-btn { font-family:'Jost',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:#111; border:none; padding:18px 0; width: 100%; text-align: center; text-decoration:none; display:inline-block; transition:background .3s; }
+    .ad-btn:hover { background: #bb9e72; color: #fff; }
 
-    <!-- Our V3 Style -->
-    <link rel="stylesheet" href="style3.css" />
-      <link rel="stylesheet" href="v3-booking-modal.css" />
+    @media (max-width: 768px) {
+        .ad-img-grid { flex-direction: column; height: auto; }
+        .ad-img-box { height: 300px; }
+    }
+  </style>
+  <link rel="stylesheet" href="inline-styles.css" />
+  <link rel="stylesheet" href="v3-booking-modal.css" />
 </head>
-  <body>
+<body>
+
 
     <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
     <div id="v3-overlay-menu" aria-hidden="true">
@@ -164,6 +191,229 @@
         </div>
       </div>
     </section>
+  <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="text-white">
+      <!-- Newsletter Section -->
+      <div class="position-relative py-5" style="min-height: 380px;">
+        <!-- BG -->
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position: center 60%;" alt="Footer bg">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(10, 20, 15, 0.25);"></div>
+        
+        <div class="container position-relative z-1 py-5">
+          <div class="row align-items-center">
+            
+            <!-- Left -->
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
+                Stay Tuned With CozyStay
+              </span>
+              <h2 style="font-family: 'Marcellus', serif; font-size: clamp(2rem, 3.2vw, 2.7rem); line-height: 1.35; max-width: 540px;">
+                Sign up for our newsletter to receive our news, deals and special offers.
+              </h2>
+            </div>
+
+            <!-- Right -->
+            <div class="col-12 col-lg-6 ps-lg-5">
+              <form class="d-flex flex-column gap-3">
+                <style>.v3-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }</style>
+                <div class="position-relative mb-2">
+                  <input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3" style="border: 0; border-bottom: 2px solid rgba(255,255,255,0.8); font-family: 'Jost', sans-serif; font-size: 15px; outline: none; padding-right: 110px;" required>
+                  <button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0" style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500;">
+                    Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="checkbox" id="v3-privacy-chk" style="width: 14px; height: 14px; accent-color: #bb9e72;">
+                  <label for="v3-privacy-chk" style="font-family: 'Jost', sans-serif; font-size: 13.5px; font-weight: 400; cursor: pointer;">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div style="background-color: #161513; padding-top: 80px; padding-bottom: 40px; position: relative;">
+        <!-- Return to top button in the footer itself -->
+        <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center" aria-label="Return to top" style="top: -22px; right: 40px; width: 44px; height: 44px; cursor: pointer; border-color: #d4cdc5 !important; color: #d4cdc5; background: #161513 !important;" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+        </button>
+
+        <div class="container">
+          <div class="row text-center text-md-start text-lg-center mb-5 pb-5" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Address</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">73120 Courchevel 1850, France</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Phone</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">+41 22 345 67 88</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Email</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">reservation@cozystay.com</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Social</span>
+              <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; color: #a3a3a3;">
+            <p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            <div class="d-flex gap-4">
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">PRIVACY</a>
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">TERMS OF USE</a>
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">POLICY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+    <script src="../main3.js"></script>
+  
+    <!-- ==================== BOOKING MODAL ==================== -->
+    <div id="v3-booking-modal" class="v3-bm-overlay" aria-hidden="true">
+      <div class="v3-bm-left"></div>
+      <div class="v3-bm-right">
+        <button id="v3-bm-close" class="v3-bm-close-btn" aria-label="Close booking modal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="v3-bm-content">
+          <h2 class="v3-bm-title">Book Your Stay</h2>
+          <p class="v3-bm-desc">
+            Welcome to CozyStay Pacific Hotel. Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island, CozyStay is a haven of warmth, tranquility and rejuvenation.
+          </p>
+          <div class="v3-bm-grid">
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check In</span>
+              <span class="v3-bm-input-val">2026-04-02 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check Out</span>
+              <span class="v3-bm-input-val">2026-04-03 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Rooms</span>
+              <span class="v3-bm-input-val">1 Room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Guests</span>
+              <span class="v3-bm-input-val">1 Adult, 0 Children <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+          </div>
+          <button class="v3-bm-btn">Check Availability</button>
+          <div class="v3-bm-footer-rules">
+            <span><b class="v3-bm-bullet">&bull;</b> Check-in: 3pm</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Check-out: 11am</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Minimum Check-in Age: 18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="v3-booking-modal.js"></script>
+</body>
+</html>
+<!-- HERO -->
+  <section class="act-detail-hero">
+    <div class="act-detail-hero-bg"></div>
+    <div class="act-detail-hero-overlay"></div>
+    <div class="act-detail-hero-content container text-white">
+      <span class="act-detail-eyebrow">ACTIVITY DETAIL PAGE</span>
+      <h1 class="act-detail-title">Diving & Snorkelling</h1>
+      <p class="act-detail-sub">Diving and snorkelling are available in Rakiraki and Nananu-i-Ra.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section id="act-detail-main">
+    <div class="container">
+      <div class="row align-items-start g-5">
+        
+        <!-- Left Content -->
+        <div class="col-lg-8">
+            <span class="ad-eyebrow">THE AMAZING EXPERIENCE</span>
+            <h2 class="ad-title">Diving & Snorkelling</h2>
+            
+            <p class="ad-text">
+              Just a short boat ride from Nanuku's beach is Bega Lagoon, home to one of the world's largest barrier reefs.
+              Explore the clear, calm waters, where you'll be able see as far ahead as 100 feet. A spectacular underwater world
+              awaits, with beautiful reef formations covered with soft corals in nearly every color imaginable, from bright purple
+              and vivid orange to mellow olive green. Keep your eyes peeled for abundant marine life, including manta rays,
+              hawksbill turtles and schools of tropical fish swimming by.
+            </p>
+            
+            <p class="ad-text">
+              Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo,
+              rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+              dapibus. Vivamus elementum semper nisi.
+            </p>
+            
+            <p class="ad-text">
+              Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+            </p>
+
+            <div class="ad-img-grid">
+                <div class="ad-img-box">
+                    <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=600&auto=format&fit=crop" alt="Surfer riding wave">
+                </div>
+                <div class="ad-img-box">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop" alt="Diver underwater">
+                </div>
+                <div class="ad-img-box">
+                    <img src="https://images.unsplash.com/photo-1544084944-15269ec7b5a0?q=80&w=600&auto=format&fit=crop" alt="Kayaking river view">
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="col-lg-4">
+            <div class="ad-sidebar">
+                <h3 class="ad-sidebar-title">More Information:</h3>
+                <ul class="ad-info-list">
+                    <li>Minimum Age: 8 years</li>
+                    <li>Half Day Trip</li>
+                    <li>Available Year-round</li>
+                </ul>
+
+                <div class="ad-phone-box">
+                    <svg class="ad-phone-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <div class="ad-phone-text">
+                        <span class="ad-phone-label">RESERVATION BY PHONE</span>
+                        <span class="ad-phone-number">+41 22 345 67 88</span>
+                    </div>
+                </div>
+
+                <a href="v3-contact.html" class="ad-btn">Contact Us</a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== FOOTER ==================== -->
     <footer id="footer" class="text-white">
       <!-- Newsletter Section -->

@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Menu – CozyStay Resort</title>
+    <meta name="description" content="Explore the full menu at CozyStay Resort — from fresh appetizers and main courses to indulgent desserts and crafted cocktails." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600;700&family=Zeyada&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <!-- V3 Shared + Menu Styles -->
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="inline-styles.css" />
+  <link rel="stylesheet" href="v3-booking-modal.css" />
+</head>
+  <body>
+
+    <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
+    <div id="v3-overlay-menu" aria-hidden="true">
+      <div class="v3-overlay-bg"></div>
+      <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between vl-inline-1">
+        <button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center vl-inline-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="vl-inline-47"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="#" class="v3-overlay-lang">EN / FR</a>
+      </div>
+      <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap vl-inline-4">
+          <a href="index3.html" class="v3-overlay-link">Home</a>
+          <a href="v3-rooms.html" class="v3-overlay-link">Stay</a>
+          <a href="v3-about.html" class="v3-overlay-link">About the hotel</a>
+          <a href="v3-dining.html" class="v3-overlay-link">Restaurants &amp; Bars</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap vl-inline-4">
+          <a href="v3-wellness.html" class="v3-overlay-link">Spa &amp; Wellness</a>
+          <a href="v3-events.html" class="v3-overlay-link">Events &amp; Meetings</a>
+          <a href="v3-activities.html" class="v3-overlay-link">Local Activities</a>
+          <a href="v3-activity-detail.html" class="v3-overlay-link">Activity Detail</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap vl-inline-4">
+          <a href="v3-news.html" class="v3-overlay-link">News</a>
+          <a href="v3-contact.html" class="v3-overlay-link">Contact</a>
+          <a href="v3-rooms.html" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
+        </div>
+      </nav>
+      <p class="v3-overlay-footer"></p>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3 vl-inline-48">
+      <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3 vl-inline-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  class="vl-inline-49">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1">
+        <li><a href="index3.html" class="v3-nav-link">HOME</a></li>
+        <li class="v3-dropdown">
+          <a href="v3-rooms.html" class="v3-nav-link">STAY <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg></a>
+          <div class="v3-dropdown-menu">
+            <a href="v3-rooms.html">Rooms Page</a>
+            <a href="v3-room-details-top-image.html">Room Details – Top Image</a>
+            <a href="v3-room-details-top-gallery.html">Room Details – Top Gallery</a>
+            <a href="v3-room-details-left-booking.html">Room Details – Left Booking Form</a>
+            <a href="v3-cart.html">Cart</a>
+            <a href="v3-cart.html">Checkout</a>
+            <a href="v3-my-account.html">My account</a>
+          </div>
+        </li>
+        <li class="v3-dropdown">
+          <a href="v3-pages.html" class="v3-nav-link v3-active-link">PAGES <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg></a>
+          <div class="v3-dropdown-menu">
+            <a href="v3-about.html">About the hotel</a>
+            <a href="v3-dining.html">Restaurants &amp; Bars</a>
+            <a href="v3-restaurant.html">The Restaurant</a>
+            <a href="v3-menu.html">Menu Page</a>
+            <a href="v3-wellness.html">Spa &amp; Wellness</a>
+            <a href="v3-events.html">Events &amp; Meetings</a>
+            <a href="v3-activities.html">Local Activities</a>
+            <a href="v3-activity-detail.html">Activity Detail Page</a>
+            <a href="v3-contact.html">Contact</a>
+          </div>
+        </li>
+        <li><a href="v3-news.html" class="v3-nav-link">NEWS</a></li>
+      </ul>
+
+      <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
+        <a href="index3.html" class="v3-logo-link">COZYSTAY<span class="v3-logo-stars">★ ★ ★ ★ ★</span></a>
+      </div>
+
+      <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
+        <span class="v3-phone">Tel: +41 22 345 67 88</span>
+        <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
+        <a href="v3-rooms.html" class="v3-book-btn">Book Now</a>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="menu-hero">
+      <div class="menu-hero-bg"></div>
+      <div class="menu-hero-overlay"></div>
+      <div class="menu-hero-content container text-white text-center">
+        <span class="menu-hero-eyebrow">A Restaurant Menu</span>
+        <h1 class="menu-hero-title">Our Menu</h1>
+        <p class="menu-hero-sub">Tantalizing flavours, fresh ingredients</p>
+      </div>
+    </section>
+
+    <!-- ==================== MENU GRID (Appetizers + Side Dishes | Main Courses) ==================== -->
+    <section id="menu-grid">
+      <div class="container">
+        <div class="d-flex gap-5 align-items-start flex-column flex-lg-row">
+
+          <!-- ── LEFT COLUMN: Appetizers + Side Dishes ── -->
+          <div class="flex-fill">
+
+            <!-- APPETIZERS -->
+            <span class="menu-col-title">Appetizers</span>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?q=80&w=100&auto=format&fit=crop" alt="Wild Mushroom Arancini" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Wild Mushroom Arancini</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€18</span>
+                </div>
+                <span class="menu-item-desc">Truffle, parmesan, wild herb aioli</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?q=80&w=100&auto=format&fit=crop" alt="Bruschetta Siciliana" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Bruschetta Siciliana</span>
+                  <span class="menu-item-badge new">New</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€22</span>
+                </div>
+                <span class="menu-item-desc">Heirloom tomato, basil oil, grilled sourdough</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1606851094851-95e634e3b12d?q=80&w=100&auto=format&fit=crop" alt="Pan Oyster Dozen" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Pan Oyster Dozen</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€27</span>
+                </div>
+                <span class="menu-item-desc">Fine oysters, shallot mignonette, lemon zest</span>
+              </div>
+            </div>
+
+            <!-- SIDE DISHES -->
+            <div class="menu-section-spacer"></div>
+            <span class="menu-col-title">Side Dishes</span>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1612487439139-c2aef47f8f64?q=80&w=100&auto=format&fit=crop" alt="Crispy Oven Chicken" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Crispy Oven Chicken</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€28</span>
+                </div>
+                <span class="menu-item-desc">Herb roasted, garlic jus, seasonal greens</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1549477531-3b57d6854a04?q=80&w=100&auto=format&fit=crop" alt="Grilled Croquina" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Grilled Croquina</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€24</span>
+                </div>
+                <span class="menu-item-desc">Flame-grilled, paprika butter, citrus salad</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=100&auto=format&fit=crop" alt="Flame Rib Steak" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Flame Rib Steak</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€58</span>
+                </div>
+                <span class="menu-item-desc">Prime cut, red wine reduction, bone marrow butter</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1565299543923-37dd37887442?q=80&w=100&auto=format&fit=crop" alt="Jumbo Lump Crab Cake" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Jumbo Lump Crab Cake</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€48</span>
+                </div>
+                <span class="menu-item-desc">Dijon remoulade, pickled cucumber, dill oil finishing</span>
+              </div>
+            </div>
+
+          </div><!-- /left -->
+
+          <!-- Vertical divider -->
+          <div class="menu-col-divider d-none d-lg-block"></div>
+
+          <!-- ── RIGHT COLUMN: Main Courses ── -->
+          <div class="flex-fill">
+            <span class="menu-col-title">Main Courses</span>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?q=80&w=100&auto=format&fit=crop" alt="Crispy Skin Chicken" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Crispy Skin Chicken</span>
+                  <span class="menu-item-badge popular">Popular</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€38</span>
+                </div>
+                <span class="menu-item-desc">Herb jus, roasted garlic mash, green beans</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=100&auto=format&fit=crop" alt="Rump Steak" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Rump Steak</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€52</span>
+                </div>
+                <span class="menu-item-desc">300g grass-fed, peppercorn sauce, hand-cut fries</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1633504581786-316c8002b1b9?q=80&w=100&auto=format&fit=crop" alt="Amber King Crab" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Amber King Crab</span>
+                  <span class="menu-item-badge new">New</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€38</span>
+                </div>
+                <span class="menu-item-desc">Drawn butter, lemon, brioche, fresh herb garnish</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=100&auto=format&fit=crop" alt="Filet Mignon" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Filet Mignon</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€38</span>
+                </div>
+                <span class="menu-item-desc">Truffle, asparagus, potato gratin, port reduction</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?q=80&w=100&auto=format&fit=crop" alt="Fish &amp; Chips" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Fish &amp; Chips</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€32</span>
+                </div>
+                <span class="menu-item-desc">Beer-battered cod, hand-cut chips, tartare sauce</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?q=80&w=100&auto=format&fit=crop" alt="Beefsteak Tomato &amp; Onion" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Beefsteak Tomato &amp; Onion</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€28</span>
+                </div>
+                <span class="menu-item-desc">Caramelised onion, aged balsamic, soft herbs</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?q=80&w=100&auto=format&fit=crop" alt="Free-range Sirloin" class="menu-item-thumb">
+              <div class="flex-fill">
+                <div class="menu-item-body">
+                  <span class="menu-item-name">Free-range Sirloin</span>
+                  <span class="menu-item-dots"></span>
+                  <span class="menu-item-price">€35</span>
+                </div>
+                <span class="menu-item-desc">Sauteed mushrooms, confit shallots, watercress</span>
+              </div>
+            </div>
+
+          </div><!-- /right -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FULL-WIDTH DINING IMAGE ==================== -->
+    <img
+      src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2000&auto=format&fit=crop"
+      alt="Fine dining atmosphere at CozyStay"
+      class="menu-wide-img"
+    >
+
+    <!-- ==================== DESSERTS & DRINKS ==================== -->
+    <section id="menu-desserts">
+      <div class="container text-center">
+        <span class="menu-desserts-eyebrow">From The Dessert Bar</span>
+        <h2 class="menu-desserts-heading">Desserts &amp; Drinks</h2>
+
+        <div class="row g-5 text-start">
+
+          <!-- LEFT COLUMN -->
+          <div class="col-12 col-md-6">
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Chocolate Truffle</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€20</span>
+                </div>
+                <span class="menu-dessert-desc">Ganache centre, dark cacao dusting, gold leaf</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Walnut Pecan Pie</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€22</span>
+                </div>
+                <span class="menu-dessert-desc">Bourbon caramel, chantilly cream, candied pecans</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Italian Ice Cream</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€16</span>
+                </div>
+                <span class="menu-dessert-desc">Three scoops, seasonal berry compote, almond tuile</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Butter Cake</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€19</span>
+                </div>
+                <span class="menu-dessert-desc">Salted caramel glaze, butterscotch sauce, vanilla</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Classic Apple Pie</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€18</span>
+                </div>
+                <span class="menu-dessert-desc">Apple, cinnamon, buttery pastry, crème anglaise</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="col-12 col-md-6">
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Crème Brûlée</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€18</span>
+                </div>
+                <span class="menu-dessert-desc">Vanilla custard, caramelised sugar, seasonal berries</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Pineapple Panna Cotta</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€16</span>
+                </div>
+                <span class="menu-dessert-desc">Mango, passion fruit coulis, coconut crumble</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Lemon Tart</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€16</span>
+                </div>
+                <span class="menu-dessert-desc">Yuzu curd, Italian meringue, candied lemon zest</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Dark Chocolate Fondant</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€21</span>
+                </div>
+                <span class="menu-dessert-desc">Molten centre, raspberry coulis, vanilla ice cream</span>
+              </div>
+            </div>
+
+            <div class="menu-dessert-item">
+              <div class="flex-fill">
+                <div class="d-flex align-items-baseline">
+                  <span class="menu-dessert-name">Amaretti</span>
+                  <span class="menu-dessert-dots"></span>
+                  <span class="menu-dessert-price">€13</span>
+                </div>
+                <span class="menu-dessert-desc">Almond biscotti, espresso dipping sauce, sea salt</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="text-white">
+
+      <!-- Newsletter -->
+      <div class="position-relative py-5 vl-inline-51">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0 vl-inline-52"  alt="Footer background">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0 vl-inline-86"></div>
+        <div class="container position-relative z-1 py-5">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;">Stay Tuned With CozyStay</span>
+              <h2 Marcellus',serif;font-size:clamp(2rem,3.2vw,2.7rem);line-height:1.35;max-width:540px;" class="vl-inline-15">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+            </div>
+            <div class="col-12 col-lg-6 ps-lg-5">
+              <form class="d-flex flex-column gap-3">
+                <style>.v3-newsletter-input::placeholder{color:rgba(255,255,255,0.7)!important;}</style>
+                <div class="position-relative mb-2">
+                  <input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3 vl-inline-54" Jost',sans-serif;font-size:15px;outline:none;padding-right:110px;" required>
+                  <button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0 vl-inline-15" Jost',sans-serif;font-size:14px;font-weight:500;">
+                    Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="checkbox" id="v3-privacy-menu"  class="vl-inline-55">
+                  <label for="v3-privacy-menu" Jost',sans-serif;font-size:13.5px;font-weight:400;cursor:pointer;" class="vl-inline-15">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="vl-inline-56">
+        <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center vl-inline-57" aria-label="Return to top"  onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+        </button>
+        <div class="container">
+          <div class="row text-center text-md-start text-lg-center mb-5 pb-5 vl-inline-58">
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Address</span>
+              <p Jost',sans-serif;font-size:14px;margin:0;font-weight:500;" class="vl-inline-15">73120 Courchevel 1850, France</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y vl-inline-59"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Phone</span>
+              <p Jost',sans-serif;font-size:14px;margin:0;font-weight:500;" class="vl-inline-15">+41 22 345 67 88</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y vl-inline-59"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Email</span>
+              <p Jost',sans-serif;font-size:14px;margin:0;font-weight:500;" class="vl-inline-15">reservation@cozystay.com</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y vl-inline-59"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Social</span>
+              <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
+              </div>
+            </div>
+
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center vl-inline-15" Jost',sans-serif;font-size:13px;font-weight:400;color:#a3a3a3;">
+            <p class="mb-4 mb-md-0"></p>
+            <div class="d-flex gap-4">
+              <a href="#" class="text-white text-decoration-none vl-inline-60">PRIVACY</a>
+              <a href="#" class="text-white text-decoration-none vl-inline-60">TERMS OF USE</a>
+              <a href="#" class="text-white text-decoration-none vl-inline-60">POLICY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../main3.js"></script>
+  
+    <!-- ==================== BOOKING MODAL ==================== -->
+    <div id="v3-booking-modal" class="v3-bm-overlay" aria-hidden="true">
+      <div class="v3-bm-left"></div>
+      <div class="v3-bm-right">
+        <button id="v3-bm-close" class="v3-bm-close-btn" aria-label="Close booking modal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="v3-bm-content">
+          <h2 class="v3-bm-title">Book Your Stay</h2>
+          <p class="v3-bm-desc">
+            Welcome to CozyStay Pacific Hotel. Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island, CozyStay is a haven of warmth, tranquility and rejuvenation.
+          </p>
+          <div class="v3-bm-grid">
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check In</span>
+              <span class="v3-bm-input-val">2026-04-02 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check Out</span>
+              <span class="v3-bm-input-val">2026-04-03 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Rooms</span>
+              <span class="v3-bm-input-val">1 Room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Guests</span>
+              <span class="v3-bm-input-val">1 Adult, 0 Children <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+          </div>
+          <button class="v3-bm-btn">Check Availability</button>
+          <div class="v3-bm-footer-rules">
+            <span><b class="v3-bm-bullet">&bull;</b> Check-in: 3pm</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Check-out: 11am</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Minimum Check-in Age: 18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="v3-booking-modal.js"></script>
+</body>
+</html>

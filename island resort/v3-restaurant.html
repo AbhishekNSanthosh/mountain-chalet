@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Restaurant – CozyStay Resort</title>
+    <meta name="description" content="Indulge your senses at The Restaurant, CozyStay Resort's signature fine-dining experience — crafted by award-winning chefs, served in breathtaking surroundings." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <!-- V3 Shared + Restaurant Styles -->
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="inline-styles.css" />
+  <link rel="stylesheet" href="v3-booking-modal.css" />
+</head>
+  <body>
+
+    <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
+    <div id="v3-overlay-menu" aria-hidden="true">
+      <div class="v3-overlay-bg"></div>
+      <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between vl-inline-1">
+        <button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center vl-inline-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"  class="vl-inline-47"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="#" class="v3-overlay-lang">EN / FR</a>
+      </div>
+      <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap vl-inline-4">
+          <a href="index3.html" class="v3-overlay-link">Home</a>
+          <a href="v3-rooms.html" class="v3-overlay-link">Stay</a>
+          <a href="v3-about.html" class="v3-overlay-link">About the hotel</a>
+          <a href="v3-dining.html" class="v3-overlay-link">Restaurants &amp; Bars</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap vl-inline-4">
+          <a href="v3-wellness.html" class="v3-overlay-link">Spa &amp; Wellness</a>
+          <a href="v3-events.html" class="v3-overlay-link">Events &amp; Meetings</a>
+          <a href="v3-activities.html" class="v3-overlay-link">Local Activities</a>
+          <a href="v3-activity-detail.html" class="v3-overlay-link">Activity Detail</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap vl-inline-4">
+          <a href="v3-news.html" class="v3-overlay-link">News</a>
+          <a href="v3-contact.html" class="v3-overlay-link">Contact</a>
+          <a href="v3-rooms.html" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
+        </div>
+      </nav>
+      <p class="v3-overlay-footer"></p>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3 vl-inline-48">
+      <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3 vl-inline-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  class="vl-inline-49">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1">
+        <li><a href="index3.html" class="v3-nav-link">HOME</a></li>
+        <li class="v3-dropdown">
+          <a href="v3-rooms.html" class="v3-nav-link">STAY <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg></a>
+          <div class="v3-dropdown-menu">
+            <a href="v3-rooms.html">Rooms Page</a>
+            <a href="v3-room-details-top-image.html">Room Details – Top Image</a>
+            <a href="v3-room-details-top-gallery.html">Room Details – Top Gallery</a>
+            <a href="v3-room-details-left-booking.html">Room Details – Left Booking Form</a>
+            <a href="v3-cart.html">Cart</a>
+            <a href="v3-cart.html">Checkout</a>
+            <a href="v3-my-account.html">My account</a>
+          </div>
+        </li>
+        <li class="v3-dropdown">
+          <a href="v3-pages.html" class="v3-nav-link v3-active-link">PAGES <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg></a>
+          <div class="v3-dropdown-menu">
+            <a href="v3-about.html">About the hotel</a>
+            <a href="v3-dining.html">Restaurants &amp; Bars</a>
+            <a href="v3-restaurant.html">The Restaurant</a>
+            <a href="v3-menu.html">Menu Page</a>
+            <a href="v3-wellness.html">Spa &amp; Wellness</a>
+            <a href="v3-events.html">Events &amp; Meetings</a>
+            <a href="v3-activities.html">Local Activities</a>
+            <a href="v3-activity-detail.html">Activity Detail Page</a>
+            <a href="v3-contact.html">Contact</a>
+          </div>
+        </li>
+        <li><a href="v3-news.html" class="v3-nav-link">NEWS</a></li>
+      </ul>
+
+      <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
+        <a href="index3.html" class="v3-logo-link">COZYSTAY<span class="v3-logo-stars">★ ★ ★ ★ ★</span></a>
+      </div>
+
+      <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
+        <span class="v3-phone">Tel: +41 22 345 67 88</span>
+        <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
+        <a href="v3-rooms.html" class="v3-book-btn">Book Now</a>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO (full viewport, content at bottom) ==================== -->
+    <section class="rest-hero">
+      <div class="rest-hero-bg"></div>
+      <div class="rest-hero-overlay"></div>
+      <div class="rest-hero-content">
+        <div class="container">
+          <span class="rest-hero-eyebrow">Serving Culinary Experience</span>
+          <h1 class="rest-hero-title">The Restaurant</h1>
+          <p class="rest-hero-sub">
+            Experience the very best of gourmet dining with our inspired menus<br>crafted by world-class chefs and sommeliers.
+          </p>
+          <a href="#rest-intro" class="rest-hero-btn">Make a Reservation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTRO + INFO CARD ==================== -->
+    <section id="rest-intro">
+      <div class="container">
+        <div class="row g-5">
+
+          <!-- LEFT: text -->
+          <div class="col-12 col-lg-7">
+            <span class="rest-intro-eyebrow">Fine Dining / South Pacific</span>
+            <h2 class="rest-intro-heading">Indulge Your Senses and<br>Discover New Flavors</h2>
+            <p class="rest-intro-body">
+              From sunrise to sunset, our restaurant has long been part of the CozyStay experience. Our menus display the very best in culinary tradition, brought to life by dedicated chefs who celebrate local produce, artful technique and inspired flavour combinations.
+            </p>
+            <p class="rest-intro-body">
+              This gastronomic haven has been around for 20 years, serving the finest, most delicious and most creative cuisine to resort guests and outside visitors alike. Our menu prides itself on being an ever-evolving, rotating menu using the freshest locally-sourced and seasonal ingredients to craft unforgettable dining moments. Reservations are recommended.
+            </p>
+            <a href="v3-menu.html" class="rest-intro-link">View Full Menu →</a>
+          </div>
+
+          <!-- RIGHT: info card -->
+          <div class="col-12 col-lg-5">
+            <div class="rest-info-card">
+              <h3 class="rest-info-card-title">Information</h3>
+
+              <div class="rest-info-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>CozyStay Resort, South Pacific<br>73120 Courchevel 1850, France</span>
+              </div>
+              <div class="rest-info-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 2v7c0 1.1.9 2 2 2h2v11h2V11h2c1.1 0 2-.9 2-2V2M18 2v20M15 2v6h6V2"/>
+                </svg>
+                <span>Lunch &amp; Dinner — French / International / Creative</span>
+              </div>
+
+              <span class="rest-hours-title">Opening Hours</span>
+
+              <div class="rest-hours-row">
+                <div class="rest-hours-dot"></div>
+                <span>Mon – Fri &nbsp; 12:00 – 15:00 &nbsp;|&nbsp; 19:00 – 23:00</span>
+              </div>
+              <div class="rest-hours-row">
+                <div class="rest-hours-dot"></div>
+                <span>Sat – Sun &nbsp; 11:00 – 16:00 &nbsp;|&nbsp; 18:30 – 23:30</span>
+              </div>
+
+              <div class="rest-hours-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                +41 22 345 67 88
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PHOTO GRID (6 images, 3×2) ==================== -->
+    <section id="rest-photo-grid">
+      <div class="rest-photo-grid">
+        <div class="rest-photo-item">
+          <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=700&auto=format&fit=crop" alt="Fine dining table setting">
+        </div>
+        <div class="rest-photo-item">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=700&auto=format&fit=crop" alt="Gourmet dish presentation">
+        </div>
+        <div class="rest-photo-item">
+          <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?q=80&w=700&auto=format&fit=crop" alt="Cocktail bar">
+        </div>
+        <div class="rest-photo-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=700&auto=format&fit=crop" alt="Plated entrée">
+        </div>
+        <div class="rest-photo-item">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=700&auto=format&fit=crop" alt="Fresh ingredients">
+        </div>
+        <div class="rest-photo-item">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=700&auto=format&fit=crop" alt="Artisan pizza">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SELECTED MENUS ==================== -->
+    <section id="rest-menu">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="rest-menu-eyebrow">From Our Kitchen</span>
+          <h2 class="rest-menu-heading">Selected Menus</h2>
+        </div>
+
+        <div class="d-flex gap-0 align-items-start flex-column flex-md-row">
+
+          <!-- STARTERS -->
+          <div class="flex-fill px-0 px-md-3 px-lg-4 mb-5 mb-md-0">
+            <span class="rest-menu-col-title">Starters</span>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Funghi Toast Tartare</div>
+                <div class="rest-menu-item-desc">Wild mushrooms, truffle cream, chives</div>
+              </div>
+              <span class="rest-menu-item-price">€18</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Fresh Oysters Dijon</div>
+                <div class="rest-menu-item-desc">Six oysters, shallot mignonette, rye bread</div>
+              </div>
+              <span class="rest-menu-item-price">€26</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Wild Mushroom Ravioli</div>
+                <div class="rest-menu-item-desc">Aged parmesan, sage brown butter, hazelnuts</div>
+              </div>
+              <span class="rest-menu-item-price">€23</span>
+            </div>
+          </div>
+
+          <!-- DIVIDER -->
+          <div class="rest-menu-divider d-none d-md-block"></div>
+
+          <!-- MAIN DISHES -->
+          <div class="flex-fill px-0 px-md-3 px-lg-4 mb-5 mb-md-0">
+            <span class="rest-menu-col-title">Main Dishes</span>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Crispy Skin Chicken</div>
+                <div class="rest-menu-item-desc">Herb jus, roasted garlic mashed potato, green beans</div>
+              </div>
+              <span class="rest-menu-item-price">€32</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Rump Steak</div>
+                <div class="rest-menu-item-desc">300g grass-fed, pepper corn sauce, hand-cut fries</div>
+              </div>
+              <span class="rest-menu-item-price">€52</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Pasta Chop</div>
+                <div class="rest-menu-item-desc">House-made pappardelle, braised short rib, gremolata</div>
+              </div>
+              <span class="rest-menu-item-price">€38</span>
+            </div>
+          </div>
+
+          <!-- DIVIDER -->
+          <div class="rest-menu-divider d-none d-md-block"></div>
+
+          <!-- DESSERTS -->
+          <div class="flex-fill px-0 px-md-3 px-lg-4">
+            <span class="rest-menu-col-title">Desserts</span>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Salted Caramel Tart</div>
+                <div class="rest-menu-item-desc">Crème fraiche, praline, sea salt flakes</div>
+              </div>
+              <span class="rest-menu-item-price">€16</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Warm Apple Cake</div>
+                <div class="rest-menu-item-desc">Calvados custard, caramelised walnuts, vanilla ice cream</div>
+              </div>
+              <span class="rest-menu-item-price">€14</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Saveur Cheesecake</div>
+                <div class="rest-menu-item-desc">Passion fruit coulis, almond crumb, mint</div>
+              </div>
+              <span class="rest-menu-item-price">€17</span>
+            </div>
+
+            <div class="rest-menu-item">
+              <div class="rest-menu-item-info">
+                <div class="rest-menu-item-name">Citrus Tiramisu</div>
+                <div class="rest-menu-item-desc">Yuzu mascarpone, espresso ladyfingers, dark cacao</div>
+              </div>
+              <span class="rest-menu-item-price">€16</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA button -->
+        <div class="text-center mt-5 pt-3">
+          <a href="v3-menu.html" class="rest-menu-btn">View Full Menu</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CHEF QUOTE ==================== -->
+    <section id="rest-chef">
+      <div class="row g-0 w-100">
+
+        <!-- Chef portrait -->
+        <div class="col-12 col-lg-5 position-relative vl-inline-97">
+          <img
+            src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=900&auto=format&fit=crop"
+            alt="Executive Chef"
+            class="rest-chef-img position-absolute top-0 start-0 w-100 h-100"
+          >
+        </div>
+
+        <!-- Quote area -->
+        <div class="col-12 col-lg-7">
+          <div class="rest-chef-quote-area h-100">
+            <span class="rest-chef-eyebrow">A Chef's Perspective</span>
+            <blockquote class="rest-chef-quote">
+              "Come and taste the surprising and seemingly endless flavours and spend an unforgettable evening at a Michelin restaurant. Experience our authentic delicacies and exquisite cocktails, as well as our warm and wholehearted hospitality."
+            </blockquote>
+            <span class="rest-chef-name">— Executive Chef / CozyStay Resort</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="text-white">
+
+      <!-- Newsletter -->
+      <div class="position-relative py-5 vl-inline-51">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0 vl-inline-52"  alt="Footer background">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0 vl-inline-86"></div>
+        <div class="container position-relative z-1 py-5">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;">Stay Tuned With CozyStay</span>
+              <h2 Marcellus',serif;font-size:clamp(2rem,3.2vw,2.7rem);line-height:1.35;max-width:540px;" class="vl-inline-15">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+            </div>
+            <div class="col-12 col-lg-6 ps-lg-5">
+              <form class="d-flex flex-column gap-3">
+                <style>.v3-newsletter-input::placeholder{color:rgba(255,255,255,0.7)!important;}</style>
+                <div class="position-relative mb-2">
+                  <input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3 vl-inline-54" Jost',sans-serif;font-size:15px;outline:none;padding-right:110px;" required>
+                  <button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0 vl-inline-15" Jost',sans-serif;font-size:14px;font-weight:500;">
+                    Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="checkbox" id="v3-privacy-rest"  class="vl-inline-55">
+                  <label for="v3-privacy-rest" Jost',sans-serif;font-size:13.5px;font-weight:400;cursor:pointer;" class="vl-inline-15">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="vl-inline-56">
+        <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center vl-inline-57" aria-label="Return to top"  onclick="window.scrollTo({top:0,behavior:'smooth'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+        </button>
+        <div class="container">
+          <div class="row text-center text-md-start text-lg-center mb-5 pb-5 vl-inline-58">
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Address</span>
+              <p Jost',sans-serif;font-size:14px;margin:0;font-weight:500;" class="vl-inline-15">73120 Courchevel 1850, France</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y vl-inline-59"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Phone</span>
+              <p Jost',sans-serif;font-size:14px;margin:0;font-weight:500;" class="vl-inline-15">+41 22 345 67 88</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y vl-inline-59"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Email</span>
+              <p Jost',sans-serif;font-size:14px;margin:0;font-weight:500;" class="vl-inline-15">reservation@cozystay.com</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y vl-inline-59"></div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+              <span class="d-block mb-3 vl-inline-15" Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#7a7060;">Social</span>
+              <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
+              </div>
+            </div>
+
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center vl-inline-15" Jost',sans-serif;font-size:13px;font-weight:400;color:#a3a3a3;">
+            <p class="mb-4 mb-md-0"></p>
+            <div class="d-flex gap-4">
+              <a href="#" class="text-white text-decoration-none vl-inline-60">PRIVACY</a>
+              <a href="#" class="text-white text-decoration-none vl-inline-60">TERMS OF USE</a>
+              <a href="#" class="text-white text-decoration-none vl-inline-60">POLICY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../main3.js"></script>
+  
+    <!-- ==================== BOOKING MODAL ==================== -->
+    <div id="v3-booking-modal" class="v3-bm-overlay" aria-hidden="true">
+      <div class="v3-bm-left"></div>
+      <div class="v3-bm-right">
+        <button id="v3-bm-close" class="v3-bm-close-btn" aria-label="Close booking modal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="v3-bm-content">
+          <h2 class="v3-bm-title">Book Your Stay</h2>
+          <p class="v3-bm-desc">
+            Welcome to CozyStay Pacific Hotel. Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island, CozyStay is a haven of warmth, tranquility and rejuvenation.
+          </p>
+          <div class="v3-bm-grid">
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check In</span>
+              <span class="v3-bm-input-val">2026-04-02 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check Out</span>
+              <span class="v3-bm-input-val">2026-04-03 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Rooms</span>
+              <span class="v3-bm-input-val">1 Room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Guests</span>
+              <span class="v3-bm-input-val">1 Adult, 0 Children <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+          </div>
+          <button class="v3-bm-btn">Check Availability</button>
+          <div class="v3-bm-footer-rules">
+            <span><b class="v3-bm-bullet">&bull;</b> Check-in: 3pm</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Check-out: 11am</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Minimum Check-in Age: 18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="v3-booking-modal.js"></script>
+</body>
+</html>

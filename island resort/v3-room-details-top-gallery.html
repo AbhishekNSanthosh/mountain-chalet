@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Premier Oceanview Villa – CozyStay Resort</title>
-    <meta name="description" content="Premier Oceanview Villa at CozyStay Resort – Private pool, ocean views, single level luxury accommodation." />
+    <title>Premier Beachfront Suite – CozyStay Resort</title>
+    <meta name="description" content="Premier Beachfront Suite at CozyStay Resort – Private pool, ocean views, single level luxury accommodation." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,9 @@
 
     <!-- Flatpickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
@@ -115,12 +118,65 @@
       </div>
     </nav>
 
-    <!-- ==================== HERO ==================== -->
-    <section class="rd-hero">
-      <img
-        src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2000&auto=format&fit=crop"
-        alt="Premier Oceanview Villa"
-      />
+    <!-- ==================== HERO GALLERY ==================== -->
+    <section class="rd-hero-gallery" style="position: relative; width: 100%; height: 62vh; min-height: 480px; overflow: hidden; background: #000;">
+      <style>
+        .rd-gallery-swiper { width: 100%; height: 100%; }
+        .rd-gallery-swiper .swiper-slide {
+          width: 70%;
+          height: 100%;
+          opacity: 0.5;
+          transition: opacity 0.4s ease;
+        }
+        .rd-gallery-swiper .swiper-slide-active {
+          opacity: 1;
+        }
+        .rd-gallery-swiper .swiper-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .rd-gallery-swiper .swiper-button-next,
+        .rd-gallery-swiper .swiper-button-prev {
+          background: rgba(255, 255, 255, 0.95);
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          color: #1e1c18;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .rd-gallery-swiper .swiper-button-next::after,
+        .rd-gallery-swiper .swiper-button-prev::after {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .rd-gallery-swiper .swiper-pagination-bullet {
+          background: #fff;
+          opacity: 0.6;
+        }
+        .rd-gallery-swiper .swiper-pagination-bullet-active {
+          background: #fff;
+          opacity: 1;
+        }
+      </style>
+      <div class="swiper rd-gallery-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2000&auto=format&fit=crop" alt="Gallery Image 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=2000&auto=format&fit=crop" alt="Gallery Image 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1574643003056-11f8e136b6f6?q=80&w=2000&auto=format&fit=crop" alt="Gallery Image 3" />
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next" style="right: 11%;"></div>
+        <div class="swiper-button-prev" style="left: 11%;"></div>
+      </div>
     </section>
 
     <!-- ==================== MAIN CONTENT ==================== -->
@@ -132,8 +188,8 @@
           <div class="col-lg-8">
 
             <!-- Title -->
-            <span class="rd-meta-tag">Private Pool / Ocean View / Single Level</span>
-            <h1 class="rd-title">Premier Oceanview Villa</h1>
+            <span class="rd-meta-tag">Private Pool / Beachfront Access / Private Pool</span>
+            <h1 class="rd-title">Premier Beachfront Suite</h1>
 
             <!-- Stats bar -->
             <div class="rd-stat-bar">
@@ -289,7 +345,7 @@
               <!-- Header -->
               <div class="rd-reserve-head">
                 <span class="rd-reserve-label">Reserve:</span>
-                <span class="rd-reserve-price">From <span>$599</span>/night</span>
+                <span class="rd-reserve-price">From <span>$399</span>/night</span>
               </div>
 
               <!-- Check In -->
@@ -375,7 +431,7 @@
                   Total Cost
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg>
                 </span>
-                <span class="rd-total-amount" id="rd-total">$599</span>
+                <span class="rd-total-amount" id="rd-total">$399</span>
               </div>
 
               <!-- Book button -->
@@ -516,6 +572,23 @@
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      new Swiper('.rd-gallery-swiper', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
     <script src="../main3.js"></script>
     <script>
       // ── Availability calendar (inline Flatpickr) ──
@@ -578,7 +651,7 @@
 
       // ── Total cost ──
       function rdCalcTotal() {
-        const baseNight = 599;
+        const baseNight = 399;
         let total = baseNight;
         const massageQty = parseInt(document.getElementById("qty-massage").textContent);
         const spaQty = parseInt(document.getElementById("qty-spa").textContent);

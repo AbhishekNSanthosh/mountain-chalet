@@ -357,10 +357,12 @@ body {
   top: 100%;
   left: 0;
   background: #fff;
-  min-width: 160px;
+  min-width: 240px;
+  white-space: nowrap;
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
+  border-top: 2px solid var(--gold);
 }
 .custom-dropdown:hover .custom-dropdown-menu {
   transform: scaleY(1);
@@ -557,8 +559,13 @@ nav {
 }
 
 .nav-dropdown-link {
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+.nav-dropdown-link:hover {
+  padding-left: 1.25rem !important;
 }
 
 .nav-phone {

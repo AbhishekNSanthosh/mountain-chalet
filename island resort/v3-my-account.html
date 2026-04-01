@@ -98,7 +98,8 @@
         cursor: pointer;
       }
     </style>
-  </head>
+      <link rel="stylesheet" href="v3-booking-modal.css" />
+</head>
   <body>
 
     <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
@@ -113,7 +114,7 @@
       <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
         <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
           <a href="index3.html" class="v3-overlay-link">Home</a>
-          <a href="v3-stay.html" class="v3-overlay-link">Stay</a>
+          <a href="v3-rooms.html" class="v3-overlay-link">Stay</a>
           <a href="v3-about.html" class="v3-overlay-link">About the hotel</a>
           <a href="v3-dining.html" class="v3-overlay-link">Restaurants &amp; Bars</a>
         </div>
@@ -125,7 +126,7 @@
         <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
           <a href="v3-news.html" class="v3-overlay-link">News</a>
           <a href="v3-contact.html" class="v3-overlay-link">Contact</a>
-          <a href="index3.html#booking-v3" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
+          <a href="v3-rooms.html" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
         </div>
       </nav>
       <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
@@ -141,7 +142,7 @@
       <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1" id="v3-nav-links-left">
         <li><a href="index3.html" class="v3-nav-link">HOME</a></li>
         <li class="v3-dropdown">
-          <a href="v3-stay.html" class="v3-nav-link v3-active-link">
+          <a href="v3-rooms.html" class="v3-nav-link v3-active-link">
             STAY
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
           </a>
@@ -183,7 +184,7 @@
       <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
         <span class="v3-phone text-white" style="font-family: 'Jost', sans-serif; font-size: 14.5px; font-weight: 500;">Tel: +41 22 345 67 88</span>
         <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
-        <a href="index3.html#booking-v3" class="v3-book-btn">Book Now</a>
+        <a href="v3-rooms.html" class="v3-book-btn">Book Now</a>
       </div>
     </nav>
 
@@ -340,5 +341,47 @@
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../main3.js"></script>
-  </body>
+  
+    <!-- ==================== BOOKING MODAL ==================== -->
+    <div id="v3-booking-modal" class="v3-bm-overlay" aria-hidden="true">
+      <div class="v3-bm-left"></div>
+      <div class="v3-bm-right">
+        <button id="v3-bm-close" class="v3-bm-close-btn" aria-label="Close booking modal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="v3-bm-content">
+          <h2 class="v3-bm-title">Book Your Stay</h2>
+          <p class="v3-bm-desc">
+            Welcome to CozyStay Pacific Hotel. Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island, CozyStay is a haven of warmth, tranquility and rejuvenation.
+          </p>
+          <div class="v3-bm-grid">
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check In</span>
+              <span class="v3-bm-input-val">2026-04-02 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Check Out</span>
+              <span class="v3-bm-input-val">2026-04-03 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Rooms</span>
+              <span class="v3-bm-input-val">1 Room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+            <div class="v3-bm-input-group">
+              <span class="v3-bm-input-label">Guests</span>
+              <span class="v3-bm-input-val">1 Adult, 0 Children <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
+            </div>
+          </div>
+          <button class="v3-bm-btn">Check Availability</button>
+          <div class="v3-bm-footer-rules">
+            <span><b class="v3-bm-bullet">&bull;</b> Check-in: 3pm</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Check-out: 11am</span>
+            <span><b class="v3-bm-bullet">&bull;</b> Minimum Check-in Age: 18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="v3-booking-modal.js"></script>
+</body>
 </html>

@@ -1,0 +1,59 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../.vscode/settings.json
+	modified:   index3.html
+	modified:   style3.css
+	modified:   v3-about.html
+	modified:   v3-activities.html
+	modified:   v3-beach-bungalows.html
+	modified:   v3-cart.html
+	modified:   v3-contact.html
+	modified:   v3-dining.html
+	modified:   v3-events.html
+	modified:   v3-gallery.html
+	modified:   v3-island-villas.html
+	modified:   v3-my-account.html
+	modified:   v3-news.html
+	modified:   v3-overwater-suites.html
+	modified:   v3-pages.html
+	modified:   v3-room-detail.html
+	modified:   v3-room-details-left-booking.html
+	modified:   v3-room-details-top-image.html
+	modified:   v3-rooms.html
+	modified:   v3-services.html
+	deleted:    v3-stay.html
+	modified:   v3-wellness.html
+	modified:   ../v1/about.html
+	modified:   ../v1/apartment_ref.html
+	modified:   ../v1/bar-lounge.html
+	modified:   ../v1/blog.html
+	modified:   ../v1/deluxe-room.html
+	modified:   ../v1/double-suite.html
+	modified:   ../v1/family-suite.html
+	modified:   ../v1/gallery.html
+	modified:   ../v1/hiking.html
+	modified:   ../v1/index.html
+	modified:   ../v1/paddling.html
+	modified:   ../v1/relax.html
+	modified:   ../v1/restaurant.html
+	modified:   ../v1/services.html
+	modified:   ../v1/skiing.html
+	modified:   ../v1/style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	gstatus.txt
+	inline-styles.css
+	refactor_inline.py
+	v3-activity-detail.html
+	v3-booking-modal.css
+	v3-booking-modal.js
+	v3-menu.html
+	v3-restaurant.html
+	v3-room-details-top-gallery.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
