@@ -165,52 +165,19 @@
   });
 })();
 
-/* ===== CAROUSEL V3 SCROLL (GSAP) ===== */
+/* ===== CAROUSEL V3 SCROLL (Native) ===== */
 (function initV3Carousel() {
-  const track = document.getElementById("v3-carousel-track");
+  const track   = document.getElementById("v3-carousel-track");
   const btnPrev = document.getElementById("v3-btn-prev");
   const btnNext = document.getElementById("v3-btn-next");
 
   if (!track || !btnPrev || !btnNext) return;
 
   btnPrev.addEventListener("click", () => {
-    const scrollAmount = track.offsetWidth * 0.45;
-    if(typeof gsap !== 'undefined') {
-      gsap.to(track, { scrollTo: { x: track.scrollLeft - scrollAmount }, duration: 0.9, ease: "power3.inOut" });
-    } else {
-      track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    }
+    track.scrollBy({ left: -(track.offsetWidth * 0.45), behavior: "smooth" });
   });
 
   btnNext.addEventListener("click", () => {
-    const scrollAmount = track.offsetWidth * 0.45;
-    if(typeof gsap !== 'undefined') {
-      gsap.to(track, { scrollTo: { x: track.scrollLeft + scrollAmount }, duration: 0.9, ease: "power3.inOut" });
-    } else {
-      track.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
+    track.scrollBy({ left:  (track.offsetWidth * 0.45), behavior: "smooth" });
   });
-})();
-
-/* ===== LENIS SMOOTH SCROLL (GSAP Ticker) ===== */
-(function initSmoothScroll() {
-  if (typeof Lenis === 'undefined') return;
-  const lenis = new Lenis({
-    duration: 1.25,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-  });
-
-  if (typeof gsap !== 'undefined') {
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
-  } else {
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
 })();

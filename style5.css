@@ -18,6 +18,150 @@ html, body {
   --olive: #3b4a3b;
 }
 
+/* ==================== MOBILE SLIDE MENU ==================== */
+.mmenu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.mmenu-overlay--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mmenu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 310px;
+  max-width: 90vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 1999;
+  transform: translateX(-100%);
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 28px 36px 36px;
+  box-sizing: border-box;
+}
+
+.mmenu-panel--open {
+  transform: translateX(0);
+}
+
+/* Close button */
+.mmenu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 0;
+  margin-left: auto;
+  display: block;
+  margin-bottom: 24px;
+  line-height: 0;
+  transition: color 0.2s;
+}
+.mmenu-close:hover { color: var(--gold); }
+
+/* Nav links */
+.mmenu-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+}
+
+.mmenu-nav li {
+  border-bottom: 1px solid #f0ede8;
+}
+
+.mmenu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Marcellus", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 14px 0;
+  transition: color 0.2s;
+}
+.mmenu-link:hover { color: var(--gold); }
+
+.mmenu-link--active {
+  color: var(--gold);
+}
+
+.mmenu-link--muted {
+  color: #aaa;
+}
+
+.mmenu-link--arrow svg {
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* Contact section */
+.mmenu-contact {
+  margin-bottom: 28px;
+}
+
+.mmenu-contact-title {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.mmenu-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #555;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.mmenu-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--gold);
+}
+
+.mmenu-contact-item strong {
+  font-weight: 500;
+  color: var(--gold);
+}
+
+/* Socials */
+.mmenu-socials {
+  display: flex;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.mmenu-socials a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 0;
+}
+.mmenu-socials a:hover { color: var(--gold); }
+
 /* ==================== NAVBAR ==================== */
 #navbar5 {
   position: absolute;
@@ -172,7 +316,7 @@ html, body {
 .hero5-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -183,7 +327,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 6vw;
+  padding: 0 5vw;
   gap: 40px;
 }
 
@@ -343,11 +487,11 @@ html, body {
 /* ==================== ABOUT SECTION ==================== */
 #about5 {
   background: #f8f6f2;
-  padding: 110px 6vw;
+  padding: 110px 5vw;
 }
 
 .about5-inner {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -470,45 +614,1156 @@ html, body {
   line-height: 1.5;
 }
 
+/* ==================== ACTIVITIES SECTION (Full-Width Redesign) ==================== */
+#activities5 {
+  background: #0e1a0e;
+  overflow: hidden;
+}
+
+.act-full-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 75vh;
+  min-height: 500px;
+}
+
+.act-full-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.act-full-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease, filter 0.5s ease;
+  filter: brightness(0.75);
+}
+
+.act-full-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.9);
+}
+
+.act-full-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 26px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  color: #fff;
+  transform: translateY(10px);
+  opacity: 0.85;
+  transition: all 0.4s ease;
+}
+
+.act-full-item:hover .act-full-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.act-full-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.act-full-caption h3 {
+  font-family: "Marcellus", serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.act-full-caption p {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+/* Center label/CTA overlaid on the grid */
+.act-center-overlay {
+  background: #0e1a0e;
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.act-vline-v {
+  width: 1px;
+  height: 50px;
+  background: var(--gold);
+  margin: 0 auto;
+}
+
+.act-center-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  line-height: 1.45;
+  color: #fff;
+  margin: 0;
+}
+
+.act-explore-btn {
+  display: inline-block;
+  border: 1px solid rgba(200,169,110,0.7);
+  color: var(--gold);
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.act-explore-btn:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* Full-width Banner */
+.act-banner {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.act-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.6);
+}
+
+.act-banner-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.act-banner-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+
+.act-banner-title {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+/* ==================== PACKAGES SECTION ==================== */
+#packages5 {
+  background: #fff;
+  padding: 100px 5vw 60px;
+}
+
+.packages5-inner {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8vw;
+}
+
+.packages5-image {
+  flex: 1;
+}
+
+.packages5-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.packages5-text {
+  flex: 1;
+  padding-right: 4vw;
+}
+
+.packages5-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.packages5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1.25;
+  color: #1a1a1a;
+  margin: 0 0 28px 0;
+}
+
+.packages5-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #444;
+  margin: 0 0 40px 0;
+}
+
+.packages5-cta {
+  display: inline-block;
+  background: var(--olive);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 14px 32px;
+  transition: background 0.3s;
+}
+
+.packages5-cta:hover {
+  background: #2e3a2e;
+  color: #fff;
+}
+
+/* ==================== EXPERIENCES SECTION ==================== */
+#experiences5 {
+  background: #fff;
+  padding: 20px 5vw 120px;
+}
+
+.experiences5-inner {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.exp-card5 {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-img-wrapper {
+  position: relative;
+  margin: 15px 0 0 15px; 
+  margin-bottom: 30px;
+}
+
+.exp-img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid rgba(200, 169, 110, 0.6);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.exp-img-wrapper img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.exp-price {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  z-index: 2;
+}
+
+.exp-content {
+  text-align: center;
+}
+
+.exp-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 18px;
+}
+
+.exp-title {
+  font-family: "Marcellus", serif;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  font-weight: 400;
+  margin: 0 0 16px 0;
+}
+
+.exp-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #555;
+  margin: 0 0 24px 0;
+  padding: 0 10px;
+}
+
+.exp-link {
+  display: inline-block;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #cca171;
+  padding-bottom: 4px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.exp-link:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ==================== ROOMS SECTION ==================== */
+#rooms5 {
+  background: var(--olive);
+  padding-bottom: 0;
+}
+
+.rooms5-header {
+  text-align: center;
+  padding: 80px 5vw 60px;
+  color: #fff;
+}
+
+.rooms5-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 20px;
+}
+
+.rooms5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 22px 0;
+}
+
+.rooms5-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Slider */
+.rooms5-slider-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5vw;
+  overflow: visible;
+  width: 100%;
+}
+
+.rooms5-track-outer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.rooms5-track {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  justify-content: center;
+}
+
+.room5-card {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.4s ease;
+}
+
+.room5-card--active {
+  width: 42%;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.room5-card--side {
+  width: 26%;
+  max-width: 300px;
+  opacity: 0.6;
+  filter: brightness(0.7);
+}
+
+.room5-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.room5-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255,255,255,0.92);
+  color: #1a1a1a;
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 5px 12px;
+  z-index: 3;
+}
+
+.room5-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--olive);
+  color: #fff;
+  padding: 18px 22px;
+  text-align: center;
+}
+
+.room5-info h3 {
+  font-family: "Marcellus", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 4px 0;
+}
+
+.room5-info p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+/* Arrows */
+.rooms5-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+.rooms5-arrow svg { width: 20px; height: 20px; }
+.rooms5-arrow:hover { background: rgba(255,255,255,0.25); }
+.rooms5-arrow--prev { left: 10px; }
+.rooms5-arrow--next { right: 10px; }
+
+/* Dots */
+.rooms5-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 0 0;
+}
+
+.rooms5-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.rooms5-dot--active {
+  background: #fff;
+}
+
+/* CTA */
+.rooms5-cta {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  padding: 14px 36px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.rooms5-cta:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ==================== SERVICES SECTION ==================== */
+#services5 {
+  background: #fff;
+  padding: 110px 5vw;
+}
+
+.services5-inner {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.services5-text {
+  flex: 1;
+}
+
+.services5-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.services5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.25;
+  color: #1a1a1a;
+  margin: 0 0 44px 0;
+}
+
+.services5-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+
+.svc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.svc-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  padding: 8px;
+}
+
+.svc-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.svc-item h4 {
+  font-family: "Marcellus", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+}
+
+.svc-item p {
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+.services5-image {
+  flex: 1;
+}
+
+.services5-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==================== TESTIMONIALS SECTION ==================== */
+#testimonials5 {
+  background: #fff;
+  padding: 100px 5vw 80px;
+  border-top: 1px solid #f0ece6;
+}
+
+.testimonials5-inner {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testi5-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.testi5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 60px 0;
+}
+
+.testi5-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.testi5-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testi5-stars {
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 22px;
+}
+
+.testi5-quote {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #444;
+  font-style: italic;
+  margin: 0 0 28px 0;
+}
+
+.testi5-avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 2px solid #e8e0d4;
+}
+
+.testi5-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testi5-name {
+  font-family: "Marcellus", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 5px 0;
+}
+
+.testi5-source {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #aaa;
+}
+
+.testi5-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 52px;
+}
+
+.testi5-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d4cfc8;
+}
+
+.testi5-dot--active {
+  background: #1a1a1a;
+}
+
+/* ==================== NEWSLETTER + FOOTER ==================== */
+#footer5 {
+  background: #111;
+}
+
+/* Newsletter */
+.newsletter5 {
+  position: relative;
+  padding: 70px 5vw 60px;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.newsletter5-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1800&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+}
+
+.newsletter5-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.55);
+}
+
+.newsletter5-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.newsletter5-heading {
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 32px 0;
+}
+
+.newsletter5-form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.newsletter5-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+}
+.newsletter5-input::placeholder { color: rgba(255,255,255,0.45); }
+
+.newsletter5-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.3s;
+  padding: 0;
+}
+.newsletter5-btn:hover { color: var(--gold); }
+
+.newsletter5-agree {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+/* Footer Body */
+.footer5-body {
+  position: relative;
+  padding: 80px 5vw 60px;
+  overflow: hidden;
+}
+
+.footer5-body-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1800&q=80');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.18;
+}
+
+.footer5-body-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5,10,5,0.75);
+}
+
+.footer5-body-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 60px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer5-logo {
+  font-family: "Marcellus", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  color: #fff;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+}
+
+.footer5-brand-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 30px 0;
+  max-width: 340px;
+}
+
+.footer5-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer5-socials a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer5-socials a:hover { color: var(--gold); }
+
+.footer5-col-title {
+  font-family: "Marcellus", serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 24px 0;
+}
+
+.footer5-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.footer5-list li {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.footer5-list--links li a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.footer5-list--links li a:hover { color: var(--gold); }
+
+.footer5-directions {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 3px;
+  transition: color 0.3s;
+}
+.footer5-directions:hover { color: var(--gold); }
+
+/* Footer Bar */
+.footer5-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.5);
+  padding: 16px 5vw;
+  font-size: 11.5px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer5-bar-links {
+  display: flex;
+  gap: 28px;
+}
+
+.footer5-bar-links a {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer5-bar-links a:hover { color: #fff; }
+
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 991px) {
+
+/* --- Tablet (≤ 1024px) --- */
+@media (max-width: 1024px) {
+  .nav-links5 { display: none !important; }
+  .nav-tel5  { display: none !important; }
+
+  /* Hero: stack text above booking card */
   .hero5-inner {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    padding-bottom: 60px;
-    height: calc(100vh - 90px);
-    padding-top: 90px;
+    padding: 110px 5vw 50px;
+    gap: 32px;
+    height: 100vh;
   }
-  .hero5-text {
-    max-width: 100%;
-  }
-  .hero5-booking-card {
-    width: 100%;
-    max-width: 500px;
-  }
-  .nav-links5 { display: none; }
-  .nav-tel5 { display: none; }
+  .hero5-text { max-width: 100%; padding-top: 0; }
+  .hero5-booking-card { width: 100%; max-width: 560px; }
 
-  .about5-inner {
-    flex-direction: column;
-    gap: 60px;
-  }
-  .about5-text {
-    max-width: 100%;
-    text-align: center;
-  }
-  .about5-images {
-    width: 100%;
-    align-items: center;
-  }
-  .about5-img-bottom {
-    margin-right: 0;
-  }
+  /* About */
+  .about5-inner { flex-direction: column; gap: 60px; }
+  .about5-text  { max-width: 100%; text-align: center; }
+  .about5-images { width: 100%; align-items: center; }
+  .about5-img-bottom { margin-right: 0; }
+
+  /* Packages */
+  .packages5-inner { flex-direction: column; gap: 50px; }
+  .packages5-text  { padding-right: 0; max-width: 100%; }
+
+  /* Activities */
+  .act-full-grid { grid-template-columns: repeat(2, 1fr); height: auto; }
+  .act-full-item { height: 300px; }
+
+  /* Experiences */
+  .experiences5-inner { grid-template-columns: repeat(2, 1fr); }
+
+  /* Rooms */
+  .room5-card--side  { display: none; }
+  .room5-card--active { width: 90%; max-width: 520px; }
+  .rooms5-slider-wrap { padding: 0 40px; }
+
+  /* Services */
+  .services5-inner { flex-direction: column; gap: 60px; }
+
+  /* Testimonials */
+  .testi5-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+
+  /* Footer */
+  .footer5-body-content { grid-template-columns: 1fr 1fr; gap: 48px; }
 }
 
-@media (max-width: 575px) {
-  .nav-lang5 { display: none; }
-  .booking-card-title { font-size: 1.5rem; }
-  .hero5-booking-card { padding: 28px 24px 32px; }
+/* --- Mobile Landscape / Small Tablet (≤ 767px) --- */
+@media (max-width: 767px) {
+  /* Navbar */
+  #navbar5 { padding: 0 5vw; }
+  .nav-lang5  { display: none !important; }
+  .nav-reserve-btn { padding: 8px 14px; font-size: 10px; }
+  .logo-link5 { font-size: 20px; letter-spacing: 0.16em; }
+  .logo-stars5 { font-size: 7px; letter-spacing: 0.3em; }
+
+  /* Hero */
+  .hero5-inner {
+    padding: 100px 5vw 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .hero5-heading { font-size: clamp(1.8rem, 6vw, 3rem); }
+  .hero5-desc { font-size: 13px; }
+  .hero5-booking-card { max-width: 100%; padding: 30px 24px 36px; }
+  .booking-card-title { font-size: 1.6rem; }
+
+  /* About */
+  #about5 { padding: 80px 5vw; }
+  .about5-heading { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  .about5-img-top { width: 100%; }
+  .about5-img-bottom { width: 70%; margin-top: -40px; }
+
+  /* Packages */
+  #packages5 { padding: 80px 5vw 50px; }
+  .packages5-heading { font-size: clamp(2rem, 7vw, 3rem); }
+
+  /* Activities */
+  .act-full-grid { grid-template-columns: 1fr 1fr; }
+  .act-full-item { height: 240px; }
+  .act-center-heading { font-size: clamp(1.4rem, 4vw, 2rem); }
+  .act-banner { height: 42vh; min-height: 240px; }
+  .act-banner-title { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+
+  /* Experiences */
+  #experiences5 { padding: 20px 5vw 80px; }
+  .experiences5-inner { grid-template-columns: 1fr; gap: 60px; }
+  .exp-title { font-size: 1.5rem; }
+
+  /* Rooms */
+  #rooms5 { padding-bottom: 0; }
+  .rooms5-heading { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+  .rooms5-desc { font-size: 13px; }
+  .room5-card--active { width: 95%; }
+  .rooms5-slider-wrap { padding: 0 36px; }
+
+  /* Services */
+  #services5 { padding: 80px 5vw; }
+  .services5-heading { font-size: clamp(1.7rem, 5vw, 2.5rem); }
+  .services5-grid { grid-template-columns: 1fr; gap: 28px; }
+  .services5-image { width: 100%; }
+
+  /* Testimonials */
+  #testimonials5 { padding: 80px 5vw 60px; }
+  .testi5-heading { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+  .testi5-grid { grid-template-columns: 1fr; gap: 50px; }
+
+  /* Newsletter */
+  .newsletter5 { padding: 60px 5vw 50px; }
+  .newsletter5-heading { font-size: clamp(1.6rem, 5vw, 2.4rem); }
+  .newsletter5-form { flex-wrap: wrap; gap: 12px; }
+  .newsletter5-btn { padding: 10px 0; }
+
+  /* Footer */
+  .footer5-body { padding: 60px 5vw 48px; }
+  .footer5-body-content { grid-template-columns: 1fr; gap: 40px; }
+  .footer5-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .footer5-bar-links { gap: 20px; }
+  .footer5-col-title { font-size: 1.1rem; }
+}
+
+/* --- Mobile Portrait (≤ 480px) --- */
+@media (max-width: 480px) {
+  /* Navbar */
+  #navbar5 { height: 72px; }
+  .nav-reserve-btn { display: none; }
+  .logo-link5 { font-size: 18px; }
+
+  /* Hero */
+  #hero5 { min-height: 100svh; }
+  .hero5-inner {
+    padding: 80px 5vw 36px;
+    gap: 24px;
+  }
+  .hero5-heading { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .hero5-eyebrow { font-size: 9px; }
+  .hero5-booking-card { padding: 24px 20px 28px; }
+  .booking-card-title { font-size: 1.4rem; }
+  .booking-field        { padding: 12px 14px; }
+  .booking-field-label  { font-size: 12px; }
+  .booking-field-value  { font-size: 12px; width: 80px; }
+
+  /* About */
+  #about5 { padding: 60px 5vw; }
+  .about5-img-bottom { width: 75%; margin-top: -30px; }
+  .about5-badge { padding: 16px 18px; }
+  .about5-badge-num { font-size: 2.2rem; }
+
+  /* Activities */
+  .act-full-grid { grid-template-columns: 1fr; }
+  .act-full-item { height: 240px; }
+  .act-center-overlay { padding: 40px 5vw; }
+
+  /* Packages */
+  #packages5 { padding: 60px 5vw 40px; }
+
+  /* Experiences */
+  #experiences5 { padding: 0 5vw 60px; }
+  .exp-img-wrapper { margin: 10px 0 0 10px; }
+  .exp-img-wrapper::before { top: -10px; left: -10px; }
+
+  /* Rooms */
+  .rooms5-header { padding: 60px 5vw 48px; }
+  .room5-card--active { width: 100%; }
+  .rooms5-arrow { width: 36px; height: 36px; }
+  .rooms5-arrow--prev { left: 4px; }
+  .rooms5-arrow--next { right: 4px; }
+
+  /* Services */
+  #services5 { padding: 60px 5vw; }
+  .svc-icon { width: 38px; height: 38px; }
+
+  /* Testimonials */
+  #testimonials5 { padding: 60px 5vw 50px; }
+  .testi5-heading { margin-bottom: 40px; }
+
+  /* Footer */
+  .footer5-logo { font-size: 1.3rem; }
+  .footer5-body { padding: 50px 5vw 40px; }
+  .footer5-bar { padding: 14px 5vw; }
+  .newsletter5 { padding: 50px 5vw 44px; }
 }

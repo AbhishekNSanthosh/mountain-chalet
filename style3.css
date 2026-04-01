@@ -514,8 +514,7 @@ body.overlay-open { overflow: hidden; }
    ================================================================ */
 #welcome-intro {
   position: relative;
-  z-index: -1;
-  background: #f8f7f5; /* Light off-white cream matching the image */
+  background: #f8f7f5;
   padding-top: calc(37px + 80px);
   padding-bottom: 110px;
 }
