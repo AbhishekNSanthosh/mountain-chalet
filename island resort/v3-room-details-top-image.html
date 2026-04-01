@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier Oceanview Villa – CozyStay Resort</title>
+    <meta name="description" content="Premier Oceanview Villa at CozyStay Resort – Private pool, ocean views, single level luxury accommodation." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap" rel="stylesheet" />
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <!-- V3 Base Style -->
+    <link rel="stylesheet" href="style3.css" />
+
+    <!-- Room Detail Style -->
+    <link rel="stylesheet" href="v3-room-details-top-image.css" />
+  </head>
+  <body>
+
+    <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
+    <div id="v3-overlay-menu" aria-hidden="true">
+      <div class="v3-overlay-bg"></div>
+      <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between" style="padding: 26px 36px;">
+        <button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center" style="transition: color 0.2s, transform 0.2s;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 28px; height: 28px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="#" class="v3-overlay-lang">EN / FR</a>
+      </div>
+      <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
+          <a href="index3.html" class="v3-overlay-link">Home</a>
+          <a href="v3-stay.html" class="v3-overlay-link">Stay</a>
+          <a href="v3-about.html" class="v3-overlay-link">About the hotel</a>
+          <a href="v3-dining.html" class="v3-overlay-link">Restaurants &amp; Bars</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
+          <a href="v3-wellness.html" class="v3-overlay-link">Spa &amp; Wellness</a>
+          <a href="v3-events.html" class="v3-overlay-link">Events &amp; Meetings</a>
+          <a href="v3-activities.html" class="v3-overlay-link">Local Activities</a>
+        </div>
+        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
+          <a href="v3-news.html" class="v3-overlay-link">News</a>
+          <a href="v3-contact.html" class="v3-overlay-link">Contact</a>
+          <a href="index3.html#booking-v3" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
+        </div>
+      </nav>
+      <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3" style="height: 110px; border-bottom: 1px solid rgba(255, 255, 255, 0.18);">
+      <!-- Hamburger -->
+      <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3" style="transition: color 0.2s ease, transform 0.2s ease;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Left Nav Links -->
+      <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1" id="v3-nav-links-left">
+        <li><a href="index3.html" class="v3-nav-link">HOME</a></li>
+        <li class="v3-dropdown">
+          <a href="v3-stay.html" class="v3-nav-link v3-active-link">
+            STAY
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="v3-dropdown-menu">
+            <a href="v3-rooms.html">Rooms &amp; Villas</a>
+            <a href="v3-island-villas.html">Island Villas</a>
+            <a href="v3-beach-bungalows.html">Beach Bungalows</a>
+            <a href="v3-overwater-suites.html">Overwater Suites</a>
+          </div>
+        </li>
+        <li class="v3-dropdown">
+          <a href="v3-pages.html" class="v3-nav-link">
+            PAGES
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="v3-dropdown-menu">
+            <a href="v3-about.html">About</a>
+            <a href="v3-services.html">Services</a>
+            <a href="v3-gallery.html">Gallery</a>
+            <a href="v3-contact.html">Contact</a>
+          </div>
+        </li>
+        <li><a href="v3-news.html" class="v3-nav-link">NEWS</a></li>
+      </ul>
+
+      <!-- Center Logo -->
+      <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
+        <a href="index3.html" class="v3-logo-link">
+          COZYSTAY
+          <span class="v3-logo-stars">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right Nav -->
+      <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
+        <span class="v3-phone">Tel: +41 22 345 67 88</span>
+        <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
+        <a href="index3.html#booking-v3" class="v3-book-btn">Book Now</a>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="rd-hero">
+      <img
+        src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2000&auto=format&fit=crop"
+        alt="Premier Oceanview Villa"
+      />
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <div class="rd-main">
+      <div class="container">
+        <div class="row g-5">
+
+          <!-- ── LEFT COLUMN ── -->
+          <div class="col-lg-8">
+
+            <!-- Title -->
+            <span class="rd-meta-tag">Private Pool / Ocean View / Single Level</span>
+            <h1 class="rd-title">Premier Oceanview Villa</h1>
+
+            <!-- Stats bar -->
+            <div class="rd-stat-bar">
+              <div class="rd-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+                84 m²
+              </div>
+              <div class="rd-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+                2 Guests
+              </div>
+              <div class="rd-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20v-6a2 2 0 012-2h16a2 2 0 012 2v6M2 14V8a2 2 0 012-2h4a2 2 0 012 2v2M12 12V8a2 2 0 012-2h4a2 2 0 012 2v6"/></svg>
+                1 King Bed
+              </div>
+              <div class="rd-stat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6a3 3 0 100 6 3 3 0 000-6zM3 20a6 6 0 0112 0v1H3v-1zM16 8h5M16 12h5M16 16h3"/></svg>
+                1 Bathroom
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="rd-body-text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+            <p class="rd-body-text">
+              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+            </p>
+
+            <!-- Family-friendly Amenities -->
+            <h3 class="rd-section-title">Family-friendly Amenities</h3>
+            <div class="rd-fam-grid">
+              <div class="rd-fam-card">
+                <div class="rd-fam-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="6" y="20" width="36" height="20" rx="2"/>
+                    <path d="M14 20v-6a10 10 0 0120 0v6"/>
+                    <circle cx="24" cy="30" r="4"/>
+                    <path d="M6 40h36"/>
+                  </svg>
+                </div>
+                <span class="rd-fam-label">Kids Swimming Pool</span>
+              </div>
+              <div class="rd-fam-card">
+                <div class="rd-fam-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="8" y="16" width="32" height="24" rx="2"/>
+                    <path d="M16 16v-4a8 8 0 0116 0v4"/>
+                    <path d="M8 28h32M8 36h32"/>
+                    <circle cx="24" cy="22" r="2"/>
+                  </svg>
+                </div>
+                <span class="rd-fam-label">Extra Beds/Baby Crib</span>
+              </div>
+              <div class="rd-fam-card">
+                <div class="rd-fam-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="10" y="8" width="28" height="32" rx="3"/>
+                    <circle cx="24" cy="26" r="8"/>
+                    <circle cx="24" cy="26" r="3"/>
+                    <path d="M24 14v4M24 36v4M12 26H8M40 26h-4"/>
+                  </svg>
+                </div>
+                <span class="rd-fam-label">Washing Machine</span>
+              </div>
+            </div>
+
+            <!-- Room Amenities -->
+            <h3 class="rd-section-title">Room Amenities</h3>
+            <div class="rd-amenity-grid">
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 18v2M17 18v2M2 10h20"/></svg>
+                Air conditioner
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                Cable TV
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+                Wifi &amp; Internet
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c0-4 2-7 5-8l2 4-2 2 3 5h6l3-5-2-2 2-4c3 1 5 4 5 8a9 9 0 01-18 0z"/></svg>
+                Towels
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="18" rx="8" ry="3"/><path d="M4 18v-6c0-2 3-4 8-4s8 2 8 4v6"/><path d="M8 8c0-2 2-4 4-4s4 2 4 4"/></svg>
+                Slippers
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2h6v4a3 3 0 01-6 0V2z"/><path d="M9 6H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-3"/><path d="M12 10v8M9 13l3-3 3 3"/></svg>
+                Hair Dryer
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2h-2M9 3a1 1 0 001 1h4a1 1 0 001-1M9 3a1 1 0 011-1h4a1 1 0 011 1"/><path d="M9 12h6M9 16h4"/></svg>
+                Shampoo
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+                Espresso Machine
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="1"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                Safe Box
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 22h8M12 2v6M4.93 10.93A10 10 0 1019 18.9"/><path d="M12 8a4 4 0 014 4v2h2l1 4H5l1-4h2v-2a4 4 0 014-4z"/></svg>
+                Welcome Drinks
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                Pet Friendly
+              </div>
+              <div class="rd-amenity-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M8 4v4M16 4v4"/></svg>
+                In-room Refrigerator
+              </div>
+            </div>
+
+            <!-- What's included -->
+            <h3 class="rd-section-title">What's included in this suite?</h3>
+            <ul class="rd-includes-list">
+              <li>Private balcony</li>
+              <li>140×200 cm Elite Bed</li>
+              <li>Upholstered seat beside the panoramic window</li>
+              <li>TV/UHD screen for watching mountaineering films</li>
+              <li>Writing desk with USB ports for documenting your adventures</li>
+              <li>Room safe for your top mountain photos</li>
+              <li>Service station with Lavazza coffee machine, kettle and tea</li>
+              <li>Bathroom with rain shower</li>
+              <li>Comfortable terry towels and bathrobes</li>
+            </ul>
+
+            <!-- Availability -->
+            <div class="rd-avail-wrap">
+              <h3 class="rd-section-title" style="margin-top: 0;">Availability</h3>
+              <div class="rd-calendar-container">
+                <div id="rd-inline-calendar"></div>
+              </div>
+              <div class="rd-cal-actions">
+                <button class="rd-cal-btn cancel" id="rd-cal-cancel">Cancel</button>
+                <button class="rd-cal-btn apply" id="rd-cal-apply">Apply</button>
+              </div>
+            </div>
+
+          </div><!-- /col-lg-8 -->
+
+          <!-- ── RIGHT SIDEBAR (Reserve) ── -->
+          <div class="col-lg-4">
+            <div class="rd-reserve-card">
+
+              <!-- Header -->
+              <div class="rd-reserve-head">
+                <span class="rd-reserve-label">Reserve:</span>
+                <span class="rd-reserve-price">From <span>$599</span>/night</span>
+              </div>
+
+              <!-- Check In -->
+              <div class="rd-reserve-row">
+                <span class="rd-reserve-row-label">Check In</span>
+                <div class="rd-reserve-row-val">
+                  <input type="text" id="rd-checkin" placeholder="2026-04-01" readonly />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg>
+                </div>
+              </div>
+
+              <!-- Check Out -->
+              <div class="rd-reserve-row">
+                <span class="rd-reserve-row-label">Check Out</span>
+                <div class="rd-reserve-row-val">
+                  <input type="text" id="rd-checkout" placeholder="2026-04-02" readonly />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg>
+                </div>
+              </div>
+
+              <!-- Rooms -->
+              <div class="rd-reserve-row">
+                <span class="rd-reserve-row-label">Rooms</span>
+                <div class="rd-reserve-row-val">
+                  <span id="rd-rooms-display">1 Room</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg>
+                </div>
+              </div>
+
+              <!-- Adults / Children -->
+              <div class="rd-guests-row">
+                <div class="rd-guests-half">
+                  <span class="rd-reserve-row-label">Adults</span>
+                  <div class="rd-counter">
+                    <button class="rd-counter-btn" onclick="rdCount('adult',-1)">−</button>
+                    <span class="rd-counter-num" id="rd-adult-count">1</span>
+                    <button class="rd-counter-btn" onclick="rdCount('adult',1)">+</button>
+                  </div>
+                </div>
+                <div class="rd-guests-half">
+                  <span class="rd-reserve-row-label">Children</span>
+                  <div class="rd-counter">
+                    <button class="rd-counter-btn" onclick="rdCount('child',-1)">−</button>
+                    <span class="rd-counter-num" id="rd-child-count">0</span>
+                    <button class="rd-counter-btn" onclick="rdCount('child',1)">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra Services -->
+              <div class="rd-extra-head">
+                <span class="rd-extra-label">Extra Services</span>
+              </div>
+              <div class="rd-extra-item">
+                <input type="checkbox" id="svc-clean">
+                <label class="rd-extra-item-name" for="svc-clean">Room Clean</label>
+                <span class="rd-extra-item-price">$12 / Night</span>
+              </div>
+              <div class="rd-extra-item">
+                <input type="checkbox" id="svc-massage" checked>
+                <label class="rd-extra-item-name" for="svc-massage">Massage</label>
+                <span class="rd-extra-item-price">$20 / Person</span>
+                <div class="rd-extra-qty">
+                  <button onclick="rdExtra('massage',-1)">−</button>
+                  <span id="qty-massage">1</span>
+                  <button onclick="rdExtra('massage',1)">+</button>
+                </div>
+              </div>
+              <div class="rd-extra-item">
+                <input type="checkbox" id="svc-spa" checked>
+                <label class="rd-extra-item-name" for="svc-spa">Day Spa</label>
+                <span class="rd-extra-item-price">$45 / Person</span>
+                <div class="rd-extra-qty">
+                  <button onclick="rdExtra('spa',-1)">−</button>
+                  <span id="qty-spa">1</span>
+                  <button onclick="rdExtra('spa',1)">+</button>
+                </div>
+              </div>
+
+              <!-- Total -->
+              <div class="rd-total-row">
+                <span class="rd-total-label">
+                  Total Cost
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg>
+                </span>
+                <span class="rd-total-amount" id="rd-total">$599</span>
+              </div>
+
+              <!-- Book button -->
+              <button class="rd-book-btn">Book Your Stay Now</button>
+
+            </div>
+          </div><!-- /col-lg-4 -->
+
+        </div><!-- /row -->
+      </div><!-- /container -->
+    </div><!-- /rd-main -->
+
+    <!-- ==================== SIMILAR ROOMS ==================== -->
+    <section class="rd-similar">
+      <div class="container">
+        <h2 class="rd-similar-heading">Similar Rooms</h2>
+        <div class="row g-4">
+
+          <div class="col-12 col-md-4">
+            <a href="v3-room-detail.html" class="rd-similar-card">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Premier Garden Suite" />
+              <div class="rd-similar-overlay"></div>
+              <span class="rd-similar-badge">$299 / NIGHT</span>
+              <div class="rd-similar-info">
+                <p class="rd-similar-name">Premier Garden Suite</p>
+                <p class="rd-similar-cat">Garden View / Private Pool / Beachfront Steps</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <a href="v3-room-detail.html" class="rd-similar-card">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Luxury Beachfront Villa" />
+              <div class="rd-similar-overlay"></div>
+              <span class="rd-similar-badge">$399 / NIGHT</span>
+              <div class="rd-similar-info">
+                <p class="rd-similar-name">Luxury Beachfront Villa</p>
+                <p class="rd-similar-cat">Two Levels / Private Pool / Full Kitchen</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <a href="v3-room-detail.html" class="rd-similar-card">
+              <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Luxury Garden Villa" />
+              <div class="rd-similar-overlay"></div>
+              <span class="rd-similar-badge">$499 / NIGHT</span>
+              <div class="rd-similar-info">
+                <p class="rd-similar-name">Luxury Garden Villa</p>
+                <p class="rd-similar-cat">Two Levels / Garden View &amp; Partial Oceanview</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="text-white">
+      <!-- Newsletter Section -->
+      <div class="position-relative py-5" style="min-height: 380px;">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position: center 60%;" alt="Footer bg">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(10, 20, 15, 0.25);"></div>
+        <div class="container position-relative z-1 py-5">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
+                Stay Tuned With CozyStay
+              </span>
+              <h2 style="font-family: 'Marcellus', serif; font-size: clamp(2rem, 3.2vw, 2.7rem); line-height: 1.35; max-width: 540px;">
+                Sign up for our newsletter to receive our news, deals and special offers.
+              </h2>
+            </div>
+            <div class="col-12 col-lg-6 ps-lg-5">
+              <form class="d-flex flex-column gap-3">
+                <style>.v3-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }</style>
+                <div class="position-relative mb-2">
+                  <input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3" style="border: 0; border-bottom: 2px solid rgba(255,255,255,0.8); font-family: 'Jost', sans-serif; font-size: 15px; outline: none; padding-right: 110px;" required>
+                  <button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0" style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500;">
+                    Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="checkbox" id="v3-privacy-chk" style="width: 14px; height: 14px; accent-color: #bb9e72;">
+                  <label for="v3-privacy-chk" style="font-family: 'Jost', sans-serif; font-size: 13.5px; font-weight: 400; cursor: pointer;">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div style="background-color: #161513; padding-top: 80px; padding-bottom: 40px; position: relative;">
+        <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center" aria-label="Return to top" style="top: -22px; right: 40px; width: 44px; height: 44px; cursor: pointer; border-color: #d4cdc5 !important; color: #d4cdc5; background: #161513 !important;" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+        </button>
+        <div class="container">
+          <div class="row text-center text-md-start text-lg-center mb-5 pb-5" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Address</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">73120 Courchevel 1850, France</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Phone</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">+41 22 345 67 88</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Email</span>
+              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">reservation@cozystay.com</p>
+              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Social</span>
+              <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; color: #a3a3a3;">
+            <p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            <div class="d-flex gap-4">
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">PRIVACY</a>
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">TERMS OF USE</a>
+              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">POLICY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../main3.js"></script>
+    <script>
+      // ── Availability calendar (inline Flatpickr) ──
+      const rdCal = flatpickr("#rd-inline-calendar", {
+        inline: true,
+        mode: "range",
+        showMonths: 2,
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        defaultDate: ["2026-04-08", "2026-04-15"],
+        onChange: function(dates) {
+          if (dates[0]) document.getElementById("rd-checkin").value = flatpickr.formatDate(dates[0], "Y-m-d");
+          if (dates[1]) document.getElementById("rd-checkout").value = flatpickr.formatDate(dates[1], "Y-m-d");
+          rdCalcTotal();
+        }
+      });
+
+      // Open checkin/checkout pickers in sidebar
+      flatpickr("#rd-checkin", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        onChange: function(dates) { if (dates[0]) rdCal.setDate([dates[0], rdCal.selectedDates[1]], true); }
+      });
+      flatpickr("#rd-checkout", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        onChange: function(dates) { if (dates[0]) rdCal.setDate([rdCal.selectedDates[0], dates[0]], true); }
+      });
+
+      // Cancel / Apply buttons
+      document.getElementById("rd-cal-cancel").addEventListener("click", function() {
+        rdCal.clear();
+        document.getElementById("rd-checkin").value = "";
+        document.getElementById("rd-checkout").value = "";
+      });
+      document.getElementById("rd-cal-apply").addEventListener("click", function() {
+        const dates = rdCal.selectedDates;
+        if (dates.length === 2) {
+          document.getElementById("rd-checkin").value = flatpickr.formatDate(dates[0], "Y-m-d");
+          document.getElementById("rd-checkout").value = flatpickr.formatDate(dates[1], "Y-m-d");
+          rdCalcTotal();
+        }
+      });
+
+      // ── Counters ──
+      function rdCount(type, delta) {
+        const id = type === "adult" ? "rd-adult-count" : "rd-child-count";
+        const el = document.getElementById(id);
+        const min = type === "adult" ? 1 : 0;
+        el.textContent = Math.max(min, parseInt(el.textContent) + delta);
+      }
+
+      // ── Extra service qty ──
+      function rdExtra(svc, delta) {
+        const id = "qty-" + svc;
+        const el = document.getElementById(id);
+        el.textContent = Math.max(0, parseInt(el.textContent) + delta);
+        rdCalcTotal();
+      }
+
+      // ── Total cost ──
+      function rdCalcTotal() {
+        const baseNight = 599;
+        let total = baseNight;
+        const massageQty = parseInt(document.getElementById("qty-massage").textContent);
+        const spaQty = parseInt(document.getElementById("qty-spa").textContent);
+        if (document.getElementById("svc-massage").checked) total += 20 * massageQty;
+        if (document.getElementById("svc-spa").checked) total += 45 * spaQty;
+        if (document.getElementById("svc-clean").checked) total += 12;
+        document.getElementById("rd-total").textContent = "$" + total;
+      }
+
+      // Recalc on checkbox change
+      ["svc-clean","svc-massage","svc-spa"].forEach(id => {
+        document.getElementById(id).addEventListener("change", rdCalcTotal);
+      });
+    </script>
+
+  </body>
+</html>

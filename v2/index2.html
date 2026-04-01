@@ -1,0 +1,1642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CozyStay – Boutique Resort in the Swiss Alps</title>
+    <meta
+      name="description"
+      content="CozyStay Resort – A boutique mountain resort in the heart of the Swiss Alps. Timeless European luxury and breathtaking alpine views."
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <!-- ==================== PAGE LOADER ==================== -->
+    <div id="page-loader" aria-hidden="true">
+      <p class="loader-logo">COZYSTAY</p>
+      <p class="loader-stars">★ ★ ★ ★ ★</p>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+    </div>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div id="top-bar">
+      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
+      <span class="d-flex align-items-center gap-3">
+        <span>TEL: <a href="tel:+41223456788">+41 22 345 67 88</a></span>
+        <span>FAX: +41 22 345 67 89</span>
+        <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+      </span>
+    </div>
+
+    <!-- ==================== NAVBAR V2 ==================== -->
+    <nav id="navbar-v2">
+      <!-- Left nav links -->
+      <ul class="v2-nav-left">
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="v2-nav-link">
+            HOME
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a
+              href="index.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Home v1</a
+            >
+            <a
+              href="index2.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Home v2</a
+            >
+          </div>
+        </li>
+        <li class="custom-dropdown position-relative">
+          <a href="#rooms" class="v2-nav-link">
+            STAY
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a
+              href="family-suite.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Family Suite</a
+            >
+            <a
+              href="deluxe-room.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Deluxe Room</a
+            >
+            <a
+              href="double-suite.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Double Suite</a
+            >
+          </div>
+        </li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="v2-nav-link">
+            DINE
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a
+              href="restaurant.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Restaurant</a
+            >
+            <a
+              href="bar-lounge.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Bar &amp; Lounge</a
+            >
+          </div>
+        </li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="v2-nav-link">
+            PLAY
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a
+              href="skiing.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Skiing</a
+            >
+            <a
+              href="hiking.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Hiking</a
+            >
+            <a
+              href="paddling.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Paddling</a
+            >
+          </div>
+        </li>
+        <li>
+          <a href="relax.html" class="v2-nav-link">RELAX</a>
+        </li>
+      </ul>
+
+      <!-- Center logo -->
+      <div class="v2-nav-center">
+        <a href="#" class="v2-logo-link">
+          COZYSTAY
+          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right nav links -->
+      <ul class="v2-nav-right">
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="v2-nav-link">
+            PAGES
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a
+              href="about.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >About</a
+            >
+            <a
+              href="services.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Services</a
+            >
+            <a
+              href="gallery.html"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Gallery</a
+            >
+          </div>
+        </li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="v2-nav-link">
+            EN
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a
+              href="#"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >English</a
+            >
+            <a
+              href="#"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Français</a
+            >
+            <a
+              href="#"
+              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
+              >Deutsch</a
+            >
+          </div>
+        </li>
+        <li>
+          <a href="#booking" class="v2-reserve-btn">Reserve Now</a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-btn-v2"
+        class="btn border-0 p-2 ms-auto"
+        aria-label="Open menu"
+      >
+        <svg
+          width="24"
+          height="24"
+          fill="none"
+          stroke="#fff"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- ==================== MOBILE MENU V2 ==================== -->
+    <div id="mobile-menu-v2">
+      <div class="px-4 py-3 d-flex flex-column gap-2">
+        <a
+          href="index.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Home v1</a
+        >
+        <a
+          href="index2.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Home v2</a
+        >
+        <a
+          href="#rooms"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Stay</a
+        >
+        <a
+          href="restaurant.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Dine</a
+        >
+        <a
+          href="skiing.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Play</a
+        >
+        <a
+          href="relax.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Relax</a
+        >
+        <a
+          href="about.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >About</a
+        >
+        <a
+          href="gallery.html"
+          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
+          >Gallery</a
+        >
+        <a
+          href="#booking"
+          class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase"
+          >Reserve Now</a
+        >
+      </div>
+    </div>
+
+    <!-- ==================== HERO V2 ==================== -->
+    <section id="hero-v2">
+      <div class="hero-v2-bg"></div>
+      <div class="hero-v2-overlay"></div>
+
+      <!-- Content -->
+      <div class="hero-v2-content">
+        <p class="hero-v2-tagline">
+          Boutique Resort Offering Timeless European Luxury
+        </p>
+        <h1 class="hero-v2-title">
+          Boutique Resort in the<br />Heart of Swiss Alps
+        </h1>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="hero-v2-stats">
+        <div class="hero-v2-stat">
+          <div class="hero-v2-stat-num">1200M</div>
+          <div class="hero-v2-stat-label">Lowest Altitude</div>
+        </div>
+        <div class="hero-v2-stat">
+          <div class="hero-v2-stat-num">2418M</div>
+          <div class="hero-v2-stat-label">Highest Altitude</div>
+        </div>
+        <div class="hero-v2-stat">
+          <div class="hero-v2-stat-num">50KM</div>
+          <div class="hero-v2-stat-label">Slopes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTRO V2 ==================== -->
+    <section id="intro-v2">
+      <div class="container px-4 px-lg-5">
+        <div class="text-center reveal">
+          <p class="intro-v2-label">Welcome to CozyStay Resort</p>
+          <p class="intro-v2-text">
+            Immerse yourself in the restorative qualities of nature, far from
+            the hustle and bustle of everyday life. Experience the finest
+            mountain hospitality in the heart of the Swiss Alps.
+          </p>
+        </div>
+      </div>
+
+      <!-- Photo Carousel -->
+      <div class="photo-carousel-wrap">
+        <div class="photo-carousel-track" id="photo-track">
+          <div class="photo-carousel-slide">
+            <img src="../images/hero.png" alt="Swiss Alps view" />
+          </div>
+          <div class="photo-carousel-slide">
+            <img src="../images/lake.png" alt="Mountain lake" />
+          </div>
+          <div class="photo-carousel-slide">
+            <img src="../images/chalet.png" alt="Alpine chalet" />
+          </div>
+          <div class="photo-carousel-slide">
+            <img src="../images/canoe.png" alt="Paddling on lake" />
+          </div>
+          <div class="photo-carousel-slide">
+            <img src="../images/room-family.png" alt="Family suite" />
+          </div>
+          <div class="photo-carousel-slide">
+            <img src="../images/room-deluxe.png" alt="Deluxe room" />
+          </div>
+        </div>
+        <button
+          class="pcarousel-btn pcarousel-prev"
+          id="pcarousel-prev"
+          aria-label="Previous"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          class="pcarousel-btn pcarousel-next"
+          id="pcarousel-next"
+          aria-label="Next"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+        <div class="pcarousel-dots" id="pcarousel-dots"></div>
+      </div>
+    </section>
+
+    <!-- ==================== HOLIDAY PARADISE ==================== -->
+    <section id="holiday-paradise">
+      <div class="container-fluid px-3 px-lg-2">
+        <div class="text-center hp-header reveal">
+          <p class="hp-label">ENJOY ULTIMATE ALPINE EXPERIENCES</p>
+          <h2 class="hp-title">YOUR HOLIDAY PARADISE</h2>
+        </div>
+        <div class="hp-grid">
+          <!-- Card 1: Winter Hiking -->
+          <div class="hp-card">
+            <div
+              class="hp-card-img"
+              style="
+                background-image: url(&quot;https://picsum.photos/seed/winterhike/600/800&quot;);
+              "
+            ></div>
+            <div class="hp-card-frame"></div>
+            <span class="hp-price">$180 / PERSON</span>
+            <div class="hp-card-bottom">
+              <p class="hp-cat">OUTDOORS</p>
+              <h3 class="hp-name">Winter Hiking</h3>
+              <a href="#" class="hp-link">DISCOVER TRIP &rsaquo;</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Paraglider Exercises (offset) -->
+          <div class="hp-card hp-card--offset">
+            <div
+              class="hp-card-img"
+              style="
+                background-image: url(&quot;https://picsum.photos/seed/paraglide/600/900&quot;);
+              "
+            ></div>
+            <div class="hp-card-frame"></div>
+            <span class="hp-price">$180 / PERSON</span>
+            <div class="hp-card-bottom">
+              <p class="hp-cat">OUTDOORS</p>
+              <h3 class="hp-name">Paraglider Exercises</h3>
+              <a href="#" class="hp-link">DISCOVER TRIP &rsaquo;</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Golf Courses -->
+          <div class="hp-card">
+            <div
+              class="hp-card-img"
+              style="
+                background-image: url(&quot;https://picsum.photos/seed/golfcourse/600/800&quot;);
+              "
+            ></div>
+            <div class="hp-card-frame"></div>
+            <span class="hp-price">$180 / PERSON</span>
+            <div class="hp-card-bottom">
+              <p class="hp-cat">OUTDOORS</p>
+              <h3 class="hp-name">Golf Courses</h3>
+              <a href="#" class="hp-link">DISCOVER TRIP &rsaquo;</a>
+            </div>
+          </div>
+
+          <!-- Card 4: Ski & Snowshoeing (offset) -->
+          <div class="hp-card hp-card--offset">
+            <div
+              class="hp-card-img"
+              style="
+                background-image: url(&quot;https://picsum.photos/seed/skiing/600/900&quot;);
+              "
+            ></div>
+            <div class="hp-card-frame"></div>
+            <span class="hp-price">$180 / PERSON</span>
+            <div class="hp-card-bottom">
+              <p class="hp-cat">OUTDOORS</p>
+              <h3 class="hp-name">Ski &amp; Snowshoeing</h3>
+              <a href="#" class="hp-link">DISCOVER TRIP &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ESSENTIALS ==================== -->
+    <section id="essentials">
+      <div class="container-xl">
+        <div class="essentials-layout">
+          <!-- LEFT: Label + Heading + Services Grid -->
+          <div class="essentials-content">
+            <p class="essentials-label reveal">
+              DISCOVER THE SERVICES WE OFFERED
+            </p>
+            <h2 class="essentials-title reveal">THE ESSENTIALS</h2>
+
+            <div class="essentials-grid">
+              <!-- 1: Airport Pick-up -->
+              <div class="ess-item reveal">
+                <div class="ess-icon">
+                  <svg
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 30h36M10 30l4-10h20l4 10" />
+                    <rect x="9" y="30" width="30" height="8" rx="2" />
+                    <circle cx="14" cy="40" r="3" />
+                    <circle cx="34" cy="40" r="3" />
+                    <path d="M20 20v-4h8v4M6 34h2M40 34h2" />
+                  </svg>
+                </div>
+                <div class="ess-text">
+                  <h4 class="ess-name">Airport Pick-up Service</h4>
+                  <p class="ess-desc">
+                    Lorem ipsum proin gravida velit auctor sde re sit amet
+                    space.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 2: Housekeeper -->
+              <div class="ess-item reveal">
+                <div class="ess-icon">
+                  <svg
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M16 8l-8 28h8l4-12 4 12h8L24 8z" />
+                    <path d="M8 36h32M14 28h20" />
+                    <circle cx="24" cy="14" r="3" />
+                    <path d="M30 12l4-4M18 12l-4-4" />
+                  </svg>
+                </div>
+                <div class="ess-text">
+                  <h4 class="ess-name">Housekeeper Services</h4>
+                  <p class="ess-desc">
+                    Lorem ipsum proin gravida velit auctor sde re sit amet
+                    space.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 3: Wifi -->
+              <div class="ess-item reveal">
+                <div class="ess-icon">
+                  <svg
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 18c4.9-4.9 11.7-8 18-8s13.1 3.1 18 8" />
+                    <path d="M11 24c3.6-3.6 8.6-5.8 13-5.8s9.4 2.2 13 5.8" />
+                    <path d="M17 30c1.9-1.9 4.5-3 7-3s5.1 1.1 7 3" />
+                    <circle
+                      cx="24"
+                      cy="38"
+                      r="2.5"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </div>
+                <div class="ess-text">
+                  <h4 class="ess-name">Wifi &amp; Internet</h4>
+                  <p class="ess-desc">
+                    Lorem ipsum proin gravida velit auctor sde re sit amet
+                    space.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 4: Laundry -->
+              <div class="ess-item reveal">
+                <div class="ess-icon">
+                  <svg
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="8" y="6" width="32" height="36" rx="3" />
+                    <circle cx="24" cy="28" r="9" />
+                    <circle cx="24" cy="28" r="5" />
+                    <path d="M12 13h4M18 13h2" />
+                  </svg>
+                </div>
+                <div class="ess-text">
+                  <h4 class="ess-name">Laundry Services</h4>
+                  <p class="ess-desc">
+                    Lorem ipsum proin gravida velit auctor sde re sit amet
+                    space.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 5: Breakfast in Bed -->
+              <div class="ess-item reveal">
+                <div class="ess-icon">
+                  <svg
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 32h36v4H6zM6 36v4M42 36v4" />
+                    <path d="M10 32v-8a4 4 0 014-4h20a4 4 0 014 4v8" />
+                    <path d="M10 24h12" />
+                    <rect x="16" y="14" width="16" height="6" rx="2" />
+                    <path d="M22 14v-4M26 14v-4M24 10h0" />
+                  </svg>
+                </div>
+                <div class="ess-text">
+                  <h4 class="ess-name">Breakfast in Bed</h4>
+                  <p class="ess-desc">
+                    Lorem ipsum proin gravida velit auctor sde re sit amet
+                    space.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 6: Swimming Pool -->
+              <div class="ess-item reveal">
+                <div class="ess-icon">
+                  <svg
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M8 38c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4" />
+                    <path d="M8 30c4 0 4-4 8-4s4 4 8 4 4-4 8-4 4 4 8 4" />
+                    <path d="M32 10v20M32 10h-8M32 14h-8M24 10v20" />
+                  </svg>
+                </div>
+                <div class="ess-text">
+                  <h4 class="ess-name">Swimming Pool</h4>
+                  <p class="ess-desc">
+                    Lorem ipsum proin gravida velit auctor sde re sit amet
+                    space.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- /.essentials-grid -->
+          </div>
+          <!-- /.essentials-content -->
+
+          <!-- RIGHT: Staggered Images -->
+          <div class="essentials-images">
+            <div class="ess-img-wrap ess-img-left">
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=560&h=720&auto=format&fit=crop"
+                alt="Spa relaxation"
+              />
+            </div>
+            <div class="ess-img-wrap ess-img-right">
+              <img
+                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=480&h=580&auto=format&fit=crop"
+                alt="Fine dining and wine"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- /.essentials-layout -->
+      </div>
+    </section>
+
+    <!-- ==================== ROOMS ==================== -->
+    <section id="rooms">
+      <div class="container-xl">
+        <div class="rooms-header reveal">
+          <div>
+            <p class="rooms-label">DISCOVER OUR ACCOMMODATIONS</p>
+            <h2 class="rooms-title">ROOMS. SUITES. VILLE</h2>
+          </div>
+          <a href="#" class="rooms-explore"
+            >Explore All Accommodations <span class="rooms-dash">——</span></a
+          >
+        </div>
+      </div>
+
+      <!-- 3-slot carousel -->
+      <div class="rooms-carousel" id="roomsCarousel">
+        <!-- LEFT slot -->
+        <div class="rooms-slot rooms-slot--side" id="roomSlotLeft">
+          <img id="roomImgLeft" src="" alt="" />
+          <span class="room-price-badge" id="roomPriceLeft"></span>
+        </div>
+
+        <!-- CENTER slot -->
+        <div class="rooms-slot rooms-slot--center" id="roomSlotCenter">
+          <img id="roomImgCenter" src="" alt="" />
+          <div class="room-dark-overlay"></div>
+          <span class="room-price-badge" id="roomPriceCenter"></span>
+          <div class="room-center-info">
+            <h3 class="room-cname" id="roomCenterName"></h3>
+            <div class="room-stats" id="roomCenterStats"></div>
+            <div class="rooms-dots" id="roomsDots"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT slot -->
+        <div class="rooms-slot rooms-slot--side" id="roomSlotRight">
+          <img id="roomImgRight" src="" alt="" />
+          <span class="room-price-badge" id="roomPriceRight"></span>
+        </div>
+
+        <!-- Arrows -->
+        <button
+          class="rooms-arrow rooms-arrow-prev"
+          id="roomsPrev"
+          aria-label="Previous room"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          class="rooms-arrow rooms-arrow-next"
+          id="roomsNext"
+          aria-label="Next room"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Rooms Booking Bar -->
+      <div class="rbb">
+        <div class="container-xl">
+          <div class="rbb-inner">
+            <div class="rbb-field">
+              <span class="rbb-label">Check In</span>
+              <div class="rbb-val-row">
+                <input
+                  type="text"
+                  id="rbbCheckin"
+                  class="rbb-input"
+                  placeholder="Select date"
+                  readonly
+                />
+                <svg
+                  class="rbb-chev"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="rbb-sep"></div>
+            <div class="rbb-field">
+              <span class="rbb-label">Check Out</span>
+              <div class="rbb-val-row">
+                <input
+                  type="text"
+                  id="rbbCheckout"
+                  class="rbb-input"
+                  placeholder="Select date"
+                  readonly
+                />
+                <svg
+                  class="rbb-chev"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="rbb-sep"></div>
+            <div class="rbb-field">
+              <span class="rbb-label">Rooms</span>
+              <div class="rbb-val-row">
+                <span class="rbb-static-val">1 Room</span>
+                <svg
+                  class="rbb-chev"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="rbb-sep"></div>
+            <div class="rbb-field">
+              <span class="rbb-label">Guests</span>
+              <div class="rbb-val-row">
+                <span class="rbb-static-val">1 Adult, 0 Children</span>
+                <svg
+                  class="rbb-chev"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <button class="rbb-btn">Check Availability</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ACTIVITIES ==================== -->
+    <section id="activities">
+      <div class="container-xl">
+        <div class="text-center act-header reveal">
+          <p class="act-label">LOCAL ACTIVITIES &amp; EVENTS</p>
+          <h2 class="act-title">
+            IMMERSE YOURSELF IN A DIVERSE<br />MOUNTAIN RESORT LIFE
+          </h2>
+        </div>
+
+        <div class="act-grid">
+          <!-- Card 1: Spa -->
+          <div class="act-card reveal">
+            <div class="act-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=700&auto=format&fit=crop"
+                alt="Spa & Wellness"
+              />
+              <div class="act-frame"></div>
+            </div>
+            <div class="act-card-body">
+              <h3 class="act-card-title">Spa &amp; Wellness</h3>
+              <p class="act-card-desc">
+                In the hotel spa center we offer an exceptional well-being
+                experience combining our expertise, high technology and
+                breathtaking results.
+              </p>
+              <a href="#" class="act-card-link">Discover More</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Summer Week (offset) -->
+          <div class="act-card act-card--offset reveal">
+            <div class="act-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=760&auto=format&fit=crop"
+                alt="Summer Week"
+              />
+              <div class="act-frame"></div>
+            </div>
+            <div class="act-card-body">
+              <h3 class="act-card-title">Summer Week</h3>
+              <p class="act-card-desc">
+                The Swiss Alps are spectacular in summer, offering some of the
+                best scenery in the world for hiking, biking, rafting and epic
+                drives.
+              </p>
+              <a href="#" class="act-card-link">Discover More</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Gastronomic -->
+          <div class="act-card reveal">
+            <div class="act-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=700&auto=format&fit=crop"
+                alt="5-Star Gastronomic"
+              />
+              <div class="act-frame"></div>
+            </div>
+            <div class="act-card-body">
+              <h3 class="act-card-title">5-Star Gastronomic</h3>
+              <p class="act-card-desc">
+                Extraordinary moments and special occasions are precious. Enjoy
+                a premium suite and dinner for two as well as spa credits with
+                this special offer.
+              </p>
+              <a href="#" class="act-card-link">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER CTA ==================== -->
+    <section id="footer-cta">
+      <div class="footer-cta-overlay"></div>
+      <div class="container-xl footer-cta-inner">
+        <p class="footer-cta-label reveal">BOOK YOUR STAY NOW</p>
+        <h2 class="footer-cta-title reveal">
+          Escape to the beautiful mountains where dreams come true.<br />Immerse
+          yourself in the restorative qualities of nature, far<br />from the
+          disturbances of everyday life.
+        </h2>
+        <div class="fcf-form">
+          <div class="fcf-field">
+            <svg
+              class="fcf-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="18"
+                rx="2"
+                stroke-width="1.5"
+              />
+              <path
+                d="M16 2v4M8 2v4M3 10h18"
+                stroke-linecap="round"
+                stroke-width="1.5"
+              />
+            </svg>
+            <div class="fcf-text">
+              <span class="fcf-label">Check In</span>
+              <input
+                type="text"
+                id="fcfCheckin"
+                class="fcf-input"
+                placeholder="2026-03-30"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="fcf-sep"></div>
+          <div class="fcf-field">
+            <svg
+              class="fcf-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="18"
+                rx="2"
+                stroke-width="1.5"
+              />
+              <path
+                d="M16 2v4M8 2v4M3 10h18"
+                stroke-linecap="round"
+                stroke-width="1.5"
+              />
+            </svg>
+            <div class="fcf-text">
+              <span class="fcf-label">Check Out</span>
+              <input
+                type="text"
+                id="fcfCheckout"
+                class="fcf-input"
+                placeholder="2026-03-31"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="fcf-sep"></div>
+          <div class="fcf-field">
+            <svg
+              class="fcf-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
+                stroke-linecap="round"
+                stroke-width="1.5"
+              />
+              <circle cx="9" cy="7" r="4" stroke-width="1.5" />
+              <path
+                d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+                stroke-linecap="round"
+                stroke-width="1.5"
+              />
+            </svg>
+            <div class="fcf-text">
+              <span class="fcf-label">Guests</span>
+              <span class="fcf-val">1 Room, 1 Adult, 0 Children</span>
+            </div>
+          </div>
+          <button class="fcf-btn">Check Availability</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="site-footer">
+      <div class="container-xl footer-main">
+        <!-- Col 1: Brand -->
+        <div class="footer-col">
+          <div class="footer-logo">COZYSTAY</div>
+          <p class="footer-brand-desc">
+            Established in 1998, CozyStay Hotel is a boutique hotel in the heart
+            of the Swiss Alps, offering contemporary accommodation and unrivaled
+            access to ski and hiking trails, immersing you in an idyllic setting
+            against pristine skies in search of a truly serene experience.
+          </p>
+          <div class="footer-pay-icons">
+            <span class="pay-icon">PayPal</span>
+            <span class="pay-icon">MC</span>
+            <span class="pay-icon">VISA</span>
+            <span class="pay-icon">Stripe</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Contact -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Reach Out</h4>
+          <div class="footer-contact">
+            <p><em>Email:</em> booking@cozystay.com</p>
+            <p><em>Tel:</em> +41 22 345 66 77</p>
+            <p><em>Fax:</em> +41 22 345 77 89</p>
+            <p>Rue de Lausanne, 1202 Genève, Switzerland</p>
+          </div>
+          <a href="#" class="footer-directions">GET DIRECTIONS</a>
+        </div>
+
+        <!-- Col 3: Newsletter -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Sign up for newsletter</h4>
+          <div class="footer-newsletter">
+            <div class="fn-row">
+              <input
+                type="email"
+                placeholder="Your Email Address"
+                class="fn-input"
+              />
+              <button class="fn-submit">
+                Subscribe
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                    d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <label class="fn-privacy">
+              <input type="checkbox" class="fn-check" /> I agree to the Privacy
+              Policy
+            </label>
+          </div>
+          <div class="footer-social">
+            <span>Stay Connected:</span>
+            <!-- Facebook -->
+            <a href="#" class="fsoc" aria-label="Facebook"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                /></svg
+            ></a>
+            <!-- Twitter/X -->
+            <a href="#" class="fsoc" aria-label="Twitter"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                /></svg
+            ></a>
+            <!-- Pinterest -->
+            <a href="#" class="fsoc" aria-label="Pinterest"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"
+                /></svg
+            ></a>
+            <!-- YouTube -->
+            <a href="#" class="fsoc" aria-label="YouTube"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"
+                /></svg
+            ></a>
+            <!-- Instagram -->
+            <a href="#" class="fsoc" aria-label="Instagram"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r=".5"
+                  fill="currentColor"
+                  stroke="none"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="container-xl footer-bottom-inner">
+          <div class="footer-bottom-links">
+            <a href="#">PRIVACY</a>
+            <a href="#">TERMS OF USE</a>
+            <a href="#">POLICY</a>
+          </div>
+          <p class="footer-copy">
+            &copy; Copyright CozyStay WordPress Theme for Hotel Booking.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button
+      id="back-top"
+      aria-label="Back to top"
+      class="btn bg-forest text-white rounded-circle d-flex align-items-center justify-content-center shadow back-top-btn"
+    >
+      <svg
+        class="back-top-icon"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../main.js" defer></script>
+
+    <script>
+      // ---- Page Loader ----
+      (function () {
+        const loader = document.getElementById("page-loader");
+        function dismiss() {
+          if (!loader) return;
+          loader.classList.add("fade-out");
+          setTimeout(() => loader.remove(), 900);
+        }
+        if (document.readyState === "complete") {
+          setTimeout(dismiss, 300);
+        } else {
+          window.addEventListener("load", () => setTimeout(dismiss, 300));
+        }
+      })();
+
+      // ---- V2 Mobile menu ----
+      (function () {
+        const btn = document.getElementById("menu-btn-v2");
+        const menu = document.getElementById("mobile-menu-v2");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => menu.classList.toggle("open"));
+        menu
+          .querySelectorAll("a")
+          .forEach((a) =>
+            a.addEventListener("click", () => menu.classList.remove("open")),
+          );
+      })();
+
+      // ---- Photo Carousel ----
+      (function () {
+        const track = document.getElementById("photo-track");
+        const dotsWrap = document.getElementById("pcarousel-dots");
+        const prevBtn = document.getElementById("pcarousel-prev");
+        const nextBtn = document.getElementById("pcarousel-next");
+        if (!track) return;
+
+        const slides = track.querySelectorAll(".photo-carousel-slide");
+        const total = slides.length;
+        const isMobile = () => window.innerWidth <= 767;
+        const visibleCount = () => (isMobile() ? 1 : 3);
+        let current = 0;
+
+        const numDots = () => Math.max(1, total - visibleCount() + 1);
+
+        function buildDots() {
+          dotsWrap.innerHTML = "";
+          for (let i = 0; i < numDots(); i++) {
+            const d = document.createElement("button");
+            d.className = "pcarousel-dot" + (i === current ? " active" : "");
+            d.addEventListener("click", () => goTo(i));
+            dotsWrap.appendChild(d);
+          }
+        }
+
+        function goTo(n) {
+          current = Math.max(0, Math.min(n, numDots() - 1));
+          let offset = 0;
+          for (let i = 0; i < current; i++) offset += slides[i].offsetWidth;
+          track.style.transform = `translateX(-${offset}px)`;
+          dotsWrap
+            .querySelectorAll(".pcarousel-dot")
+            .forEach((d, i) => d.classList.toggle("active", i === current));
+        }
+
+        prevBtn.addEventListener("click", () => goTo(current - 1));
+        nextBtn.addEventListener("click", () => goTo(current + 1));
+        window.addEventListener("resize", () => {
+          buildDots();
+          goTo(0);
+        });
+
+        buildDots();
+      })();
+
+      // ---- Focused About Carousel ----
+      (function () {
+        const track = document.getElementById("fcarousel-track");
+        const prevBtn = document.getElementById("fcarousel-prev");
+        const nextBtn = document.getElementById("fcarousel-next");
+        const dotsWrap = document.getElementById("fcarousel-dots");
+        if (!track) return;
+
+        const items = Array.from(track.querySelectorAll(".fcarousel-item"));
+        const total = items.length;
+        let current = 0;
+
+        function render() {
+          const left = (current - 1 + total) % total;
+          const right = (current + 1) % total;
+          items.forEach((item, i) => {
+            item.classList.remove("is-center", "is-peek");
+            if (i === current) item.classList.add("is-center");
+            else if (i === left || i === right) item.classList.add("is-peek");
+          });
+          dotsWrap
+            .querySelectorAll(".fcarousel-dot")
+            .forEach((d, i) => d.classList.toggle("active", i === current));
+        }
+
+        function buildDots() {
+          dotsWrap.innerHTML = "";
+          for (let i = 0; i < total; i++) {
+            const d = document.createElement("button");
+            d.className = "fcarousel-dot" + (i === 0 ? " active" : "");
+            d.addEventListener("click", () => {
+              current = i;
+              render();
+            });
+            dotsWrap.appendChild(d);
+          }
+        }
+
+        prevBtn.addEventListener("click", () => {
+          current = (current - 1 + total) % total;
+          render();
+        });
+        nextBtn.addEventListener("click", () => {
+          current = (current + 1) % total;
+          render();
+        });
+
+        buildDots();
+        render();
+      })();
+
+      // ---- Rooms Carousel ----
+      (function () {
+        const rooms = [
+          {
+            name: "Standard Room",
+            price: "$199 / NIGHT",
+            area: "30 m²",
+            guests: 2,
+            beds: 1,
+            baths: 1,
+            img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&h=600&auto=format&fit=crop",
+            alt: "Standard Room",
+          },
+          {
+            name: "Signature Suite",
+            price: "FROM $399",
+            area: "60 m²",
+            guests: 4,
+            beds: 2,
+            baths: 1,
+            img: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200&h=800&auto=format&fit=crop",
+            alt: "Signature Suite",
+          },
+          {
+            name: "Deluxe Villa",
+            price: "$299 / NIGHT",
+            area: "80 m²",
+            guests: 6,
+            beds: 3,
+            baths: 2,
+            img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&h=600&auto=format&fit=crop",
+            alt: "Deluxe Villa",
+          },
+        ];
+
+        const statIcon = {
+          area: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>`,
+          guests: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+          bed: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V5a2 2 0 012-2h14a2 2 0 012 2v4M3 9h18M3 9v10a1 1 0 001 1h16a1 1 0 001-1V9M7 14h.01M7 18h.01"/></svg>`,
+          bath: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2.25"/></svg>`,
+        };
+
+        let centerIdx = 1;
+        const total = rooms.length;
+
+        const imgLeft = document.getElementById("roomImgLeft");
+        const imgCenter = document.getElementById("roomImgCenter");
+        const imgRight = document.getElementById("roomImgRight");
+        const priceLeft = document.getElementById("roomPriceLeft");
+        const priceCenter = document.getElementById("roomPriceCenter");
+        const priceRight = document.getElementById("roomPriceRight");
+        const nameEl = document.getElementById("roomCenterName");
+        const statsEl = document.getElementById("roomCenterStats");
+        const dotsEl = document.getElementById("roomsDots");
+        const slotLeft = document.getElementById("roomSlotLeft");
+        const slotCenter = document.getElementById("roomSlotCenter");
+        const slotRight = document.getElementById("roomSlotRight");
+        const prevBtn = document.getElementById("roomsPrev");
+        const nextBtn = document.getElementById("roomsNext");
+        if (!imgCenter) return;
+
+        function buildDots() {
+          dotsEl.innerHTML = "";
+          for (let i = 0; i < total; i++) {
+            const b = document.createElement("button");
+            b.className = "rdot" + (i === centerIdx ? " active" : "");
+            b.setAttribute("aria-label", "Go to room " + (i + 1));
+            b.addEventListener("click", () => goTo(i));
+            dotsEl.appendChild(b);
+          }
+        }
+
+        function buildStats(room) {
+          statsEl.innerHTML = `
+            <div class="room-stat">${statIcon.area}<span>${room.area}</span></div>
+            <div class="room-stat">${statIcon.guests}<span>${room.guests} Guests</span></div>
+            <div class="room-stat">${statIcon.bed}<span>${room.beds} ${room.beds === 1 ? "Bed" : "Beds"}</span></div>
+            <div class="room-stat">${statIcon.bath}<span>${room.baths} ${room.baths === 1 ? "Bathroom" : "Bathrooms"}</span></div>`;
+        }
+
+        function fade(slot, cb) {
+          slot.classList.add("is-fading");
+          setTimeout(() => {
+            cb();
+            slot.classList.remove("is-fading");
+          }, 300);
+        }
+
+        function goTo(newCenter) {
+          if (newCenter === centerIdx) return;
+          centerIdx = ((newCenter % total) + total) % total;
+          const L = rooms[(centerIdx - 1 + total) % total];
+          const C = rooms[centerIdx];
+          const R = rooms[(centerIdx + 1) % total];
+
+          fade(slotLeft, () => {
+            imgLeft.src = L.img;
+            imgLeft.alt = L.alt;
+            priceLeft.textContent = L.price;
+          });
+          fade(slotCenter, () => {
+            imgCenter.src = C.img;
+            imgCenter.alt = C.alt;
+            priceCenter.textContent = C.price;
+            nameEl.textContent = C.name;
+            buildStats(C);
+          });
+          fade(slotRight, () => {
+            imgRight.src = R.img;
+            imgRight.alt = R.alt;
+            priceRight.textContent = R.price;
+          });
+          dotsEl
+            .querySelectorAll(".rdot")
+            .forEach((d, i) => d.classList.toggle("active", i === centerIdx));
+        }
+
+        function init() {
+          const L = rooms[(centerIdx - 1 + total) % total];
+          const C = rooms[centerIdx];
+          const R = rooms[(centerIdx + 1) % total];
+          imgLeft.src = L.img;
+          imgLeft.alt = L.alt;
+          priceLeft.textContent = L.price;
+          imgCenter.src = C.img;
+          imgCenter.alt = C.alt;
+          priceCenter.textContent = C.price;
+          nameEl.textContent = C.name;
+          buildStats(C);
+          imgRight.src = R.img;
+          imgRight.alt = R.alt;
+          priceRight.textContent = R.price;
+          buildDots();
+        }
+
+        prevBtn.addEventListener("click", () => goTo(centerIdx - 1));
+        nextBtn.addEventListener("click", () => goTo(centerIdx + 1));
+        init();
+
+        // Flatpickr for rooms booking bar
+        if (typeof flatpickr !== "undefined") {
+          const today = new Date();
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
+          flatpickr("#rbbCheckin", {
+            minDate: "today",
+            defaultDate: today,
+            dateFormat: "Y-m-d",
+          });
+          flatpickr("#rbbCheckout", {
+            minDate: "today",
+            defaultDate: tomorrow,
+            dateFormat: "Y-m-d",
+          });
+          flatpickr("#fcfCheckin", {
+            minDate: "today",
+            defaultDate: today,
+            dateFormat: "Y-m-d",
+          });
+          flatpickr("#fcfCheckout", {
+            minDate: "today",
+            defaultDate: tomorrow,
+            dateFormat: "Y-m-d",
+          });
+        }
+      })();
+
+      // ---- Back to top ----
+      (function () {
+        const btn = document.getElementById("back-top");
+        if (!btn) return;
+        window.addEventListener(
+          "scroll",
+          () => {
+            btn.style.opacity = window.scrollY > 400 ? "1" : "0";
+            btn.style.pointerEvents = window.scrollY > 400 ? "auto" : "none";
+          },
+          { passive: true },
+        );
+        btn.addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
+      })();
+
+      // ---- Scroll reveal ----
+      (function () {
+        const els = document.querySelectorAll(
+          ".reveal, .reveal-left, .reveal-right",
+        );
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        els.forEach((el) => obs.observe(el));
+      })();
+      // ---- RBB-V3 Booking Bar ----
+      (function () {
+        // Flatpickr date pickers
+        if (typeof flatpickr !== 'undefined') {
+          flatpickr('#rbbCheckin', {
+            minDate: 'today',
+            dateFormat: 'Y-m-d',
+            defaultDate: new Date(),
+            onChange: function(d) {
+              var co = document.querySelector('#rbbCheckout')._flatpickr;
+              if (co) co.set('minDate', d[0]);
+            }
+          });
+          flatpickr('#rbbCheckout', {
+            minDate: 'today',
+            dateFormat: 'Y-m-d',
+            defaultDate: new Date(Date.now() + 86400000)
+          });
+        }
+
+        // Guests dropdown
+        var adults = 1, children = 0;
+        var guestsTrigger = document.querySelector('.rbb-guests-trigger');
+        var guestsDropdown = document.getElementById('rbb-guests-dropdown');
+        var guestsDisplay = document.getElementById('rbb-guests-display');
+        var roomsDisplay = document.getElementById('rbb-rooms-display');
+        var rooms = 1;
+
+        function updateGuestsDisplay() {
+          if (guestsDisplay) guestsDisplay.textContent = adults + ' Adult' + (adults !== 1 ? 's' : '') + ', ' + children + ' Children';
+        }
+
+        if (guestsTrigger && guestsDropdown) {
+          guestsTrigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            guestsDropdown.classList.toggle('open');
+          });
+          document.addEventListener('click', function(e) {
+            if (!guestsDropdown.contains(e.target) && !guestsTrigger.contains(e.target)) {
+              guestsDropdown.classList.remove('open');
+            }
+          });
+        }
+
+        function bindCounter(minusId, plusId, countId, getter, setter, min) {
+          var minus = document.getElementById(minusId);
+          var plus = document.getElementById(plusId);
+          var countEl = document.getElementById(countId);
+          if (!minus || !plus || !countEl) return;
+          minus.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var v = getter();
+            if (v > min) { setter(v - 1); countEl.textContent = getter(); updateGuestsDisplay(); }
+          });
+          plus.addEventListener('click', function(e) {
+            e.stopPropagation();
+            setter(getter() + 1); countEl.textContent = getter(); updateGuestsDisplay();
+          });
+        }
+
+        bindCounter('rbb-adult-minus','rbb-adult-plus','rbb-adult-count',
+          function(){ return adults; }, function(v){ adults = v; }, 1);
+        bindCounter('rbb-child-minus','rbb-child-plus','rbb-child-count',
+          function(){ return children; }, function(v){ children = v; }, 0);
+
+        // Rooms counter (click on rooms box cycles 1-5)
+        var roomsBox = document.getElementById('rbb-rooms-cell');
+        if (roomsBox && roomsDisplay) {
+          roomsBox.addEventListener('click', function() {
+            rooms = rooms < 5 ? rooms + 1 : 1;
+            roomsDisplay.textContent = rooms + ' Room' + (rooms > 1 ? 's' : '');
+          });
+        }
+
+        // Apply button
+        var applyBtn = document.getElementById('rbb-guest-apply');
+        if (applyBtn) {
+          applyBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            guestsDropdown.classList.remove('open');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
