@@ -3,51 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Events & Meetings – CozyStay Resort</title>
-    <meta
-      name="description"
-      content="CozyStay – Boutique Private Island Resort. The seaside haven of warmth, tranquility and restoration."
-    />
+    <title>My Account – CozyStay Resort</title>
+    <meta name="description" content="Login to your CozyStay Resort account." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Flatpickr -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap" rel="stylesheet" />
 
     <!-- Bootstrap 5 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
-    <!-- Our V3 Style -->
+    <!-- V3 Base Style -->
     <link rel="stylesheet" href="style3.css" />
+    <style>
+      .login-input {
+        width: 100%;
+        border: 1px solid #d6d0c8;
+        background: #fff;
+        font-family: 'Jost', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: #2a2620;
+        padding: 13px 16px;
+        outline: none;
+        border-radius: 0;
+        transition: border-color 0.2s;
+      }
+      .login-input:focus {
+        border-color: #bb9e72;
+      }
+      .login-input-wrap {
+        position: relative;
+      }
+      .login-eye-btn {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #888;
+        display: flex;
+        align-items: center;
+      }
+      .login-btn {
+        background-color: #bb9e72;
+        color: #fff;
+        font-family: 'Jost', sans-serif;
+        font-size: 13.5px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 14px 38px;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .login-btn:hover {
+        background-color: #a88d65;
+      }
+      .login-lost-pw {
+        color: #bb9e72;
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .login-lost-pw:hover {
+        color: #a88d65;
+        text-decoration: underline;
+      }
+      .login-label {
+        font-family: 'Jost', sans-serif;
+        font-size: 14.5px;
+        font-weight: 400;
+        color: #2a2620;
+        margin-bottom: 8px;
+        display: block;
+      }
+      .login-required {
+        color: #c0392b;
+        margin-left: 2px;
+      }
+      .login-remember-label {
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #2a2620;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
 
     <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
     <div id="v3-overlay-menu" aria-hidden="true">
-      <!-- Overlay BG (blurred hero behind) -->
       <div class="v3-overlay-bg"></div>
-
-      <!-- Top controls -->
       <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between" style="padding: 26px 36px;">
         <button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center" style="transition: color 0.2s, transform 0.2s;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 28px; height: 28px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
         <a href="#" class="v3-overlay-lang">EN / FR</a>
       </div>
-
-      <!-- Centered Links — 3 rows -->
       <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
         <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
           <a href="index3.html" class="v3-overlay-link">Home</a>
@@ -63,36 +125,34 @@
         <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
           <a href="v3-news.html" class="v3-overlay-link">News</a>
           <a href="v3-contact.html" class="v3-overlay-link">Contact</a>
-          <a href="#booking-v3" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
+          <a href="index3.html#booking-v3" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
         </div>
       </nav>
-
-      <!-- Footer -->
       <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
     </div>
 
     <!-- ==================== NAVBAR ==================== -->
     <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3" style="height: 110px; border-bottom: 1px solid rgba(255, 255, 255, 0.18);">
-      <!-- Hamburger (always visible) -->
       <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3" style="transition: color 0.2s ease, transform 0.2s ease;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
-      <!-- Left Nav Links -->
       <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1" id="v3-nav-links-left">
-        <li>
-          <a href="index3.html" class="v3-nav-link v3-active-link">HOME</a>
-        </li>
+        <li><a href="index3.html" class="v3-nav-link">HOME</a></li>
         <li class="v3-dropdown">
-          <a href="v3-stay.html" class="v3-nav-link">
+          <a href="v3-stay.html" class="v3-nav-link v3-active-link">
             STAY
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
           </a>
           <div class="v3-dropdown-menu">
-            <a href="v3-island-villas.html">Island Villas</a>
-            <a href="v3-beach-bungalows.html">Beach Bungalows</a>
-            <a href="v3-overwater-suites.html">Overwater Suites</a>
+            <a href="v3-rooms.html">Rooms Page</a>
+            <a href="v3-room-details-top-image.html">Room Details – Top Image</a>
+            <a href="v3-room-details-top-gallery.html">Room Details – Top Gallery</a>
+            <a href="v3-room-details-left-booking.html">Room Details – Left Booking Form</a>
+            <a href="v3-cart.html">Cart</a>
+            <a href="v3-cart.html">Checkout</a>
+            <a href="v3-my-account.html">My account</a>
           </div>
         </li>
         <li class="v3-dropdown">
@@ -112,69 +172,99 @@
             <a href="v3-contact.html">Contact</a>
           </div>
         </li>
-        <li>
-          <a href="v3-news.html" class="v3-nav-link">NEWS</a>
-        </li>
+        <li><a href="v3-news.html" class="v3-nav-link">NEWS</a></li>
       </ul>
-
-      <!-- Center Logo -->
       <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
         <a href="index3.html" class="v3-logo-link">
           COZYSTAY
           <span class="v3-logo-stars">★ ★ ★ ★ ★</span>
         </a>
       </div>
-
-      <!-- Right Nav -->
       <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
-        <span class="v3-phone">Tel: +41 22 345 67 88</span>
+        <span class="v3-phone text-white" style="font-family: 'Jost', sans-serif; font-size: 14.5px; font-weight: 500;">Tel: +41 22 345 67 88</span>
         <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
-        <a href="#booking-v3" class="v3-book-btn">Book Now</a>
+        <a href="index3.html#booking-v3" class="v3-book-btn">Book Now</a>
       </div>
-
     </nav>
 
-    
-    <!-- PAGE HERO -->
-    <section class="position-relative d-flex align-items-center justify-content-center text-center text-white" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1519225421980-a72c418cadd0?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:110px;">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.5);"></div>
-      <div class="position-relative z-2 px-4 container">
-        <span class="d-inline-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #bb9e72; text-transform: uppercase;">CELEBRATE</span>
-        <h1 class="mb-4" style="font-family: 'Marcellus', serif; font-size: clamp(2.5rem, 5vw, 4rem);">Events & Meetings</h1>
-        <p style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">The perfect sophisticated venue for your occasion.</p>
+    <!-- ==================== HERO ==================== -->
+    <section class="position-relative d-flex flex-column align-items-center justify-content-center" style="height: 55vh; min-height: 480px; overflow: hidden;">
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" alt="My Account Hero – Poolside Lounge Chairs" />
+      <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(40, 30, 20, 0.45);"></div>
+      <div class="position-relative z-1 text-center text-white mt-5">
+        <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;">HOME / MY ACCOUNT</span>
+        <h1 style="font-family: 'Marcellus', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 400; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">My account</h1>
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-5 bg-white" style="min-height: 40vh;">
-      <div class="container py-5">
-        <div class="row g-5 align-items-center">
-          <div class="col-md-6">
-            <h2 class="mb-4" style="font-family: 'Marcellus', serif; font-size: 2.2rem; color: #2a2620;">Experience Events & Meetings</h2>
-            <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="index3.html#booking-v3" class="btn text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest mt-2 border-0 v3-book-btn" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em;">Book Your Experience</a>
+    <!-- ==================== LOGIN SECTION ==================== -->
+    <section class="bg-white" style="padding: 90px 20px 110px;">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-family: 'Marcellus', serif; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 400; color: #2a2620; margin-bottom: 36px;">Login</h2>
+
+        <form action="#" method="post" style="max-width: 100%;">
+
+          <!-- Username / Email -->
+          <div class="mb-4">
+            <label for="login-username" class="login-label">
+              Username or email address <span class="login-required">*</span>
+            </label>
+            <input type="text" id="login-username" name="username" class="login-input" required autocomplete="username" />
           </div>
-          <div class="col-md-6">
-             <div class="position-relative" style="height: 450px; overflow: hidden;">
-               <img src="https://images.unsplash.com/photo-1519225421980-a72c418cadd0?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover shadow-sm" alt="Events & Meetings" />
-             </div>
+
+          <!-- Password -->
+          <div class="mb-4">
+            <label for="login-password" class="login-label">
+              Password <span class="login-required">*</span>
+            </label>
+            <div class="login-input-wrap">
+              <input type="password" id="login-password" name="password" class="login-input" required autocomplete="current-password" style="padding-right: 46px;" />
+              <button type="button" class="login-eye-btn" aria-label="Toggle password visibility" onclick="
+                var inp = document.getElementById('login-password');
+                var icon = this.querySelector('svg');
+                if (inp.type === 'password') {
+                  inp.type = 'text';
+                  icon.setAttribute('data-state','visible');
+                  this.innerHTML = '<svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' width=\'20\' height=\'20\'><path d=\'M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z\'/><circle cx=\'12\' cy=\'12\' r=\'3\'/></svg>';
+                } else {
+                  inp.type = 'password';
+                  this.innerHTML = '<svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\' width=\'20\' height=\'20\'><path d=\'M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94\'/><path d=\'M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19\'/><line x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\'/></svg>';
+                }
+              ">
+                <!-- Eye-off icon (default: password hidden) -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
+                  <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/>
+                  <path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
+
+          <!-- Submit row -->
+          <div class="d-flex align-items-center gap-4 mb-4 flex-wrap">
+            <button type="submit" class="login-btn">Log in</button>
+            <div class="d-flex align-items-center gap-2">
+              <input type="checkbox" id="login-remember" name="remember" style="width: 14px; height: 14px; accent-color: #bb9e72; cursor: pointer;">
+              <label for="login-remember" class="login-remember-label">Remember me</label>
+            </div>
+          </div>
+
+          <!-- Lost password -->
+          <a href="#" class="login-lost-pw">Lost your password?</a>
+
+        </form>
       </div>
     </section>
-  <!-- ==================== FOOTER ==================== -->
-    <footer id="footer" class="text-white">
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="text-white border-top">
       <!-- Newsletter Section -->
       <div class="position-relative py-5" style="min-height: 380px;">
-        <!-- BG -->
         <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position: center 60%;" alt="Footer bg">
-        <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(10, 20, 15, 0.25);"></div>
-        
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(10, 20, 15, 0.45);"></div>
         <div class="container position-relative z-1 py-5">
           <div class="row align-items-center">
-            
-            <!-- Left -->
             <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
               <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
                 Stay Tuned With CozyStay
@@ -183,8 +273,6 @@
                 Sign up for our newsletter to receive our news, deals and special offers.
               </h2>
             </div>
-
-            <!-- Right -->
             <div class="col-12 col-lg-6 ps-lg-5">
               <form class="d-flex flex-column gap-3">
                 <style>.v3-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }</style>
@@ -200,39 +288,32 @@
                 </div>
               </form>
             </div>
-
           </div>
         </div>
       </div>
 
       <!-- Footer Bottom -->
       <div style="background-color: #161513; padding-top: 80px; padding-bottom: 40px; position: relative;">
-        <!-- Return to top button in the footer itself -->
         <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center" aria-label="Return to top" style="top: -22px; right: 40px; width: 44px; height: 44px; cursor: pointer; border-color: #d4cdc5 !important; color: #d4cdc5; background: #161513 !important;" onclick="window.scrollTo({top:0, behavior:'smooth'})">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
         </button>
-
         <div class="container">
           <div class="row text-center text-md-start text-lg-center mb-5 pb-5" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-            
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
               <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Address</span>
               <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">73120 Courchevel 1850, France</p>
               <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
             </div>
-            
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
               <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Phone</span>
               <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">+41 22 345 67 88</p>
               <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
               <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Email</span>
               <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">reservation@cozystay.com</p>
               <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
             </div>
-
             <div class="col-12 col-md-6 col-lg-3">
               <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Social</span>
               <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
@@ -240,11 +321,10 @@
                 <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
                 <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
                 <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
+                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="1.5"/></svg></a>
               </div>
             </div>
-
           </div>
-
           <div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; color: #a3a3a3;">
             <p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
             <div class="d-flex gap-4">
@@ -259,8 +339,6 @@
 
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
     <script src="../main3.js"></script>
   </body>
 </html>
