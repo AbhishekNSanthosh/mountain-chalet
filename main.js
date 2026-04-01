@@ -94,16 +94,60 @@
 // ------- Page Loader -------
 (function () {
   const loader = document.getElementById("page-loader");
+  const fill = loader && loader.querySelector(".loader-fill");
+  if (!loader) return;
+
+  const MIN_SHOW = 500; // ms – keeps the loader from flashing on fast connections
+  const startTime = Date.now();
+  let dismissed = false;
+
+  function setProgress(pct) {
+    if (fill) fill.style.width = Math.min(100, pct) + "%";
+  }
+
   function dismiss() {
-    if (!loader) return;
-    loader.classList.add("fade-out");
-    setTimeout(() => loader.remove(), 900);
+    if (dismissed) return;
+    dismissed = true;
+    setProgress(100);
+    const elapsed = Date.now() - startTime;
+    const delay = Math.max(0, MIN_SHOW - elapsed);
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+      setTimeout(() => loader.remove(), 900);
+    }, delay);
   }
-  if (document.readyState === "complete") {
-    setTimeout(dismiss, 300);
-  } else {
-    window.addEventListener("load", () => setTimeout(dismiss, 300));
+
+  // Collect all <img> elements (including those added before this script runs)
+  const images = Array.from(document.images).filter(
+    (img) => img.src && !img.src.startsWith("data:")
+  );
+  const total = images.length;
+
+  if (total === 0) {
+    // No external images – just wait for full page load
+    if (document.readyState === "complete") dismiss();
+    else window.addEventListener("load", dismiss);
+    return;
   }
+
+  let counted = 0;
+  function onImageSettled() {
+    counted++;
+    setProgress((counted / total) * 100);
+    if (counted >= total) dismiss();
+  }
+
+  images.forEach((img) => {
+    if (img.complete) {
+      onImageSettled();
+    } else {
+      img.addEventListener("load", onImageSettled, { once: true });
+      img.addEventListener("error", onImageSettled, { once: true });
+    }
+  });
+
+  // Fallback: always dismiss when the browser fires window.load
+  window.addEventListener("load", dismiss);
 })();
 
 // ------- Navbar hide on scroll down, show on scroll up -------

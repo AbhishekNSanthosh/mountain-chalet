@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – CozyStay Mountain Chalet</title>
+  <meta name="description" content="Learn about CozyStay Resort — our story, heritage, values, and the passionate team behind one of Switzerland's finest boutique alpine retreats since 1998."/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed-top w-100 z-50 bg-white">
+  <div class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding">
+    <div class="d-flex justify-content-start flex-grow-1">
+      <a href="index.html" class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative">
+        COZYSTAY
+        <span class="text-gold tracking-widest mt-1 navbar-logo-stars">★ ★ ★ ★ ★</span>
+      </a>
+    </div>
+    <div class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5">
+      <ul class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list">
+        <li><a href="index.html" class="text-decoration-none text-charcoal hover-text-forest transition-colors"><span class="pb-1">HOME</span></a></li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1">
+            <span class="pb-1">ROOMS</span>
+            <svg class="nav-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a href="family-suite.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Family Suite</a>
+            <a href="deluxe-room.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Deluxe Room</a>
+            <a href="double-suite.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Double Suite</a>
+          </div>
+        </li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1">
+            <span class="pb-1">PAGES</span>
+            <svg class="nav-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a href="about.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">About</a>
+            <a href="services.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Services</a>
+            <a href="gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Gallery</a>
+          </div>
+        </li>
+        <li><a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest transition-colors"><span class="pb-1">BLOG</span></a></li>
+        <li class="fw-normal text-charcoal ms-2 nav-phone">Tel: +41 22 345 67 88</li>
+      </ul>
+      <a href="index.html#booking" class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn">Enquire Now</a>
+    </div>
+    <button id="menu-btn" class="d-lg-none btn border-0 text-charcoal p-2" aria-label="Open menu">
+      <svg class="nav-hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
+    <div class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner">
+      <a href="index.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Home</a>
+      <a href="family-suite.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Family Suite</a>
+      <a href="deluxe-room.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Deluxe Room</a>
+      <a href="double-suite.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Double Suite</a>
+      <a href="about.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">About</a>
+      <a href="services.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Services</a>
+      <a href="gallery.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Gallery</a>
+      <a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Blog</a>
+      <a href="index.html#booking" class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase">Enquire Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="position-relative d-flex align-items-end" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1551882547-ff40c4a49f77?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:100px;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.45);"></div>
+  <div class="position-relative container px-4 px-lg-5 pb-5">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+      </ol>
+    </nav>
+    <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Established 1998</p>
+    <h1 class="font-serif text-white display-4 mb-2">About CozyStay</h1>
+    <p class="text-white-50 fs-5">Our Story &amp; Heritage</p>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="bg-cream py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="row g-5 align-items-stretch">
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Our Story</p>
+        <h2 class="font-serif text-charcoal mb-4" style="font-size:2rem;">A Vision Born in the Alps</h2>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">CozyStay Resort was founded in 1998 by Hans and Elise Müller, a husband-and-wife duo who fell in love with the Swiss Alps on their honeymoon and never quite found their way back down. What began as a modest eight-room chalet perched above Zermatt has grown, over nearly three decades, into one of the region's most celebrated boutique mountain retreats — without ever losing the intimate warmth and personal attention that defined it from the very first night a guest walked through its doors.</p>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Hans's background in sustainable architecture and Elise's lifelong passion for alpine gastronomy shaped CozyStay's founding philosophy: that true luxury is inseparable from the landscape that surrounds it. Every structural decision, every seasonal menu, every carefully curated local experience has been guided by a deep respect for the mountains, the forests, and the communities that call this corner of Switzerland home. Guests often describe CozyStay as feeling less like a hotel and more like a home — one that simply happens to have extraordinarily attentive staff and breathtaking views in every direction.</p>
+        <p class="text-charcoal lh-base" style="opacity:0.8;">Today, with Hans and Elise still actively involved in the resort's direction and their daughter, Anna, leading the next generation of leadership, CozyStay continues to evolve while holding firmly to its founding values. New suites, expanded wellness facilities, and a thriving culinary programme sit alongside a commitment to carbon neutrality and community partnerships that reflect the Müllers' belief that looking after people and looking after the planet are never in contradiction.</p>
+      </div>
+      <div class="col-md-6" style="min-height:480px;">
+        <div class="h-100 w-100 overflow-hidden" style="min-height:400px;">
+          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80" alt="Alpine Forest" class="w-100 h-100 object-fit-cover"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS ROW -->
+<section class="bg-forest text-white py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif mb-2" style="font-size:3rem; line-height:1;">1998</div>
+        <div class="text-white-50 text-uppercase tracking-widest" style="font-size:0.75rem;">Founded</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif mb-2" style="font-size:3rem; line-height:1;">28</div>
+        <div class="text-white-50 text-uppercase tracking-widest" style="font-size:0.75rem;">Years of Excellence</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif mb-2" style="font-size:3rem; line-height:1;">12k+</div>
+        <div class="text-white-50 text-uppercase tracking-widest" style="font-size:0.75rem;">Happy Guests</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif mb-2" style="font-size:3rem; line-height:1;">5</div>
+        <div class="text-white-50 text-uppercase tracking-widest" style="font-size:0.75rem;">Awards Won</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="bg-cream py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="text-center mb-5">
+      <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Our Philosophy</p>
+      <h2 class="font-serif text-charcoal" style="font-size:2rem;">What We Stand For</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="bg-white p-5 text-center h-100">
+          <div class="mb-4 d-flex justify-content-center">
+            <svg width="48" height="48" fill="none" stroke="#b89a6a" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-charcoal mb-3" style="font-size:1.3rem;">Alpine Hospitality</h3>
+          <p class="text-charcoal lh-base" style="opacity:0.7; font-size:0.95rem;">We believe hospitality is an art form rooted in genuine warmth. Every guest is welcomed as a cherished friend, and every interaction is an opportunity to surprise and delight. Our team are ambassadors not just for CozyStay, but for the alpine way of life — generous, unhurried, and deeply human.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-5 text-center h-100">
+          <div class="mb-4 d-flex justify-content-center">
+            <svg width="48" height="48" fill="none" stroke="#b89a6a" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-charcoal mb-3" style="font-size:1.3rem;">Sustainable Luxury</h3>
+          <p class="text-charcoal lh-base" style="opacity:0.7; font-size:0.95rem;">True luxury leaves the world better than it found it. CozyStay operates with a carbon-neutral commitment, sources produce from local alpine farms, and works with regional craftspeople and artisans. We believe that caring for the environment and offering a five-star experience are not in competition — they are inseparable.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-5 text-center h-100">
+          <div class="mb-4 d-flex justify-content-center">
+            <svg width="48" height="48" fill="none" stroke="#b89a6a" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-charcoal mb-3" style="font-size:1.3rem;">Unforgettable Memories</h3>
+          <p class="text-charcoal lh-base" style="opacity:0.7; font-size:0.95rem;">We measure success not in occupancy rates but in the stories our guests take home with them. The first ski lesson, the candlelit dinner under a full alpine moon, the morning when the mist parted to reveal a view that stole the breath — these are the moments we dedicate ourselves to creating, day after day, season after season.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET THE TEAM -->
+<section class="bg-white py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="text-center mb-5">
+      <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Our People</p>
+      <h2 class="font-serif text-charcoal" style="font-size:2rem;">The People Behind CozyStay</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="overflow-hidden mb-4 mx-auto" style="width:200px; height:200px; border-radius:0;">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Marcus Huber" class="w-100 h-100 object-fit-cover" style="object-position:top;"/>
+          </div>
+          <h4 class="font-serif text-charcoal mb-1" style="font-size:1.2rem;">Marcus Huber</h4>
+          <p class="text-uppercase fw-semibold tracking-widest text-gold mb-3" style="font-size:0.7rem;">General Manager</p>
+          <p class="text-charcoal lh-base" style="opacity:0.7; font-size:0.9rem;">With over 18 years of luxury hospitality experience across Switzerland and Austria, Marcus joined CozyStay in 2014. His calm authority and encyclopaedic knowledge of the Alps — he once guided a solo traverse of four cantons — have made him the heart of every guest's alpine adventure.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="overflow-hidden mb-4 mx-auto" style="width:200px; height:200px; border-radius:0;">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Sofia Berger" class="w-100 h-100 object-fit-cover" style="object-position:top;"/>
+          </div>
+          <h4 class="font-serif text-charcoal mb-1" style="font-size:1.2rem;">Sofia Berger</h4>
+          <p class="text-uppercase fw-semibold tracking-widest text-gold mb-3" style="font-size:0.7rem;">Head Chef</p>
+          <p class="text-charcoal lh-base" style="opacity:0.7; font-size:0.9rem;">Trained in Lausanne and refined in the kitchens of Lyon and Copenhagen, Sofia returned to Switzerland with a singular mission: to celebrate the extraordinary larder of the Swiss Alps. Her farm-to-table menus change with the seasons and her cheese fondue is, by all accounts, the finest in the canton.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="overflow-hidden mb-4 mx-auto" style="width:200px; height:200px; border-radius:0;">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?auto=format&fit=crop&w=400&q=80" alt="Lena Kessler" class="w-100 h-100 object-fit-cover" style="object-position:top;"/>
+          </div>
+          <h4 class="font-serif text-charcoal mb-1" style="font-size:1.2rem;">Lena Kessler</h4>
+          <p class="text-uppercase fw-semibold tracking-widest text-gold mb-3" style="font-size:0.7rem;">Wellness Director</p>
+          <p class="text-charcoal lh-base" style="opacity:0.7; font-size:0.9rem;">A certified physiotherapist and certified yoga instructor with training in Balinese and Ayurvedic traditions, Lena oversees CozyStay's entire wellness programme. Her morning yoga sessions on the terrace — mist rising from the valley below — have become a beloved ritual for returning guests from around the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-forest py-5 text-white text-center">
+  <div class="container px-4 px-lg-5">
+    <p class="text-uppercase fw-semibold tracking-widest text-gold mb-3" style="font-size:0.75rem;">We Are Waiting for You</p>
+    <h2 class="font-serif mb-3" style="font-size:2.2rem;">Come Experience It Yourself</h2>
+    <p class="text-white-50 mb-4 mx-auto" style="max-width:520px; line-height:1.8;">Words can only go so far. The mountains, the light, the warmth of the CozyStay welcome — these things must be felt to be believed. Come and see for yourself.</p>
+    <a href="index.html#booking" class="btn bg-white text-forest text-uppercase rounded-0 px-5 py-3 fw-semibold tracking-widest">Enquire Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="position-relative text-white overflow-hidden">
+  <div class="position-absolute inset-0 pointer-events-none footer-bg-image"></div>
+  <div class="position-absolute inset-0 pointer-events-none footer-bg-overlay"></div>
+  <div class="position-relative px-4 px-lg-5 pt-5 pb-0">
+    <div class="row g-5 mb-5 pt-4">
+      <div class="col-12 col-lg-3">
+        <p class="font-serif fs-4 tracking-widest mb-1">COZYSTAY</p>
+        <p class="text-gold tracking-widest mb-4 footer-stars">★ ★ ★ ★ ★</p>
+        <p class="text-white-50 lh-base mb-4 footer-description">Founded in 1998, CozyStay Resort is located on the hills of Zermatt, immersing you in the wonder of the Swiss Alps against the pure sky.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="#2c3f32"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#2c3f32" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading">About Us</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0 footer-nav-list">
+          <li><a href="about.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Our Story</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Contact Us</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Premium Services</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Careers</a></li>
+          <li><a href="blog.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading">Experiences</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0 footer-nav-list">
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Dining</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Spa &amp; Wellness</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Local Activities</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Meetings</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Our Menu</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-3">
+        <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading">Reach Out</h5>
+        <ul class="list-unstyled d-flex flex-column gap-3 text-white-50 m-0 footer-contact-list">
+          <li class="d-flex align-items-start gap-2">
+            <svg class="footer-contact-icon text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke-width="1.5"/></svg>
+            <span>Guidino 25, 6900, Lugano, Switzerland</span>
+          </li>
+          <li class="d-flex align-items-center gap-2">
+            <svg class="footer-contact-icon text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-width="1.5"/><polyline points="22,6 12,13 2,6" stroke-width="1.5"/></svg>
+            <a href="mailto:information@cozystay.com" class="text-decoration-none text-white-50 hover-text-gold transition-colors">information@cozystay.com</a>
+          </li>
+          <li class="d-flex align-items-center gap-2">
+            <svg class="footer-contact-icon text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 12 19.79 19.79 0 011.44 3.4 2 2 0 013.42 1.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-width="1.5"/></svg>
+            <a href="tel:+41223456788" class="text-decoration-none text-white-50 hover-text-gold transition-colors">+41 22 345 67 88</a>
+          </li>
+          <li class="pt-2">
+            <a href="#" class="text-decoration-none text-gold d-inline-flex align-items-center gap-1 fw-medium footer-directions-link">
+              Get Directions
+              <svg class="footer-directions-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-top py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50 footer-bottom-bar">
+      <p class="text-center text-md-start mb-0">© 2026 CozyStay Resort. All rights reserved.</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center">
+        <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Privacy</a>
+        <span class="opacity-25">|</span>
+        <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Terms of Use</a>
+        <span class="opacity-25">|</span>
+        <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top" class="btn bg-forest text-white rounded-circle d-flex align-items-center justify-content-center shadow back-top-btn">
+  <svg class="back-top-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Suite – CozyStay Mountain Chalet</title>
+  <meta name="description" content="Our most spacious accommodation — the Family Suite at CozyStay Resort. 75 m², 3 bedrooms, sleeps up to 6 guests with stunning mountain and forest views."/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed-top w-100 z-50 bg-white">
+  <div class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding">
+    <div class="d-flex justify-content-start flex-grow-1">
+      <a href="index.html" class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative">
+        COZYSTAY
+        <span class="text-gold tracking-widest mt-1 navbar-logo-stars">★ ★ ★ ★ ★</span>
+      </a>
+    </div>
+    <div class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5">
+      <ul class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list">
+        <li><a href="index.html" class="text-decoration-none text-charcoal hover-text-forest transition-colors"><span class="pb-1">HOME</span></a></li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1">
+            <span class="pb-1">ROOMS</span>
+            <svg class="nav-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a href="family-suite.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Family Suite</a>
+            <a href="deluxe-room.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Deluxe Room</a>
+            <a href="double-suite.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Double Suite</a>
+          </div>
+        </li>
+        <li class="custom-dropdown position-relative">
+          <a href="#" class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1">
+            <span class="pb-1">PAGES</span>
+            <svg class="nav-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="custom-dropdown-menu">
+            <a href="about.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">About</a>
+            <a href="services.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Services</a>
+            <a href="gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Gallery</a>
+          </div>
+        </li>
+        <li><a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest transition-colors"><span class="pb-1">BLOG</span></a></li>
+        <li class="fw-normal text-charcoal ms-2 nav-phone">Tel: +41 22 345 67 88</li>
+      </ul>
+      <a href="index.html#booking" class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn">Enquire Now</a>
+    </div>
+    <button id="menu-btn" class="d-lg-none btn border-0 text-charcoal p-2" aria-label="Open menu">
+      <svg class="nav-hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
+    <div class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner">
+      <a href="index.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Home</a>
+      <a href="family-suite.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Family Suite</a>
+      <a href="deluxe-room.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Deluxe Room</a>
+      <a href="double-suite.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Double Suite</a>
+      <a href="about.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">About</a>
+      <a href="services.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Services</a>
+      <a href="gallery.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Gallery</a>
+      <a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Blog</a>
+      <a href="index.html#booking" class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase">Enquire Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="position-relative d-flex align-items-end" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:100px;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.45);"></div>
+  <div class="position-relative container px-4 px-lg-5 pb-5">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item text-white-50">Rooms</li>
+        <li class="breadcrumb-item active text-white" aria-current="page">Family Suite</li>
+      </ol>
+    </nav>
+    <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Our Finest Accommodation</p>
+    <h1 class="font-serif text-white display-4 mb-2">Family Suite</h1>
+    <p class="text-white-50 fs-5">Our Most Spacious Accommodation</p>
+  </div>
+</section>
+
+<!-- ROOM OVERVIEW -->
+<section class="bg-cream py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="row g-5 align-items-start">
+      <div class="col-md-7">
+        <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Room Overview</p>
+        <h2 class="font-serif text-charcoal mb-4" style="font-size:2rem;">A Home Above the Clouds</h2>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Spanning an impressive 75 square metres across the third and fourth floors, the Family Suite at CozyStay is our most expansive and thoughtfully designed accommodation. Conceived for families and groups seeking a truly immersive alpine retreat, the suite features three beautifully appointed bedrooms — a master bedroom with a king-size bed and two comfortable twin rooms — each adorned with hand-crafted alpine furnishings, locally sourced textiles, and artwork celebrating the Zermatt highlands. Floor-to-ceiling windows flood every room with natural light and frame breathtaking panoramas of both the mountain peaks and the dense surrounding forest.</p>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Step out onto your private terrace — one of the suite's most beloved features — and breathe in the crisp alpine air while watching the sun paint the snowcapped summits in hues of gold and rose. The terrace is furnished with premium teak loungers and a fire-basket, making it as inviting on a still summer evening as on a brisk autumn afternoon. Inside, the open-plan living and dining area provides ample space for the family to gather, complete with a fireplace, a curated library of alpine books, and a fully equipped kitchenette for informal meals.</p>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">CozyStay's dedicated family concierge team is on hand around the clock to arrange everything from ski lessons and hiking itineraries to in-suite dining and babysitting services, ensuring that every member of your family — from the youngest adventurer to the most discerning adult — creates memories that will last a lifetime. The Family Suite represents the very pinnacle of alpine hospitality: generous, warm, and utterly unforgettable.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="bg-white shadow p-4">
+          <h5 class="font-serif text-charcoal mb-4" style="font-size:1.1rem; letter-spacing:0.05em;">Quick Facts</h5>
+          <ul class="list-unstyled m-0">
+            <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+              <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Room Size</span>
+              <span class="text-charcoal fw-semibold">75 m²</span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+              <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Bedrooms</span>
+              <span class="text-charcoal fw-semibold">3</span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+              <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Max Guests</span>
+              <span class="text-charcoal fw-semibold">6</span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+              <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">View</span>
+              <span class="text-charcoal fw-semibold">Mountain &amp; Forest</span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
+              <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Floor</span>
+              <span class="text-charcoal fw-semibold">3rd &amp; 4th</span>
+            </li>
+            <li class="d-flex align-items-center justify-content-between py-3">
+              <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Price From</span>
+              <span class="text-gold fw-semibold fs-5">CHF 480<span class="text-charcoal fw-normal" style="font-size:0.8rem;">/night</span></span>
+            </li>
+          </ul>
+          <a href="index.html#booking" class="btn bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest w-100 mt-4">Book This Suite</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="bg-forest text-white py-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif" style="font-size:2rem;">75 m²</div>
+        <div class="text-white-50 text-uppercase tracking-widest mt-1" style="font-size:0.75rem;">Room Size</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif" style="font-size:2rem;">3</div>
+        <div class="text-white-50 text-uppercase tracking-widest mt-1" style="font-size:0.75rem;">Bedrooms</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif" style="font-size:2rem;">6</div>
+        <div class="text-white-50 text-uppercase tracking-widest mt-1" style="font-size:0.75rem;">Guests Max</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fw-bold font-serif" style="font-size:2rem; line-height:1.2;">Mountain</div>
+        <div class="text-white-50 text-uppercase tracking-widest mt-1" style="font-size:0.75rem;">View</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="bg-cream py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="text-center mb-5">
+      <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Included in Your Stay</p>
+      <h2 class="font-serif text-charcoal" style="font-size:2rem;">Room Amenities</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">King Bed + 2 Twins</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Private Terrace</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Mountain View</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Flat-screen TV</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Free Wi-Fi</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Minibar</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Nespresso Machine</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">En-suite Bathroom</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Walk-in Wardrobe</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Air Conditioning</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Room Service</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
+          <span class="text-gold fs-5">✦</span>
+          <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Safe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="bg-white py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="text-center mb-5">
+      <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Visual Tour</p>
+      <h2 class="font-serif text-charcoal" style="font-size:2rem;">Room Gallery</h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="overflow-hidden" style="height:320px;">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1600&q=80" alt="Family Suite Bedroom" class="w-100 h-100 object-fit-cover transition-all" style="transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"/>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="overflow-hidden" style="height:320px;">
+          <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="Family Suite Bathroom" class="w-100 h-100 object-fit-cover transition-all" style="transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"/>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="overflow-hidden" style="height:320px;">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80" alt="Resort Pool" class="w-100 h-100 object-fit-cover transition-all" style="transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMILAR ROOMS -->
+<section class="bg-cream py-5">
+  <div class="container px-4 px-lg-5">
+    <div class="text-center mb-5">
+      <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Explore More</p>
+      <h2 class="font-serif text-charcoal" style="font-size:2rem;">You May Also Like</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <a href="deluxe-room.html" class="text-decoration-none d-block bg-white overflow-hidden" style="box-shadow:0 2px 16px rgba(0,0,0,0.08);">
+          <div class="overflow-hidden" style="height:260px;">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1600&q=80" alt="Deluxe Room" class="w-100 h-100 object-fit-cover" style="transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          </div>
+          <div class="p-4">
+            <p class="text-uppercase fw-semibold tracking-widest text-gold mb-1" style="font-size:0.7rem;">From CHF 280/night</p>
+            <h3 class="font-serif text-charcoal mb-1" style="font-size:1.4rem;">Deluxe Room</h3>
+            <p class="text-charcoal mb-0" style="opacity:0.6; font-size:0.9rem;">Sophisticated Alpine Comfort</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="double-suite.html" class="text-decoration-none d-block bg-white overflow-hidden" style="box-shadow:0 2px 16px rgba(0,0,0,0.08);">
+          <div class="overflow-hidden" style="height:260px;">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=80" alt="Double Suite" class="w-100 h-100 object-fit-cover" style="transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+          </div>
+          <div class="p-4">
+            <p class="text-uppercase fw-semibold tracking-widest text-gold mb-1" style="font-size:0.7rem;">From CHF 390/night</p>
+            <h3 class="font-serif text-charcoal mb-1" style="font-size:1.4rem;">Double Suite</h3>
+            <p class="text-charcoal mb-0" style="opacity:0.6; font-size:0.9rem;">Romantic Alpine Retreat</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="bg-forest py-5 text-white text-center">
+  <div class="container px-4 px-lg-5">
+    <p class="text-uppercase fw-semibold tracking-widest text-gold mb-3" style="font-size:0.75rem;">Reserve Your Suite</p>
+    <h2 class="font-serif mb-3" style="font-size:2.2rem;">Ready to Book Your Stay?</h2>
+    <p class="text-white-50 mb-4 mx-auto" style="max-width:520px; line-height:1.8;">The Family Suite awaits you and your loved ones. Contact our reservations team to check availability and arrange a bespoke alpine experience tailored to your family.</p>
+    <a href="index.html#booking" class="btn bg-white text-forest text-uppercase rounded-0 px-5 py-3 fw-semibold tracking-widest">Enquire Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="position-relative text-white overflow-hidden">
+  <div class="position-absolute inset-0 pointer-events-none footer-bg-image"></div>
+  <div class="position-absolute inset-0 pointer-events-none footer-bg-overlay"></div>
+  <div class="position-relative px-4 px-lg-5 pt-5 pb-0">
+    <div class="row g-5 mb-5 pt-4">
+      <div class="col-12 col-lg-3">
+        <p class="font-serif fs-4 tracking-widest mb-1">COZYSTAY</p>
+        <p class="text-gold tracking-widest mb-4 footer-stars">★ ★ ★ ★ ★</p>
+        <p class="text-white-50 lh-base mb-4 footer-description">Founded in 1998, CozyStay Resort is located on the hills of Zermatt, immersing you in the wonder of the Swiss Alps against the pure sky.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
+            <svg class="footer-social-icon" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="#2c3f32"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#2c3f32" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading">About Us</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0 footer-nav-list">
+          <li><a href="about.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Our Story</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Contact Us</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Premium Services</a></li>
+          <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Careers</a></li>
+          <li><a href="blog.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading">Experiences</h5>
+        <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0 footer-nav-list">
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Dining</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Spa &amp; Wellness</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Local Activities</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Meetings</a></li>
+          <li><a href="services.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors d-inline-block py-1">Our Menu</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-3">
+        <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading">Reach Out</h5>
+        <ul class="list-unstyled d-flex flex-column gap-3 text-white-50 m-0 footer-contact-list">
+          <li class="d-flex align-items-start gap-2">
+            <svg class="footer-contact-icon text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke-width="1.5"/></svg>
+            <span>Guidino 25, 6900, Lugano, Switzerland</span>
+          </li>
+          <li class="d-flex align-items-center gap-2">
+            <svg class="footer-contact-icon text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-width="1.5"/><polyline points="22,6 12,13 2,6" stroke-width="1.5"/></svg>
+            <a href="mailto:information@cozystay.com" class="text-decoration-none text-white-50 hover-text-gold transition-colors">information@cozystay.com</a>
+          </li>
+          <li class="d-flex align-items-center gap-2">
+            <svg class="footer-contact-icon text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 12 19.79 19.79 0 011.44 3.4 2 2 0 013.42 1.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-width="1.5"/></svg>
+            <a href="tel:+41223456788" class="text-decoration-none text-white-50 hover-text-gold transition-colors">+41 22 345 67 88</a>
+          </li>
+          <li class="pt-2">
+            <a href="#" class="text-decoration-none text-gold d-inline-flex align-items-center gap-1 fw-medium footer-directions-link">
+              Get Directions
+              <svg class="footer-directions-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-top py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50 footer-bottom-bar">
+      <p class="text-center text-md-start mb-0">© 2026 CozyStay Resort. All rights reserved.</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center">
+        <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Privacy</a>
+        <span class="opacity-25">|</span>
+        <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Terms of Use</a>
+        <span class="opacity-25">|</span>
+        <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top" class="btn bg-forest text-white rounded-circle d-flex align-items-center justify-content-center shadow back-top-btn">
+  <svg class="back-top-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="main.js" defer></script>
+</body>
+</html>
