@@ -2,7 +2,7 @@
 
 // ---- Mobile Menu Right Drawer ----
 (function () {
-  const btn = document.getElementById("menu-btn-v2");
+  const btn = document.getElementById("v3-hamburger");
   const menu = document.getElementById("mobile-menu-v2");
   const overlay = document.getElementById("mobile-menu-overlay");
   const closeBtn = document.getElementById("mobile-menu-close");
