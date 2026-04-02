@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About The Resort – CozyStay Resort</title>
+    <title>About The Hotel – CozyStay Resort</title>
     <meta
       name="description"
-      content="CozyStay – Boutique Private Island Resort. The seaside haven of warmth, tranquility and restoration."
+      content="CozyStay – Boutique Private Island Resort. In the heart of the South Pacific – a haven of warmth, tranquility and restoration."
     />
 
     <!-- Google Fonts -->
@@ -31,7 +31,330 @@
 
     <!-- Our V3 Style -->
     <link rel="stylesheet" href="style3.css" />
-      <link rel="stylesheet" href="v3-booking-modal.css" />
+    <link rel="stylesheet" href="v3-booking-modal.css" />
+
+    <style>
+      /* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+
+      /* Hero */
+      .about-hero {
+        min-height: 100vh;
+        background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        padding-top: 110px;
+      }
+      .about-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.55) 100%);
+      }
+      .about-hero-content { position: relative; z-index: 2; }
+      .about-hero-eyebrow {
+        font-family: 'Jost', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.75);
+        margin-bottom: 8px;
+        display: block;
+      }
+      .about-hero h1 {
+        font-family: 'Marcellus', serif;
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        font-weight: 400;
+        margin-bottom: 16px;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+      }
+      .about-hero-sub {
+        font-family: 'Jost', sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        color: rgba(255,255,255,0.82);
+        letter-spacing: 0.06em;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      /* ===== SECTION SHARED ===== */
+      .about-section { background: #fff; }
+      .about-eyebrow {
+        font-family: 'Jost', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #7a7060;
+        display: block;
+        margin-bottom: 18px;
+      }
+      .about-heading {
+        font-family: 'Marcellus', serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 400;
+        color: #2a2620;
+        line-height: 1.2;
+        margin-bottom: 22px;
+      }
+      .about-body {
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.8;
+        color: #5c5549;
+        margin-bottom: 14px;
+      }
+
+      /* ===== INTRO SECTION ===== */
+      #about-intro {
+        background: #fff;
+        padding: 90px 0 70px;
+        text-align: center;
+      }
+      .about-intro-icon {
+        width: 44px;
+        height: 50px;
+        margin: 0 auto 20px;
+        opacity: 0.65;
+        color: #4a4a3e;
+      }
+      .about-intro-heading {
+        font-family: 'Marcellus', serif;
+        font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+        color: #2a2620;
+        line-height: 1.22;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+      .about-intro-body {
+        font-family: 'Jost', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.85;
+        color: #5c5549;
+        max-width: 700px;
+        margin: 0 auto 14px;
+      }
+      .about-intro-img {
+        margin-top: 55px;
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ===== JOURNEY SECTION (right text, left image) ===== */
+      #about-journey {
+        background: #f8f7f5;
+        padding: 90px 0;
+      }
+      .journey-img-wrap {
+        height: 480px;
+        overflow: hidden;
+      }
+      .journey-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+      .journey-img-wrap:hover img { transform: scale(1.04); }
+      .journey-text-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: clamp(30px, 5vw, 70px);
+      }
+
+      /* ===== ADVENTURE SECTION (left text, right overlapping images) ===== */
+      #about-adventure {
+        background: #fff;
+        padding: 90px 0;
+      }
+      .adventure-text-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: clamp(30px, 5vw, 70px);
+      }
+      .adventure-images-col {
+        position: relative;
+        min-height: 480px;
+      }
+      .adventure-img-main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 72%;
+        height: 340px;
+        object-fit: cover;
+      }
+      .adventure-img-secondary {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 56%;
+        height: 260px;
+        object-fit: cover;
+        border: 6px solid #fff;
+      }
+
+      /* ===== AMENITIES ICON GRID ===== */
+      #about-amenities-grid {
+        background: #fff;
+        padding: 60px 0 80px;
+        border-top: 1px solid #f0ece6;
+      }
+      .amenity-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 18px 8px;
+      }
+      .amenity-icon {
+        width: 40px;
+        height: 40px;
+        color: #4a4a3e;
+        opacity: 0.7;
+      }
+      .amenity-label {
+        font-family: 'Jost', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #5c5549;
+        line-height: 1.4;
+      }
+
+      /* ===== STATS PARALLAX ===== */
+      #about-stats {
+        position: relative;
+        background-image: url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 100px 0;
+        text-align: center;
+        color: #fff;
+      }
+      #about-stats::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 20, 15, 0.62);
+      }
+      #about-stats .container { position: relative; z-index: 2; }
+      .stats-eyebrow {
+        font-family: 'Jost', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.65);
+        display: block;
+        margin-bottom: 16px;
+      }
+      .stats-tagline {
+        font-family: 'Marcellus', serif;
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
+        color: #fff;
+        max-width: 620px;
+        margin: 0 auto 60px;
+        line-height: 1.4;
+      }
+      .stat-number {
+        font-family: 'Marcellus', serif;
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .stat-label {
+        font-family: 'Jost', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.7);
+      }
+      .stat-divider {
+        width: 1px;
+        background: rgba(255,255,255,0.2);
+        align-self: stretch;
+        margin: 0 20px;
+      }
+
+      /* ===== AMENITIES & SERVICES CARDS ===== */
+      #about-services {
+        background: #f8f7f5;
+        padding: 90px 0 100px;
+      }
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .service-card-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .service-card:hover .service-card-img { transform: scale(1.06); }
+      .service-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 55%);
+        display: flex;
+        align-items: flex-end;
+        padding: 24px 20px;
+      }
+      .service-card-label {
+        font-family: 'Marcellus', serif;
+        font-size: 1.15rem;
+        color: #fff;
+        line-height: 1.3;
+      }
+      .service-card-sub {
+        font-family: 'Jost', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        color: rgba(255,255,255,0.7);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* responsive fixes */
+      @media (max-width: 991px) {
+        .journey-text-col { padding-left: 0; margin-top: 32px; }
+        .adventure-text-col { padding-right: 0; margin-bottom: 32px; }
+        .adventure-images-col { min-height: 360px; }
+        .adventure-img-main { width: 80%; height: 280px; }
+        .adventure-img-secondary { width: 60%; height: 200px; }
+        #about-stats { background-attachment: scroll; }
+      }
+      @media (max-width: 767px) {
+        .about-intro-img { height: 280px; }
+        .journey-img-wrap { height: 320px; }
+        .adventure-images-col { min-height: 300px; }
+        .stats-tagline { margin-bottom: 40px; }
+      }
+    </style>
 </head>
   <body>
 
@@ -69,7 +392,7 @@
       </nav>
 
       <!-- Footer -->
-      <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+      <p class="v3-overlay-footer">&copy; Copyright CozyStay.</p>
     </div>
 
     <!-- ==================== NAVBAR ==================== -->
@@ -83,17 +406,21 @@
       <!-- Left Nav Links -->
       <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1" id="v3-nav-links-left">
         <li>
-          <a href="index3.html" class="v3-nav-link v3-active-link">HOME</a>
+          <a href="index3.html" class="v3-nav-link">HOME</a>
         </li>
         <li class="v3-dropdown">
           <a href="v3-rooms.html" class="v3-nav-link">
             STAY
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
           </a>
-          <div class="v3-dropdown-menu">
-            <a href="v3-island-villas.html">Island Villas</a>
-            <a href="v3-beach-bungalows.html">Beach Bungalows</a>
-            <a href="v3-overwater-suites.html">Overwater Suites</a>
+                    <div class="v3-dropdown-menu">
+            <a href="v3-rooms.html">Rooms Page</a>
+            <a href="v3-room-details-top-image.html">Room Details – Top Image</a>
+            <a href="v3-room-details-top-gallery.html">Room Details – Top Gallery</a>
+            <a href="v3-room-details-left-booking.html">Room Details – Left Booking Form</a>
+            <a href="v3-cart.html">Cart</a>
+            <a href="v3-cart.html">Checkout</a>
+            <a href="v3-my-account.html">My account</a>
           </div>
         </li>
         <li class="v3-dropdown">
@@ -135,36 +462,358 @@
 
     </nav>
 
-    
-    <!-- PAGE HERO -->
-    <section class="position-relative d-flex align-items-center justify-content-center text-center text-white" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:110px;">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.5);"></div>
-      <div class="position-relative z-2 px-4 container">
-        <span class="d-inline-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #bb9e72; text-transform: uppercase;">OUR STORY</span>
-        <h1 class="mb-4" style="font-family: 'Marcellus', serif; font-size: clamp(2.5rem, 5vw, 4rem);">About The Resort</h1>
-        <p style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">A haven of warmth, tranquility and rejuvenation.</p>
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <span class="about-hero-eyebrow">Our Story · About The Hotel</span>
+        <h1>About The Hotel</h1>
+        <p class="about-hero-sub">The seaside haven of warmth, tranquility and restoration.</p>
       </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-5 bg-white" style="min-height: 40vh;">
-      <div class="container py-5">
-        <div class="row g-5 align-items-center">
-          <div class="col-md-6">
-            <h2 class="mb-4" style="font-family: 'Marcellus', serif; font-size: 2.2rem; color: #2a2620;">Experience About The Resort</h2>
-            <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="v3-rooms.html" class="btn text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest mt-2 border-0 v3-book-btn" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em;">Book Your Experience</a>
+    <!-- ==================== INTRO SECTION ==================== -->
+    <section id="about-intro">
+      <div class="container">
+        <!-- Icon -->
+        <div class="about-intro-icon">
+          <svg viewBox="0 0 44 50" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 4 C12 4 4 12 4 22 C4 32 12 40 22 40 C32 40 40 32 40 22 C40 12 32 4 22 4Z"/>
+            <path d="M22 14 L22 30 M14 22 L30 22"/>
+            <path d="M22 2 L22 6 M22 38 L22 42 M2 22 L6 22 M38 22 L42 22"/>
+          </svg>
+        </div>
+
+        <!-- Eyebrow -->
+        <span class="about-eyebrow" style="text-align:center;">Private Island Resort · South Pacific</span>
+
+        <!-- Heading -->
+        <h2 class="about-intro-heading">
+          In the Heart of the South Pacific,<br>Outstanding Views
+        </h2>
+
+        <!-- Body -->
+        <p class="about-intro-body">
+          Welcome to CozyStay Pacific Hotel. Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island, CozyStay is a haven of warmth, tranquility and rejuvenation. Each villa and suite has been thoughtfully designed to blend effortlessly with the natural surroundings.
+        </p>
+        <p class="about-intro-body">
+          Bathed in golden Pacific light, surrounded by lush tropical gardens and the gentle sound of waves, our resort offers an unparalleled escape from the world. From the moment you arrive, you will be immersed in warmth, beauty and serenity that defines our distinctive island lifestyle.
+        </p>
+      </div>
+
+      <!-- Full-width image -->
+      <img
+        src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=80"
+        alt="The resort pool and gardens"
+        class="about-intro-img"
+      />
+    </section>
+
+    <!-- ==================== JOURNEY SECTION ==================== -->
+    <section id="about-journey">
+      <div class="container">
+        <div class="row align-items-center g-0 g-lg-5">
+
+          <!-- Left: image -->
+          <div class="col-12 col-lg-5">
+            <div class="journey-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+                alt="Her Lecuring Journey"
+              />
+            </div>
           </div>
-          <div class="col-md-6">
-             <div class="position-relative" style="height: 450px; overflow: hidden;">
-               <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover shadow-sm" alt="About The Resort" />
-             </div>
+
+          <!-- Right: text -->
+          <div class="col-12 col-lg-7 journey-text-col">
+            <span class="about-eyebrow">Our Heritage · Since 1994</span>
+            <h2 class="about-heading">Her Lecuring Journey</h2>
+            <p class="about-body">
+              Our resort was born from a dream — a vision of a place where nature and luxury existed in perfect harmony. Founded in 1994 by our pioneering founders, the resort has grown from a small collection of beach huts into one of the South Pacific's most celebrated destinations.
+            </p>
+            <p class="about-body">
+              Over the decades, we have carefully cultivated our relationships with the local communities and the natural environment. Every structure, every garden path, every sunset terrace has been placed with intention and care. The journey continues every day, shaped by the stories of those who visit and the staff who call this island home.
+            </p>
+            <p class="about-body">
+              Today the resort encompasses twelve private villas, twenty overwater bungalows, six restaurants and bars, a world-class spa, and a dedicated marine conservation program — all without ever losing sight of the original dream.
+            </p>
           </div>
+
         </div>
       </div>
     </section>
-  <!-- ==================== FOOTER ==================== -->
+
+    <!-- ==================== ADVENTURE SECTION ==================== -->
+    <section id="about-adventure">
+      <div class="container">
+        <div class="row align-items-center g-0 g-lg-5">
+
+          <!-- Left: text -->
+          <div class="col-12 col-lg-6 adventure-text-col order-2 order-lg-1">
+            <span class="about-eyebrow">Activities · Adventures · Exploration</span>
+            <h2 class="about-heading">A World of Choice and Endless Adventure Await You</h2>
+            <p class="about-body">
+              From the thrill of deep-sea diving in crystal-clear lagoons to the quiet pleasure of watching the sunrise from your private terrace, CozyStay offers an extraordinary range of experiences for every traveller.
+            </p>
+            <p class="about-body">
+              Our activity programme encompasses watersports, cultural excursions, guided jungle treks, sunset sailing, and much more. Expert guides and instructors are on hand to ensure every activity is safe, memorable and perfectly tailored to your interests.
+            </p>
+            <p class="about-body">
+              Whether you seek adventure or absolute stillness, the South Pacific is waiting for you. The only challenge you will face is deciding what to do first.
+            </p>
+          </div>
+
+          <!-- Right: overlapping images -->
+          <div class="col-12 col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0">
+            <div class="adventure-images-col">
+              <img
+                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                alt="Snorkelling adventure"
+                class="adventure-img-main"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?auto=format&fit=crop&w=800&q=80"
+                alt="Sunset dining experience"
+                class="adventure-img-secondary"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== AMENITIES ICON GRID ==================== -->
+    <section id="about-amenities-grid">
+      <div class="container">
+        <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-0">
+
+          <!-- 1 Pool -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 28c4-4 8 0 12-4s8-4 12 0 8 0 8 0M4 34c4-4 8 0 12-4s8-4 12 0 8 0 8 0M8 20V10a2 2 0 012-2h4a2 2 0 012 2v10M24 20V10a2 2 0 012-2h4a2 2 0 012 2v10"/></svg>
+              <span class="amenity-label">Pool</span>
+            </div>
+          </div>
+
+          <!-- 2 Beach Access -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="12" r="5"/><path d="M13 38c0-8 14-8 14 0M4 28h32"/><path d="M4 28q4-8 16-8t16 8"/></svg>
+              <span class="amenity-label">Beach Access</span>
+            </div>
+          </div>
+
+          <!-- 3 Fitness -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 20h4M30 20h4M10 14v12M30 14v12M14 20h12M14 16v8M26 16v8"/></svg>
+              <span class="amenity-label">Fitness Centre</span>
+            </div>
+          </div>
+
+          <!-- 4 Restaurant -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 6v10c0 3 2 5 6 5s6-2 6-5V6"/><path d="M20 21v13M10 34h20"/><path d="M14 6h12"/></svg>
+              <span class="amenity-label">Restaurants</span>
+            </div>
+          </div>
+
+          <!-- 5 Spa -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 8c-4 4-10 8-10 16a10 10 0 0020 0c0-8-6-12-10-16z"/><path d="M20 24v10M16 34h8"/></svg>
+              <span class="amenity-label">Spa &amp; Wellness</span>
+            </div>
+          </div>
+
+          <!-- 6 Bar -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 8l4 12h12l4-12H10z"/><path d="M14 20v12M26 20v12M10 32h20"/><circle cx="20" cy="6" r="2"/></svg>
+              <span class="amenity-label">Bars &amp; Lounge</span>
+            </div>
+          </div>
+
+          <!-- 7 Watersports -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 26c3-3 6 0 9-3s6-3 9 0 6 0 6 0"/><path d="M20 6l-4 14h8L20 6z"/><path d="M18 20l-4 6M22 20l4 6"/></svg>
+              <span class="amenity-label">Watersports</span>
+            </div>
+          </div>
+
+          <!-- 8 Concierge -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="14" r="6"/><path d="M8 34c0-7 5-12 12-12s12 5 12 12"/><path d="M14 34h12"/></svg>
+              <span class="amenity-label">Concierge</span>
+            </div>
+          </div>
+
+          <!-- 9 Kids Club -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="15" cy="12" r="4"/><circle cx="25" cy="12" r="4"/><path d="M7 34c0-6 4-10 8-10M33 34c0-6-4-10-8-10M15 24c2 2 8 2 10 0"/></svg>
+              <span class="amenity-label">Kids Club</span>
+            </div>
+          </div>
+
+          <!-- 10 Diving -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="14" cy="20" r="6"/><path d="M20 20h8a4 4 0 000-8h-4M20 20c0 4 4 8 8 8M28 28l4-4"/><path d="M14 14v12"/></svg>
+              <span class="amenity-label">Diving Centre</span>
+            </div>
+          </div>
+
+          <!-- 11 Tennis -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="20" cy="20" r="14"/><path d="M6 20c4-4 4-8 0-12M34 20c-4 4-4 8 0 12"/><line x1="6" y1="20" x2="34" y2="20"/></svg>
+              <span class="amenity-label">Tennis Court</span>
+            </div>
+          </div>
+
+          <!-- 12 Snorkelling -->
+          <div class="col">
+            <div class="amenity-item">
+              <svg class="amenity-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 18c4-6 10-6 14-2s10 4 14-2"/><path d="M6 26c4-6 10-6 14-2s10 4 14-2"/><path d="M20 10 Q24 14 20 18 Q16 22 20 26"/></svg>
+              <span class="amenity-label">Snorkelling</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS / PARALLAX SECTION ==================== -->
+    <section id="about-stats">
+      <div class="container">
+        <!-- Eyebrow + tagline -->
+        <span class="stats-eyebrow">Our Numbers · Our Pride</span>
+        <p class="stats-tagline">
+          Spend your comfortable holiday in the heart of the beautiful South Pacific
+        </p>
+
+        <!-- Stats row -->
+        <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 gap-lg-0">
+
+          <div class="text-center px-4 px-lg-5">
+            <div class="stat-number">72</div>
+            <div class="stat-label">Luxury Suites</div>
+          </div>
+
+          <div class="stat-divider d-none d-lg-block"></div>
+
+          <div class="text-center px-4 px-lg-5">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Private Villas</div>
+          </div>
+
+          <div class="stat-divider d-none d-lg-block"></div>
+
+          <div class="text-center px-4 px-lg-5">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Restaurants &amp; Bars</div>
+          </div>
+
+          <div class="stat-divider d-none d-lg-block"></div>
+
+          <div class="text-center px-4 px-lg-5">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Pool &amp; Beach Areas</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== AMENITIES & SERVICES CARDS ==================== -->
+    <section id="about-services">
+      <div class="container">
+        <!-- Eyebrow -->
+        <div class="text-center mb-5">
+          <span class="about-eyebrow">What We Offer</span>
+          <h2 class="about-heading" style="margin:0 auto; max-width:560px;">Amenities &amp; Services</h2>
+          <p class="about-body" style="max-width:580px; margin:18px auto 0;">From award-winning culinary experiences to world-class wellness and endless aquatic adventures, every moment at CozyStay is crafted to delight the senses.</p>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- Card 1: Restaurants -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+                alt="Restaurants"
+                class="service-card-img"
+              />
+              <div class="service-card-overlay">
+                <div>
+                  <span class="service-card-sub">Dining</span>
+                  <div class="service-card-label">Restaurants</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Wellness Center -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
+                alt="Wellness Center"
+                class="service-card-img"
+              />
+              <div class="service-card-overlay">
+                <div>
+                  <span class="service-card-sub">Spa &amp; Wellness</span>
+                  <div class="service-card-label">Wellness Center</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Life Aquatic -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?auto=format&fit=crop&w=800&q=80"
+                alt="Life Aquatic"
+                class="service-card-img"
+              />
+              <div class="service-card-overlay">
+                <div>
+                  <span class="service-card-sub">Water Activities</span>
+                  <div class="service-card-label">Life Aquatic</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Boutique Lodge -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?auto=format&fit=crop&w=800&q=80"
+                alt="Boutique Lodge"
+                class="service-card-img"
+              />
+              <div class="service-card-overlay">
+                <div>
+                  <span class="service-card-sub">Accommodation</span>
+                  <div class="service-card-label">Boutique Lodge</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer id="footer" class="text-white">
       <!-- Newsletter Section -->
       <div class="position-relative py-5" style="min-height: 380px;">
@@ -247,7 +896,7 @@
           </div>
 
           <div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; color: #a3a3a3;">
-            <p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            <p class="mb-4 mb-md-0">&copy; Copyright CozyStay.</p>
             <div class="d-flex gap-4">
               <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">PRIVACY</a>
               <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">TERMS OF USE</a>

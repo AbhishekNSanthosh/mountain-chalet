@@ -1,309 +1,201 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resort News – CozyStay Resort</title>
-    <meta
-      name="description"
-      content="CozyStay – Boutique Private Island Resort. The seaside haven of warmth, tranquility and restoration."
-    />
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our News – CozyStay Resort</title>
+  <meta name="description" content="Latest news, stories and updates from CozyStay Pacific Hotel Resort."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style3.css"/><link rel="stylesheet" href="v3-booking-modal.css"/>
+  <style>
+    /* HERO */
+    .news-hero {
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      color: #fff; position: relative; padding-top: 110px;
+    }
+    .news-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.52); }
+    .news-hero-content { position:relative; z-index:2; }
+    .news-hero-eyebrow { display:block; font-family:'Jost',sans-serif; font-size:10px; font-weight:600; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-bottom:10px; }
+    .news-hero h1 { font-family:'Marcellus',serif; font-size:clamp(3rem,7vw,5rem); margin-bottom:0; }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&family=Zeyada&display=swap"
-      rel="stylesheet"
-    />
+    /* NEWS FEED */
+    #news-feed { background:#fff; padding:80px 0 100px; }
 
-    <!-- Flatpickr -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
+    /* Article row */
+    .news-article { display:flex; align-items:stretch; gap:0; margin-bottom:0; border-bottom:1px solid #f0ece6; }
+    .news-article:last-child { border-bottom:none; }
+    .news-article.reverse { flex-direction:row-reverse; }
 
-    <!-- Bootstrap 5 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
+    /* Image half */
+    .news-article-img-wrap { flex:0 0 48%; position:relative; overflow:hidden; min-height:260px; }
+    .news-article-img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s ease; }
+    .news-article-img-wrap:hover .news-article-img { transform:scale(1.05); }
+    .news-article-date-badge {
+      position:absolute; top:16px; left:16px; background:#fff;
+      font-family:'Jost',sans-serif; font-size:11px; font-weight:600; color:#2a2620;
+      padding:6px 14px; letter-spacing:.05em;
+      display:flex; flex-direction:column; align-items:center; line-height:1.2;
+    }
+    .news-date-num { font-family:'Marcellus',serif; font-size:1.5rem; }
+    .news-date-month { font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
 
-    <!-- Our V3 Style -->
-    <link rel="stylesheet" href="style3.css" />
-      <link rel="stylesheet" href="v3-booking-modal.css" />
+    /* Text half */
+    .news-article-text { flex:1; padding:44px 50px; display:flex; flex-direction:column; justify-content:center; }
+    @media(max-width:767px){
+      .news-article,.news-article.reverse { flex-direction:column; }
+      .news-article-img-wrap { flex:none; min-height:220px; }
+      .news-article-text { padding:28px 20px; }
+    }
+    .news-article-eyebrow { display:block; font-family:'Jost',sans-serif; font-size:10px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:#7a7060; margin-bottom:12px; }
+    .news-article-title { font-family:'Marcellus',serif; font-size:clamp(1.3rem,2.5vw,1.9rem); color:#2a2620; line-height:1.3; margin-bottom:16px; text-decoration:none; display:block; }
+    .news-article-title:hover { color:#bb9e72; }
+    .news-article-body { font-family:'Jost',sans-serif; font-size:13.5px; font-weight:300; line-height:1.8; color:#5c5549; margin-bottom:20px; }
+    .news-read-more { font-family:'Jost',sans-serif; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#2a2620; text-decoration:none; border-bottom:1.5px solid #2a2620; padding-bottom:2px; display:inline-block; transition:color .2s,border-color .2s; }
+    .news-read-more:hover { color:#bb9e72; border-color:#bb9e72; }
+  </style>
 </head>
-  <body>
-
-    <!-- ==================== FULLSCREEN OVERLAY MENU ==================== -->
-    <div id="v3-overlay-menu" aria-hidden="true">
-      <!-- Overlay BG (blurred hero behind) -->
-      <div class="v3-overlay-bg"></div>
-
-      <!-- Top controls -->
-      <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between" style="padding: 26px 36px;">
-        <button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center" style="transition: color 0.2s, transform 0.2s;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 28px; height: 28px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-        <a href="#" class="v3-overlay-lang">EN / FR</a>
-      </div>
-
-      <!-- Centered Links — 3 rows -->
-      <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
-        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
-          <a href="index3.html" class="v3-overlay-link">Home</a>
-          <a href="v3-rooms.html" class="v3-overlay-link">Stay</a>
-          <a href="v3-about.html" class="v3-overlay-link">About the hotel</a>
-          <a href="v3-dining.html" class="v3-overlay-link">Restaurants &amp; Bars</a>
-        </div>
-        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
-          <a href="v3-wellness.html" class="v3-overlay-link">Spa &amp; Wellness</a>
-          <a href="v3-events.html" class="v3-overlay-link">Events &amp; Meetings</a>
-          <a href="v3-activities.html" class="v3-overlay-link">Local Activities</a>
-        </div>
-        <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap: 10px 52px;">
-          <a href="v3-news.html" class="v3-overlay-link">News</a>
-          <a href="v3-contact.html" class="v3-overlay-link">Contact</a>
-          <a href="v3-rooms.html" class="v3-overlay-link v3-overlay-book">Book Your Stay</a>
-        </div>
-      </nav>
-
-      <!-- Footer -->
-      <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
-    </div>
-
-    <!-- ==================== NAVBAR ==================== -->
-    <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3" style="height: 110px; border-bottom: 1px solid rgba(255, 255, 255, 0.18);">
-      <!-- Hamburger (always visible) -->
-      <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3" style="transition: color 0.2s ease, transform 0.2s ease;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-      <!-- Left Nav Links -->
-      <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1" id="v3-nav-links-left">
-        <li>
-          <a href="index3.html" class="v3-nav-link v3-active-link">HOME</a>
-        </li>
-        <li class="v3-dropdown">
-          <a href="v3-rooms.html" class="v3-nav-link">
-            STAY
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-          </a>
-          <div class="v3-dropdown-menu">
-            <a href="v3-island-villas.html">Island Villas</a>
-            <a href="v3-beach-bungalows.html">Beach Bungalows</a>
-            <a href="v3-overwater-suites.html">Overwater Suites</a>
-          </div>
-        </li>
-        <li class="v3-dropdown">
-          <a href="v3-pages.html" class="v3-nav-link">
-            PAGES
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-          </a>
-                    <div class="v3-dropdown-menu">
-            <a href="v3-about.html">About the hotel</a>
-            <a href="v3-dining.html">Restaurants &amp; Bars</a>
-            <a href="v3-restaurant.html">The Restaurant</a>
-            <a href="v3-menu.html">Menu Page</a>
-            <a href="v3-wellness.html">Spa &amp; Wellness</a>
-            <a href="v3-events.html">Events &amp; Meetings</a>
-            <a href="v3-activities.html">Local Activities</a>
-            <a href="v3-activity-detail.html">Activity Detail Page</a>
-            <a href="v3-contact.html">Contact</a>
-          </div>
-        </li>
-        <li>
-          <a href="v3-news.html" class="v3-nav-link">NEWS</a>
-        </li>
-      </ul>
-
-      <!-- Center Logo -->
-      <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
-        <a href="index3.html" class="v3-logo-link">
-          COZYSTAY
-          <span class="v3-logo-stars">★ ★ ★ ★ ★</span>
-        </a>
-      </div>
-
-      <!-- Right Nav -->
-      <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1">
-        <span class="v3-phone">Tel: +41 22 345 67 88</span>
-        <a href="#" class="v3-nav-link v3-lang">EN / FR</a>
-        <a href="v3-rooms.html" class="v3-book-btn">Book Now</a>
-      </div>
-
+<body>
+  <div id="v3-overlay-menu" aria-hidden="true">
+    <div class="v3-overlay-bg"></div>
+    <div class="v3-overlay-topbar position-relative z-3 d-flex align-items-center justify-content-between" style="padding:26px 36px;"><button id="v3-overlay-close" aria-label="Close menu" class="bg-transparent border-0 text-white p-1 d-flex align-items-center justify-content-center" style="transition:color .2s,transform .2s;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><a href="#" class="v3-overlay-lang">EN / FR</a></div>
+    <nav class="v3-overlay-nav position-relative z-3 flex-grow-1 d-flex flex-column align-items-center justify-content-center px-4 gap-3">
+      <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 52px;"><a href="index3.html" class="v3-overlay-link">Home</a><a href="v3-rooms.html" class="v3-overlay-link">Stay</a><a href="v3-about.html" class="v3-overlay-link">About the hotel</a><a href="v3-dining.html" class="v3-overlay-link">Restaurants &amp; Bars</a></div>
+      <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 52px;"><a href="v3-wellness.html" class="v3-overlay-link">Spa &amp; Wellness</a><a href="v3-events.html" class="v3-overlay-link">Events &amp; Meetings</a><a href="v3-activities.html" class="v3-overlay-link">Local Activities</a></div>
+      <div class="v3-overlay-row d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 52px;"><a href="v3-news.html" class="v3-overlay-link">News</a><a href="v3-contact.html" class="v3-overlay-link">Contact</a><a href="v3-rooms.html" class="v3-overlay-link v3-overlay-book">Book Your Stay</a></div>
     </nav>
+    <p class="v3-overlay-footer">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+  </div>
+  <nav id="navbar-v3" class="d-flex align-items-center justify-content-between px-3 px-lg-5 w-100 position-absolute top-0 z-3" style="height:110px;border-bottom:1px solid rgba(255,255,255,.18);">
+    <button id="v3-hamburger" aria-label="Open menu" class="bg-transparent border-0 text-white p-2 d-flex align-items-center justify-content-center me-3" style="transition:color .2s ease,transform .2s ease;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:22px;height:22px;"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <ul class="v3-nav-left d-none d-lg-flex align-items-center list-unstyled mb-0 gap-4 flex-grow-1">
+      <li><a href="index3.html" class="v3-nav-link">HOME</a></li>
+      <li class="v3-dropdown"><a href="v3-rooms.html" class="v3-nav-link">STAY <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg></a><div class="v3-dropdown-menu"><a href="v3-rooms.html">Rooms Page</a><a href="v3-room-details-top-image.html">Room Details – Top Image</a><a href="v3-room-details-top-gallery.html">Room Details – Top Gallery</a><a href="v3-room-details-left-booking.html">Room Details – Left Booking Form</a><a href="v3-cart.html">Cart</a><a href="v3-my-account.html">My account</a></div></li>
+      <li class="v3-dropdown"><a href="v3-pages.html" class="v3-nav-link">PAGES <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg></a><div class="v3-dropdown-menu"><a href="v3-about.html">About the hotel</a><a href="v3-dining.html">Restaurants &amp; Bars</a><a href="v3-restaurant.html">The Restaurant</a><a href="v3-menu.html">Menu Page</a><a href="v3-wellness.html">Spa &amp; Wellness</a><a href="v3-events.html">Events &amp; Meetings</a><a href="v3-activities.html">Local Activities</a><a href="v3-activity-detail.html">Activity Detail Page</a><a href="v3-contact.html">Contact</a></div></li>
+      <li><a href="v3-news.html" class="v3-nav-link v3-active-link">NEWS</a></li>
+    </ul>
+    <div class="v3-nav-center flex-shrink-0 text-center px-lg-4"><a href="index3.html" class="v3-logo-link">COZYSTAY<span class="v3-logo-stars">★ ★ ★ ★ ★</span></a></div>
+    <div class="v3-nav-right d-none d-lg-flex align-items-center justify-content-end gap-3 flex-grow-1"><span class="v3-phone">Tel: +41 22 345 67 88</span><a href="#" class="v3-nav-link v3-lang">EN / FR</a><a href="v3-rooms.html" class="v3-book-btn">Book Now</a></div>
+  </nav>
 
-    
-    <!-- PAGE HERO -->
-    <section class="position-relative d-flex align-items-center justify-content-center text-center text-white" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:110px;">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.5);"></div>
-      <div class="position-relative z-2 px-4 container">
-        <span class="d-inline-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #bb9e72; text-transform: uppercase;">JOURNAL</span>
-        <h1 class="mb-4" style="font-family: 'Marcellus', serif; font-size: clamp(2.5rem, 5vw, 4rem);">Resort News</h1>
-        <p style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; letter-spacing: 0.04em; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Stay updated with our latest offerings.</p>
-      </div>
-    </section>
+  <!-- HERO -->
+  <section class="news-hero">
+    <div class="news-hero-content">
+      <span class="news-hero-eyebrow">Latest News &amp; Blog</span>
+      <h1>Our News</h1>
+    </div>
+  </section>
 
-    <!-- CONTENT -->
-    <section class="py-5 bg-white" style="min-height: 40vh;">
-      <div class="container py-5">
-        <div class="row g-5 align-items-center">
-          <div class="col-md-6">
-            <h2 class="mb-4" style="font-family: 'Marcellus', serif; font-size: 2.2rem; color: #2a2620;">Experience Resort News</h2>
-            <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p style="font-family: 'Jost', sans-serif; font-size: 14.5px; line-height: 1.6; color: #666; margin-bottom: 24px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="v3-rooms.html" class="btn text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest mt-2 border-0 v3-book-btn" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em;">Book Your Experience</a>
-          </div>
-          <div class="col-md-6">
-             <div class="position-relative" style="height: 450px; overflow: hidden;">
-               <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover shadow-sm" alt="Resort News" />
-             </div>
-          </div>
+  <!-- NEWS FEED -->
+  <section id="news-feed">
+    <div class="container-fluid px-0">
+
+      <!-- Article 1: Image Left -->
+      <article class="news-article">
+        <div class="news-article-img-wrap">
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=80" alt="Pacific Scenery" class="news-article-img"/>
+          <div class="news-article-date-badge"><span class="news-date-num">26</span><span class="news-date-month">Apr</span></div>
         </div>
-      </div>
-    </section>
-  <!-- ==================== FOOTER ==================== -->
-    <footer id="footer" class="text-white">
-      <!-- Newsletter Section -->
-      <div class="position-relative py-5" style="min-height: 380px;">
-        <!-- BG -->
-        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position: center 60%;" alt="Footer bg">
-        <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background: rgba(10, 20, 15, 0.25);"></div>
-        
-        <div class="container position-relative z-1 py-5">
-          <div class="row align-items-center">
-            
-            <!-- Left -->
-            <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
-              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;">
-                Stay Tuned With CozyStay
-              </span>
-              <h2 style="font-family: 'Marcellus', serif; font-size: clamp(2rem, 3.2vw, 2.7rem); line-height: 1.35; max-width: 540px;">
-                Sign up for our newsletter to receive our news, deals and special offers.
-              </h2>
-            </div>
-
-            <!-- Right -->
-            <div class="col-12 col-lg-6 ps-lg-5">
-              <form class="d-flex flex-column gap-3">
-                <style>.v3-newsletter-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }</style>
-                <div class="position-relative mb-2">
-                  <input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3" style="border: 0; border-bottom: 2px solid rgba(255,255,255,0.8); font-family: 'Jost', sans-serif; font-size: 15px; outline: none; padding-right: 110px;" required>
-                  <button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0" style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500;">
-                    Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                  </button>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                  <input type="checkbox" id="v3-privacy-chk" style="width: 14px; height: 14px; accent-color: #bb9e72;">
-                  <label for="v3-privacy-chk" style="font-family: 'Jost', sans-serif; font-size: 13.5px; font-weight: 400; cursor: pointer;">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label>
-                </div>
-              </form>
-            </div>
-
-          </div>
+        <div class="news-article-text">
+          <span class="news-article-eyebrow">Hotel &amp; Activities</span>
+          <a href="#" class="news-article-title">Pacific Scenery in Summer</a>
+          <p class="news-article-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.</p>
+          <a href="#" class="news-read-more">Read More →</a>
         </div>
-      </div>
+      </article>
 
-      <!-- Footer Bottom -->
-      <div style="background-color: #161513; padding-top: 80px; padding-bottom: 40px; position: relative;">
-        <!-- Return to top button in the footer itself -->
-        <button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center" aria-label="Return to top" style="top: -22px; right: 40px; width: 44px; height: 44px; cursor: pointer; border-color: #d4cdc5 !important; color: #d4cdc5; background: #161513 !important;" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-        </button>
-
-        <div class="container">
-          <div class="row text-center text-md-start text-lg-center mb-5 pb-5" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-            
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
-              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Address</span>
-              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">73120 Courchevel 1850, France</p>
-              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
-            </div>
-            
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
-              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Phone</span>
-              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">+41 22 345 67 88</p>
-              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative">
-              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Email</span>
-              <p style="font-family: 'Jost', sans-serif; font-size: 14px; margin: 0; font-weight: 500;">reservation@cozystay.com</p>
-              <div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px; height: 40px; background: rgba(255,255,255,0.08);"></div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3">
-              <span class="d-block mb-3" style="font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #7a7060;">Social</span>
-              <div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3">
-                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a>
-                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/><path d="M16.5 7.5v.01" fill="none" stroke="currentColor"/></svg></a>
-                <a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; color: #a3a3a3;">
-            <p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
-            <div class="d-flex gap-4">
-              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">PRIVACY</a>
-              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">TERMS OF USE</a>
-              <a href="#" class="text-white text-decoration-none" style="letter-spacing: 0.1em; font-weight: 500; font-size: 11px;">POLICY</a>
-            </div>
-          </div>
+      <!-- Article 2: Image Right (reverse) -->
+      <article class="news-article reverse">
+        <div class="news-article-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Chef Menu" class="news-article-img"/>
+          <div class="news-article-date-badge" style="left:auto;right:16px;"><span class="news-date-num">18</span><span class="news-date-month">Apr</span></div>
         </div>
-      </div>
-    </footer>
+        <div class="news-article-text">
+          <span class="news-article-eyebrow">Dining</span>
+          <a href="#" class="news-article-title">Our New Chef and Spring Special Menu</a>
+          <p class="news-article-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          <a href="#" class="news-read-more">Read More →</a>
+        </div>
+      </article>
 
-    <!-- ==================== SCRIPTS ==================== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    
-    <script src="../main3.js"></script>
-  
-    <!-- ==================== BOOKING MODAL ==================== -->
-    <div id="v3-booking-modal" class="v3-bm-overlay" aria-hidden="true">
-      <div class="v3-bm-left"></div>
-      <div class="v3-bm-right">
-        <button id="v3-bm-close" class="v3-bm-close-btn" aria-label="Close booking modal">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-        <div class="v3-bm-content">
-          <h2 class="v3-bm-title">Book Your Stay</h2>
-          <p class="v3-bm-desc">
-            Welcome to CozyStay Pacific Hotel. Nestled in the heart of the Pacific Islands resort, on the edge of a tranquil and beautiful Garden Island, CozyStay is a haven of warmth, tranquility and rejuvenation.
-          </p>
-          <div class="v3-bm-grid">
-            <div class="v3-bm-input-group">
-              <span class="v3-bm-input-label">Check In</span>
-              <span class="v3-bm-input-val">2026-04-02 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
-            </div>
-            <div class="v3-bm-input-group">
-              <span class="v3-bm-input-label">Check Out</span>
-              <span class="v3-bm-input-val">2026-04-03 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
-            </div>
-            <div class="v3-bm-input-group">
-              <span class="v3-bm-input-label">Rooms</span>
-              <span class="v3-bm-input-val">1 Room <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
-            </div>
-            <div class="v3-bm-input-group">
-              <span class="v3-bm-input-label">Guests</span>
-              <span class="v3-bm-input-val">1 Adult, 0 Children <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 9l-7 7-7-7"/></svg></span>
-            </div>
-          </div>
-          <button class="v3-bm-btn">Check Availability</button>
-          <div class="v3-bm-footer-rules">
-            <span><b class="v3-bm-bullet">&bull;</b> Check-in: 3pm</span>
-            <span><b class="v3-bm-bullet">&bull;</b> Check-out: 11am</span>
-            <span><b class="v3-bm-bullet">&bull;</b> Minimum Check-in Age: 18</span>
-          </div>
+      <!-- Article 3: Image Left -->
+      <article class="news-article">
+        <div class="news-article-img-wrap">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" alt="Fitness" class="news-article-img"/>
+          <div class="news-article-date-badge"><span class="news-date-num">20</span><span class="news-date-month">Mar</span></div>
+        </div>
+        <div class="news-article-text">
+          <span class="news-article-eyebrow">Spa &amp; Wellness</span>
+          <a href="#" class="news-article-title">Maintain Your Fitness Routine on Vacation</a>
+          <p class="news-article-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+          <a href="#" class="news-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Article 4: Image Right (reverse) -->
+      <article class="news-article reverse">
+        <div class="news-article-img-wrap">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80" alt="Restaurant" class="news-article-img"/>
+          <div class="news-article-date-badge" style="left:auto;right:16px;"><span class="news-date-num">18</span><span class="news-date-month">Mar</span></div>
+        </div>
+        <div class="news-article-text">
+          <span class="news-article-eyebrow">Dining · Hotel</span>
+          <a href="#" class="news-article-title">Introducing New Restaurants</a>
+          <p class="news-article-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+          <a href="#" class="news-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Article 5: Image Left -->
+      <article class="news-article">
+        <div class="news-article-img-wrap">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80" alt="Infinity Pool" class="news-article-img"/>
+          <div class="news-article-date-badge"><span class="news-date-num">12</span><span class="news-date-month">Feb</span></div>
+        </div>
+        <div class="news-article-text">
+          <span class="news-article-eyebrow">Hotel &amp; Resort</span>
+          <a href="#" class="news-article-title">Outdoor Infinite Pool is Back</a>
+          <p class="news-article-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+          <a href="#" class="news-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Article 6: Image Right (reverse) -->
+      <article class="news-article reverse">
+        <div class="news-article-img-wrap">
+          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80" alt="Couples" class="news-article-img"/>
+          <div class="news-article-date-badge" style="left:auto;right:16px;"><span class="news-date-num">10</span><span class="news-date-month">Feb</span></div>
+        </div>
+        <div class="news-article-text">
+          <span class="news-article-eyebrow">Hotel &amp; Activities</span>
+          <a href="#" class="news-article-title">10 Romantic Escapes for Couples</a>
+          <p class="news-article-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+          <a href="#" class="news-read-more">Read More →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="text-white">
+    <div class="position-relative py-5" style="min-height:380px;">
+      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" style="object-position:center 60%;" alt="">
+      <div class="position-absolute top-0 start-0 w-100 h-100 z-0" style="background:rgba(10,20,15,.25);"></div>
+      <div class="container position-relative z-1 py-5">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5"><span class="d-block mb-3" style="font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;">Stay Tuned With CozyStay</span><h2 style="font-family:'Marcellus',serif;font-size:clamp(2rem,3.2vw,2.7rem);line-height:1.35;max-width:540px;">Sign up for our newsletter to receive our news, deals and special offers.</h2></div>
+          <div class="col-12 col-lg-6 ps-lg-5"><form class="d-flex flex-column gap-3"><div class="position-relative mb-2"><input type="email" placeholder="Your Email Address" class="v3-newsletter-input w-100 bg-transparent rounded-0 text-white pb-3" style="border:0;border-bottom:2px solid rgba(255,255,255,.8);font-family:'Jost',sans-serif;font-size:15px;outline:none;padding-right:110px;" required><button type="submit" class="position-absolute top-0 end-0 bg-transparent border-0 text-white d-flex gap-2 align-items-center p-0" style="font-family:'Jost',sans-serif;font-size:14px;font-weight:500;">Subscribe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div><div class="d-flex align-items-center gap-2"><input type="checkbox" id="v3-privacy-news" style="width:14px;height:14px;accent-color:#bb9e72;"><label for="v3-privacy-news" style="font-family:'Jost',sans-serif;font-size:13.5px;cursor:pointer;">I agree to the <a href="#" class="text-white text-decoration-none">Privacy Policy</a></label></div></form></div>
         </div>
       </div>
     </div>
-
-    <script src="v3-booking-modal.js"></script>
+    <div style="background-color:#161513;padding-top:80px;padding-bottom:40px;position:relative;"><button class="position-absolute border bg-transparent d-flex align-items-center justify-content-center" aria-label="Return to top" style="top:-22px;right:40px;width:44px;height:44px;cursor:pointer;border-color:#d4cdc5!important;color:#d4cdc5;background:#161513!important;" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button><div class="container"><div class="row text-center text-md-start text-lg-center mb-5 pb-5" style="border-bottom:1px solid rgba(255,255,255,.08);"><div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative"><span class="d-block mb-3" style="font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#7a7060;">Address</span><p style="font-family:'Jost',sans-serif;font-size:14px;margin:0;font-weight:500;">73120 Courchevel 1850, France</p><div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px;height:40px;background:rgba(255,255,255,.08);"></div></div><div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative"><span class="d-block mb-3" style="font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#7a7060;">Phone</span><p style="font-family:'Jost',sans-serif;font-size:14px;margin:0;font-weight:500;">+41 22 345 67 88</p><div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px;height:40px;background:rgba(255,255,255,.08);"></div></div><div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0 position-relative"><span class="d-block mb-3" style="font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#7a7060;">Email</span><p style="font-family:'Jost',sans-serif;font-size:14px;margin:0;font-weight:500;">reservation@cozystay.com</p><div class="d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" style="width:1px;height:40px;background:rgba(255,255,255,.08);"></div></div><div class="col-12 col-md-6 col-lg-3"><span class="d-block mb-3" style="font-family:'Jost',sans-serif;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#7a7060;">Social</span><div class="d-flex justify-content-center justify-content-md-start justify-content-lg-center gap-3"><a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.8l.2-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4.01c-1 .49-1.98.68-3 .92-1-.92-2-1.54-3-1.54-2 0-3.8 1.83-3.8 4 0 .34.03.65.1.95-3.15-.15-6-1.68-7.9-4-1 1.76-.5 4.34 1.1 5.37-1-.03-1.8-.32-2.6-.74 0 2.5 1.8 4.6 4.1 5.08-.4.12-1 .15-1.5.15-.4 0-.7-.03-1-.1 1 2 2.7 3.6 5 3.64-1.9 1.5-4.4 2.5-7.1 2.5-.4 0-.8-.03-1.2-.06 2.5 1.6 5.3 2.5 8.4 2.5 10 0 15.5-8.24 15.5-15.3 0-.25-.01-.5-.03-.76C20.6 6 21.4 5.1 22 4.01z"/></svg></a><a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16a4 4 0 110-8 4 4 0 010 8z" fill="none" stroke="currentColor"/></svg></a><a href="#" class="text-white opacity-75 text-decoration-none"><svg width="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33zM9.75 15.02V8.48l6.5 3.27-6.5 3.27z"/></svg></a></div></div></div><div class="d-flex flex-column flex-md-row justify-content-between align-items-center" style="font-family:'Jost',sans-serif;font-size:13px;font-weight:400;color:#a3a3a3;"><p class="mb-4 mb-md-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p><div class="d-flex gap-4"><a href="#" class="text-white text-decoration-none" style="letter-spacing:.1em;font-weight:500;font-size:11px;">PRIVACY</a><a href="#" class="text-white text-decoration-none" style="letter-spacing:.1em;font-weight:500;font-size:11px;">TERMS OF USE</a><a href="#" class="text-white text-decoration-none" style="letter-spacing:.1em;font-weight:500;font-size:11px;">POLICY</a></div></div></div></div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../main3.js"></script>
+  <div id="v3-booking-modal" class="v3-bm-overlay" aria-hidden="true"><div class="v3-bm-left"></div><div class="v3-bm-right"><button id="v3-bm-close" class="v3-bm-close-btn" aria-label="Close booking modal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button><div class="v3-bm-content"><h2 class="v3-bm-title">Book Your Stay</h2><p class="v3-bm-desc">Welcome to CozyStay Pacific Hotel.</p><div class="v3-bm-grid"><div class="v3-bm-input-group"><span class="v3-bm-input-label">Check In</span><span class="v3-bm-input-val">2026-04-02</span></div><div class="v3-bm-input-group"><span class="v3-bm-input-label">Check Out</span><span class="v3-bm-input-val">2026-04-03</span></div></div><button class="v3-bm-btn">Check Availability</button></div></div></div>
+  <script src="v3-booking-modal.js"></script>
 </body>
 </html>
