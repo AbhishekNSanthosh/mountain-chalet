@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Honeymoon Suite â€“ CozyStay Resort</title>
-    <meta name="description" content="Honeymoon Suite at CozyStay Resort â€“ Private details, ocean views, luxury accommodation." />
+    <title>Honeymoon Suite – CozyStay Resort</title>
+    <meta name="description" content="Honeymoon Suite at CozyStay Resort – Private details, ocean views, luxury accommodation." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,9 +74,9 @@
           </a>
           <div class="v3-dropdown-menu">
             <a href="v3-rooms.html">Rooms Page</a>
-            <a href="v3-room-details-top-image.html">Room Details â€“ Top Image</a>
-            <a href="v3-room-details-top-gallery.html">Room Details â€“ Top Gallery</a>
-            <a href="v3-room-details-left-booking.html">Room Details â€“ Left Booking Form</a>
+            <a href="v3-room-details-top-image.html">Room Details – Top Image</a>
+            <a href="v3-room-details-top-gallery.html">Room Details – Top Gallery</a>
+            <a href="v3-room-details-left-booking.html">Room Details – Left Booking Form</a>
             <a href="v3-cart.html">Cart</a>
             <a href="v3-cart.html">Checkout</a>
             <a href="v3-my-account.html">My account</a>
@@ -106,7 +106,7 @@
       <div class="v3-nav-center flex-shrink-0 text-center px-lg-4">
         <a href="index3.html" class="v3-logo-link">
           COZYSTAY
-          <span class="v3-logo-stars">â˜… â˜… â˜… â˜… â˜…</span>
+          <span class="v3-logo-stars">★ ★ ★ ★ ★</span>
         </a>
       </div>
 
@@ -131,7 +131,7 @@
       <div class="container">
         <div class="row g-5">
 
-          <!-- â”€â”€ LEFT SIDEBAR (Reserve) â”€â”€ -->
+          <!-- ── LEFT SIDEBAR (Reserve) ── -->
           <div class="col-lg-4 order-2 order-lg-1">
             <div class="rd-reserve-card">
 
@@ -173,7 +173,7 @@
                 <div class="rd-guests-half">
                   <span class="rd-reserve-row-label">Adults</span>
                   <div class="rd-counter">
-                    <button class="rd-counter-btn" onclick="rdCount('adult',-1)">âˆ’</button>
+                    <button class="rd-counter-btn" onclick="rdCount('adult',-1)">−</button>
                     <span class="rd-counter-num" id="rd-adult-count">1</span>
                     <button class="rd-counter-btn" onclick="rdCount('adult',1)">+</button>
                   </div>
@@ -181,7 +181,7 @@
                 <div class="rd-guests-half">
                   <span class="rd-reserve-row-label">Children</span>
                   <div class="rd-counter">
-                    <button class="rd-counter-btn" onclick="rdCount('child',-1)">âˆ’</button>
+                    <button class="rd-counter-btn" onclick="rdCount('child',-1)">−</button>
                     <span class="rd-counter-num" id="rd-child-count">0</span>
                     <button class="rd-counter-btn" onclick="rdCount('child',1)">+</button>
                   </div>
@@ -202,7 +202,7 @@
                 <label class="rd-extra-item-name" for="svc-massage">Massage</label>
                 <span class="rd-extra-item-price">$35 / Person</span>
                 <div class="rd-extra-qty">
-                  <button onclick="rdExtra('massage',-1)">âˆ’</button>
+                  <button onclick="rdExtra('massage',-1)">−</button>
                   <span id="qty-massage">1</span>
                   <button onclick="rdExtra('massage',1)">+</button>
                 </div>
@@ -212,7 +212,7 @@
                 <label class="rd-extra-item-name" for="svc-spa">Day Spa</label>
                 <span class="rd-extra-item-price">$35 / Person</span>
                 <div class="rd-extra-qty">
-                  <button onclick="rdExtra('spa',-1)">âˆ’</button>
+                  <button onclick="rdExtra('spa',-1)">−</button>
                   <span id="qty-spa">1</span>
                   <button onclick="rdExtra('spa',1)">+</button>
                 </div>
@@ -233,7 +233,7 @@
             </div>
           </div><!-- /col-lg-4 -->
 
-          <!-- â”€â”€ RIGHT COLUMN â”€â”€ -->
+          <!-- ── RIGHT COLUMN ── -->
           <div class="col-lg-8 order-1 order-lg-2">
 
             <!-- Title -->
@@ -521,7 +521,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="../main3.js"></script>
     <script>
-      // â”€â”€ Availability calendar (inline Flatpickr) â”€â”€
+      // ── Availability calendar (inline Flatpickr) ──
       const rdCal = flatpickr("#rd-inline-calendar", {
         inline: true,
         mode: "range",
@@ -563,7 +563,7 @@
         }
       });
 
-      // â”€â”€ Counters â”€â”€
+      // ── Counters ──
       function rdCount(type, delta) {
         const id = type === "adult" ? "rd-adult-count" : "rd-child-count";
         const el = document.getElementById(id);
@@ -571,7 +571,7 @@
         el.textContent = Math.max(min, parseInt(el.textContent) + delta);
       }
 
-      // â”€â”€ Extra service qty â”€â”€
+      // ── Extra service qty ──
       function rdExtra(svc, delta) {
         const id = "qty-" + svc;
         const el = document.getElementById(id);
@@ -579,7 +579,7 @@
         rdCalcTotal();
       }
 
-      // â”€â”€ Total cost â”€â”€
+      // ── Total cost ──
       function rdCalcTotal() {
         // Updated to basically match fixed demo layout text, but can be dynamic
         const baseNight = 399; // Updated base price to match screenshot "From $399"
