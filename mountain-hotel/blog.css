@@ -144,3 +144,17 @@
 @media (max-width: 991px) {
     .hero-box h1 { font-size: 3.5rem; }
 }
+
+@media (max-width: 767px) {
+    .hero-box h1 { font-size: 2.8rem; }
+    .blog-grid-sec { padding: 80px 5vw; }
+    .blog-img-box { height: 280px; }
+    .blog-title { font-size: 1.5rem; }
+}
+
+@media (max-width: 575px) {
+    .blog-hero { height: 60vh; }
+    .hero-box h1 { font-size: 2.2rem; }
+    .blog-grid-sec { padding: 60px 5vw; }
+    .blog-img-box { height: 230px; }
+}

@@ -221,10 +221,23 @@
   .highlight-img, .highlight-card { width: 100%; position: relative; right: auto; left: auto; }
   .highlight-card { margin-top: -80px; padding: 60px 30px; }
   .strip-container { grid-template-columns: repeat(2, 1fr); }
+  .winter-highlights { padding: 80px 0; }
+}
+
+@media (max-width: 767px) {
+  .hero-title { font-size: 2.8rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .highlight-card { padding: 40px 24px; margin-top: -40px; }
+  .highlight-card h3 { font-size: 2rem; }
+  .highlight-row { margin-bottom: 80px; }
+  .title-large { font-size: 2rem; }
+  .winter-highlights { padding: 60px 0; }
 }
 
 @media (max-width: 576px) {
-  .hero-title { font-size: 2.5rem; }
-  .title-large { font-size: 2rem; }
+  .hero-title { font-size: 2.2rem; }
+  .title-large { font-size: 1.7rem; }
   .strip-container { grid-template-columns: 1fr; }
+  .highlight-card { padding: 32px 20px; }
+  .highlight-card h3 { font-size: 1.7rem; }
 }

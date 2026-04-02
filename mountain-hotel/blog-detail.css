@@ -194,3 +194,19 @@
     .sidebar { padding-left: 0; margin-top: 80px; }
     .detail-hero-box h1 { font-size: 3rem; }
 }
+
+@media (max-width: 767px) {
+    .detail-hero-box h1 { font-size: 2.4rem; }
+    .blog-detail-hero { height: 65vh; }
+    .blog-content-sec { padding: 80px 5vw; }
+    .author-box { flex-direction: column; gap: 20px; padding: 30px; }
+    .author-img { width: 90px; height: 90px; }
+}
+
+@media (max-width: 575px) {
+    .detail-hero-box h1 { font-size: 1.9rem; }
+    .blog-detail-hero { height: 55vh; }
+    .blog-content-sec { padding: 60px 5vw; }
+    .post-nav { flex-direction: column; gap: 20px; }
+    .comment-form-box h3 { font-size: 1.8rem; }
+}

@@ -224,16 +224,23 @@
 
     <!-- ==================== MOBILE MENU V2 ==================== -->
     <div id="mobile-menu-v2">
-      <div class="px-4 py-3 d-flex flex-column gap-2">
-        <a href="index2.html" class="text-decoration-none py-2 border-bottom border-light">HOME</a>
-        <a href="rooms.html" class="text-decoration-none py-2 border-bottom border-light">STAY</a>
-        <a href="restaurant.html" class="text-decoration-none py-2 border-bottom border-light">DINE</a>
-        <a href="skiing.html" class="text-decoration-none py-2 border-bottom border-light">PLAY</a>
-        <a href="relax.html" class="text-decoration-none py-2 border-bottom border-light">RELAX</a>
-        <a href="about.html" class="text-decoration-none py-2 border-bottom border-light">ABOUT</a>
-        <a href="gallery.html" class="text-decoration-none py-2 border-bottom border-light">GALLERY</a>
-      </div>
+      <button id="mobile-menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mobile-menu-logo">COZYSTAY</div>
+      <nav class="mobile-menu-nav">
+        <a href="index2.html">Home</a>
+        <a href="rooms.html">Stay</a>
+        <a href="restaurant.html">Dine</a>
+        <a href="activities.html">Play</a>
+        <a href="spa.html">Relax</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="#booking" class="mobile-menu-cta">Reserve Now</a>
     </div>
+    <div id="mobile-menu-overlay"></div>
 
     <!-- ==================== RESTAURANT HERO ==================== -->
     <header class="restaurant-hero">
@@ -479,10 +486,21 @@
         });
       });
 
-      // Mobile menu toggle
-      document.getElementById('menu-btn-v2').addEventListener('click', function() {
-        document.getElementById('mobile-menu-v2').classList.toggle('open');
-      });
+      // Mobile menu right drawer
+      (function() {
+        var btn = document.getElementById('menu-btn-v2');
+        var menu = document.getElementById('mobile-menu-v2');
+        var overlay = document.getElementById('mobile-menu-overlay');
+        var closeBtn = document.getElementById('mobile-menu-close');
+        if (!btn || !menu) return;
+        function openMenu() { menu.classList.add('open'); if(overlay) overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+        function closeMenu() { menu.classList.remove('open'); if(overlay) overlay.classList.remove('open'); document.body.style.overflow=''; }
+        btn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+        document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
+      })();
     </script>
   </body>
 </html>

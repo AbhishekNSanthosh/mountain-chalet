@@ -307,3 +307,28 @@
     .room-card { flex: 0 0 100%; }
     .services-hero-title { font-size: 3rem; }
 }
+
+@media (max-width: 767px) {
+    .services-hero-title { font-size: 2.4rem; }
+    .services-hero-subtitle { font-size: 1rem; }
+    .holiday-sec h2 { font-size: 2.2rem; }
+    .testimonial-text { font-size: 1.5rem; }
+    .benefits-title { font-size: 2rem; }
+    .rooms-carousel-wrapper { padding: 0 20px; }
+    .services-grid-sec { padding: 80px 0; }
+    .holiday-sec { padding: 90px 0; }
+    .benefits-sec { padding: 80px 0; }
+}
+
+@media (max-width: 575px) {
+    .services-hero-title { font-size: 1.9rem; }
+    .services-grid-sec { padding: 60px 0; }
+    .services-grid-sec h2 { font-size: 1.8rem; margin-bottom: 50px; }
+    .holiday-sec { padding: 70px 0; }
+    .holiday-sec h2 { font-size: 1.8rem; }
+    .testimonial-bg-sec { padding: 70px 0; }
+    .testimonial-text { font-size: 1.3rem; }
+    .benefits-sec { padding: 60px 0; }
+    .benefits-title { font-size: 1.7rem; }
+    .rooms-carousel-wrapper { padding: 0 10px; }
+}

@@ -221,3 +221,26 @@
     .indulge-text-col { padding-right: 0; margin-bottom: 50px; }
     .essentials-img-grid { margin-bottom: 50px; }
 }
+
+@media (max-width: 767px) {
+    .about-hero-title { font-size: 2.5rem; }
+    .about-hero-subtitle { font-size: 1rem; }
+    .about-intro { padding: 60px 0; }
+    .intro-large-img { height: 320px; }
+    .about-indulge { padding: 60px 0; }
+    .indulge-img-grid { flex-direction: column; }
+    .indulge-img-item { flex: none; width: 100%; height: 260px; }
+    .about-essentials { padding: 60px 0; }
+    .essentials-img-grid { flex-direction: column; }
+    .essentials-img-item { flex: none; width: 100%; height: 260px; }
+}
+
+@media (max-width: 575px) {
+    .about-hero-title { font-size: 2rem; }
+    .about-intro h2 { font-size: 1.7rem; }
+    .quote-text { font-size: 2.2rem; }
+    .stats-title { font-size: 1.8rem; margin-bottom: 50px; }
+    .stat-number { font-size: 3rem; }
+    .about-stats-sec { padding: 60px 0; }
+    .intro-large-img { height: 240px; }
+}

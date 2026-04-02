@@ -230,54 +230,23 @@
 
     <!-- ==================== MOBILE MENU V2 ==================== -->
     <div id="mobile-menu-v2">
-      <div class="px-4 py-3 d-flex flex-column gap-2">
-        <a
-          href="index.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Home v1</a
-        >
-        <a
-          href="index2.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Home v2</a
-        >
-        <a
-          href="rooms.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Stay</a
-        >
-        <a
-          href="restaurant.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Dine</a
-        >
-        <a
-          href="skiing.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Play</a
-        >
-        <a
-          href="relax.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Relax</a
-        >
-        <a
-          href="about.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >About</a
-        >
-        <a
-          href="gallery.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Gallery</a
-        >
-        <a
-          href="#booking"
-          class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase"
-          >Reserve Now</a
-        >
-      </div>
+      <button id="mobile-menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mobile-menu-logo">COZYSTAY</div>
+      <nav class="mobile-menu-nav">
+        <a href="index2.html">Home</a>
+        <a href="rooms.html">Stay</a>
+        <a href="restaurant.html">Dine</a>
+        <a href="activities.html">Play</a>
+        <a href="spa.html">Relax</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="#booking" class="mobile-menu-cta">Reserve Now</a>
     </div>
+    <div id="mobile-menu-overlay"></div>
 
     <!-- ==================== HERO V2 ==================== -->
     <section id="hero-v2">
@@ -1090,17 +1059,28 @@
       })();
 
 
-      // ---- V2 Mobile menu ----
+      // ---- V2 Mobile menu (right drawer) ----
       (function () {
         const btn = document.getElementById("menu-btn-v2");
         const menu = document.getElementById("mobile-menu-v2");
+        const overlay = document.getElementById("mobile-menu-overlay");
+        const closeBtn = document.getElementById("mobile-menu-close");
         if (!btn || !menu) return;
-        btn.addEventListener("click", () => menu.classList.toggle("open"));
-        menu
-          .querySelectorAll("a")
-          .forEach((a) =>
-            a.addEventListener("click", () => menu.classList.remove("open")),
-          );
+        function openMenu() {
+          menu.classList.add("open");
+          if (overlay) overlay.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        function closeMenu() {
+          menu.classList.remove("open");
+          if (overlay) overlay.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        btn.addEventListener("click", openMenu);
+        if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+        if (overlay) overlay.addEventListener("click", closeMenu);
+        menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
       })();
 
       // ---- Photo Carousel ----

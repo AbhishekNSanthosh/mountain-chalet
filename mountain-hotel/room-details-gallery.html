@@ -81,6 +81,16 @@
             transition: all 0.3s;
         }
         .gallery-dot.active { background: #fff; width: 20px; border-radius: 10px; }
+
+        @media (max-width: 767px) {
+            .room-gallery-header { height: 60vh; }
+            .gallery-btn { width: 40px; height: 40px; }
+            .gallery-nav { padding: 0 16px; }
+        }
+        @media (max-width: 575px) {
+            .room-gallery-header { height: 50vh; }
+            .gallery-btn { width: 36px; height: 36px; }
+        }
     </style>
 </head>
 <body>
@@ -282,6 +292,25 @@
         </svg>
       </button>
     </nav>
+    <!-- ==================== MOBILE MENU V2 ==================== -->
+    <div id="mobile-menu-v2">
+      <button id="mobile-menu-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mobile-menu-logo">COZYSTAY</div>
+      <nav class="mobile-menu-nav">
+        <a href="index2.html">Home</a>
+        <a href="rooms.html">Stay</a>
+        <a href="restaurant.html">Dine</a>
+        <a href="activities.html">Play</a>
+        <a href="spa.html">Relax</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="#booking" class="mobile-menu-cta">Reserve Now</a>
+    </div>
+    <div id="mobile-menu-overlay"></div>
 
     <!-- ==================== GALLERY HEADER ==================== -->
     <header class="room-gallery-header">
@@ -371,8 +400,8 @@
     </main>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer id="footer-v2">
-        <div class="footer-container text-start">
+   <footer id="footer-v2">
+        <div class="footer-container">
             <div class="row gx-lg-5 gy-5">
                 <div class="col-lg-4">
                     <h3 class="footer-logo">COZYSTAY</h3>
@@ -404,8 +433,8 @@
                         </button>
                     </form>
                     <div class="privacy-agree">
-                        <input type="checkbox" id="policy-agree-gallery">
-                        <label for="policy-agree-gallery">I agree to the Privacy Policy</label>
+                        <input type="checkbox" id="policy-agree-index">
+                        <label for="policy-agree-index">I agree to the Privacy Policy</label>
                     </div>
                     <div class="social-connect">
                         <span>Stay Connected:</span>
@@ -462,5 +491,6 @@
         next.onclick = () => goTo(current + 1);
         setInterval(() => goTo(current + 1), 6000);
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

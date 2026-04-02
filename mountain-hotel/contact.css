@@ -184,3 +184,23 @@
     .v-divider { display: none; }
     .info-col { margin-bottom: 80px; }
 }
+
+@media (max-width: 767px) {
+    .hero-box h1 { font-size: 2.8rem; }
+    .contact-hero { height: 60vh; }
+    .contact-img-box { height: 380px; }
+    .contact-form-sec { padding: 80px 5vw; }
+    .form-content-box h2 { font-size: 2.2rem; }
+    .contact-info-sec { padding: 70px 5vw; }
+    .contact-bottom-img { height: 50vh; }
+}
+
+@media (max-width: 575px) {
+    .hero-box h1 { font-size: 2rem; }
+    .contact-hero { height: 55vh; }
+    .contact-img-box { height: 260px; }
+    .contact-form-sec { padding: 60px 5vw; }
+    .form-content-box h2 { font-size: 1.8rem; }
+    .contact-info-sec { padding: 50px 5vw; }
+    .info-col h3 { font-size: 1.7rem; }
+}

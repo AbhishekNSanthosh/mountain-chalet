@@ -249,4 +249,24 @@
   .hero-title { font-size: 3rem; }
   .pool-img-large { height: 400px; }
   .spa-section-title { font-size: 2.2rem; }
+  .spa-balance { padding: 80px 0; }
+  .pool-hero-section { padding: 70px 5vw 100px; }
+  .pool-header h2 { font-size: 2.2rem; }
+  .spa-overlapping-images { padding-left: 0; margin-top: 40px; }
+  .img-small { width: 70%; }
+}
+
+@media (max-width: 575px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-subtitle { font-size: 1rem; letter-spacing: 0.1rem; }
+  .section-title-large { font-size: 1.9rem; }
+  .phone-gold { font-size: 1.4rem; }
+  .pool-img-large { height: 280px; }
+  .pool-play-btn { width: 80px; height: 80px; }
+  .spa-section-title { font-size: 1.8rem; }
+  .pool-hero-section { padding: 60px 5vw 80px; }
+  .spa-balance { padding: 60px 0; }
+  .pool-header h2 { font-size: 1.8rem; }
+  .img-large { width: 100%; }
+  .img-small { position: relative; width: 80%; bottom: auto; right: auto; margin-top: -30px; margin-left: auto; }
 }

@@ -327,6 +327,25 @@ body {
   .cuisine-content { padding-left: 15px; }
   .gallery-inner img { width: 33.33%; }
 }
+
 @media (max-width: 767px) {
   .gallery-inner img { width: 50%; }
+  .cuisine-images { height: 300px; }
+  .cuisine-section { padding: 80px 0; }
+  .flavors-section { padding: 80px 0; }
+  .dining-promo { padding: 80px 0; }
+  .reservation-phone h3 { font-size: 1.8rem; }
+  .info-strip { min-height: auto; padding: 50px 0; }
+}
+
+@media (max-width: 575px) {
+  .gallery-inner { flex-wrap: wrap; }
+  .gallery-inner img { width: 50%; }
+  .cuisine-section { padding: 60px 0; }
+  .flavors-section { padding: 60px 0; }
+  .dining-promo { padding: 60px 0; }
+  .promo-title { font-size: 1.8rem; }
+  .reservation-phone h3 { font-size: 1.5rem; }
+  .menu-card { height: 260px; }
+  .menu-overlay h3 { font-size: 1.4rem; }
 }

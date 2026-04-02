@@ -330,4 +330,16 @@
 @media (max-width: 767px) {
     .room-title { font-size: 32px; }
     .family-amenities-row { flex-direction: column; }
+    .room-details-header { height: 65vh; }
+    .reserve-card { padding: 28px; }
+    .similar-card { height: 320px; }
+}
+
+@media (max-width: 575px) {
+    .room-title { font-size: 26px; }
+    .room-details-header { height: 55vh; margin-top: 64px; }
+    .reserve-card { padding: 20px; }
+    .similar-card { height: 260px; }
+    .room-amenities-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .family-amenities-row { gap: 12px; }
 }
