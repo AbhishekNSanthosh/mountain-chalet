@@ -1,5 +1,5 @@
-/* ============================================================
-   CozyStay – V3 Stylesheet (index3.html)
+﻿/* ============================================================
+   CozyStay â€“ V3 Stylesheet (index3.html)
    Island Resort Design
    ============================================================ */
 
@@ -64,7 +64,7 @@ body {
   background: rgba(255,255,255,0.7);
   border-radius: 2px;
 }
-/* No scrolled overrides — nav always white */
+/* No scrolled overrides â€” nav always white */
 
 /* Dropdown */
 .v3-dropdown { position: relative; }
@@ -196,7 +196,7 @@ body {
   z-index: 0;
 }
 
-/* Top bar: × left, EN/FR right */
+/* Top bar: Ã— left, EN/FR right */
 #v3-overlay-close:hover { color: #fff !important; transform: rotate(90deg); }
 
 
@@ -213,7 +213,7 @@ body {
 }
 .v3-overlay-lang:hover { color: #fff; }
 
-/* Stagger — using global ordering across all rows */
+/* Stagger â€” using global ordering across all rows */
 #v3-overlay-menu.open .v3-overlay-row:nth-child(1) .v3-overlay-link:nth-child(1) { transition-delay: 0.04s; }
 #v3-overlay-menu.open .v3-overlay-row:nth-child(1) .v3-overlay-link:nth-child(2) { transition-delay: 0.09s; }
 #v3-overlay-menu.open .v3-overlay-row:nth-child(1) .v3-overlay-link:nth-child(3) { transition-delay: 0.14s; }
@@ -240,7 +240,7 @@ body {
 }
 .v3-overlay-link:hover { color: #ffffff; text-decoration: none; }
 
-/* Book Your Stay — slightly distinguished */
+/* Book Your Stay â€” slightly distinguished */
 .v3-overlay-book {
   color: var(--gold) !important;
 }
@@ -274,7 +274,7 @@ body.overlay-open { overflow: hidden; }
   100% { transform: scale(1.06); }
 }
 
-/* Overlay — deep dark gradient for text legibility + drama */
+/* Overlay â€” deep dark gradient for text legibility + drama */
 .hero-v3-overlay {
   position: absolute;
   inset: 0;
@@ -625,3 +625,4 @@ body.overlay-open { overflow: hidden; }
 .acc-card:hover .acc-link {
   border-color: #2a2620;
 }
+
