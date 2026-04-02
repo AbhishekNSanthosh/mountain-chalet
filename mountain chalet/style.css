@@ -379,7 +379,8 @@ body {
   opacity: 0;
 }
 #mobile-menu.open {
-  max-height: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
   opacity: 1;
 }
 
@@ -438,21 +439,35 @@ nav {
 .gallery-item:hover img {
   transform: scale(1.08);
 }
-.testi-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  background: transparent;
-  cursor: pointer;
-  transition:
-    background 0.3s,
-    border-color 0.3s;
-  padding: 0;
-}
 .testi-dot.active {
   background: #fff;
   border-color: #fff;
+}
+
+/* Navbar Underline & Active */
+.nav-list a {
+  position: relative;
+  display: inline-block;
+}
+.nav-list a span {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-list a span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--forest);
+  transition: width 0.3s ease;
+}
+.nav-list a:hover span::after {
+  width: 100%;
+}
+.nav-active {
+  border-bottom: 2px solid var(--forest);
 }
 
 /* Fix utility class missing from BS5 */
@@ -1361,3 +1376,299 @@ span.flatpickr-weekday {
 .newsletter-input { border: none; border-radius: 0; padding: 0.85rem 1.2rem; font-family: 'Jost', sans-serif; font-size: 0.9rem; flex: 1; outline: none; }
 .newsletter-btn { background: var(--gold); border: none; color: #fff; padding: 0 1.8rem; font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: background 0.2s; }
 .newsletter-btn:hover { background: var(--gold-dark); }
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+
+/* ── Extra-small / Small phones (< 576px) ── */
+@media (max-width: 575.98px) {
+  /* Navbar */
+  .navbar-inner-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Mobile menu: taller and scrollable for many items */
+  #mobile-menu.open {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Hero text */
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1rem !important;
+    max-width: 100%;
+  }
+  .hero-tagline {
+    font-size: 10px;
+  }
+  .hero-cta-btn {
+    font-size: 12px;
+    padding: 0.6rem 1.5rem !important;
+  }
+  .hero-indicators {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Booking bar: remove negative overlap on mobile */
+  .booking-bar-section {
+    margin-top: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .booking-bar-cell,
+  .booking-bar-cell-last {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(133, 114, 80, 0.2) !important;
+    min-height: 70px;
+  }
+  .booking-bar-label {
+    font-size: 15px;
+  }
+  .booking-bar-calendar-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* About section: prevent excessively tall stacked columns */
+  .about-section-row {
+    min-height: unset;
+  }
+  .about-image-col {
+    min-height: 220px;
+  }
+  .about-center-col {
+    min-height: 320px;
+  }
+
+  /* Rooms */
+  .room-card-img {
+    height: 200px;
+  }
+
+  /* Experience cards */
+  .exp-card-img-wrapper {
+    height: 200px;
+  }
+  .exp-center {
+    height: 320px !important;
+  }
+  .exp-card-title {
+    font-size: 1.3rem;
+  }
+
+  /* Stats / testimonial banner */
+  .stats-banner-section {
+    min-height: unset;
+    padding: 3rem 1rem;
+  }
+  .testimonial-quote {
+    font-size: 1rem !important;
+  }
+
+  /* Gallery */
+  .gallery-follow-btn {
+    font-size: 11px;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Blog cards */
+  .blog-card-img-wrap {
+    height: 180px;
+  }
+  .blog-card-img {
+    height: 100%;
+  }
+  .blog-feat-img {
+    height: 220px;
+  }
+  .blog-pg-img {
+    height: 170px;
+  }
+
+  /* Footer */
+  .footer-description {
+    max-width: 100%;
+  }
+
+  /* Inner page hero */
+  .page-hero {
+    min-height: 45vh;
+    padding-top: 80px;
+  }
+
+  /* Room gallery */
+  .room-gallery-img {
+    height: 190px;
+  }
+  .similar-room-img {
+    height: 170px;
+  }
+
+  /* Team cards */
+  .team-card-img {
+    height: 240px;
+  }
+
+  /* Back-to-top button */
+  .back-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* ── Small to medium phones (576px – 767px) ── */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar-inner-padding {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #mobile-menu.open {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .hero-title {
+    font-size: 2.4rem !important;
+  }
+
+  .booking-bar-section {
+    margin-top: 0;
+  }
+  .booking-bar-cell,
+  .booking-bar-cell-last {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(133, 114, 80, 0.2) !important;
+    min-height: 75px;
+  }
+  .booking-bar-label {
+    font-size: 16px;
+  }
+
+  .about-section-row {
+    min-height: unset;
+  }
+  .about-image-col {
+    min-height: 250px;
+  }
+  .about-center-col {
+    min-height: 340px;
+  }
+
+  .exp-center {
+    height: 360px !important;
+  }
+
+  .stats-banner-section {
+    min-height: unset;
+    padding: 3.5rem 1rem;
+  }
+
+  .page-hero {
+    min-height: 48vh;
+    padding-top: 80px;
+  }
+
+  .blog-feat-img {
+    height: 260px;
+  }
+}
+
+/* ── Tablets (768px – 991px) ── */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar-inner-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  #mobile-menu.open {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .booking-bar-section {
+    margin-top: -20px;
+  }
+  .booking-bar-label {
+    font-size: 16px;
+  }
+  .booking-bar-cell,
+  .booking-bar-cell-last {
+    min-height: 78px;
+  }
+
+  .about-section-row {
+    min-height: unset;
+  }
+  .about-image-col {
+    min-height: 280px;
+  }
+  .about-center-col {
+    min-height: 360px;
+  }
+
+  .stats-banner-section {
+    min-height: 400px;
+  }
+
+  .page-hero {
+    min-height: 50vh;
+    padding-top: 90px;
+  }
+
+  .blog-feat-img {
+    height: 300px;
+  }
+
+  .room-gallery-img {
+    height: 220px;
+  }
+}
+
+/* ── Desktop and up (≥ 992px) ── */
+@media (min-width: 992px) {
+  .about-section-row {
+    min-height: max(600px, 75vh);
+  }
+
+  .booking-bar-section {
+    margin-top: -45px;
+  }
+  .booking-bar-label {
+    font-size: 19px;
+  }
+}
+
+/* ── Ensure images never overflow on any screen ── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Keep fixed-height images (cards, gallery) working correctly */
+.room-card-img,
+.room-gallery-img,
+.similar-room-img,
+.blog-card-img,
+.blog-pg-img,
+.blog-feat-img,
+.gal-img,
+.team-card-img,
+.exp-card-img-wrapper img,
+.exp-center img {
+  max-width: none;  /* let object-fit handle it inside fixed containers */
+  height: inherit;
+}
+
+/* ── Prevent horizontal scroll on all screens ── */
+.container-fluid,
+.container {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
