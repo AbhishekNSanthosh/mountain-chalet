@@ -1,0 +1,252 @@
+/* ==================== SPA & WELLNESS CSS ==================== */
+
+/* Hero */
+.spa-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1920&q=80') center/cover no-repeat;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Marcellus', serif;
+  font-size: 5.5rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
+  opacity: 0.9;
+}
+
+/* Intro Section */
+.py-100 { padding: 120px 0; }
+.section-title-large { font-family: 'Marcellus', serif; font-size: 3rem; color: #0d0d0d; margin: 30px 0; }
+.text-gold { color: #b89a6a !important; }
+.phone-gold { font-family: 'Marcellus', serif; color: #b89a6a; font-size: 1.8rem; text-decoration: none; }
+
+.spa-overlapping-images {
+  padding-left: 50px;
+}
+
+.img-large {
+  width: 80%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+
+.img-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-small {
+  width: 60%;
+  aspect-ratio: 4/3;
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  z-index: 5;
+  overflow: hidden;
+  border-left: 15px solid #fff;
+  border-top: 15px solid #fff;
+}
+
+.img-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Balance Cards */
+.spa-balance {
+  background: #0d1216;
+  padding: 120px 0;
+}
+
+.balance-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  cursor: pointer;
+  background: #1a1a1a;
+}
+
+.balance-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.6;
+}
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+  text-align: center;
+}
+
+.card-content .card-icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.card-content h4 {
+  font-family: 'Marcellus', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.balance-card:hover img {
+  transform: scale(1.15);
+  opacity: 0.45;
+}
+
+/* Treatment Sections */
+.spa-section-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.spa-section-img { flex: 1; }
+.spa-section-img img { width: 100%; height: 700px; object-fit: cover; display: block; }
+
+.spa-section-text {
+  flex: 1;
+  padding: 100px 8vw;
+}
+
+.tag-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 25px;
+  display: block;
+}
+
+.spa-section-title {
+  font-family: 'Marcellus', serif;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.spa-section-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Pool Section */
+.pool-hero-section {
+  padding: 100px 8vw 150px;
+  background: #fdfdfd;
+}
+
+.pool-header {
+  max-width: 1200px;
+  margin-bottom: 60px;
+}
+
+.pool-header h2 {
+  font-family: 'Marcellus', serif;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+.pool-header p {
+  color: #777;
+  max-width: 500px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pool-img-large {
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pool-img-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pool-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.pool-play-btn:hover {
+  background: rgba(255,255,255,1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.pool-play-btn svg { width: 20px; height: 26px; fill: #111; margin-left: 5px; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .spa-section-row { flex-direction: column; }
+  .spa-section-img img { height: 450px; }
+  .spa-section-text { padding: 60px 8vw; }
+  .spa-section-row.reverse { flex-direction: column-reverse; }
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 3rem; }
+  .pool-img-large { height: 400px; }
+  .spa-section-title { font-size: 2.2rem; }
+}

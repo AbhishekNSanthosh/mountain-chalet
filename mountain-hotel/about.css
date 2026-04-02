@@ -1,0 +1,223 @@
+/* About Page Specific Styles */
+:root {
+    --gold: #b89a6a;
+    --dark: #111;
+    --light-bg: #f9f9f9;
+}
+
+.about-hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1583321500900-82807e458f3c?w=1920&h=1080&fit=crop') center/cover no-repeat;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero-title {
+    font-family: 'Marcellus', serif;
+    font-size: 4.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.about-hero-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Intro Section */
+.about-intro {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-intro .tag-label {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.about-intro h2 {
+    font-family: 'Marcellus', serif;
+    font-size: 2.2rem;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.about-intro p {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.intro-large-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* Indulge Section */
+.about-indulge {
+    padding: 100px 0;
+}
+
+.indulge-text-col {
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.indulge-img-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.indulge-img-item {
+    flex: 1;
+    height: 500px;
+    object-fit: cover;
+}
+
+.indulge-title {
+    font-family: 'Marcellus', serif;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.indulge-desc {
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Essentials Section */
+.about-essentials {
+    padding: 100px 0;
+    background: var(--light-bg);
+}
+
+.essentials-img-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.essentials-img-item {
+    flex: 1;
+    height: 500px;
+    object-fit: cover;
+}
+
+.essential-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.essential-icon {
+    font-size: 24px;
+    color: var(--gold);
+}
+
+.essential-content h5 {
+    font-family: 'Marcellus', serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.essential-content p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+/* Stats Section */
+.about-stats-sec {
+    position: relative;
+    padding: 15vw 0;
+    background: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1920&h=1080&fit=crop') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.about-stats-sec::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.stats-container {
+    position: relative;
+    z-index: 1;
+}
+
+.stats-title {
+    font-family: 'Marcellus', serif;
+    font-size: 2.5rem;
+    margin-bottom: 80px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stat-box {
+    margin-bottom: 40px;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Marcellus', serif;
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.explore-link {
+    display: inline-block;
+    margin-top: 60px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 5px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.explore-link:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+@media (max-width: 991px) {
+    .about-hero-title { font-size: 3rem; }
+    .indulge-text-col { padding-right: 0; margin-bottom: 50px; }
+    .essentials-img-grid { margin-bottom: 50px; }
+}

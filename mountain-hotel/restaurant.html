@@ -1,109 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dining Experience - CozyStay</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style2.css">
-    <style>
-        /* Restaurant Specifics */
-        .dine-hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: #fff;
-            text-align: center;
-            position: relative;
-        }
-        .dine-hero h1 { font-family: "Marcellus", serif; font-size: 80px; letter-spacing: 10px; text-transform: uppercase; margin: 0; }
-        .dine-hero p { font-family: "Jost", sans-serif; font-size: 18px; letter-spacing: 4px; text-transform: uppercase; margin-top: 20px; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dining Experience – CozyStay Resort</title>
+    <meta
+      name="description"
+      content="Experience exquisite cuisine at CozyStay Resort. From our lobby cafe to our rooftop bar, enjoy a wide variety of dining options."
+    />
 
-        .restaurant-intro { padding: 100px 5vw; background: #fff; text-align: center; }
-        .intro-label { font-family: "Jost", sans-serif; font-size: 12px; letter-spacing: 3px; color: #b89a6a; text-transform: uppercase; margin-bottom: 20px; display: block; }
-        .intro-title { font-family: "Marcellus", serif; font-size: 48px; color: #333; margin-bottom: 30px; }
-        .intro-desc { max-width: 800px; margin: 0 auto; line-height: 1.8; color: #666; font-size: 16px; }
-        .intro-btn { 
-            display: inline-block; margin-top: 40px; padding: 12px 35px; background: #b89a6a; color: #fff; 
-            text-decoration: none; font-family: "Jost", sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
-        }
-        .intro-btn:hover { background: #a3895e; color: #fff; }
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-        /* Dish Showcase */
-        .dish-showcase { display: flex; gap: 20px; padding: 0 5vw 100px; overflow-x: auto; scrollbar-width: none; }
-        .dish-showcase::-webkit-scrollbar { display: none; }
-        .dish-item { flex: 0 0 33.33%; height: 500px; overflow: hidden; position: relative; }
-        .dish-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-        .dish-item:hover img { transform: scale(1.05); }
-
-        /* Lounge Section */
-        .lounge-teaser { padding: 100px 5vw; background: #fdfcf9; text-align: center; }
-        .lounge-title { font-family: "Marcellus", serif; font-size: 42px; margin-bottom: 30px; }
-
-        /* Lobby Cafe Section - Dark Theme */
-        .lobby-cafe-section { background: #111; color: #fff; padding: 100px 5vw; position: relative; }
-        .lobby-cafe-row { display: flex; align-items: center; gap: 60px; }
-        .lobby-cafe-imgs { flex: 1; display: flex; gap: 20px; align-items: center; }
-        .lobby-cafe-imgs img:nth-child(1) { width: 40%; height: 350px; object-fit: cover; }
-        .lobby-cafe-imgs img:nth-child(2) { width: 60%; height: 450px; object-fit: cover; margin-top: 50px; }
-        .lobby-cafe-content { flex: 1; }
-        .cafe-label { font-size: 12px; letter-spacing: 2px; color: #b89a6a; text-transform: uppercase; margin-bottom: 20px; display: block; }
-        .cafe-title { font-family: "Marcellus", serif; font-size: 42px; margin-bottom: 30px; }
-        .cafe-desc { color: #aaa; line-height: 1.8; margin-bottom: 30px; }
-        .cafe-info { list-style: none; padding: 0; margin-bottom: 30px; }
-        .cafe-info li { padding: 8px 0; border-bottom: 1px solid #333; color: #bbb; display: flex; justify-content: space-between; }
-        .menu-link { color: #b89a6a; text-decoration: none; font-size: 13px; text-transform: uppercase; border-bottom: 1px solid #b89a6a; transition: 0.3s; }
-        .menu-link:hover { color: #fff; border-color: #fff; }
-
-        /* Venue Grid */
-        .venue-grid { padding: 100px 5vw; background: #fff; }
-        .venue-card { margin-bottom: 40px; }
-        .venue-img-wrap { height: 300px; overflow: hidden; margin-bottom: 25px; }
-        .venue-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .venue-card:hover .venue-img-wrap img { transform: scale(1.05); }
-        .venue-type { font-size: 11px; letter-spacing: 2px; color: #b89a6a; text-transform: uppercase; margin-bottom: 10px; display: block; }
-        .venue-name { font-family: "Marcellus", serif; font-size: 26px; margin-bottom: 15px; }
-        .venue-desc { color: #777; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-
-        /* In-Room Dining */
-        .in-room-section { 
-            height: 70vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544145945-f904253d0c7b?w=1600&auto=format&fit=crop');
-            background-size: cover; background-position: center; display: flex; align-items: flex-end; padding: 100px 5vw; color: #fff;
-        }
-        .in-room-content { max-width: 500px; }
-        .in-room-label { font-size: 12px; letter-spacing: 2px; color: #b89a6a; text-transform: uppercase; margin-bottom: 20px; display: block; }
-        .in-room-title { font-family: "Marcellus", serif; font-size: 42px; margin-bottom: 20px; }
-
-        @media (max-width: 991px) {
-            .lobby-cafe-row { flex-direction: column; }
-            .lobby-cafe-imgs { width: 100%; }
-            .dine-hero h1 { font-size: 50px; }
-            .dish-item { flex: 0 0 80%; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- ==================== NAVBAR ==================== -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="restaurant.css" />
+  </head>
+  <body>
+    <!-- ==================== TOP BAR ==================== -->
     <div id="top-bar">
       <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
       <span class="d-flex align-items-center gap-4">
         <span>TEL: +41 22 345 67 88</span>
         <span>FAX: +41 22 345 67 89</span>
-        <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+        <a href="mailto:booking@cozystay.com" class="text-white text-decoration-none border-bottom border-white border-opacity-25">BOOKING@COZYSTAY.COM</a>
       </span>
     </div>
 
-    <!-- ==================== NAVBAR V2 ==================== -->
+    <!-- ==================== NAVBAR ==================== -->
     <nav id="navbar-v2">
-      <!-- Left nav links -->
       <ul class="v2-nav-left">
         <li class="dropdown">
           <a href="index2.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -115,12 +47,12 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="rooms.html" class="v2-nav-link active-nav">
+          <a href="rooms.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             STAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <ul class="custom-dropdown-menu dropdown-menu">
             <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link active" href="room-details.html">Room Details – Top Image</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details – Top Image</a></li>
             <li><a class="dropdown-item nav-dropdown-link" href="room-details-gallery.html">Room Details – Top Gallery</a></li>
             <li><a class="dropdown-item nav-dropdown-link" href="room-details-left.html">Room Details – Left Booking Form</a></li>
             <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
@@ -129,7 +61,7 @@
           </ul>
         </li>
         <li class="dropdown mega-dropdown">
-          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="restaurant.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <div class="mega-menu dropdown-menu">
@@ -141,40 +73,28 @@
                 </a>
               </div>
               <div class="mega-item">
-                <a href="restaurant.html">
+                <a href="the-restaurant.html">
                   <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
                   <span>The Restaurant</span>
                 </a>
               </div>
               <div class="mega-item">
-                <a href="restaurant.html">
+                <a href="lobby-cafe.html">
                   <div class="mega-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&auto=format&fit=crop" alt="Lobby Cafe" /></div>
                   <span>Lobby Cafe</span>
                 </a>
               </div>
               <div class="mega-item">
                 <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1541544741938-0af808b77e40?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
                   <span>Rooftop Bar</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
-                  <span>Steakhouse</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
-                  <span>Cigar Lounge</span>
                 </a>
               </div>
             </div>
           </div>
         </li>
         <li class="dropdown mega-dropdown">
-          <a href="skiing.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <div class="mega-menu dropdown-menu play-mega-menu">
@@ -184,13 +104,13 @@
                 <div class="play-col">
                   <h4>LOCAL ACTIVITIES</h4>
                   <ul>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Winter Activities</a></li>
-                    <li><a href="#">Summer Activities</a></li>
+                    <li><a href="activities.html">Overview</a></li>
+                    <li><a href="winter-activities.html">Winter Activities</a></li>
+                    <li><a href="summer-activities.html">Summer Activities</a></li>
                   </ul>
-                  <h4 class="mt-4">WINTER ACTIVITIES</h4>
+                  <h4 class="mt-5">WINTER ACTIVITIES</h4>
                   <ul>
-                    <li><a href="#">Ski & Snowboard</a></li>
+                    <li><a href="skiing.html">Ski & Snowboard</a></li>
                     <li><a href="#">Freeriding</a></li>
                     <li><a href="#">Winter Hiking</a></li>
                     <li><a href="#">Snowshoeing</a></li>
@@ -204,25 +124,15 @@
                     <li><a href="#">Hiking</a></li>
                     <li><a href="#">Running & Walking</a></li>
                     <li><a href="#">Mountain Bike</a></li>
-                    <li><a href="#">Racing Bike</a></li>
-                    <li><a href="#">Golf Courses</a></li>
-                  </ul>
-                  <h4 class="mt-4">OTHERS</h4>
-                  <ul>
-                    <li><a href="#">Art & Museum</a></li>
-                    <li><a href="#">Musics</a></li>
                   </ul>
                 </div>
               </div>
-              
-              <!-- Right Part with Promotional Cards -->
               <div class="play-cards-grid">
                 <div class="play-card winter-card">
                   <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
                   <div class="play-card-content">
                     <p class="play-card-label">ADVENTURES</p>
                     <h5 class="play-card-title">WINTER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
                   </div>
                 </div>
                 <div class="play-card summer-card">
@@ -230,7 +140,6 @@
                   <div class="play-card-content">
                     <p class="play-card-label">NATURE & WILD</p>
                     <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
                   </div>
                 </div>
               </div>
@@ -238,7 +147,7 @@
           </div>
         </li>
         <li>
-          <a href="relax.html" class="v2-nav-link">RELAX</a>
+          <li><a href="spa.html" class="v2-nav-link">RELAX</a></li>
         </li>
       </ul>
 
@@ -287,104 +196,194 @@
       </button>
     </nav>
 
-    <!-- ==================== HERO ==================== -->
-    <header class="dine-hero">
-        <h1>DINING EXPERIENCE</h1>
-        <p>Enjoy a world-class selection of dining options from around the world.</p>
+    <!-- ==================== MOBILE MENU V2 ==================== -->
+    <div id="mobile-menu-v2">
+      <div class="px-4 py-3 d-flex flex-column gap-2">
+        <a href="index2.html" class="text-decoration-none py-2 border-bottom border-light">HOME</a>
+        <a href="rooms.html" class="text-decoration-none py-2 border-bottom border-light">STAY</a>
+        <a href="restaurant.html" class="text-decoration-none py-2 border-bottom border-light">DINE</a>
+        <a href="skiing.html" class="text-decoration-none py-2 border-bottom border-light">PLAY</a>
+        <a href="relax.html" class="text-decoration-none py-2 border-bottom border-light">RELAX</a>
+        <a href="about.html" class="text-decoration-none py-2 border-bottom border-light">ABOUT</a>
+        <a href="gallery.html" class="text-decoration-none py-2 border-bottom border-light">GALLERY</a>
+      </div>
+    </div>
+
+    <!-- ==================== RESTAURANT HERO ==================== -->
+    <header class="restaurant-hero">
+      <div class="restaurant-hero-bg"></div>
+      <div class="restaurant-hero-overlay"></div>
+      <div class="container text-center restaurant-hero-content">
+        <h1 class="hero-title">DINING EXPERIENCE</h1>
+        <p class="hero-subtitle">Enjoy a wide variety of dining options from around the world.</p>
+      </div>
     </header>
 
-    <!-- ==================== INTRO ==================== -->
-    <section class="restaurant-intro">
-        <span class="intro-label">ESTABLISHED SINCE 1998 IN SWITZERLAND</span>
-        <h2 class="intro-title">Experience Exquisite Cuisine at The Restaurant</h2>
-        <p class="intro-desc">The menu at CozyStay Resort is a journey through nature, where each and every dish reflects its terroir, following the rhythm of the seasons. Freshly harvested fruits and vegetables are always in focus, from our own farm to your plate, providing a truly serene experience.</p>
-        <a href="#" class="intro-btn">The Restaurant Menu</a>
+    <!-- ==================== INTRO SECTION ==================== -->
+    <section class="dining-intro px-5vw">
+      <div class="container text-center">
+        <p class="intro-label">EXPERIENCE THE FINEST GASTRONOMY</p>
+        <h2 class="intro-title">EXPERIENCE EXQUISITE CUISINE AT THE RESTAURANT</h2>
+        <p class="intro-desc">
+          The restaurant boasts a variety of delightful options for every mood. Relax with coffee and sweets in our cozy Lobby Cafe, enjoy spectacular skyline views with a craft cocktail at our Rooftop Bar, or savor gourmet steak in our sophisticated steakhouse. For a more private experience, our in-room dining is also available to you.
+        </p>
+        <a href="#" class="btn-outline-gold">The Restaurant Menu</a>
+      </div>
     </section>
 
-    <!-- ==================== DISH SHOWCASE ==================== -->
-    <section class="dish-showcase">
-        <div class="dish-item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop" alt="Dish 1"></div>
-        <div class="dish-item"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&auto=format&fit=crop" alt="Dish 2"></div>
-        <div class="dish-item"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&auto=format&fit=crop" alt="Dish 3"></div>
+    <!-- ==================== IMAGE GALLERY CAROUSEL ==================== -->
+    <section class="dining-gallery">
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=900&fit=crop" alt="Fine Dining 1" />
+        </div>
+        <div class="gallery-item active">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=900&fit=crop" alt="Fine Dining 2" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=900&fit=crop" alt="Fine Dining 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=900&fit=crop" alt="Fine Dining 4" />
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=900&fit=crop" alt="Fine Dining 5" />
+        </div>
+      </div>
+      <div class="gallery-dots">
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </section>
 
-    <!-- ==================== TEASER ==================== -->
-    <section class="lounge-teaser">
-        <span class="intro-label">CHECK OUT ALL RESTAURANTS AND CAFES</span>
-        <h2 class="lounge-title">Interested in Afternoon Tea, Bar, Cigar Lounge?</h2>
-        <p class="intro-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <!-- ==================== PROMO SECTION ==================== -->
+    <section class="dining-promo px-5vw">
+      <div class="container text-center">
+        <p class="promo-label">CHECK OUT ALL RESTAURANTS AND CAFES</p>
+        <h2 class="promo-title">INTERESTED IN AFTERNOON TEA, BAR, CIGAR LOUNGE?</h2>
+        <p class="promo-desc">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+      </div>
     </section>
 
-    <!-- ==================== LOBBY CAFE ==================== -->
-    <section class="lobby-cafe-section">
-        <div class="lobby-cafe-row">
-            <div class="lobby-cafe-imgs">
-                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&auto=format&fit=crop" alt="Coffee">
-                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&auto=format&fit=crop" alt="Cafe Interior">
+    <!-- ==================== LOBBY CAFE SECTION ==================== -->
+    <section class="lobby-cafe px-5vw">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 position-relative cafe-images">
+            <div class="img-back">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&h=700&fit=crop" alt="Tea" />
             </div>
-            <div class="lobby-cafe-content">
-                <span class="cafe-label">AFTERNOON TEA, COFFEE & CAKE</span>
-                <h2 class="cafe-title">CozyStay Lobby Cafe</h2>
-                <p class="cafe-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. From snacks to casual meals, our cafe provides an idyllic setting for your morning coffee or afternoon tea.</p>
-                <ul class="cafe-info">
-                    <li><span>Location</span> <span>The main lobby</span></li>
-                    <li><span>Serve</span> <span>Coffee, Tea, Cake, Snacks</span></li>
-                    <li><span>Hours</span> <span>11:00 am - 10:00 pm</span></li>
+            <div class="img-front">
+              <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=800&fit=crop" alt="Cake" />
+            </div>
+          </div>
+          <div class="col-lg-6 cafe-content">
+            <p class="section-label">AFTERNOON TEA, HOTELS, CAFE</p>
+            <h2 class="section-title">CozyStay Lobby Café</h2>
+            <p class="section-desc">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+            <ul class="section-info">
+              <li><strong>Location:</strong> The Main Lobby</li>
+              <li><strong>Serve:</strong> Coffee, Tea, Cakes, Snacks</li>
+              <li><strong>Hours:</strong> 11:00 am - 10:00 pm</li>
+            </ul>
+            <a href="#" class="view-menu">View menu &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DINING GRID ==================== -->
+    <section class="dining-grid px-5vw">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Rooftop Bar -->
+          <div class="col-md-4">
+            <div class="dining-card">
+              <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=450&fit=crop" alt="Rooftop Bar" />
+              </div>
+              <div class="card-body">
+                <p class="card-label">BAR & COCKTAILS</p>
+                <h3 class="card-title">Rooftop Bar</h3>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <ul class="card-info">
+                  <li><strong>Location:</strong> Rooftop</li>
+                  <li><strong>Serve:</strong> Cocktails, Snacks, Wines</li>
+                  <li><strong>Hours:</strong> 17:00 pm - 01:00 am</li>
                 </ul>
-                <a href="#" class="menu-link">View Café Menu</a>
+                <a href="#" class="view-menu">View menu &rarr;</a>
+              </div>
             </div>
+          </div>
+          <!-- Steakhouse -->
+          <div class="col-md-4">
+            <div class="dining-card">
+              <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&h=450&fit=crop" alt="Steakhouse" />
+              </div>
+              <div class="card-body">
+                <p class="card-label">AMERICAN STEAK</p>
+                <h3 class="card-title">Steakhouse</h3>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <ul class="card-info">
+                  <li><strong>Location:</strong> The 2nd Floor (South wing)</li>
+                  <li><strong>Serve:</strong> Steaks, Grilled meats, Wines</li>
+                  <li><strong>Hours:</strong> 18:00 pm - 11:00 pm</li>
+                </ul>
+                <a href="#" class="view-menu">View menu &rarr;</a>
+              </div>
+            </div>
+          </div>
+          <!-- Cigar Lounge -->
+          <div class="col-md-4">
+            <div class="dining-card">
+              <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=450&fit=crop" alt="Cigar Lounge" />
+              </div>
+              <div class="card-body">
+                <p class="card-label">HOTELS & CIGAR LOUNGE</p>
+                <h3 class="card-title">Cigar Lounge</h3>
+                <p class="card-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <ul class="card-info">
+                  <li><strong>Location:</strong> Rooftop</li>
+                  <li><strong>Serve:</strong> Spirits, Premium Tobacco</li>
+                  <li><strong>Hours:</strong> 17:00 pm - 01:00 am</li>
+                </ul>
+                <a href="#" class="view-menu">View menu &rarr;</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- ==================== VENUE GRID ==================== -->
-    <section class="venue-grid">
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="venue-card">
-                    <div class="venue-img-wrap"><img src="https://images.unsplash.com/photo-1541544741938-0af808b77e40?w=600&auto=format&fit=crop" alt="Rooftop Bar"></div>
-                    <span class="venue-type">TAPAS, DRINKS & COCTAILS</span>
-                    <h3 class="venue-name">Rooftop Bar</h3>
-                    <p class="venue-desc">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
-                    <ul class="cafe-info"><li><span>Location</span> <span>Rooftop</span></li></ul>
-                    <a href="#" class="menu-link">View Bar Menu</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="venue-card">
-                    <div class="venue-img-wrap"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&auto=format&fit=crop" alt="Steakhouse"></div>
-                    <span class="venue-type">AMERICAN CUISINE</span>
-                    <h3 class="venue-name">Steakhouse</h3>
-                    <p class="venue-desc">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
-                    <ul class="cafe-info"><li><span>Location</span> <span>The 2nd floor, East wing</span></li></ul>
-                    <a href="#" class="menu-link">View Steak Menu</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="venue-card">
-                    <div class="venue-img-wrap"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop" alt="Cigar Lounge"></div>
-                    <span class="venue-type">THE EXCLUSIVE LOUNGE</span>
-                    <h3 class="venue-name">Cigar Lounge</h3>
-                    <p class="venue-desc">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
-                    <ul class="cafe-info"><li><span>Location</span> <span>The Hall</span></li></ul>
-                    <a href="#" class="menu-link">View Lounge Menu</a>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- ==================== IN-ROOM DINING ==================== -->
-    <section class="in-room-section">
-        <div class="in-room-content">
-            <span class="in-room-label">BREAKFAST, DINNER & SNACKS</span>
-            <h2 class="in-room-title">In-Room Dining</h2>
-            <p class="cafe-desc">Deliver an elaborate feast or artisanal snacks right into your room. Available 24 hours a day.</p>
-            <a href="#" class="menu-link" style="color:#fff; border-color:#fff;">Dining Menu</a>
-        </div>
+    <section class="in-room-dining px-5vw">
+      <div class="in-room-bg"></div>
+      <div class="in-room-overlay"></div>
+      <div class="container text-white in-room-content">
+        <p class="section-label">HOTELS & RESTAURANTS</p>
+        <h2 class="section-title">IN-ROOM DINING</h2>
+        <p class="section-desc">Order your meal and share it with people in your bedroom.<br>Available to you anytime.</p>
+        <ul class="section-info">
+          <li><strong>Serve:</strong> Breakfast, Lunch, Dinner, Snacks</li>
+          <li><strong>Phone:</strong> +41 22 345 67 88</li>
+          <li><strong>Hours:</strong> 06:00 am - 12:00 pm</li>
+        </ul>
+        <a href="#" class="view-menu">View menu &rarr;</a>
+      </div>
     </section>
 
     <!-- ==================== FOOTER ==================== -->
     <footer id="footer-v2">
-        <div class="footer-container text-start">
+        <div class="footer-container">
             <div class="row gx-lg-5 gy-5">
                 <div class="col-lg-4">
                     <h3 class="footer-logo">COZYSTAY</h3>
@@ -416,14 +415,13 @@
                         </button>
                     </form>
                     <div class="privacy-agree">
-                        <input type="checkbox" id="policy-agree-dine">
-                        <label for="policy-agree-dine">I agree to the Privacy Policy</label>
+                        <input type="checkbox" id="policy-agree-rest">
+                        <label for="policy-agree-rest">I agree to the Privacy Policy</label>
                     </div>
                     <div class="social-connect">
                         <span>Stay Connected:</span>
                         <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
                         <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-                        <a href="#" aria-label="Pinterest"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
                         <a href="#" aria-label="YouTube"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
                         <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.197-4.347-2.618-6.778-6.98-6.981C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                     </div>
@@ -440,10 +438,25 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Copy consistent navigation from other pages after DOM load
-        // This is a placeholder since the nav propagation is handled manually in this turn
+      // Simple dots and active states for gallery demonstration
+      const dots = document.querySelectorAll('.dot');
+      const items = document.querySelectorAll('.gallery-item');
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          dots.forEach(d => d.classList.remove('active'));
+          items.forEach(item => item.classList.remove('active'));
+          dot.classList.add('active');
+          items[index].classList.add('active');
+        });
+      });
+
+      // Mobile menu toggle
+      document.getElementById('menu-btn-v2').addEventListener('click', function() {
+        document.getElementById('mobile-menu-v2').classList.toggle('open');
+      });
     </script>
-</body>
+  </body>
 </html>
