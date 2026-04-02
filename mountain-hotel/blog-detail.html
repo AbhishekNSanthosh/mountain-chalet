@@ -12,94 +12,202 @@
     <link rel="stylesheet" href="blog-detail.css" />
   </head>
   <body>
+    <!-- ==================== TOP BAR ==================== -->
+    <div id="top-bar">
+      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
+      <span class="d-flex align-items-center gap-4">
+        <span>TEL: +41 22 345 67 88</span>
+        <span>FAX: +41 22 345 67 89</span>
+        <a href="mailto:booking@cozystay.com" class="text-white text-decoration-none border-bottom border-white border-opacity-25">BOOKING@COZYSTAY.COM</a>
+      </span>
+    </div>
+
     <!-- ==================== NAVBAR ==================== -->
     <nav id="navbar-v2">
-        <ul class="v2-nav-left">
-          <li class="dropdown">
-            <a href="index2.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              HOME <svg viewBox="0 0 10 6" width="10" height="6"><polyline points="1,1 5,5 9,1" stroke="currentColor" fill="none" /></svg>
-            </a>
-            <ul class="custom-dropdown-menu dropdown-menu">
-              <li><a class="dropdown-item nav-dropdown-link" href="index.html">Home v1</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="index2.html">Home v2</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="rooms.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              STAY <svg viewBox="0 0 10 6" width="10" height="6"><polyline points="1,1 5,5 9,1" stroke="currentColor" fill="none" /></svg>
-            </a>
-            <ul class="custom-dropdown-menu dropdown-menu">
-              <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="account.html">My account</a></li>
-            </ul>
-          </li>
-          <li class="dropdown mega-dropdown">
-            <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              DINE <svg viewBox="0 0 10 6" width="10" height="6"><polyline points="1,1 5,5 9,1" stroke="currentColor" fill="none" /></svg>
-            </a>
-            <div class="mega-menu dropdown-menu">
-              <div class="mega-menu-container">
-                <div class="mega-item">
-                  <a href="restaurant.html">
-                    <div class="mega-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&auto=format&fit=crop" alt="Overview" /></div>
-                    <span>Overview</span>
-                  </a>
-                </div>
-                <div class="mega-item">
-                  <a href="the-restaurant.html">
-                    <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
-                    <span>The Restaurant</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown mega-dropdown">
-            <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              PLAY <svg viewBox="0 0 10 6" width="10" height="6"><polyline points="1,1 5,5 9,1" stroke="currentColor" fill="none" /></svg>
-            </a>
-            <div class="mega-menu dropdown-menu play-mega-menu">
-              <div class="mega-play-container text-start">
-                <div class="play-links-grid">
-                  <div class="play-col">
-                    <h4 class="h6 mb-4">LOCAL ACTIVITIES</h4>
-                    <ul class="list-unstyled d-flex flex-column gap-2 opacity-50">
-                      <li><a href="activities.html" class="text-white text-decoration-none">Overview</a></li>
-                      <li><a href="winter-activities.html" class="text-white text-decoration-none">Winter Activities</a></li>
-                      <li><a href="summer-activities.html" class="text-white text-decoration-none">Summer Activities</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><a href="spa.html" class="v2-nav-link">RELAX</a></li>
-        </ul>
-  
-        <div class="v2-nav-center">
-          <a href="index2.html" class="v2-logo-link">
-            COZYSTAY
-            <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
+      <!-- Left nav links -->
+      <ul class="v2-nav-left">
+        <li class="dropdown">
+          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
-        </div>
-  
-        <ul class="v2-nav-right">
-          <li class="dropdown">
-            <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              PAGES <svg viewBox="0 0 10 6" width="10" height="6"><polyline points="1,1 5,5 9,1" stroke="currentColor" fill="none" /></svg>
-            </a>
-            <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="services.html">Services</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
-              <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
-            </ul>
-          </li>
-          <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
-        </ul>
+          <ul class="custom-dropdown-menu dropdown-menu">
+            <li><a class="dropdown-item nav-dropdown-link" href="index.html">Home v1</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="index2.html">Home v2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="rooms.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            STAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu">
+            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details – Top Image</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details-gallery.html">Room Details – Top Gallery</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details-left.html">Room Details – Left Booking Form</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Checkout</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="account.html">My account</a></li>
+          </ul>
+        </li>
+        <li class="dropdown mega-dropdown">
+          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <div class="mega-menu dropdown-menu">
+            <div class="mega-menu-container">
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&auto=format&fit=crop" alt="Overview" /></div>
+                  <span>Overview</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="the-restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
+                  <span>The Restaurant</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="lobby-cafe.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&auto=format&fit=crop" alt="Lobby Cafe" /></div>
+                  <span>Lobby Cafe</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
+                  <span>Rooftop Bar</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
+                  <span>Steakhouse</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
+                  <span>Cigar Lounge</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="dropdown mega-dropdown">
+          <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <div class="mega-menu dropdown-menu play-mega-menu">
+            <div class="mega-play-container">
+              <!-- Left Cols with Links -->
+              <div class="play-links-grid">
+                <div class="play-col">
+                  <h4>LOCAL ACTIVITIES</h4>
+                  <ul>
+                    <li><a href="activities.html">Overview</a></li>
+                    <li><a href="winter-activities.html">Winter Activities</a></li>
+                    <li><a href="summer-activities.html">Summer Activities</a></li>
+                  </ul>
+                  <h4 class="mt-5">WINTER ACTIVITIES</h4>
+                  <ul>
+                    <li><a href="skiing.html">Ski & Snowboard</a></li>
+                    <li><a href="#">Freeriding</a></li>
+                    <li><a href="#">Winter Hiking</a></li>
+                    <li><a href="#">Snowshoeing</a></li>
+                    <li><a href="#">Paraglider Exercises</a></li>
+                    <li><a href="#">Sledding</a></li>
+                  </ul>
+                </div>
+                <div class="play-col">
+                  <h4>SUMMER ACTIVITIES</h4>
+                  <ul>
+                    <li><a href="#">Hiking</a></li>
+                    <li><a href="#">Running & Walking</a></li>
+                    <li><a href="#">Mountain Bike</a></li>
+                    <li><a href="#">Racing Bike</a></li>
+                    <li><a href="#">Golf Courses</a></li>
+                  </ul>
+                  <h4 class="mt-5">OTHERS</h4>
+                  <ul>
+                    <li><a href="#">Art & Museum</a></li>
+                    <li><a href="#">Musics</a></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Right Part with Promotional Cards -->
+              <div class="play-cards-grid">
+                <a href="winter-activities.html" class="play-card winter-card">
+                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
+                  <div class="play-card-content">
+                    <p class="play-card-label">ADVENTURES</p>
+                    <h5 class="play-card-title">WINTER ACTIVITIES</h5>
+                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </a>
+                <a href="summer-activities.html" class="play-card summer-card">
+                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&h=900&fit=crop" alt="Summer" /></div>
+                  <div class="play-card-content">
+                    <p class="play-card-label">NATURE & WILD</p>
+                    <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
+                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="spa.html" class="v2-nav-link">RELAX</a>
+        </li>
+      </ul>
+
+      <!-- Center logo -->
+      <div class="v2-nav-center">
+        <a href="index2.html" class="v2-logo-link">
+          COZYSTAY
+          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right nav links -->
+      <ul class="v2-nav-right">
+        <li class="dropdown">
+          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            PAGES <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="services.html">Services</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="restaurant.html">Restaurants</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="activities.html">Local Activities</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="spa.html">Wellness</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            EN <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item nav-dropdown-link" href="#">English</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="#">Français</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="#">Deutsch</a></li>
+          </ul>
+        </li>
+        <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
+      </ul>
+      <button id="menu-btn-v2">
+        <span>MENU</span>
+        <svg viewBox="0 0 26 18" width="26" height="18">
+          <line x1="0" y1="1" x2="26" y2="1" stroke="currentColor" stroke-width="2"/>
+          <line x1="0" y1="9" x2="26" y2="9" stroke="currentColor" stroke-width="2"/>
+          <line x1="0" y1="17" x2="26" y2="17" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
     </nav>
 
     <!-- ==================== HERO SECTION ==================== -->

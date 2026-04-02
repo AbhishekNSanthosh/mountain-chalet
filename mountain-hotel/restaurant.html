@@ -25,7 +25,7 @@
   </head>
   <body>
     <!-- ==================== TOP BAR ==================== -->
-    <div id="top-bar">
+   <div id="top-bar">
       <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
       <span class="d-flex align-items-center gap-4">
         <span>TEL: +41 22 345 67 88</span>
@@ -36,9 +36,10 @@
 
     <!-- ==================== NAVBAR ==================== -->
     <nav id="navbar-v2">
+      <!-- Left nav links -->
       <ul class="v2-nav-left">
         <li class="dropdown">
-          <a href="index2.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <ul class="custom-dropdown-menu dropdown-menu">
@@ -61,7 +62,7 @@
           </ul>
         </li>
         <li class="dropdown mega-dropdown">
-          <a href="restaurant.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <div class="mega-menu dropdown-menu">
@@ -88,6 +89,18 @@
                 <a href="restaurant.html">
                   <div class="mega-img"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
                   <span>Rooftop Bar</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
+                  <span>Steakhouse</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
+                  <span>Cigar Lounge</span>
                 </a>
               </div>
             </div>
@@ -124,30 +137,41 @@
                     <li><a href="#">Hiking</a></li>
                     <li><a href="#">Running & Walking</a></li>
                     <li><a href="#">Mountain Bike</a></li>
+                    <li><a href="#">Racing Bike</a></li>
+                    <li><a href="#">Golf Courses</a></li>
+                  </ul>
+                  <h4 class="mt-5">OTHERS</h4>
+                  <ul>
+                    <li><a href="#">Art & Museum</a></li>
+                    <li><a href="#">Musics</a></li>
                   </ul>
                 </div>
               </div>
+              
+              <!-- Right Part with Promotional Cards -->
               <div class="play-cards-grid">
-                <div class="play-card winter-card">
+                <a href="winter-activities.html" class="play-card winter-card">
                   <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
                   <div class="play-card-content">
                     <p class="play-card-label">ADVENTURES</p>
                     <h5 class="play-card-title">WINTER ACTIVITIES</h5>
+                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
                   </div>
-                </div>
-                <div class="play-card summer-card">
+                </a>
+                <a href="summer-activities.html" class="play-card summer-card">
                   <div class="play-card-img"><img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&h=900&fit=crop" alt="Summer" /></div>
                   <div class="play-card-content">
                     <p class="play-card-label">NATURE & WILD</p>
                     <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
+                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
         </li>
         <li>
-          <li><a href="spa.html" class="v2-nav-link">RELAX</a></li>
+          <a href="spa.html" class="v2-nav-link">RELAX</a>
         </li>
       </ul>
 
@@ -167,8 +191,13 @@
           </a>
           <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="services.html">Services</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="restaurant.html">Restaurants</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="activities.html">Local Activities</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="spa.html">Wellness</a></li>
             <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -181,17 +210,14 @@
             <li><a class="dropdown-item nav-dropdown-link" href="#">Deutsch</a></li>
           </ul>
         </li>
-        <li>
-          <a href="#booking" class="v2-reserve-btn">Reserve Now</a>
-        </li>
+        <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
       </ul>
-
-      <!-- Mobile hamburger -->
-      <button id="menu-btn-v2" class="d-none border-0 bg-transparent p-0" aria-label="Toggle menu">
-        <svg width="26" height="18" viewBox="0 0 26 18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
-          <line x1="0" y1="1" x2="26" y2="1"/>
-          <line x1="0" y1="9" x2="26" y2="9"/>
-          <line x1="0" y1="17" x2="26" y2="17"/>
+      <button id="menu-btn-v2">
+        <span>MENU</span>
+        <svg viewBox="0 0 26 18" width="26" height="18">
+          <line x1="0" y1="1" x2="26" y2="1" stroke="currentColor" stroke-width="2"/>
+          <line x1="0" y1="9" x2="26" y2="9" stroke="currentColor" stroke-width="2"/>
+          <line x1="0" y1="17" x2="26" y2="17" stroke="currentColor" stroke-width="2"/>
         </svg>
       </button>
     </nav>

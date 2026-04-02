@@ -25,7 +25,7 @@
   </head>
   <body>
     <!-- ==================== TOP BAR ==================== -->
-    <div id="top-bar">
+   <div id="top-bar">
       <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
       <span class="d-flex align-items-center gap-4">
         <span>TEL: +41 22 345 67 88</span>
@@ -39,7 +39,7 @@
       <!-- Left nav links -->
       <ul class="v2-nav-left">
         <li class="dropdown">
-          <a href="index2.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <ul class="custom-dropdown-menu dropdown-menu">
@@ -91,11 +91,23 @@
                   <span>Rooftop Bar</span>
                 </a>
               </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
+                  <span>Steakhouse</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
+                  <span>Cigar Lounge</span>
+                </a>
+              </div>
             </div>
           </div>
         </li>
         <li class="dropdown mega-dropdown">
-          <a href="activities.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
           </a>
           <div class="mega-menu dropdown-menu play-mega-menu">
@@ -184,8 +196,8 @@
             <li><a class="dropdown-item nav-dropdown-link" href="restaurant.html">Restaurants</a></li>
             <li><a class="dropdown-item nav-dropdown-link" href="activities.html">Local Activities</a></li>
             <li><a class="dropdown-item nav-dropdown-link" href="spa.html">Wellness</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Contact</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Our Blog</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -200,8 +212,15 @@
         </li>
         <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
       </ul>
+      <button id="menu-btn-v2">
+        <span>MENU</span>
+        <svg viewBox="0 0 26 18" width="26" height="18">
+          <line x1="0" y1="1" x2="26" y2="1" stroke="currentColor" stroke-width="2"/>
+          <line x1="0" y1="9" x2="26" y2="9" stroke="currentColor" stroke-width="2"/>
+          <line x1="0" y1="17" x2="26" y2="17" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
     </nav>
-
     <!-- ==================== HERO SECTION ==================== -->
     <header class="activities-hero">
       <div class="hero-overlay"></div>
