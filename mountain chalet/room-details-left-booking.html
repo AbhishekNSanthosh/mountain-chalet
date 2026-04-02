@@ -3,11 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - CozyStay</title>
+    <title>Room Details â€“ Overlook Lodge</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .amenity-icon { width: 1.2rem; height: 1.2rem; margin-right: 0.5rem;  text-align: center; }
+      .list-unstyled-amenity li { margin-bottom: 0.75rem; color: #6c757d; font-size: 0.95rem; display: flex; align-items: center;}
+      .styled-checkbox { width: 1.2rem; height: 1.2rem; accent-color: #2c3f32; }
+      .border-light-subtle { border-color: rgba(0,0,0,0.1) !important; }
+      .custom-select {
+        appearance: none;
+        background-color: transparent;
+        border: 1px solid #ced4da;
+        padding: 0.375rem 1.5rem 0.375rem 0.75rem;
+        font-size: 0.9rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        background-size: 0.8rem;
+      }
+      .custom-select:focus { border-color: #2c3f32; outline: 0; box-shadow: 0 0 0 0.2rem rgba(44,63,50,.25); }
+    </style>
   </head>
   <body class="overflow-x-hidden pt-5">
     <!-- ==================== NAVBAR ==================== -->
@@ -180,229 +199,210 @@
       </div>
     </nav>
 
-    
-    <!-- HERO -->
-    <section class="w-100 position-relative d-flex justify-content-center align-items-center" style="height: 100vh; min-height: 600px;">
-        <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070&auto=format&fit=crop" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Hero" style="filter: brightness(0.6);">
-        <div class="position-relative z-1 text-center text-white pt-5">
-            <p class="text-uppercase tracking-widest fs-8 mb-2 fw-semibold opacity-75">HOME / ABOUT THE HOTEL</p>
-            <h1 class="font-serif display-3 mb-4">About The Hotel</h1>
-            <p class="fs-6 opacity-75 tracking-widest text-uppercase">THE FOREST PARADISE OF WARMTH, TRANQUILITY AND RESTORATION</p>
-        </div>
+    <!-- TOP IMAGE HERO -->
+    <section class="w-100 mt-5 pt-3">
+        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2000&auto=format&fit=crop" class="w-100 object-fit-cover" alt="Overlook Lodge Room Interior" style="height: 55vh; min-height: 400px; max-height: 600px;">
     </section>
 
-    <!-- INTRO -->
-    <section class="container py-5 my-5 text-center px-4">
-        <p class="text-gold text-uppercase tracking-widest fs-8 fw-semibold mb-3">WELCOME TO COZYSTAY RESORT</p>
-        <h2 class="font-serif display-5 text-charcoal mb-4">In the Heart of the Banff Park,<br>Outstanding Views</h2>
-        <p class="text-secondary lh-lg mx-auto mb-5" style="max-width: 800px;">
-            At CozyStay we have designed spaces that elevate the concept of comfort and well-being.
-            Everything runs from a lifestyle state to a peace filled feeling that can only be found in our mountain lodge.
-        </p>
+    <!-- CONTENT SECTION -->
+    <section class="container py-5 my-4">
+        <div class="row g-5">
+            <!-- Left Column: Details (Now Right) -->
+            <div class="col-lg-8 order-2 order-lg-2">
+                <h1 class="font-serif display-5 mb-2">Overlook Lodge</h1>
+                <p class="text-secondary mb-4 fs-6">Luxury Accommodation &nbsp;|&nbsp; 2 Reviews</p>
 
-        <!-- 3 Images Intro -->
-        <div class="row g-4 mt-2">
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=600&auto=format&fit=crop" class="w-100 object-fit-cover scale-img hover-scale-img" style="aspect-ratio: 3/4;" alt="Red cabin">
-            </div>
-            <div class="col-md-4">
-                 <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=600&auto=format&fit=crop" class="w-100 object-fit-cover scale-img hover-scale-img mt-md-4" style="aspect-ratio: 3/4;" alt="Orb structure in forest">
-            </div>
-            <div class="col-md-4">
-                 <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=600&auto=format&fit=crop" class="w-100 object-fit-cover scale-img hover-scale-img" style="aspect-ratio: 3/4;" alt="Lake and mountains">
-            </div>
-        </div>
-    </section>
+                <!-- Room Key Specs -->
+                <div class="d-flex gap-4 text-charcoal fw-medium mb-4 pb-4 border-bottom border-light-subtle flex-wrap">
+                    <span class="d-flex align-items-center"><svg width="18" height="18" class="me-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="1.5"/></svg> 240 mÂ²</span>
+                    <span class="d-flex align-items-center"><svg width="18" height="18" class="me-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-width="1.5"/><circle cx="12" cy="7" r="4" stroke-width="1.5"/></svg> 8 Guests</span>
+                    <span class="d-flex align-items-center"><svg width="18" height="18" class="me-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M2 20h20M6 20V10M18 20V10M2 10h20M6 4h12l2 6H4L6 4z" stroke-width="1.5"/></svg> 4 Beds</span>
+                    <span class="d-flex align-items-center"><svg width="18" height="18" class="me-2 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-5H3v5z" stroke-width="1.5"/><path d="M3 10V6a2 2 0 012-2h14a2 2 0 012 2v4" stroke-width="1.5"/></svg> 3 Bathrooms</span>
+                </div>
 
-    <!-- PARALLAX STATS -->
-    <section class="w-100 position-relative py-5 d-flex align-items-center mb-5" style="background: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2000&auto=format&fit=crop') center/cover fixed; min-height: 400px;">
-        <div class="position-absolute bg-dark opacity-75 inset-0 w-100 h-100"></div>
-        <div class="container position-relative z-1 text-center text-white py-5">
-            <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-3">ABOUT OUR HOTEL</p>
-            <h2 class="font-serif fs-1 mb-5 mx-auto" style="max-width: 600px;">Spend your comfortable holiday in the heart of the beautiful forest</h2>
-            
-            <div class="row g-4 mt-4 mx-auto" style="max-width: 800px;">
-                <div class="col-6 col-md-3">
-                    <h3 class="display-5 font-serif mb-0">72</h3>
-                    <p class="text-uppercase tracking-widest fs-8 opacity-75">ROOMS/SUITES</p>
+                <!-- Description -->
+                <div class="text-secondary lh-lg mb-5 fs-6">
+                    <p>Overlooking the beautiful lake and the snow-capped peak, 
+the open-plan suite features a comfortable king-size bed and a lavish bathroom. An open wood fireplace rounds out the rustic-chic feel. A wonderful, 
+private retreat.</p>
+                    <p>Designed with your lifestyle in mind, every room is a tranquil retreat. The Overlook Lodge offers a breathtaking view over 
+the lake, and each morning you can wake up to the song of the birds in a luxury 
+paradise that makes every moment a beautiful picture. We hope you have a pleasant stay making you feel at complete ease.</p>
                 </div>
-                <div class="col-6 col-md-3">
-                    <h3 class="display-5 font-serif mb-0">20</h3>
-                    <p class="text-uppercase tracking-widest fs-8 opacity-75">YEARS OPEN</p>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h3 class="display-5 font-serif mb-0">12</h3>
-                    <p class="text-uppercase tracking-widest fs-8 opacity-75">RESTAURANTS</p>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h3 class="display-5 font-serif mb-0">9</h3>
-                    <p class="text-uppercase tracking-widest fs-8 opacity-75">AWARDS WON</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ROOMS SECTION -->
-    <section class="container py-5 my-4 px-4 overflow-hidden">
-        <div class="row align-items-center g-5">
-            <div class="col-md-5">
-                <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-3">EXPLORE THE ROOMS</p>
-                <h2 class="font-serif display-5 text-charcoal mb-4">Naturally Comfortable Rooms and Private Chalets</h2>
-                <p class="text-secondary lh-lg mb-4">
-                    Escape to the beautiful mountains and valleys where dreams come true. Culture, nature, streams and gastronomy. Immerse yourself in the restorative qualities of nature, far from the disturbances of everyday life.
-                </p>
-                <a href="rooms.html" class="btn bg-forest border-0 rounded-0 text-white text-uppercase tracking-widest px-4 py-2 mt-2">Explore</a>
-            </div>
-            <div class="col-md-7 position-relative">
-                <div class="w-100 overflow-hidden position-relative">
-                    <span class="position-absolute bg-white text-charcoal px-3 py-1 z-10 m-3 fw-bold fs-8">$299 / NIGHT</span>
-                    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=1500&auto=format&fit=crop" class="w-100 object-fit-cover scale-img hover-scale-img transition-all" style="height: 450px;" alt="Family Suite">
-                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                        <h4 class="font-serif fs-3 mb-0">Family Suite</h4>
-                        <p class="fs-7 m-0 opacity-75">100 mÂ² | 4 Guests | 2 Beds | 1 Bathroom</p>
+                <!-- Family-Friendly Amenities -->
+                <h4 class="font-serif fs-4 mb-4">Family-Friendly Amenities</h4>
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <div class="bg-light px-3 py-2 d-flex align-items-center rounded-2">
+                        <svg width="20" height="20" class="me-2 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span class="text-charcoal fw-medium fs-7">Free Swimming Pool</span>
+                    </div>
+                    <div class="bg-light px-3 py-2 d-flex align-items-center rounded-2">
+                        <svg width="20" height="20" class="me-2 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2a5 5 0 00-5 5v14a1 1 0 001 1h8a1 1 0 001-1V7a5 5 0 00-5-5z"/></svg>
+                        <span class="text-charcoal fw-medium fs-7">Extra Infant Bed / Crib</span>
+                    </div>
+                    <div class="bg-light px-3 py-2 d-flex align-items-center rounded-2">
+                        <svg width="20" height="20" class="me-2 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                        <span class="text-charcoal fw-medium fs-7">Washing Machine</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ACTIVITIES SECTION -->
-    <section class="container py-5 my-5 px-4 overflow-hidden">
-        <div class="row align-items-center g-5 pt-4 flex-column-reverse flex-md-row">
-            <div class="col-md-7 position-relative">
-                <div class="row g-3">
-                    <div class="col-6 position-relative z-10" style="margin-top: 40px;">
-                        <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=800&auto=format&fit=crop" class="w-100 object-fit-cover shadow-lg" style="height: 400px;" alt="Canoe">
+                <!-- Room Amenities -->
+                <h4 class="font-serif fs-4 mb-4">Room Amenities</h4>
+                <div class="row w-100 mb-5">
+                    <div class="col-12 col-md-6">
+                        <ul class="list-unstyled list-unstyled-amenity">
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 18a6 6 0 100-12 6 6 0 000 12z"/></svg> Air Conditioner</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M5 12.55a11 11 0 0114.08 0M1.42 9l1.41-1.41a16 16 0 0122.34 0L22.58 9M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg> Wifi & Internet</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg> Slippers</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg> Shampoo</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/></svg> Safe Box</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg> Pet Friendly</li>
+                        </ul>
                     </div>
-                    <div class="col-6 position-relative">
-                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop" class="w-100 object-fit-cover shadow-lg" style="height: 450px;" alt="Hiking">
+                    <div class="col-12 col-md-6">
+                        <ul class="list-unstyled list-unstyled-amenity">
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" stroke-width="1.5"/><path stroke-width="1.5" d="M17 2l-5 5-5-5"/></svg> Cable Tv</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M3 13h18M3 17h18M5 9h14M8 5h8"/></svg> Towels</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M4 14.5l3 3M11 21v-3l-2.5-3"/></svg> Hair Dryer</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg> Espresso Machine</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M10 21h4M12 17v4M7 5a5 5 0 0110 0v2H7V5z"/></svg> Welcome Drinks</li>
+                            <li><svg class="amenity-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M5 3v18h14V3H5zm0 10h14"/></svg> In-room Refrigerator</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-5 ps-md-4">
-                 <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-3">THE HIGHEST QUALITY OF STAY</p>
-                 <h2 class="font-serif display-5 text-charcoal mb-4">The Best Mountain Play Experience</h2>
-                 <p class="text-secondary lh-lg mb-4">
-                     We offer a wide range of activities for our guests. You can choose from hiking in the nearby trails, cycling or experiencing a great canoe adventure. A relaxed and peace filled environment where one can reconnect with nature and oneself.
-                 </p>
-                 <a href="activities.html" class="btn bg-forest border-0 rounded-0 text-white text-uppercase tracking-widest px-4 py-2 mt-2">Explore</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- AMENITIES (9 ICONS) -->
-    <section class="container py-5 my-5 text-center bg-light">
-        <div class="py-5 px-3">
-            <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-3">ALL OUR SERVICES & AMENITIES</p>
-            <h2 class="font-serif display-5 text-charcoal mb-5 pb-4">All the Essentials for a Cozy and<br>Comfortable Stay</h2>
-            
-            <div class="row g-4 px-md-5 mx-md-5 text-start">
-               <!-- Icon 1 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M12 2L3 7v10l9 5 9-5V7l-9-5z"/></svg> 
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Airport Pick-up Service</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">We can arrange an airport transfer to your chalet.</p>
-               </div>
-               <!-- Icon 2 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Breakfast Included</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">Enjoy our organic breakfasts in the main chalet.</p>
-               </div>
-               <!-- Icon 3 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Wifi & Internet</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">We provide fast Wi-Fi connection in all rooms.</p>
-               </div>
-               <!-- Icon 4 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Laundry Service</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">Daily commercial laundry service is available.</p>
-               </div>
-               <!-- Icon 5 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Pet Friendly</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">We are happy to accommodate pets with prior notice.</p>
-               </div>
-               <!-- Icon 6 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="1.5"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Free Parking Space</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">We have ample parking for all items and vehicles.</p>
-               </div>
-               <!-- Icon 7 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Babysitting</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">Qualified professionals to mind children.</p>
-               </div>
-               <!-- Icon 8 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Safe Box</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">Safety deposit boxes in all chalets.</p>
-               </div>
-               <!-- Icon 9 -->
-               <div class="col-md-4 col-sm-6 p-4 bg-white border">
-                    <div class="d-flex align-items-center mb-2">
-                        <svg class="text-secondary me-2" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M10 21h4M12 17v4M7 5a5 5 0 0110 0v2H7V5z"/></svg>
-                        <h5 class="font-serif fs-5 m-0 text-charcoal">Welcome Drinks</h5>
-                    </div>
-                    <p class="fs-7 text-secondary m-0">Complimentary local drinks upon arrival.</p>
-               </div>
-            </div>
-        </div>
-    </section>
+                <!-- What's included in this suite? -->
+                <h4 class="font-serif fs-4 mb-4">What's included in this suite?</h4>
+                <ul class="text-secondary lh-lg mb-5 ps-3" style="font-size: 0.95rem;">
+                    <li>Private balcony</li>
+                    <li>140x200 cm size bed</li>
+                    <li>Upholstered seat beside the panoramic window</li>
+                    <li>TV-MP3-internet on a rotating sound-insulation pillar</li>
+                    <li>Writing desk with USB ports for places making your adventure</li>
+                    <li>Room safe for your trip essential items</li>
+                    <li>Service station with Nespresso coffee machine and tea</li>
+                    <li>Fully equipped rain shower</li>
+                    <li>Comfortable terry towels and bathrobes</li>
+                </ul>
 
-    <!-- THREE IMAGE COLUMNS -->
-    <section class="container-fluid p-0 my-5 overflow-hidden text-center text-white">
-        <div class="row g-0">
-            <div class="col-md-4 position-relative overflow-hidden" style="height: 450px;">
-                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover scale-img hover-scale-img" alt="Restaurants & Bars">
-                <div class="position-absolute inset-0 d-flex flex-column align-items-center justify-content-center p-4 bg-dark bg-opacity-50 transition-opacity">
-                    <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-2">COZYSTAY</p>
-                    <h3 class="font-serif display-6 mb-3">Restaurants & Bars</h3>
-                    <a href="restaurants-bars.html" class="text-white text-uppercase tracking-widest fs-8 text-decoration-none fw-semibold pt-2 border-bottom border-light">Explore âž”</a>
+                <!-- Availability Placeholder -->
+                <h4 class="font-serif fs-4 mb-4">Availability</h4>
+                <div class="w-100 border p-4 mb-5 rounded-2 bg-light text-center">
+                    <!-- Fake calendar for visual -->
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold fs-7 mb-3">Apr 2026</h6>
+                            <table class="table table-borderless table-sm fs-7">
+                                <thead><tr class="text-muted"><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr></thead>
+                                <tbody>
+                                    <tr><td><span class="text-muted">30</span></td><td><span class="text-muted">31</span></td><td>1</td><td class="bg-secondary text-white rounded">2</td><td class="bg-secondary bg-opacity-75 text-white">3</td><td class="bg-secondary bg-opacity-50 text-white">4</td><td>5</td></tr>
+                                    <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                                    <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                             <h6 class="fw-bold fs-7 mb-3">May 2026</h6>
+                            <table class="table table-borderless table-sm fs-7">
+                                <thead><tr class="text-muted"><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                                    <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                                    <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="col-md-4 position-relative overflow-hidden" style="height: 450px;">
-                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover scale-img hover-scale-img" alt="Spa & Wellness">
-                <div class="position-absolute inset-0 d-flex flex-column align-items-center justify-content-center p-4 bg-dark bg-opacity-50 transition-opacity">
-                    <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-2">RELAX & RESTORE</p>
-                    <h3 class="font-serif display-6 mb-3">Spa & Wellness</h3>
-                    <a href="spa-wellness.html" class="text-white text-uppercase tracking-widest fs-8 text-decoration-none fw-semibold pt-2 border-bottom border-light">Explore âž”</a>
-                </div>
-            </div>
-            <div class="col-md-4 position-relative overflow-hidden" style="height: 450px;">
-                <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=800&auto=format&fit=crop" class="w-100 h-100 object-fit-cover scale-img hover-scale-img" alt="Local Activities">
-                <div class="position-absolute inset-0 d-flex flex-column align-items-center justify-content-center p-4 bg-dark bg-opacity-50 transition-opacity">
-                    <p class="text-gold tracking-widest text-uppercase fw-semibold fs-8 mb-2">SPORTS & CULTURE</p>
-                    <h3 class="font-serif display-6 mb-3">Local Activities</h3>
-                    <a href="activities.html" class="text-white text-uppercase tracking-widest fs-8 text-decoration-none fw-semibold pt-2 border-bottom border-light">Explore âž”</a>
+
+            <!-- Right Column: Sidebar (Now Left) -->
+            <div class="col-lg-4 order-1 order-lg-1">
+                <div class="card border-light-subtle rounded-3 shadow-lg sticky-top" style="top: 100px;">
+                    <div class="card-body p-4 p-xl-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="font-serif fs-4 mb-0">RESERVE</h3>
+                            <span class="text-secondary fs-6">From <strong class="text-charcoal">$899</strong>/night</span>
+                        </div>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label text-secondary fs-7 mb-1">Check-In</label>
+                                <input type="date" class="form-control bg-light shadow-none border-light-subtle" value="2026-04-02">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-secondary fs-7 mb-1">Check-Out</label>
+                                <input type="date" class="form-control bg-light shadow-none border-light-subtle" value="2026-04-05">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-secondary fs-7 mb-1">Rooms</label>
+                                <select class="custom-select w-100 rounded-2 bg-light">
+                                    <option>1 Room</option>
+                                    <option>2 Rooms</option>
+                                </select>
+                            </div>
+                            <div class="row g-3 mb-4 border-bottom border-light-subtle pb-4">
+                                <div class="col-6">
+                                    <label class="form-label text-secondary fs-7 mb-1">Adults</label>
+                                    <select class="custom-select w-100 rounded-2 bg-light">
+                                        <option>2 Adults</option>
+                                        <option>1 Adult</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label text-secondary fs-7 mb-1">Children</label>
+                                    <select class="custom-select w-100 rounded-2 bg-light">
+                                        <option>0 Children</option>
+                                        <option>1 Child</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h5 class="fs-6 fw-bold mb-3">EXTRA SERVICES</h5>
+                            
+                            <!-- Room Clean -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input styled-checkbox" type="checkbox" id="clean">
+                                    <label class="form-check-label fs-7 ms-2" for="clean">Room Clean</label>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="text-secondary fs-7">$15 / Night</span>
+                                    <input type="number" class="form-control form-control-sm w-25 text-center shadow-none p-1 border-light-subtle" value="1">
+                                </div>
+                            </div>
+                            <!-- Massage -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input styled-checkbox" type="checkbox" id="massage">
+                                    <label class="form-check-label fs-7 ms-2" for="massage">Massage</label>
+                                </div>
+                                <div class="text-secondary fs-7">Daily Menu â€” <span class="text-charcoal">$30</span></div>
+                            </div>
+                            <!-- Day Spa -->
+                            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-light-subtle pb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input styled-checkbox" type="checkbox" id="spa">
+                                    <label class="form-check-label fs-7 ms-2" for="spa">Day Spa</label>
+                                </div>
+                                <div class="text-secondary fs-7">Daily Menu â€” <span class="text-charcoal">$20</span></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center fw-bold fs-5 mb-4">
+                                <span class="text-charcoal">Total Cost</span>
+                                <span class="text-charcoal">$899</span>
+                            </div>
+
+                            <button type="button" class="btn btn-dark w-100 rounded-0 py-3 text-uppercase tracking-widest fw-medium">Book Your Stay Now</button>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- NEWSLETTER & FOOTER COMPONENT -->
     <div class="bg-light pt-5">
@@ -506,7 +506,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="../main.js" defer></script>
-  
   </body>
 </html>
 

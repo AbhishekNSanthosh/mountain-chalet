@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Family Suite – CozyStay Mountain Chalet</title>
-  <meta name="description" content="Our most spacious accommodation — the Family Suite at CozyStay Resort. 75 m², 3 bedrooms, sleeps up to 6 guests with stunning mountain and forest views."/>
+  <title>Family Suite â€“ CozyStay Mountain Chalet</title>
+  <meta name="description" content="Our most spacious accommodation â€” the Family Suite at CozyStay Resort. 75 mÂ², 3 bedrooms, sleeps up to 6 guests with stunning mountain and forest views."/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
@@ -14,39 +14,89 @@
 
 <!-- NAVBAR -->
 <nav id="navbar" class="fixed-top w-100 z-50 bg-white">
-  <div class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding">
-    <div class="d-flex justify-content-start flex-grow-1">
-      <a href="index.html" class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative">
-        COZYSTAY
-        <span class="text-gold tracking-widest mt-1 navbar-logo-stars">★ ★ ★ ★ ★</span>
-      </a>
-    </div>
-    <div class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5">
-      <ul class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list">
-        <li><a href="index.html" class="text-decoration-none text-charcoal hover-text-forest transition-colors"><span class="pb-1">HOME</span></a></li>
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1">
-            <span class="pb-1">ROOMS</span>
-            <svg class="nav-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      <div
+        class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding"
+      >
+        <div class="d-flex justify-content-start flex-grow-1">
+          <a
+            href="index.html"
+            class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative"
+          >
+            COZYSTAY
+            <span class="text-gold tracking-widest mt-1 navbar-logo-stars"
+              >&#9733; &#9733; &#9733; &#9733; &#9733;</span
+            >
           </a>
-          <div class="custom-dropdown-menu">
+        </div>
+
+        <!-- Desktop Nav -->
+        <div
+          class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5"
+        >
+          <ul
+            class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors"
+              >
+                <span class="nav-active pb-1">HOME</span>
+              </a>
+            </li>
+            <li class="custom-dropdown position-relative">
+              <a
+                href="#"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1"
+              >
+                <span class="pb-1">ROOMS</span>
+                <svg
+                  class="nav-dropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div class="custom-dropdown-menu">
             <a href="rooms.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Rooms Page</a>
-            <a href="room-details-top-image.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Top Image</a>
-            <a href="room-details-top-gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Top Gallery 1</a>
-            <a href="room-details-top-gallery-2.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Top Gallery 2</a>
-            <a href="room-details-left-booking.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Left Booking Form</a>
-            <a href="room-details-booking-rules.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Booking Rules Example</a>
+            <a href="room-details-top-image.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Image</a>
+            <a href="room-details-top-gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Gallery 1</a>
+            <a href="room-details-top-gallery-2.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Gallery 2</a>
+            <a href="room-details-left-booking.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Left Booking Form</a>
+            <a href="room-details-booking-rules.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Booking Rules Example</a>
             <a href="cart.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Cart</a>
             <a href="checkout.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Checkout</a>
             <a href="my-account.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">My account</a>
           </div>
-        </li>
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1">
-            <span class="pb-1">PAGES</span>
-            <svg class="nav-dropdown-chevron" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-          </a>
-          <div class="custom-dropdown-menu">
+            </li>
+            <li class="custom-dropdown position-relative">
+              <a
+                href="#"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1"
+              >
+                <span class="pb-1">PAGES</span>
+                <svg
+                  class="nav-dropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div class="custom-dropdown-menu">
             <a href="about.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">About the hotel</a>
             <a href="restaurants-bars.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Restaurants & Bars</a>
             <a href="restaurant.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">The Restaurant</a>
@@ -54,47 +104,83 @@
             <a href="spa-wellness.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Spa & Wellness</a>
             <a href="events-meetings.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Events & Meetings</a>
             <a href="activities.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Local Activities</a>
-            <a href="activity-detail.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Activity Detail Page</a>
+            <a href="horseback-riding.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Activity Detail Page</a>
             <a href="contact.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Contact</a>
           </div>
-        </li>
-        <li><a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest transition-colors"><span class="pb-1">BLOG</span></a></li>
-        <li class="fw-normal text-charcoal ms-2 nav-phone">Tel: +41 22 345 67 88</li>
-      </ul>
-      <a href="index.html#booking" class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn">Enquire Now</a>
-    </div>
-    <button id="menu-btn" class="d-lg-none btn border-0 text-charcoal p-2" aria-label="Open menu">
-      <svg class="nav-hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
-  <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
-    <div class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner">
-      <a href="index.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Home</a>
-                <a href="rooms.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Rooms Page</a>
-          <a href="room-details-top-image.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details – Top Image</a>
-          <a href="room-details-top-gallery.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details – Top Gallery 1</a>
-          <a href="room-details-top-gallery-2.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details – Top Gallery 2</a>
-          <a href="room-details-left-booking.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details – Left Booking Form</a>
-          <a href="room-details-booking-rules.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details – Booking Rules Example</a>
+            </li>
+            <li>
+              <a
+                href="blog.html"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors"
+                ><span class="pb-1">BLOG</span></a
+              >
+            </li>
+            <li
+              class="fw-normal text-charcoal ms-2 nav-phone"
+            >
+              Tel: +41 22 345 67 88
+            </li>
+          </ul>
+
+          <a
+            href="#booking"
+            class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn"
+          >
+            Enquire Now
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-btn"
+          class="d-lg-none btn border-0 text-charcoal p-2"
+          aria-label="Open menu"
+        >
+          <svg
+            class="nav-hamburger-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
+        <div
+          class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner"
+        >
+          <a href="index.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Home</a>
+                    <a href="rooms.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Rooms Page</a>
+          <a href="room-details-top-image.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Image</a>
+          <a href="room-details-top-gallery.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Gallery 1</a>
+          <a href="room-details-top-gallery-2.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Gallery 2</a>
+          <a href="room-details-left-booking.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Left Booking Form</a>
+          <a href="room-details-booking-rules.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Booking Rules Example</a>
           <a href="cart.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Cart</a>
           <a href="checkout.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Checkout</a>
           <a href="my-account.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">My account</a>
-                <a href="about.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">About the hotel</a>
+                    <a href="about.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">About the hotel</a>
           <a href="restaurants-bars.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Restaurants & Bars</a>
           <a href="restaurant.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">The Restaurant</a>
           <a href="menu.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Menu Page</a>
           <a href="spa-wellness.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Spa & Wellness</a>
           <a href="events-meetings.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Events & Meetings</a>
           <a href="activities.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Local Activities</a>
-          <a href="activity-detail.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Activity Detail Page</a>
+          <a href="horseback-riding.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Activity Detail Page</a>
           <a href="contact.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Contact</a>
-      <a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Blog</a>
-      <a href="index.html#booking" class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase">Enquire Now</a>
-    </div>
-  </div>
-</nav>
+          <a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Blog</a>
+          <a href="#booking" class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase">Enquire Now</a>
+        </div>
+      </div>
+    </nav>
 
 <!-- PAGE HERO -->
 <section class="position-relative d-flex align-items-end" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:100px;">
@@ -120,9 +206,9 @@
       <div class="col-md-7">
         <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Room Overview</p>
         <h2 class="font-serif text-charcoal mb-4" style="font-size:2rem;">A Home Above the Clouds</h2>
-        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Spanning an impressive 75 square metres across the third and fourth floors, the Family Suite at CozyStay is our most expansive and thoughtfully designed accommodation. Conceived for families and groups seeking a truly immersive alpine retreat, the suite features three beautifully appointed bedrooms — a master bedroom with a king-size bed and two comfortable twin rooms — each adorned with hand-crafted alpine furnishings, locally sourced textiles, and artwork celebrating the Zermatt highlands. Floor-to-ceiling windows flood every room with natural light and frame breathtaking panoramas of both the mountain peaks and the dense surrounding forest.</p>
-        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Step out onto your private terrace — one of the suite's most beloved features — and breathe in the crisp alpine air while watching the sun paint the snowcapped summits in hues of gold and rose. The terrace is furnished with premium teak loungers and a fire-basket, making it as inviting on a still summer evening as on a brisk autumn afternoon. Inside, the open-plan living and dining area provides ample space for the family to gather, complete with a fireplace, a curated library of alpine books, and a fully equipped kitchenette for informal meals.</p>
-        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">CozyStay's dedicated family concierge team is on hand around the clock to arrange everything from ski lessons and hiking itineraries to in-suite dining and babysitting services, ensuring that every member of your family — from the youngest adventurer to the most discerning adult — creates memories that will last a lifetime. The Family Suite represents the very pinnacle of alpine hospitality: generous, warm, and utterly unforgettable.</p>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Spanning an impressive 75 square metres across the third and fourth floors, the Family Suite at CozyStay is our most expansive and thoughtfully designed accommodation. Conceived for families and groups seeking a truly immersive alpine retreat, the suite features three beautifully appointed bedrooms â€” a master bedroom with a king-size bed and two comfortable twin rooms â€” each adorned with hand-crafted alpine furnishings, locally sourced textiles, and artwork celebrating the Zermatt highlands. Floor-to-ceiling windows flood every room with natural light and frame breathtaking panoramas of both the mountain peaks and the dense surrounding forest.</p>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Step out onto your private terrace â€” one of the suite's most beloved features â€” and breathe in the crisp alpine air while watching the sun paint the snowcapped summits in hues of gold and rose. The terrace is furnished with premium teak loungers and a fire-basket, making it as inviting on a still summer evening as on a brisk autumn afternoon. Inside, the open-plan living and dining area provides ample space for the family to gather, complete with a fireplace, a curated library of alpine books, and a fully equipped kitchenette for informal meals.</p>
+        <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">CozyStay's dedicated family concierge team is on hand around the clock to arrange everything from ski lessons and hiking itineraries to in-suite dining and babysitting services, ensuring that every member of your family â€” from the youngest adventurer to the most discerning adult â€” creates memories that will last a lifetime. The Family Suite represents the very pinnacle of alpine hospitality: generous, warm, and utterly unforgettable.</p>
       </div>
       <div class="col-md-5">
         <div class="bg-white shadow p-4">
@@ -130,7 +216,7 @@
           <ul class="list-unstyled m-0">
             <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
               <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Room Size</span>
-              <span class="text-charcoal fw-semibold">75 m²</span>
+              <span class="text-charcoal fw-semibold">75 mÂ²</span>
             </li>
             <li class="d-flex align-items-center justify-content-between py-3 border-bottom border-light">
               <span class="text-charcoal fw-semibold" style="opacity:0.7; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em;">Bedrooms</span>
@@ -165,7 +251,7 @@
   <div class="container px-4 px-lg-5">
     <div class="row g-4 text-center">
       <div class="col-6 col-md-3">
-        <div class="fw-bold font-serif" style="font-size:2rem;">75 m²</div>
+        <div class="fw-bold font-serif" style="font-size:2rem;">75 mÂ²</div>
         <div class="text-white-50 text-uppercase tracking-widest mt-1" style="font-size:0.75rem;">Room Size</div>
       </div>
       <div class="col-6 col-md-3">
@@ -194,73 +280,73 @@
     <div class="row g-4">
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">King Bed + 2 Twins</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Private Terrace</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Mountain View</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Flat-screen TV</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Free Wi-Fi</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Minibar</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Nespresso Machine</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">En-suite Bathroom</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Walk-in Wardrobe</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Air Conditioning</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Room Service</span>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-3">
         <div class="d-flex align-items-center gap-3 bg-white p-3 h-100">
-          <span class="text-gold fs-5">✦</span>
+          <span class="text-gold fs-5">âœ¦</span>
           <span class="text-charcoal fw-semibold" style="font-size:0.9rem;">Safe</span>
         </div>
       </div>
@@ -349,7 +435,7 @@
     <div class="row g-5 mb-5 pt-4">
       <div class="col-12 col-lg-3">
         <p class="font-serif fs-4 tracking-widest mb-1">COZYSTAY</p>
-        <p class="text-gold tracking-widest mb-4 footer-stars">★ ★ ★ ★ ★</p>
+        <p class="text-gold tracking-widest mb-4 footer-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
         <p class="text-white-50 lh-base mb-4 footer-description">Founded in 1998, CozyStay Resort is located on the hills of Zermatt, immersing you in the wonder of the Swiss Alps against the pure sky.</p>
         <div class="d-flex gap-2">
           <a href="#" class="rounded-circle border border-white-50 d-flex align-items-center justify-content-center text-white-50 text-decoration-none transition-all hover-text-gold hover-border-gold footer-social-link">
@@ -411,7 +497,7 @@
       </div>
     </div>
     <div class="border-top py-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50 footer-bottom-bar">
-      <p class="text-center text-md-start mb-0">© 2026 CozyStay Resort. All rights reserved.</p>
+      <p class="text-center text-md-start mb-0">Â&copy; 2026 CozyStay Resort. All rights reserved.</p>
       <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center">
         <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Privacy</a>
         <span class="opacity-25">|</span>
@@ -434,3 +520,6 @@
 <script src="../main.js" defer></script>
 </body>
 </html>
+
+
+

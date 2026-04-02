@@ -1,206 +1,323 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant – CozyStay Resort</title>
-    <meta
-      name="description"
-      content="CozyStay Resort – A boutique mountain resort in the heart of the Swiss Alps. Timeless European luxury and breathtaking alpine views."
-    />
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Flatpickr -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-
+    <title>The Restaurant â€“ CozyStay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style2.css" />
+    <style>
+      /* â”€â”€ Hero â”€â”€ */
+      .rest-hero {
+        height: 100vh;
+        min-height: 600px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #1e2e22;
+        background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2000&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center 40%;
+        overflow: hidden;
+      }
+      .rest-hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.48);
+        z-index: 0;
+      }
+      .rest-hero-content {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+      }
+
+      /* â”€â”€ Circle images â”€â”€ */
+      .circle-main {
+        width: 100%;
+        max-width: 420px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #fff;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        display: block;
+      }
+      .reservation-badge {
+        position: absolute;
+        bottom: 30px;
+        left: -10px;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: var(--forest);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: "Jost", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.3;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        text-decoration: none;
+      }
+
+      /* â”€â”€ Photo slider â”€â”€ */
+      .photo-slider {
+        position: relative;
+        overflow: hidden;
+        height: 420px;
+      }
+      .photo-slider-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease;
+      }
+      .photo-slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 0;
+      }
+      .photo-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .photo-slide .side-img {
+        filter: brightness(0.55);
+      }
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(255,255,255,0.9);
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: background 0.2s;
+      }
+      .slider-btn:hover { background: #fff; }
+      .slider-btn-prev { left: 16px; }
+      .slider-btn-next { right: 16px; }
+
+      /* â”€â”€ Menu tabs â”€â”€ */
+      .menu-tabs .nav-link {
+        color: #888;
+        font-family: "Jost", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        border: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 0;
+        padding: 10px 20px;
+        background: transparent;
+      }
+      .menu-tabs .nav-link.active {
+        color: var(--charcoal);
+        border-bottom-color: var(--charcoal);
+        background: transparent;
+      }
+      .menu-tabs .nav-link:hover:not(.active) {
+        color: var(--forest);
+        border-bottom-color: var(--forest);
+      }
+
+      /* â”€â”€ Menu item row â”€â”€ */
+      .menu-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 1.4rem;
+      }
+      .menu-item-img {
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+      .menu-item-body { flex: 1; }
+      .menu-item-name-row {
+        display: flex;
+        align-items: baseline;
+      }
+      .menu-item-name {
+        font-family: "Jost", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--charcoal);
+        white-space: nowrap;
+      }
+      .menu-item-dots {
+        flex: 1;
+        border-bottom: 1px dotted #bbb;
+        margin: 0 8px;
+        position: relative;
+        top: -4px;
+      }
+      .menu-item-price {
+        font-family: "Jost", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--charcoal);
+        white-space: nowrap;
+      }
+      .menu-item-desc {
+        font-size: 0.76rem;
+        color: #999;
+        margin-top: 3px;
+        line-height: 1.4;
+      }
+
+      /* â”€â”€ Center divider â”€â”€ */
+      .menu-divider {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        height: 100%;
+      }
+      .menu-divider-line {
+        width: 1px;
+        flex: 1;
+        background-color: #d4c9b8;
+      }
+      .menu-divider-arrow {
+        color: #b89a6a;
+        font-size: 1rem;
+        padding: 4px 0;
+      }
+
+      /* â”€â”€ Info grid â”€â”€ */
+      .info-icon {
+        width: 16px;
+        height: 16px;
+        stroke: var(--forest);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      @media (max-width: 767px) {
+        .photo-slide { grid-template-columns: 1fr; }
+        .photo-slide .side-img { display: none; }
+        .menu-tabs .nav-link { padding: 8px 10px; font-size: 0.65rem; }
+        .menu-divider { display: none; }
+        .menu-col-div { display: none !important; }
+      }
+    </style>
   </head>
-  <body>
-    <!-- ==================== PAGE LOADER ==================== -->
-    <div id="page-loader" aria-hidden="true">
-      <p class="loader-logo">COZYSTAY</p>
-      <p class="loader-stars">★ ★ ★ ★ ★</p>
-      <div class="loader-track"><div class="loader-fill"></div></div>
-    </div>
+  <body class="overflow-x-hidden pt-5">
 
-    <!-- ==================== TOP BAR ==================== -->
-    <div id="top-bar">
-      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
-      <span class="d-flex align-items-center gap-3">
-        <span>TEL: <a href="tel:+41223456788">+41 22 345 67 88</a></span>
-        <span>FAX: +41 22 345 67 89</span>
-        <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
-      </span>
-    </div>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar" class="fixed-top w-100 z-50 bg-white">
+      <div
+        class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding"
+      >
+        <div class="d-flex justify-content-start flex-grow-1">
+          <a
+            href="index.html"
+            class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative"
+          >
+            COZYSTAY
+            <span class="text-gold tracking-widest mt-1 navbar-logo-stars"
+              >&#9733; &#9733; &#9733; &#9733; &#9733;</span
+            >
+          </a>
+        </div>
 
-    <!-- ==================== NAVBAR V2 ==================== -->
-    <nav id="navbar-v2">
-      <!-- Left nav links -->
-      <ul class="v2-nav-left">
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="v2-nav-link">
-            HOME
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <div class="custom-dropdown-menu">
-            <a
-              href="index.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Home v1</a
-            >
-            <a
-              href="index2.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Home v2</a
-            >
-          </div>
-        </li>
-        <li class="custom-dropdown position-relative">
-          <a href="#rooms" class="v2-nav-link">
-            STAY
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <div class="custom-dropdown-menu">
+        <!-- Desktop Nav -->
+        <div
+          class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5"
+        >
+          <ul
+            class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors"
+              >
+                <span class="nav-active pb-1">HOME</span>
+              </a>
+            </li>
+            <li class="custom-dropdown position-relative">
+              <a
+                href="#"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1"
+              >
+                <span class="pb-1">ROOMS</span>
+                <svg
+                  class="nav-dropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div class="custom-dropdown-menu">
             <a href="rooms.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Rooms Page</a>
-            <a href="room-details-top-image.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Top Image</a>
-            <a href="room-details-top-gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Top Gallery 1</a>
-            <a href="room-details-top-gallery-2.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Top Gallery 2</a>
-            <a href="room-details-left-booking.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Left Booking Form</a>
-            <a href="room-details-booking-rules.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details – Booking Rules Example</a>
+            <a href="room-details-top-image.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Image</a>
+            <a href="room-details-top-gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Gallery 1</a>
+            <a href="room-details-top-gallery-2.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Gallery 2</a>
+            <a href="room-details-left-booking.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Left Booking Form</a>
+            <a href="room-details-booking-rules.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Booking Rules Example</a>
             <a href="cart.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Cart</a>
             <a href="checkout.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Checkout</a>
             <a href="my-account.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">My account</a>
           </div>
-        </li>
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="v2-nav-link">
-            DINE
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <div class="custom-dropdown-menu">
-            <a
-              href="restaurant.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Restaurant</a
-            >
-            <a
-              href="bar-lounge.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Bar &amp; Lounge</a
-            >
-          </div>
-        </li>
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="v2-nav-link">
-            PLAY
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <div class="custom-dropdown-menu">
-            <a
-              href="skiing.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Skiing</a
-            >
-            <a
-              href="hiking.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Hiking</a
-            >
-            <a
-              href="paddling.html"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Paddling</a
-            >
-          </div>
-        </li>
-        <li>
-          <a href="relax.html" class="v2-nav-link">RELAX</a>
-        </li>
-      </ul>
-
-      <!-- Center logo -->
-      <div class="v2-nav-center">
-        <a href="#" class="v2-logo-link">
-          COZYSTAY
-          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
-        </a>
-      </div>
-
-      <!-- Right nav links -->
-      <ul class="v2-nav-right">
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="v2-nav-link">
-            PAGES
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <div class="custom-dropdown-menu">
+            </li>
+            <li class="custom-dropdown position-relative">
+              <a
+                href="#"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1"
+              >
+                <span class="pb-1">PAGES</span>
+                <svg
+                  class="nav-dropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div class="custom-dropdown-menu">
             <a href="about.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">About the hotel</a>
             <a href="restaurants-bars.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Restaurants & Bars</a>
             <a href="restaurant.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">The Restaurant</a>
@@ -208,833 +325,650 @@
             <a href="spa-wellness.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Spa & Wellness</a>
             <a href="events-meetings.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Events & Meetings</a>
             <a href="activities.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Local Activities</a>
-            <a href="activity-detail.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Activity Detail Page</a>
+            <a href="horseback-riding.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Activity Detail Page</a>
             <a href="contact.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Contact</a>
           </div>
-        </li>
-        <li class="custom-dropdown position-relative">
-          <a href="#" class="v2-nav-link">
-            EN
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </a>
-          <div class="custom-dropdown-menu">
-            <a
-              href="#"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >English</a
-            >
-            <a
-              href="#"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Français</a
-            >
-            <a
-              href="#"
-              class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link"
-              >Deutsch</a
-            >
-          </div>
-        </li>
-        <li>
-          <a href="#booking" class="v2-reserve-btn">Reserve Now</a>
-        </li>
-      </ul>
-
-      <!-- Mobile hamburger -->
-      <button
-        id="menu-btn-v2"
-        class="btn border-0 p-2 ms-auto"
-        aria-label="Open menu"
-      >
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          stroke="#fff"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
-    </nav>
-
-    <!-- ==================== MOBILE MENU V2 ==================== -->
-    <div id="mobile-menu-v2">
-      <div class="px-4 py-3 d-flex flex-column gap-2">
-        <a
-          href="index.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Home v1</a
-        >
-        <a
-          href="index2.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Home v2</a
-        >
-        <a
-          href="#rooms"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Stay</a
-        >
-        <a
-          href="restaurant.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Dine</a
-        >
-        <a
-          href="skiing.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Play</a
-        >
-        <a
-          href="relax.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Relax</a
-        >
-        <a
-          href="about.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >About the hotel</a
-        >
-        <a
-          href="gallery.html"
-          class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light"
-          >Gallery</a
-        >
-        <a
-          href="#booking"
-          class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase"
-          >Reserve Now</a
-        >
-      </div>
-    </div>
-
-    
-    <!-- PAGE HERO -->
-    <section class="position-relative d-flex align-items-end" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:100px;">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.45);"></div>
-      <div class="position-relative container px-4 px-lg-5 pb-5">
-        <nav aria-label="breadcrumb" class="mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index2.html" class="text-white-50 text-decoration-none">Home</a></li>
-            <li class="breadcrumb-item active text-white" aria-current="page">Restaurant</li>
-          </ol>
-        </nav>
-        <p class="text-uppercase fw-semibold tracking-widest text-gold mb-2" style="font-size:0.75rem;">Discover</p>
-        <h1 class="font-serif text-white display-4 mb-2">Restaurant</h1>
-        <p class="text-white-50 fs-5">Experience fine dining with a breathtaking view of the Swiss Alps.</p>
-      </div>
-    </section>
-
-    <!-- CONTENT -->
-    <section class="bg-cream py-5" style="min-height: 40vh;">
-      <div class="container px-4 px-lg-5 py-5">
-        <div class="row g-5 align-items-center">
-          <div class="col-md-6">
-            <h2 class="font-serif text-charcoal mb-4" style="font-size:2rem;">Experience Restaurant</h2>
-            <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="text-charcoal lh-base mb-4" style="opacity:0.8;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="index2.html#booking" class="btn bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest mt-2 border-0">Book Your Experience</a>
-          </div>
-          <div class="col-md-6">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" class="img-fluid w-100 shadow-sm" alt="Restaurant" style="height: 450px; object-fit: cover;" />
-          </div>
-        </div>
-      </div>
-    </section>
-  <!-- ==================== FOOTER CTA ==================== -->
-    <section id="footer-cta">
-      <div class="footer-cta-overlay"></div>
-      <div class="container-xl footer-cta-inner">
-        <p class="footer-cta-label reveal">BOOK YOUR STAY NOW</p>
-        <h2 class="footer-cta-title reveal">
-          Escape to the beautiful mountains where dreams come true.<br />Immerse
-          yourself in the restorative qualities of nature, far<br />from the
-          disturbances of everyday life.
-        </h2>
-        <div class="fcf-form">
-          <div class="fcf-field">
-            <svg
-              class="fcf-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <rect
-                x="3"
-                y="4"
-                width="18"
-                height="18"
-                rx="2"
-                stroke-width="1.5"
-              />
-              <path
-                d="M16 2v4M8 2v4M3 10h18"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="fcf-text">
-              <span class="fcf-label">Check In</span>
-              <input
-                type="text"
-                id="fcfCheckin"
-                class="fcf-input"
-                placeholder="2026-03-30"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="fcf-sep"></div>
-          <div class="fcf-field">
-            <svg
-              class="fcf-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <rect
-                x="3"
-                y="4"
-                width="18"
-                height="18"
-                rx="2"
-                stroke-width="1.5"
-              />
-              <path
-                d="M16 2v4M8 2v4M3 10h18"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="fcf-text">
-              <span class="fcf-label">Check Out</span>
-              <input
-                type="text"
-                id="fcfCheckout"
-                class="fcf-input"
-                placeholder="2026-03-31"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="fcf-sep"></div>
-          <div class="fcf-field">
-            <svg
-              class="fcf-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              />
-              <circle cx="9" cy="7" r="4" stroke-width="1.5" />
-              <path
-                d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
-                stroke-linecap="round"
-                stroke-width="1.5"
-              />
-            </svg>
-            <div class="fcf-text">
-              <span class="fcf-label">Guests</span>
-              <span class="fcf-val">1 Room, 1 Adult, 0 Children</span>
-            </div>
-          </div>
-          <button class="fcf-btn">Check Availability</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer id="site-footer">
-      <div class="container-xl footer-main">
-        <!-- Col 1: Brand -->
-        <div class="footer-col">
-          <div class="footer-logo">COZYSTAY</div>
-          <p class="footer-brand-desc">
-            Established in 1998, CozyStay Hotel is a boutique hotel in the heart
-            of the Swiss Alps, offering contemporary accommodation and unrivaled
-            access to ski and hiking trails, immersing you in an idyllic setting
-            against pristine skies in search of a truly serene experience.
-          </p>
-          <div class="footer-pay-icons">
-            <span class="pay-icon">PayPal</span>
-            <span class="pay-icon">MC</span>
-            <span class="pay-icon">VISA</span>
-            <span class="pay-icon">Stripe</span>
-          </div>
-        </div>
-
-        <!-- Col 2: Contact -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Reach Out</h4>
-          <div class="footer-contact">
-            <p><em>Email:</em> booking@cozystay.com</p>
-            <p><em>Tel:</em> +41 22 345 66 77</p>
-            <p><em>Fax:</em> +41 22 345 77 89</p>
-            <p>Rue de Lausanne, 1202 Genève, Switzerland</p>
-          </div>
-          <a href="#" class="footer-directions">GET DIRECTIONS</a>
-        </div>
-
-        <!-- Col 3: Newsletter -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Sign up for newsletter</h4>
-          <div class="footer-newsletter">
-            <div class="fn-row">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                class="fn-input"
-              />
-              <button class="fn-submit">
-                Subscribe
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  height="16"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                    d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <label class="fn-privacy">
-              <input type="checkbox" class="fn-check" /> I agree to the Privacy
-              Policy
-            </label>
-          </div>
-          <div class="footer-social">
-            <span>Stay Connected:</span>
-            <!-- Facebook -->
-            <a href="#" class="fsoc" aria-label="Facebook"
-              ><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                /></svg
-            ></a>
-            <!-- Twitter/X -->
-            <a href="#" class="fsoc" aria-label="Twitter"
-              ><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                /></svg
-            ></a>
-            <!-- Pinterest -->
-            <a href="#" class="fsoc" aria-label="Pinterest"
-              ><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"
-                /></svg
-            ></a>
-            <!-- YouTube -->
-            <a href="#" class="fsoc" aria-label="YouTube"
-              ><svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"
-                /></svg
-            ></a>
-            <!-- Instagram -->
-            <a href="#" class="fsoc" aria-label="Instagram"
-              ><svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+            </li>
+            <li>
+              <a
+                href="blog.html"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors"
+                ><span class="pb-1">BLOG</span></a
               >
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle
-                  cx="17.5"
-                  cy="6.5"
-                  r=".5"
-                  fill="currentColor"
-                  stroke="none"
-                /></svg
-            ></a>
-          </div>
+            </li>
+            <li
+              class="fw-normal text-charcoal ms-2 nav-phone"
+            >
+              Tel: +41 22 345 67 88
+            </li>
+          </ul>
+
+          <a
+            href="#booking"
+            class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn"
+          >
+            Enquire Now
+          </a>
         </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-btn"
+          class="d-lg-none btn border-0 text-charcoal p-2"
+          aria-label="Open menu"
+        >
+          <svg
+            class="nav-hamburger-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </div>
 
-      <!-- Bottom bar -->
-      <div class="footer-bottom">
-        <div class="container-xl footer-bottom-inner">
-          <div class="footer-bottom-links">
-            <a href="#">PRIVACY</a>
-            <a href="#">TERMS OF USE</a>
-            <a href="#">POLICY</a>
-          </div>
-          <p class="footer-copy">
-            &copy; Copyright CozyStay WordPress Theme for Hotel Booking.
-          </p>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
+        <div
+          class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner"
+        >
+          <a href="index.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Home</a>
+                    <a href="rooms.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Rooms Page</a>
+          <a href="room-details-top-image.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Image</a>
+          <a href="room-details-top-gallery.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Gallery 1</a>
+          <a href="room-details-top-gallery-2.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Gallery 2</a>
+          <a href="room-details-left-booking.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Left Booking Form</a>
+          <a href="room-details-booking-rules.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Booking Rules Example</a>
+          <a href="cart.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Cart</a>
+          <a href="checkout.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Checkout</a>
+          <a href="my-account.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">My account</a>
+                    <a href="about.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">About the hotel</a>
+          <a href="restaurants-bars.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Restaurants & Bars</a>
+          <a href="restaurant.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">The Restaurant</a>
+          <a href="menu.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Menu Page</a>
+          <a href="spa-wellness.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Spa & Wellness</a>
+          <a href="events-meetings.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Events & Meetings</a>
+          <a href="activities.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Local Activities</a>
+          <a href="horseback-riding.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Activity Detail Page</a>
+          <a href="contact.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Contact</a>
+          <a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Blog</a>
+          <a href="#booking" class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase">Enquire Now</a>
         </div>
       </div>
-    </footer>
+    </nav>
+    <!-- ==================== END NAVBAR ==================== -->
 
-    <!-- ==================== BACK TO TOP ==================== -->
-    <button
-      id="back-top"
-      aria-label="Back to top"
-      class="btn bg-forest text-white rounded-circle d-flex align-items-center justify-content-center shadow back-top-btn"
-    >
-      <svg
-        class="back-top-icon"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 15l7-7 7 7"
-        />
-      </svg>
-    </button>
+    <!-- ==================== HERO ==================== -->
+    <section class="rest-hero">
+      <div class="rest-hero-content px-3">
+        <p class="text-uppercase tracking-widest mb-2 fw-semibold" style="font-size: 0.72rem; opacity: 0.8;">CURATED CULINARY EXPERIENCES</p>
+        <h1 class="font-serif mb-3" style="font-size: clamp(2.4rem, 5vw, 4rem);">The Restaurant</h1>
+        <p style="font-size: 0.85rem; opacity: 0.8; max-width: 520px; margin: 0 auto; line-height: 1.7;">
+          Carefully curated menus incorporate locally sourced ingredients into exquisite dishes<br class="d-none d-md-block"> that reflect the locals and the world around them.
+        </p>
+      </div>
+    </section>
+    <!-- ==================== END HERO ==================== -->
 
-    <!-- ==================== SCRIPTS ==================== -->
+    <!-- ==================== INTRO SECTION ==================== -->
+    <section class="py-5 bg-white overflow-hidden">
+      <div class="container py-4" style="max-width: 1140px;">
+        <div class="row align-items-center g-5">
+
+          <!-- Left text -->
+          <div class="col-12 col-md-6 pe-md-4">
+            <p class="text-uppercase tracking-widest fw-semibold mb-3" style="font-size: 0.72rem; color: var(--gold);">FINE DINING EXPERIENCES</p>
+            <h2 class="font-serif text-charcoal mb-4" style="font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.25;">Indulge Your Senses and<br>Discover New Flavors</h2>
+            <p class="text-secondary lh-lg mb-4" style="font-size: 0.9rem;">
+              We are committed to create wonderful memories for all guests with every stay. Carefully curated menus incorporate locally sourced ingredients into exquisite dishes that reflect the locals and the world around them. Wherever you are in the world, we'll take your taste buds on a journey they'll never forget. Authentic flavors and culinary skills combine to create an unforgettable dining experience. A reservation is recommended.
+            </p>
+
+            <!-- Info + Opening Hours -->
+            <div class="row g-4 mt-1">
+              <div class="col-12 col-sm-6">
+                <p class="fw-semibold text-charcoal mb-3" style="font-size: 0.85rem;">Information</p>
+                <div class="d-flex flex-column gap-2">
+                  <div class="d-flex align-items-start gap-2">
+                    <svg class="info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 12 19.79 19.79 0 011.44 3.4 2 2 0 013.42 1.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span class="text-secondary" style="font-size: 0.82rem;">Phone: +41 22 345 67 88</span>
+                  </div>
+                  <div class="d-flex align-items-start gap-2">
+                    <svg class="info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke-width="1.5"/></svg>
+                    <span class="text-secondary" style="font-size: 0.82rem;">Email: dine@fullrocean.com</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <p class="fw-semibold text-charcoal mb-3" style="font-size: 0.85rem;">Opening Hours</p>
+                <div class="d-flex flex-column gap-2">
+                  <div class="d-flex align-items-start gap-2">
+                    <svg class="info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><polyline points="12 6 12 12 16 14" stroke-width="1.5"/></svg>
+                    <span class="text-secondary" style="font-size: 0.82rem;">Lunch: Daily 11:30 till 18:00</span>
+                  </div>
+                  <div class="d-flex align-items-start gap-2">
+                    <svg class="info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><polyline points="12 6 12 12 16 14" stroke-width="1.5"/></svg>
+                    <span class="text-secondary" style="font-size: 0.82rem;">Dinner: Daily 18:00 till 22:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right circle image -->
+          <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end position-relative" style="padding-right: 2rem;">
+            <div class="position-relative d-inline-block">
+              <img
+                src="https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=900&auto=format&fit=crop"
+                class="circle-main"
+                alt="Restaurant dining"
+              >
+              <a href="#booking" class="reservation-badge">
+                <span style="font-size: 0.65rem; line-height: 1.4;">Make A<br>Reservation</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ==================== END INTRO ==================== -->
+
+    <!-- ==================== PHOTO SLIDER ==================== -->
+    <section class="photo-slider w-100" id="photoSlider">
+      <div class="photo-slider-track" id="sliderTrack">
+        <!-- Slide 1 -->
+        <div class="photo-slide">
+          <img class="side-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop" alt="Restaurant interior">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=900&auto=format&fit=crop" alt="Fine dish">
+          <img class="side-img" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" alt="Food spread">
+        </div>
+        <!-- Slide 2 -->
+        <div class="photo-slide">
+          <img class="side-img" src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=600&auto=format&fit=crop" alt="Breakfast">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop" alt="Fine dining">
+          <img class="side-img" src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=600&auto=format&fit=crop" alt="Salad">
+        </div>
+        <!-- Slide 3 -->
+        <div class="photo-slide">
+          <img class="side-img" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=600&auto=format&fit=crop" alt="Tostada">
+          <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=900&auto=format&fit=crop" alt="Pasta">
+          <img class="side-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Salad bowl">
+        </div>
+      </div>
+      <button class="slider-btn slider-btn-prev" id="slidePrev" aria-label="Previous">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="slider-btn slider-btn-next" id="slideNext" aria-label="Next">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </section>
+    <!-- ==================== END PHOTO SLIDER ==================== -->
+
+    <!-- ==================== MENU TABS ==================== -->
+    <section class="py-5 bg-white">
+      <div class="container py-3" style="max-width: 1100px;">
+
+        <!-- Tab nav -->
+        <ul class="nav menu-tabs justify-content-center border-bottom mb-5" id="menuTabs">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-breakfast">Breakfast Menu</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-lunch">Lunch Menu</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-dinner">Dinner Menu</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-wine">Wine Menu</button>
+          </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content">
+
+          <!-- â”€â”€ Breakfast â”€â”€ -->
+          <div class="tab-pane fade show active" id="tab-breakfast">
+            <div class="row g-0">
+              <!-- Left -->
+              <div class="col-12 col-md-5 pe-md-4">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Breakfast Sandwich">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Breakfast Sandwich</span><span class="menu-item-dots"></span><span class="menu-item-price">$8</span></div>
+                    <p class="menu-item-desc">Fried eggs, bacon, Canadian cheddar on a brioche bun</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Spinach Omelet">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Spinach Omelet</span><span class="menu-item-dots"></span><span class="menu-item-price">$10</span></div>
+                    <p class="menu-item-desc">Egg whites, spinach, salsa</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Eggs Benedict">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Eggs Benedict</span><span class="menu-item-dots"></span><span class="menu-item-price">$12</span></div>
+                    <p class="menu-item-desc">Poached eggs, Canadian bacon with hollandaise sauce</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Ham & Cheese Omelet">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Ham &amp; Cheese Omelet</span><span class="menu-item-dots"></span><span class="menu-item-price">$10</span></div>
+                    <p class="menu-item-desc">Eggs, ham, cheddar jack cheese</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Purple Corn Tostada">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Purple Corn Tostada</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                    <p class="menu-item-desc">Culatello, spalla cotta, mortadella, culacciona</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Divider -->
+              <div class="col-md-2 d-none d-md-flex justify-content-center menu-col-div">
+                <div class="menu-divider">
+                  <div class="menu-divider-arrow">â-²</div>
+                  <div class="menu-divider-line"></div>
+                  <div class="menu-divider-arrow">â-¼</div>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="col-12 col-md-5 ps-md-4 mt-4 mt-md-0">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Berry Smoothie">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Berry Smoothie</span><span class="menu-item-dots"></span><span class="menu-item-price">$7</span></div>
+                    <p class="menu-item-desc">Strawberries, blueberries and blackberries with yogurt</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Veggie Omelet">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Veggie Omelet</span><span class="menu-item-dots"></span><span class="menu-item-price">$10</span></div>
+                    <p class="menu-item-desc">Eggs, peppers, onion, mushrooms</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Wakeup Breakfast">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Wakeup Breakfast</span><span class="menu-item-dots"></span><span class="menu-item-price">$10</span></div>
+                    <p class="menu-item-desc">Two eggs, griddled hash browns and bacon</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1559559853-1e408d4c3ce6?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Bruno's Scribble">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Bruno's Scribble</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                    <p class="menu-item-desc">Eggs, peppers, onion, mushrooms</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Sunrise Oatmeal">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Sunrise Oatmeal</span><span class="menu-item-dots"></span><span class="menu-item-price">$6</span></div>
+                    <p class="menu-item-desc">Spiced oatmeal with cranberries</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-secondary mt-4 text-center" style="font-size: 0.76rem; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;">
+              *Please ask your server for additional Gluten Free options or other dietary requirements. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor
+            </p>
+          </div>
+
+          <!-- â”€â”€ Lunch â”€â”€ -->
+          <div class="tab-pane fade" id="tab-lunch">
+            <div class="row g-0">
+              <div class="col-12 col-md-5 pe-md-4">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Caesar Salad">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Caesar Salad</span><span class="menu-item-dots"></span><span class="menu-item-price">$14</span></div>
+                    <p class="menu-item-desc">Romaine, parmesan, croutons, classic dressing</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Garden Bowl">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Garden Bowl</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                    <p class="menu-item-desc">Quinoa, roasted vegetables, tahini dressing</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Club Sandwich">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Club Sandwich</span><span class="menu-item-dots"></span><span class="menu-item-price">$15</span></div>
+                    <p class="menu-item-desc">Grilled chicken, bacon, avocado, sourdough</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Pasta Primavera">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Pasta Primavera</span><span class="menu-item-dots"></span><span class="menu-item-price">$18</span></div>
+                    <p class="menu-item-desc">Seasonal vegetables, olive oil, garlic, parmesan</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 d-none d-md-flex justify-content-center menu-col-div">
+                <div class="menu-divider"><div class="menu-divider-arrow">â-²</div><div class="menu-divider-line"></div><div class="menu-divider-arrow">â-¼</div></div>
+              </div>
+              <div class="col-12 col-md-5 ps-md-4 mt-4 mt-md-0">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Tomato Soup">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Tomato Bisque</span><span class="menu-item-dots"></span><span class="menu-item-price">$11</span></div>
+                    <p class="menu-item-desc">Roasted tomatoes, cream, fresh basil</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Grilled Salmon">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Grilled Salmon</span><span class="menu-item-dots"></span><span class="menu-item-price">$26</span></div>
+                    <p class="menu-item-desc">Atlantic salmon, lemon butter, seasonal greens</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Mushroom Risotto">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Mushroom Risotto</span><span class="menu-item-dots"></span><span class="menu-item-price">$20</span></div>
+                    <p class="menu-item-desc">Porcini, arborio rice, white wine, parmesan</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Beef Burger">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Alpine Beef Burger</span><span class="menu-item-dots"></span><span class="menu-item-price">$22</span></div>
+                    <p class="menu-item-desc">Aged cheddar, caramelised onion, truffle aioli</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-secondary mt-4 text-center" style="font-size: 0.76rem; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;">
+              *Please ask your server for additional Gluten Free options or other dietary requirements. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <!-- â”€â”€ Dinner â”€â”€ -->
+          <div class="tab-pane fade" id="tab-dinner">
+            <div class="row g-0">
+              <div class="col-12 col-md-5 pe-md-4">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Filet Mignon">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Filet Mignon</span><span class="menu-item-dots"></span><span class="menu-item-price">$48</span></div>
+                    <p class="menu-item-desc">200g tenderloin, truffle jus, pomme purÃ&copy;e</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Rack of Lamb">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Rack of Lamb</span><span class="menu-item-dots"></span><span class="menu-item-price">$52</span></div>
+                    <p class="menu-item-desc">Herb crust, rosemary jus, ratatouille</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1544025162-83141f1762c4?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Sea Bass">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Pan-Seared Sea Bass</span><span class="menu-item-dots"></span><span class="menu-item-price">$42</span></div>
+                    <p class="menu-item-desc">Saffron risotto, beurre blanc, micro herbs</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1559559853-1e408d4c3ce6?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Duck Confit">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Duck Confit</span><span class="menu-item-dots"></span><span class="menu-item-price">$44</span></div>
+                    <p class="menu-item-desc">Slow-cooked leg, lentil cassoulet, orange glaze</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 d-none d-md-flex justify-content-center menu-col-div">
+                <div class="menu-divider"><div class="menu-divider-arrow">â-²</div><div class="menu-divider-line"></div><div class="menu-divider-arrow">â-¼</div></div>
+              </div>
+              <div class="col-12 col-md-5 ps-md-4 mt-4 mt-md-0">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Lobster Bisque">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Lobster Bisque</span><span class="menu-item-dots"></span><span class="menu-item-price">$22</span></div>
+                    <p class="menu-item-desc">Cream, brandy, tarragon, lobster tail</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Truffle Tagliatelle">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Truffle Tagliatelle</span><span class="menu-item-dots"></span><span class="menu-item-price">$34</span></div>
+                    <p class="menu-item-desc">Black truffle, parmesan, egg pasta, chives</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Wagyu Striploin">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Wagyu Striploin</span><span class="menu-item-dots"></span><span class="menu-item-price">$68</span></div>
+                    <p class="menu-item-desc">MB9+ striploin, bone marrow butter, asparagus</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Vegetarian Wellington">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Vegetarian Wellington</span><span class="menu-item-dots"></span><span class="menu-item-price">$32</span></div>
+                    <p class="menu-item-desc">Mushroom duxelles, spinach, puff pastry, red wine jus</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-secondary mt-4 text-center" style="font-size: 0.76rem; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;">
+              *Please ask your server for additional Gluten Free options or other dietary requirements. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <!-- â”€â”€ Wine â”€â”€ -->
+          <div class="tab-pane fade" id="tab-wine">
+            <div class="row g-0">
+              <div class="col-12 col-md-5 pe-md-4">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Chardonnay">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Chardonnay Reserve</span><span class="menu-item-dots"></span><span class="menu-item-price">$18</span></div>
+                    <p class="menu-item-desc">Burgundy, France â€“ buttery, oak, vanilla</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Pinot Grigio">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Pinot Grigio</span><span class="menu-item-dots"></span><span class="menu-item-price">$14</span></div>
+                    <p class="menu-item-desc">Friuli, Italy â€“ crisp, light, citrus notes</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="RosÃ&copy;">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">ProvenÃ§al RosÃ&copy;</span><span class="menu-item-dots"></span><span class="menu-item-price">$16</span></div>
+                    <p class="menu-item-desc">Provence, France â€“ dry, strawberry, floral</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Champagne">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Brut Champagne</span><span class="menu-item-dots"></span><span class="menu-item-price">$28</span></div>
+                    <p class="menu-item-desc">Reims, France â€“ fine bubbles, toasty brioche</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 d-none d-md-flex justify-content-center menu-col-div">
+                <div class="menu-divider"><div class="menu-divider-arrow">â-²</div><div class="menu-divider-line"></div><div class="menu-divider-arrow">â-¼</div></div>
+              </div>
+              <div class="col-12 col-md-5 ps-md-4 mt-4 mt-md-0">
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Cabernet Sauvignon">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Cabernet Sauvignon</span><span class="menu-item-dots"></span><span class="menu-item-price">$22</span></div>
+                    <p class="menu-item-desc">Napa Valley â€“ full bodied, dark fruit, cedar</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Barolo">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Barolo DOCG</span><span class="menu-item-dots"></span><span class="menu-item-price">$32</span></div>
+                    <p class="menu-item-desc">Piedmont, Italy â€“ structured, tar, roses</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Malbec">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Malbec Gran Reserva</span><span class="menu-item-dots"></span><span class="menu-item-price">$19</span></div>
+                    <p class="menu-item-desc">Mendoza, Argentina â€“ velvet, plum, tobacco</p>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?q=80&w=200&auto=format&fit=crop" class="menu-item-img" alt="Pinot Noir">
+                  <div class="menu-item-body">
+                    <div class="menu-item-name-row"><span class="menu-item-name">Pinot Noir</span><span class="menu-item-dots"></span><span class="menu-item-price">$24</span></div>
+                    <p class="menu-item-desc">Oregon, USA â€“ earthy, cherry, silky tannins</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-secondary mt-4 text-center" style="font-size: 0.76rem; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;">
+              *Please ask your server for wine pairing recommendations. All wines available by the glass or bottle. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ==================== END MENU TABS ==================== -->
+
+    <!-- ==================== NEWSLETTER + INSTAGRAM + FOOTER ==================== -->
+    <div class="bg-light pt-5">
+      <section class="py-5 px-4 bg-transparent">
+        <div class="row align-items-center mb-4 g-4" style="max-width: 1200px; margin: 0 auto;">
+          <div class="col-md-5">
+            <p class="text-uppercase tracking-widest fw-semibold mb-2" style="font-size: 0.7rem; color: var(--gold);">STAY TUNED WITH COZYSTAY</p>
+            <h3 class="font-serif display-6 text-charcoal mb-0">Sign up for our newsletter to receive our news, deals and special offers.</h3>
+          </div>
+          <div class="col-md-7">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control rounded-0 py-3 px-4 shadow-none border-secondary text-charcoal bg-transparent" placeholder="Your Email Address" style="border-width: 0 0 1px 0;">
+              <button class="btn bg-transparent text-charcoal rounded-0 px-4 py-3 border-bottom border-secondary border-1" style="border-left:0;border-top:0;border-right:0;">Subscribe âž”</button>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="privacyCheck">
+              <label class="form-check-label text-secondary" for="privacyCheck" style="font-size:0.78rem;">I agree to the Privacy Policy</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram grid -->
+        <div class="row g-2" style="max-width: 1200px; margin: 0 auto;">
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=500&auto=format&fit=crop" class="w-100 object-fit-cover" alt="IG 1" style="aspect-ratio:1/1;">
+          </div>
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=500&auto=format&fit=crop" class="w-100 object-fit-cover" alt="IG 2" style="aspect-ratio:1/1;">
+          </div>
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=500&auto=format&fit=crop" class="w-100 object-fit-cover" alt="IG 3" style="aspect-ratio:1/1;">
+          </div>
+          <div class="col-6 col-md-3">
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=500&auto=format&fit=crop" class="w-100 object-fit-cover" alt="IG 4" style="aspect-ratio:1/1;">
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <button class="btn bg-forest text-white tracking-widest text-uppercase rounded-0 px-5 py-3 border-0">Follow Us on Instagram</button>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="position-relative text-white overflow-hidden py-5" style="background:#2c3f32;">
+        <div class="container px-4 px-lg-5 pt-4">
+          <div class="row g-5 mb-5">
+            <div class="col-12 col-md-12 col-lg-3">
+              <p class="font-serif fs-4 tracking-widest mb-1">COZYSTAY</p>
+              <p class="text-gold tracking-widest mb-4 footer-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+              <p class="text-white-50 lh-base mb-4 footer-description" style="font-size:0.9rem;">Founded in 1998, CozyStay Resort is located on the hills of Zermatt, immersing you in the wonder of the Swiss Alps against the pure sky. Welcome to CozyStay, Zermatt.</p>
+              <div class="d-flex gap-3 text-white-50">
+                <a href="#" class="text-white-50 text-decoration-none"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="#" class="text-white-50 text-decoration-none"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                <a href="#" class="text-white-50 text-decoration-none"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"/><path stroke-width="1.5" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round"/></svg></a>
+                <a href="#" class="text-white-50 text-decoration-none"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke-width="1.5"/></svg></a>
+                <a href="#" class="text-white-50 text-decoration-none"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path stroke-width="1.5" d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg></a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading fs-6">About Us</h5>
+              <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0" style="font-size:0.9rem;">
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Our Story</a></li>
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Contact Us</a></li>
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Premium Services</a></li>
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Careers</a></li>
+                <li><a href="blog.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Blog</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading fs-6">Experiences</h5>
+              <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0" style="font-size:0.9rem;">
+                <li><a href="restaurants-bars.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Dining</a></li>
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Spa &amp; Wellness</a></li>
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Local Activities</a></li>
+                <li><a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Meetings</a></li>
+                <li><a href="menu.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Our Menu</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-12 col-lg-3">
+              <h5 class="text-white fw-semibold mb-4 text-uppercase footer-heading fs-6">Reach Out</h5>
+              <ul class="list-unstyled d-flex flex-column gap-3 text-white-50 m-0" style="font-size:0.9rem;">
+                <li class="d-flex align-items-center gap-2"><svg width="18" height="18" fill="none" stroke="currentColor" class="text-gold" viewBox="0 0 24 24"><path stroke-width="1.5" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" stroke-width="1.5"/></svg> Guidino 25, 6900, Lugano, Switzerland</li>
+                <li class="d-flex align-items-center gap-2"><svg width="18" height="18" fill="none" stroke="currentColor" class="text-gold" viewBox="0 0 24 24"><path stroke-width="1.5" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke-width="1.5"/></svg><a href="mailto:information@cozystay.com" class="text-decoration-none text-white-50 hover-text-gold transition-colors">information@cozystay.com</a></li>
+                <li class="d-flex align-items-center gap-2"><svg width="18" height="18" fill="none" stroke="currentColor" class="text-gold" viewBox="0 0 24 24"><path stroke-width="1.5" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.52 12 19.79 19.79 0 011.44 3.4 2 2 0 013.42 1.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:+41223456788" class="text-decoration-none text-white-50 hover-text-gold transition-colors">+41 22 345 67 88</a></li>
+                <li class="d-flex align-items-center pt-2"><a href="#" class="text-gold text-decoration-none fw-semibold">Get Directions âž”</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-top py-4 border-secondary border-opacity-25 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50" style="font-size:0.85rem;">
+            <p class="text-center text-md-start mb-0">Â&copy; Copyright CozyStay. WordPress Theme for Hotel Booking</p>
+            <div class="d-flex align-items-center gap-3">
+              <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Privacy</a>
+              <span class="opacity-25">|</span>
+              <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Terms of Use</a>
+              <span class="opacity-25">|</span>
+              <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase tracking-wider">Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- ==================== END FOOTER ==================== -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="../main.js" defer></script>
-
     <script>
-      // ---- Page Loader ----
-      (function () {
-        const loader = document.getElementById("page-loader");
-        function dismiss() {
-          if (!loader) return;
-          loader.classList.add("fade-out");
-          setTimeout(() => loader.remove(), 900);
-        }
-        if (document.readyState === "complete") {
-          setTimeout(dismiss, 300);
-        } else {
-          window.addEventListener("load", () => setTimeout(dismiss, 300));
-        }
-      })();
+      // â”€â”€ Photo slider â”€â”€
+      const track = document.getElementById('sliderTrack');
+      const slides = track.querySelectorAll('.photo-slide');
+      let current = 0;
 
-      // ---- V2 Mobile menu ----
-      (function () {
-        const btn = document.getElementById("menu-btn-v2");
-        const menu = document.getElementById("mobile-menu-v2");
-        if (!btn || !menu) return;
-        btn.addEventListener("click", () => menu.classList.toggle("open"));
-        menu
-          .querySelectorAll("a")
-          .forEach((a) =>
-            a.addEventListener("click", () => menu.classList.remove("open")),
-          );
-      })();
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+      }
 
-      // ---- Photo Carousel ----
-      (function () {
-        const track = document.getElementById("photo-track");
-        const dotsWrap = document.getElementById("pcarousel-dots");
-        const prevBtn = document.getElementById("pcarousel-prev");
-        const nextBtn = document.getElementById("pcarousel-next");
-        if (!track) return;
+      document.getElementById('slidePrev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('slideNext').addEventListener('click', () => goTo(current + 1));
 
-        const slides = track.querySelectorAll(".photo-carousel-slide");
-        const total = slides.length;
-        const isMobile = () => window.innerWidth <= 767;
-        const visibleCount = () => (isMobile() ? 1 : 3);
-        let current = 0;
-
-        const numDots = () => Math.max(1, total - visibleCount() + 1);
-
-        function buildDots() {
-          dotsWrap.innerHTML = "";
-          for (let i = 0; i < numDots(); i++) {
-            const d = document.createElement("button");
-            d.className = "pcarousel-dot" + (i === current ? " active" : "");
-            d.addEventListener("click", () => goTo(i));
-            dotsWrap.appendChild(d);
-          }
-        }
-
-        function goTo(n) {
-          current = Math.max(0, Math.min(n, numDots() - 1));
-          let offset = 0;
-          for (let i = 0; i < current; i++) offset += slides[i].offsetWidth;
-          track.style.transform = `translateX(-${offset}px)`;
-          dotsWrap
-            .querySelectorAll(".pcarousel-dot")
-            .forEach((d, i) => d.classList.toggle("active", i === current));
-        }
-
-        prevBtn.addEventListener("click", () => goTo(current - 1));
-        nextBtn.addEventListener("click", () => goTo(current + 1));
-        window.addEventListener("resize", () => {
-          buildDots();
-          goTo(0);
-        });
-
-        buildDots();
-      })();
-
-      // ---- Focused About Carousel ----
-      (function () {
-        const track = document.getElementById("fcarousel-track");
-        const prevBtn = document.getElementById("fcarousel-prev");
-        const nextBtn = document.getElementById("fcarousel-next");
-        const dotsWrap = document.getElementById("fcarousel-dots");
-        if (!track) return;
-
-        const items = Array.from(track.querySelectorAll(".fcarousel-item"));
-        const total = items.length;
-        let current = 0;
-
-        function render() {
-          const left = (current - 1 + total) % total;
-          const right = (current + 1) % total;
-          items.forEach((item, i) => {
-            item.classList.remove("is-center", "is-peek");
-            if (i === current) item.classList.add("is-center");
-            else if (i === left || i === right) item.classList.add("is-peek");
-          });
-          dotsWrap
-            .querySelectorAll(".fcarousel-dot")
-            .forEach((d, i) => d.classList.toggle("active", i === current));
-        }
-
-        function buildDots() {
-          dotsWrap.innerHTML = "";
-          for (let i = 0; i < total; i++) {
-            const d = document.createElement("button");
-            d.className = "fcarousel-dot" + (i === 0 ? " active" : "");
-            d.addEventListener("click", () => {
-              current = i;
-              render();
-            });
-            dotsWrap.appendChild(d);
-          }
-        }
-
-        prevBtn.addEventListener("click", () => {
-          current = (current - 1 + total) % total;
-          render();
-        });
-        nextBtn.addEventListener("click", () => {
-          current = (current + 1) % total;
-          render();
-        });
-
-        buildDots();
-        render();
-      })();
-
-      // ---- Rooms Carousel ----
-      (function () {
-        const rooms = [
-          {
-            name: "Standard Room",
-            price: "$199 / NIGHT",
-            area: "30 m²",
-            guests: 2,
-            beds: 1,
-            baths: 1,
-            img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&h=600&auto=format&fit=crop",
-            alt: "Standard Room",
-          },
-          {
-            name: "Signature Suite",
-            price: "FROM $399",
-            area: "60 m²",
-            guests: 4,
-            beds: 2,
-            baths: 1,
-            img: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200&h=800&auto=format&fit=crop",
-            alt: "Signature Suite",
-          },
-          {
-            name: "Deluxe Villa",
-            price: "$299 / NIGHT",
-            area: "80 m²",
-            guests: 6,
-            beds: 3,
-            baths: 2,
-            img: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&h=600&auto=format&fit=crop",
-            alt: "Deluxe Villa",
-          },
-        ];
-
-        const statIcon = {
-          area: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>`,
-          guests: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
-          bed: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V5a2 2 0 012-2h14a2 2 0 012 2v4M3 9h18M3 9v10a1 1 0 001 1h16a1 1 0 001-1V9M7 14h.01M7 18h.01"/></svg>`,
-          bath: `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2.25"/></svg>`,
-        };
-
-        let centerIdx = 1;
-        const total = rooms.length;
-
-        const imgLeft = document.getElementById("roomImgLeft");
-        const imgCenter = document.getElementById("roomImgCenter");
-        const imgRight = document.getElementById("roomImgRight");
-        const priceLeft = document.getElementById("roomPriceLeft");
-        const priceCenter = document.getElementById("roomPriceCenter");
-        const priceRight = document.getElementById("roomPriceRight");
-        const nameEl = document.getElementById("roomCenterName");
-        const statsEl = document.getElementById("roomCenterStats");
-        const dotsEl = document.getElementById("roomsDots");
-        const slotLeft = document.getElementById("roomSlotLeft");
-        const slotCenter = document.getElementById("roomSlotCenter");
-        const slotRight = document.getElementById("roomSlotRight");
-        const prevBtn = document.getElementById("roomsPrev");
-        const nextBtn = document.getElementById("roomsNext");
-        if (!imgCenter) return;
-
-        function buildDots() {
-          dotsEl.innerHTML = "";
-          for (let i = 0; i < total; i++) {
-            const b = document.createElement("button");
-            b.className = "rdot" + (i === centerIdx ? " active" : "");
-            b.setAttribute("aria-label", "Go to room " + (i + 1));
-            b.addEventListener("click", () => goTo(i));
-            dotsEl.appendChild(b);
-          }
-        }
-
-        function buildStats(room) {
-          statsEl.innerHTML = `
-            <div class="room-stat">${statIcon.area}<span>${room.area}</span></div>
-            <div class="room-stat">${statIcon.guests}<span>${room.guests} Guests</span></div>
-            <div class="room-stat">${statIcon.bed}<span>${room.beds} ${room.beds === 1 ? "Bed" : "Beds"}</span></div>
-            <div class="room-stat">${statIcon.bath}<span>${room.baths} ${room.baths === 1 ? "Bathroom" : "Bathrooms"}</span></div>`;
-        }
-
-        function fade(slot, cb) {
-          slot.classList.add("is-fading");
-          setTimeout(() => {
-            cb();
-            slot.classList.remove("is-fading");
-          }, 300);
-        }
-
-        function goTo(newCenter) {
-          if (newCenter === centerIdx) return;
-          centerIdx = ((newCenter % total) + total) % total;
-          const L = rooms[(centerIdx - 1 + total) % total];
-          const C = rooms[centerIdx];
-          const R = rooms[(centerIdx + 1) % total];
-
-          fade(slotLeft, () => {
-            imgLeft.src = L.img;
-            imgLeft.alt = L.alt;
-            priceLeft.textContent = L.price;
-          });
-          fade(slotCenter, () => {
-            imgCenter.src = C.img;
-            imgCenter.alt = C.alt;
-            priceCenter.textContent = C.price;
-            nameEl.textContent = C.name;
-            buildStats(C);
-          });
-          fade(slotRight, () => {
-            imgRight.src = R.img;
-            imgRight.alt = R.alt;
-            priceRight.textContent = R.price;
-          });
-          dotsEl
-            .querySelectorAll(".rdot")
-            .forEach((d, i) => d.classList.toggle("active", i === centerIdx));
-        }
-
-        function init() {
-          const L = rooms[(centerIdx - 1 + total) % total];
-          const C = rooms[centerIdx];
-          const R = rooms[(centerIdx + 1) % total];
-          imgLeft.src = L.img;
-          imgLeft.alt = L.alt;
-          priceLeft.textContent = L.price;
-          imgCenter.src = C.img;
-          imgCenter.alt = C.alt;
-          priceCenter.textContent = C.price;
-          nameEl.textContent = C.name;
-          buildStats(C);
-          imgRight.src = R.img;
-          imgRight.alt = R.alt;
-          priceRight.textContent = R.price;
-          buildDots();
-        }
-
-        prevBtn.addEventListener("click", () => goTo(centerIdx - 1));
-        nextBtn.addEventListener("click", () => goTo(centerIdx + 1));
-        init();
-
-        // Flatpickr for rooms booking bar
-        if (typeof flatpickr !== "undefined") {
-          const today = new Date();
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate() + 1);
-          flatpickr("#rbbCheckin", {
-            minDate: "today",
-            defaultDate: today,
-            dateFormat: "Y-m-d",
-          });
-          flatpickr("#rbbCheckout", {
-            minDate: "today",
-            defaultDate: tomorrow,
-            dateFormat: "Y-m-d",
-          });
-          flatpickr("#fcfCheckin", {
-            minDate: "today",
-            defaultDate: today,
-            dateFormat: "Y-m-d",
-          });
-          flatpickr("#fcfCheckout", {
-            minDate: "today",
-            defaultDate: tomorrow,
-            dateFormat: "Y-m-d",
-          });
-        }
-      })();
-
-      // ---- Back to top ----
-      (function () {
-        const btn = document.getElementById("back-top");
-        if (!btn) return;
-        window.addEventListener(
-          "scroll",
-          () => {
-            btn.style.opacity = window.scrollY > 400 ? "1" : "0";
-            btn.style.pointerEvents = window.scrollY > 400 ? "auto" : "none";
-          },
-          { passive: true },
-        );
-        btn.addEventListener("click", () =>
-          window.scrollTo({ top: 0, behavior: "smooth" }),
-        );
-      })();
-
-      // ---- Scroll reveal ----
-      (function () {
-        const els = document.querySelectorAll(
-          ".reveal, .reveal-left, .reveal-right",
-        );
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("visible");
-                obs.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.12 },
-        );
-        els.forEach((el) => obs.observe(el));
-      })();
-      // ---- RBB-V3 Booking Bar ----
-      (function () {
-        // Flatpickr date pickers
-        if (typeof flatpickr !== 'undefined') {
-          flatpickr('#rbbCheckin', {
-            minDate: 'today',
-            dateFormat: 'Y-m-d',
-            defaultDate: new Date(),
-            onChange: function(d) {
-              var co = document.querySelector('#rbbCheckout')._flatpickr;
-              if (co) co.set('minDate', d[0]);
-            }
-          });
-          flatpickr('#rbbCheckout', {
-            minDate: 'today',
-            dateFormat: 'Y-m-d',
-            defaultDate: new Date(Date.now() + 86400000)
-          });
-        }
-
-        // Guests dropdown
-        var adults = 1, children = 0;
-        var guestsTrigger = document.querySelector('.rbb-guests-trigger');
-        var guestsDropdown = document.getElementById('rbb-guests-dropdown');
-        var guestsDisplay = document.getElementById('rbb-guests-display');
-        var roomsDisplay = document.getElementById('rbb-rooms-display');
-        var rooms = 1;
-
-        function updateGuestsDisplay() {
-          if (guestsDisplay) guestsDisplay.textContent = adults + ' Adult' + (adults !== 1 ? 's' : '') + ', ' + children + ' Children';
-        }
-
-        if (guestsTrigger && guestsDropdown) {
-          guestsTrigger.addEventListener('click', function(e) {
-            e.stopPropagation();
-            guestsDropdown.classList.toggle('open');
-          });
-          document.addEventListener('click', function(e) {
-            if (!guestsDropdown.contains(e.target) && !guestsTrigger.contains(e.target)) {
-              guestsDropdown.classList.remove('open');
-            }
-          });
-        }
-
-        function bindCounter(minusId, plusId, countId, getter, setter, min) {
-          var minus = document.getElementById(minusId);
-          var plus = document.getElementById(plusId);
-          var countEl = document.getElementById(countId);
-          if (!minus || !plus || !countEl) return;
-          minus.addEventListener('click', function(e) {
-            e.stopPropagation();
-            var v = getter();
-            if (v > min) { setter(v - 1); countEl.textContent = getter(); updateGuestsDisplay(); }
-          });
-          plus.addEventListener('click', function(e) {
-            e.stopPropagation();
-            setter(getter() + 1); countEl.textContent = getter(); updateGuestsDisplay();
-          });
-        }
-
-        bindCounter('rbb-adult-minus','rbb-adult-plus','rbb-adult-count',
-          function(){ return adults; }, function(v){ adults = v; }, 1);
-        bindCounter('rbb-child-minus','rbb-child-plus','rbb-child-count',
-          function(){ return children; }, function(v){ children = v; }, 0);
-
-        // Rooms counter (click on rooms box cycles 1-5)
-        var roomsBox = document.getElementById('rbb-rooms-cell');
-        if (roomsBox && roomsDisplay) {
-          roomsBox.addEventListener('click', function() {
-            rooms = rooms < 5 ? rooms + 1 : 1;
-            roomsDisplay.textContent = rooms + ' Room' + (rooms > 1 ? 's' : '');
-          });
-        }
-
-        // Apply button
-        var applyBtn = document.getElementById('rbb-guest-apply');
-        if (applyBtn) {
-          applyBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            guestsDropdown.classList.remove('open');
-          });
-        }
-      })();
+      // Auto-advance every 5s
+      setInterval(() => goTo(current + 1), 5000);
     </script>
   </body>
 </html>
+
+
+

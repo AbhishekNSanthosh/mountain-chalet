@@ -1,0 +1,439 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horseback Riding - CozyStay</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .activity-hero {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.pexels.com/photos/1996333/pexels-photo-1996333.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero-title {
+            font-family: 'Marcellus', serif;
+            font-size: 5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .intro-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        .intro-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 30px;
+            display: block;
+        }
+        .intro-title {
+            font-family: 'Marcellus', serif;
+            font-size: 2.8rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.2;
+            color: var(--charcoal);
+        }
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .gallery-section img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .details-section {
+            padding: 100px 0;
+        }
+        .details-title {
+            font-family: 'Marcellus', serif;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+        }
+        .sidebar-title {
+            font-family: 'Marcellus', serif;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--charcoal);
+        }
+        .highlight-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .highlight-item::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .contact-widget {
+            background: #fcfbf7;
+            padding: 40px;
+            margin-top: 50px;
+            border: 1px solid #f1efe4;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .contact-info-item svg {
+            color: var(--gold);
+        }
+    </style>
+  </head>
+  <body class="overflow-x-hidden pt-5">
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar" class="fixed-top w-100 z-50 bg-white">
+      <div
+        class="d-flex align-items-center justify-content-between nav-inner-height navbar-inner-padding"
+      >
+        <div class="d-flex justify-content-start flex-grow-1">
+          <a
+            href="index.html"
+            class="text-decoration-none font-serif fs-4 tracking-widest fw-semibold text-charcoal d-flex flex-column align-items-center justify-content-center lh-1 position-relative"
+          >
+            COZYSTAY
+            <span class="text-gold tracking-widest mt-1 navbar-logo-stars"
+              >&#9733; &#9733; &#9733; &#9733; &#9733;</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div
+          class="d-none d-lg-flex flex-grow-2 align-items-center justify-content-end gap-5"
+        >
+          <ul
+            class="d-flex align-items-center gap-4 text-charcoal m-0 p-0 list-unstyled fw-semibold tracking-widest text-uppercase nav-list"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors"
+              >
+                <span class="nav-active pb-1">HOME</span>
+              </a>
+            </li>
+            <li class="custom-dropdown position-relative">
+              <a
+                href="#"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1"
+              >
+                <span class="pb-1">ROOMS</span>
+                <svg
+                  class="nav-dropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div class="custom-dropdown-menu">
+            <a href="rooms.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Rooms Page</a>
+            <a href="room-details-top-image.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Image</a>
+            <a href="room-details-top-gallery.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Gallery 1</a>
+            <a href="room-details-top-gallery-2.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Top Gallery 2</a>
+            <a href="room-details-left-booking.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Left Booking Form</a>
+            <a href="room-details-booking-rules.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Room Details - Booking Rules Example</a>
+            <a href="cart.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Cart</a>
+            <a href="checkout.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Checkout</a>
+            <a href="my-account.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">My account</a>
+          </div>
+            </li>
+            <li class="custom-dropdown position-relative">
+              <a
+                href="#"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors d-flex align-items-center gap-1"
+              >
+                <span class="pb-1">PAGES</span>
+                <svg
+                  class="nav-dropdown-chevron"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              <div class="custom-dropdown-menu">
+            <a href="about.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">About the hotel</a>
+            <a href="restaurants-bars.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Restaurants & Bars</a>
+            <a href="restaurant.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">The Restaurant</a>
+            <a href="menu.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Menu Page</a>
+            <a href="spa-wellness.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Spa & Wellness</a>
+            <a href="events-meetings.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Events & Meetings</a>
+            <a href="activities.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Local Activities</a>
+            <a href="horseback-riding.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Activity Detail Page</a>
+            <a href="contact.html" class="d-block px-4 py-2 text-decoration-none text-charcoal hover-text-forest hover-bg-cream transition-colors nav-dropdown-link">Contact</a>
+          </div>
+            </li>
+            <li>
+              <a
+                href="blog.html"
+                class="text-decoration-none text-charcoal hover-text-forest transition-colors"
+                ><span class="pb-1">BLOG</span></a
+              >
+            </li>
+            <li
+              class="fw-normal text-charcoal ms-2 nav-phone"
+            >
+              Tel: +41 22 345 67 88
+            </li>
+          </ul>
+
+          <a
+            href="#booking"
+            class="btn bg-forest hover-bg-forest text-white text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest transition-all ms-3 nav-enquire-btn"
+          >
+            Enquire Now
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-btn"
+          class="d-lg-none btn border-0 text-charcoal p-2"
+          aria-label="Open menu"
+        >
+          <svg
+            class="nav-hamburger-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="d-lg-none bg-white border-top border-light">
+        <div
+          class="px-4 py-3 d-flex flex-column gap-2 mobile-menu-inner"
+        >
+          <a href="index.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Home</a>
+                    <a href="rooms.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Rooms Page</a>
+          <a href="room-details-top-image.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Image</a>
+          <a href="room-details-top-gallery.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Gallery 1</a>
+          <a href="room-details-top-gallery-2.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Top Gallery 2</a>
+          <a href="room-details-left-booking.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Left Booking Form</a>
+          <a href="room-details-booking-rules.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Room Details - Booking Rules Example</a>
+          <a href="cart.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Cart</a>
+          <a href="checkout.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Checkout</a>
+          <a href="my-account.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">My account</a>
+                    <a href="about.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">About the hotel</a>
+          <a href="restaurants-bars.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Restaurants & Bars</a>
+          <a href="restaurant.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">The Restaurant</a>
+          <a href="menu.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Menu Page</a>
+          <a href="spa-wellness.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Spa & Wellness</a>
+          <a href="events-meetings.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Events & Meetings</a>
+          <a href="activities.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Local Activities</a>
+          <a href="horseback-riding.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Activity Detail Page</a>
+          <a href="contact.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Contact</a>
+          <a href="blog.html" class="text-decoration-none text-charcoal hover-text-forest py-2 border-bottom border-light">Blog</a>
+          <a href="#booking" class="btn bg-forest text-white w-100 rounded-0 py-2 mt-2 tracking-widest text-uppercase">Enquire Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="activity-hero mt-4">
+        <div class="container">
+            <span class="hero-eyebrow">COZYSTAY BANFF PARK</span>
+            <h1 class="hero-title">Horseback Riding</h1>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+        <div class="container px-4">
+            <span class="intro-eyebrow">CLIENTS HAVE THE CHANCE TO VISIT THE SIGHTS OF THE NATIONAL PARK</span>
+            <h2 class="intro-title">Ride to the top of the mountain as you explore our beautiful park.</h2>
+            <p class="intro-text">
+                Explore the mountain trails in a whole new way. Our guided tours offer a unique perspective on the breathtaking scenery of Banff National Park. <a href="#" class="text-decoration-none text-primary">Horseback Riding Adventures</a> are suitable for all ages and abilities. Experience the majesty of the wilderness with our well-trained horses and expert guides.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section container py-4">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/14648227/pexels-photo-14648227.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hikers">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Camping">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.pexels.com/photos/463734/pexels-photo-463734.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pony">
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILS SECTION -->
+    <section class="details-section">
+        <div class="container px-4">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <h3 class="details-title">Guided Horseback Tours for Guests of Any Riding Ability</h3>
+                    <p class="text-secondary lh-lg mb-4">
+                        Horseback Riding Adventures lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
+                    </p>
+                    <p class="text-secondary lh-lg mb-4">
+                        Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+                    </p>
+                    <p class="text-secondary lh-lg">
+                        Maecenas nec odio et ante tincidunt tempus.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ps-lg-4">
+                        <h4 class="sidebar-title">Highlights of This Activity</h4>
+                        <div class="highlight-list">
+                            <div class="highlight-item">22 miles of trails available for riders of all levels</div>
+                            <div class="highlight-item">Perfectly suited for small groups and large groups</div>
+                            <div class="highlight-item">Pony rides</div>
+                            <div class="highlight-item">Reservations preferred</div>
+                            <div class="highlight-item">Ages 8 and older ride their own mounts</div>
+                            <div class="highlight-item">A full day horse trek</div>
+                        </div>
+
+                        <div class="contact-widget">
+                            <h4 class="sidebar-title mb-4">Contact Information</h4>
+                            <div class="contact-info-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                                <span>Phone: +41 22 345 67 89</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741z"/></svg>
+                                <span>Email: concierge@cozystay.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER & FOOTER -->
+    <section class="newsletter-section bg-light py-5">
+      <div class="container py-5">
+          <div class="row align-items-center g-4">
+              <div class="col-md-7">
+                  <h2 class="font-serif display-6 text-charcoal mb-0">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+              </div>
+              <div class="col-md-5">
+                  <div class="d-flex align-items-center">
+                      <input type="email" placeholder="Your Email Address" class="form-control rounded-0 border-0 border-bottom bg-transparent px-0 py-3 shadow-none" style="border-color: #ccc !important;">
+                      <button class="btn bg-transparent border-0 tracking-widest fw-semibold ms-3 text-nowrap text-charcoal hover-text-gold transition-colors">SUBSCRIBE \u2794</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="position-relative text-white overflow-hidden py-5" style="background:#2c3f32;">
+        <div class="container px-4 px-lg-5 pt-4">
+            <div class="row g-5 mb-5">
+                <div class="col-12 col-md-12 col-lg-3">
+                    <p class="font-serif fs-4 tracking-widest mb-1">COZYSTAY</p>
+                    <p class="text-gold tracking-widest mb-4">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                    <p class="text-white-50 lh-base mb-4" style="font-size: 0.9rem;">
+                        Founded in 1998, CozyStay Resort is located on the hills of Zermatt, immersing you in the wonder of the Swiss Alps against the pure sky.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="text-white fw-semibold mb-4 text-uppercase fs-6 tracking-widest">About Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0" style="font-size: 0.9rem;">
+                        <li><a href="about.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Our Story</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Contact Us</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="text-white fw-semibold mb-4 text-uppercase fs-6 tracking-widest">Experiences</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-white-50 m-0" style="font-size: 0.9rem;">
+                        <li><a href="activities.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Local Activities</a></li>
+                        <li><a href="spa-wellness.html" class="text-decoration-none text-white-50 hover-text-gold transition-colors">Spa &amp; Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-12 col-lg-3">
+                    <h5 class="text-white fw-semibold mb-4 text-uppercase fs-6 tracking-widest">Reach Out</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3 text-white-50 m-0" style="font-size: 0.9rem;">
+                        <li class="d-flex align-items-center gap-2">Guidino 25, 6900, Lugano, Switzerland</li>
+                        <li class="d-flex align-items-center gap-2">information@cozystay.com</li>
+                        <li class="d-flex align-items-center gap-2">+41 22 345 67 88</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-top py-4 border-secondary border-opacity-25 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-white-50" style="font-size: 0.85rem;">
+                <p class="mb-0">\&copy; 2026 CozyStay Resort. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase">Privacy</a>
+                    <a href="#" class="text-decoration-none text-white-50 hover-text-gold transition-colors text-uppercase">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+
+
