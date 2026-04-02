@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms & Suites | CozyStay - Mountain Luxury</title>
+    <meta name="description" content="Explore our refined accommodation options and find the perfect space for your stay at CozyStay Mountain Resort.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="rooms.css">
+</head>
+<body>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div id="top-bar">
+      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
+      <span class="d-flex align-items-center gap-4">
+        <span>TEL: +41 22 345 67 88</span>
+        <span>FAX: +41 22 345 67 89</span>
+        <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+      </span>
+    </div>
+
+    <!-- ==================== NAVBAR V2 ==================== -->
+    <nav id="navbar-v2">
+      <!-- Left nav links -->
+      <ul class="v2-nav-left">
+        <li class="dropdown">
+          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu">
+            <li><a class="dropdown-item nav-dropdown-link" href="index.html">Home v1</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="index2.html">Home v2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="rooms.html" class="v2-nav-link">
+            STAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu">
+            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details – Top Image</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details-gallery.html">Room Details – Top Gallery</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="room-details-left.html">Room Details – Left Booking Form</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="checkout.html">Checkout</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="account.html">My account</a></li>
+          </ul>
+        </li>
+        <li class="dropdown mega-dropdown">
+          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <div class="mega-menu dropdown-menu">
+            <div class="mega-menu-container">
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&auto=format&fit=crop" alt="Overview" /></div>
+                  <span>Overview</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
+                  <span>The Restaurant</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&auto=format&fit=crop" alt="Lobby Cafe" /></div>
+                  <span>Lobby Cafe</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
+                  <span>Rooftop Bar</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
+                  <span>Steakhouse</span>
+                </a>
+              </div>
+              <div class="mega-item">
+                <a href="restaurant.html">
+                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
+                  <span>Cigar Lounge</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="dropdown mega-dropdown">
+          <a href="skiing.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <div class="mega-menu dropdown-menu play-mega-menu">
+            <div class="mega-play-container">
+              <!-- Left Cols with Links -->
+              <div class="play-links-grid">
+                <div class="play-col">
+                  <h4>LOCAL ACTIVITIES</h4>
+                  <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Winter Activities</a></li>
+                    <li><a href="#">Summer Activities</a></li>
+                  </ul>
+                  <h4 class="mt-4">WINTER ACTIVITIES</h4>
+                  <ul>
+                    <li><a href="#">Ski & Snowboard</a></li>
+                    <li><a href="#">Freeriding</a></li>
+                    <li><a href="#">Winter Hiking</a></li>
+                    <li><a href="#">Snowshoeing</a></li>
+                    <li><a href="#">Paraglider Exercises</a></li>
+                    <li><a href="#">Sledding</a></li>
+                  </ul>
+                </div>
+                <div class="play-col">
+                  <h4>SUMMER ACTIVITIES</h4>
+                  <ul>
+                    <li><a href="#">Hiking</a></li>
+                    <li><a href="#">Running & Walking</a></li>
+                    <li><a href="#">Mountain Bike</a></li>
+                    <li><a href="#">Racing Bike</a></li>
+                    <li><a href="#">Golf Courses</a></li>
+                  </ul>
+                  <h4 class="mt-4">OTHERS</h4>
+                  <ul>
+                    <li><a href="#">Art & Museum</a></li>
+                    <li><a href="#">Musics</a></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Right Part with Promotional Cards -->
+              <div class="play-cards-grid">
+                <div class="play-card winter-card">
+                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
+                  <div class="play-card-content">
+                    <p class="play-card-label">ADVENTURES</p>
+                    <h5 class="play-card-title">WINTER ACTIVITIES</h5>
+                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+                <div class="play-card summer-card">
+                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&h=900&fit=crop" alt="Summer" /></div>
+                  <div class="play-card-content">
+                    <p class="play-card-label">NATURE & WILD</p>
+                    <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
+                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="relax.html" class="v2-nav-link">RELAX</a>
+        </li>
+      </ul>
+
+      <!-- Center logo -->
+      <div class="v2-nav-center">
+        <a href="index2.html" class="v2-logo-link">
+          COZYSTAY
+          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right nav links -->
+      <ul class="v2-nav-right">
+        <li class="dropdown">
+          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            PAGES <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="gallery.html">Gallery</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            EN <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
+          </a>
+          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item nav-dropdown-link" href="#">English</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="#">Français</a></li>
+            <li><a class="dropdown-item nav-dropdown-link" href="#">Deutsch</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#booking" class="v2-reserve-btn">Reserve Now</a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn-v2" class="d-none border-0 bg-transparent p-0" aria-label="Toggle menu">
+        <svg width="26" height="18" viewBox="0 0 26 18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+          <line x1="0" y1="1" x2="26" y2="1"/>
+          <line x1="0" y1="9" x2="26" y2="9"/>
+          <line x1="0" y1="17" x2="26" y2="17"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="rooms-hero">
+        <div class="rooms-hero-content">
+            <h1 class="rooms-hero-title">Rooms & Suites</h1>
+            <p class="rooms-hero-subtitle">Naturally Conceived</p>
+        </div>
+
+        <div class="hero-booking-bar">
+            <div class="hbb-field">
+                <label>Check In</label>
+                <input type="text" id="checkin" placeholder="Select Date">
+            </div>
+            <div class="hbb-field">
+                <label>Check Out</label>
+                <input type="text" id="checkout" placeholder="Select Date">
+            </div>
+            <div class="hbb-field">
+                <label>Guests</label>
+                <select>
+                    <option>1 Adult, 1 Child</option>
+                    <option>2 Adults</option>
+                    <option>2 Adults, 1 Child</option>
+                    <option>2 Adults, 2 Children</option>
+                </select>
+            </div>
+            <button class="hbb-btn">Check Availability</button>
+        </div>
+    </section>
+
+    <!-- ==================== INTRO ==================== -->
+    <section class="rooms-intro container">
+        <h2>Explore our refined accommodation options and find the perfect space for your stay.</h2>
+        <p>All our luxury suites & villas come with terrace, fireplace, private bar, and full accessibility. If you need any special request, feel free to contact us and let us know. See our booking policy.</p>
+        <div class="links">
+            <a href="#">Booking Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- ==================== ROOM GRID ==================== -->
+    <section class="container">
+        <div class="room-grid">
+            <!-- Room 1: Signature Suite -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <a href="room-details.html">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop" alt="Signature Suite">
+                    </a>
+                    <span class="room-badge">Popular</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Signature Suite</h3>
+                    <div class="room-card-meta">
+                        <span>$500 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>80 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            1 King Bed
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            City View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">The most luxury suite at the resort with a large balcony and view. Perfect for families or couples seeking extra space and luxury.</p>
+                    <a href="room-details.html" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 2: Deluxe Room -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&auto=format&fit=crop" alt="Deluxe Room">
+                    <span class="room-badge">New</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Deluxe Room</h3>
+                    <div class="room-card-meta">
+                        <span>$350 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>45 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            1 Queen Bed
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Mountain View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">Modern and cozy room with all the essentials. Features a private terrace and state-of-the-art entertainment system for your comfort.</p>
+                    <a href="room-details.html" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 3: Double Room -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&auto=format&fit=crop" alt="Double Room">
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Double Room</h3>
+                    <div class="room-card-meta">
+                        <span>$300 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>35 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            2 Single Beds
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Garden View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">Perfect for friends or colleagues. Each bed has high-quality linens and a comfortable workspace is provided for your needs.</p>
+                    <a href="room-details.html" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 4: Prestige Suite -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&auto=format&fit=crop" alt="Prestige Suite">
+                    <span class="room-badge">30% OFF</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Prestige Suite</h3>
+                    <div class="room-card-meta">
+                        <span>$450 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>60 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            1 King Bed
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Panoramic View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">Luxury at its finest. This suite offers a separate living area and a spacious bathroom with a rain shower and luxury amenities.</p>
+                    <a href="#" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 5: Grand Deluxe Room -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop" alt="Grand Deluxe Room - CozyStay">
+                    <span class="room-badge">Best Value</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Grand Deluxe Room</h3>
+                    <div class="room-card-meta">
+                        <span>$400 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>55 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            1 King Bed
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Lake View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">Spacious and elegant room with a stunning lake view. Each detail is designed for a premium stay experience.</p>
+                    <a href="#" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 6: Luxury Deluxe Suite -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&auto=format&fit=crop" alt="Luxury Deluxe Suite">
+                    <span class="room-badge">King Size</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Luxury Deluxe Suite</h3>
+                    <div class="room-card-meta">
+                        <span>$600 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>95 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            1 Super King
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            360 View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">The ultimate expression of luxury. Features a private sauna and a 360-degree view of the surrounding mountains.</p>
+                    <a href="#" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 7: Premier Room -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&auto=format&fit=crop" alt="Premier Room">
+                    <span class="room-badge">Mountain View</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Premier Room</h3>
+                    <div class="room-card-meta">
+                        <span>$380 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>50 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            2 Twin Beds
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Forest View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">Experience nature at its best. This room offers a direct view into the lush alpine forests, perfect for nature lovers.</p>
+                    <a href="#" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+
+            <!-- Room 8: Grand Deluxe Suite -->
+            <div class="room-card">
+                <div class="room-card-img">
+                    <img src="https://images.unsplash.com/photo-1601760562234-9814eea6663a?w=800&auto=format&fit=crop" alt="Grand Deluxe Suite - Alpine Luxury">
+                    <span class="room-badge">Alpine View</span>
+                </div>
+                <div class="room-card-content">
+                    <h3 class="room-card-title">Grand Deluxe Suite</h3>
+                    <div class="room-card-meta">
+                        <span>$550 / Night</span>
+                        <span>Geneva, Switzerland</span>
+                        <span>85 sqm</span>
+                    </div>
+                    <div class="room-icons">
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            1 King Bed
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Summit View
+                        </div>
+                        <div class="room-icon-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            2 Guests
+                        </div>
+                    </div>
+                    <p class="room-card-desc">An elegant suite with high ceilings and a cozy fireplace. The perfect retreat after a day on the slopes or hiking.</p>
+                    <a href="#" class="room-card-link">Book Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FACILITIES ==================== -->
+    <section class="facilities-section">
+        <div class="container d-flex flex-wrap flex-lg-nowrap gap-5">
+            <div class="fac-header w-100 w-lg-50">
+                <p class="fac-label">Most Popular Facilities</p>
+                <h2 class="fac-title">MOST POPULAR FACILITIES</h2>
+                <p class="fac-desc">Discover the range of services we provide to ensure your stay is comfortable and memorable. From fine dining to wellness activities.</p>
+                <a href="#" class="room-card-link" style="color: #fff; border-color: #555;">Learn More About Us →</a>
+            </div>
+            <div class="fac-grid w-100 w-lg-50">
+                <div class="fac-item">Intercom TV</div>
+                <div class="fac-item">Wifi</div>
+                <div class="fac-item">Restaurant & Coffee</div>
+                <div class="fac-item">Television</div>
+                <div class="fac-item">Free Car Park</div>
+                <div class="fac-item">Sitting Area</div>
+                <div class="fac-item">Pet Friend</div>
+                <div class="fac-item">Balcony</div>
+                <div class="fac-item">Airport pick-up</div>
+                <div class="fac-item">King Size Bed</div>
+                <div class="fac-item">Hair Drier</div>
+                <div class="fac-item">Wellness Infinity</div>
+                <div class="fac-item">Breakfast & Mini Bar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== QUOTE ==================== -->
+    <section class="quote-section">
+        <div class="quote-overlay"></div>
+        <div class="quote-content">
+            <div class="quote-icon">“</div>
+            <h2 class="quote-text">Everything here was great: the staff, the room layout, the property amenities with indoor pool, and the quality of the food. But the high point is the view from the mountains.</h2>
+            <div class="quote-author">Jane Wilson — Traveler</div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer-v2">
+        <div class="footer-container text-start">
+            <div class="row gx-lg-5 gy-5">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo">COZYSTAY</h3>
+                    <p class="footer-desc">Established in 1998, CozyStay Hotel is a boutique hotel in the heart of the Swiss Alps, offering contemporary accommodation and unrivaled access to ski and hiking trails, immersing you in an idyllic setting against pristine skies in search of a truly serene experience.</p>
+                    <div class="payment-icons">
+                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></div>
+                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard"></div>
+                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" alt="Visa"></div>
+                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Reach Out</h4>
+                    <div class="footer-contact-info">
+                        <span>Email: <a href="mailto:booking@cozystay.com" class="footer-email">booking@cozystay.com</a></span>
+                        <span>Tel: +41 22 345 66 77</span>
+                        <span>Fax: +41 22 345 77 89</span>
+                        <span>Rue de Lausanne, 1202 Genève, Switzerland</span>
+                    </div>
+                    <a href="#" class="get-directions">Get Directions</a>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Sign up for newsletter</h4>
+                    <form class="newsletter-form-premium">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit">
+                            Subscribe
+                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        </button>
+                    </form>
+                    <div class="privacy-agree">
+                        <input type="checkbox" id="policy-agree">
+                        <label for="policy-agree">I agree to the Privacy Policy</label>
+                    </div>
+                    <div class="social-connect">
+                        <span>Stay Connected:</span>
+                        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                        <a href="#" aria-label="Pinterest"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+                        <a href="#" aria-label="YouTube"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+                        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.197-4.347-2.618-6.778-6.98-6.981C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Policy</a>
+                </div>
+                <p class="mb-0">© Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#checkin", {
+            dateFormat: "M d, Y",
+            defaultDate: "2026-10-10"
+        });
+        flatpickr("#checkout", {
+            dateFormat: "M d, Y",
+            defaultDate: "2026-10-15"
+        });
+
+        // ---- V2 Mobile menu ----
+        (function () {
+            const btn = document.getElementById("menu-btn-v2");
+            const menu = document.getElementById("mobile-menu-v2");
+            if (!btn || !menu) return;
+            btn.addEventListener("click", () => menu.classList.toggle("open"));
+            menu
+                .querySelectorAll("a")
+                .forEach((a) =>
+                    a.addEventListener("click", () => menu.classList.remove("open")),
+                );
+        })();
+    </script>
+</body>
+</html>

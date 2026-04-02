@@ -1,0 +1,63 @@
+/* ============================================================
+   CozyStay – Base Variables & Utilities (mountain-hotel)
+   ============================================================ */
+
+:root {
+  --forest: #3a5241;
+  --forest-dark: #2c3f32;
+  --forest-light: #4d6b57;
+  --gold: #b89a6a;
+  --gold-light: #d4b98a;
+  --gold-dark: #9a7d52;
+  --cream: #f0ebe3;
+  --cream-dark: #e5ddd2;
+  --charcoal: #2d2d2d;
+  --bs-body-font-family: "Jost", sans-serif;
+  --bs-body-bg: var(--cream);
+  --bs-body-color: var(--charcoal);
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+/* Color utilities */
+.text-forest  { color: var(--forest) !important; }
+.bg-forest    { background-color: var(--forest) !important; }
+.hover-bg-forest:hover  { background-color: var(--forest-dark) !important; }
+.hover-text-forest:hover { color: var(--forest) !important; }
+.text-gold    { color: var(--gold) !important; }
+.bg-gold      { background-color: var(--gold) !important; }
+.hover-text-gold:hover  { color: var(--gold-dark) !important; }
+.border-gold  { border-color: var(--gold) !important; }
+.text-cream   { color: var(--cream) !important; }
+.bg-cream     { background-color: var(--cream) !important; }
+.hover-bg-cream:hover { background-color: var(--cream) !important; }
+.text-charcoal { color: var(--charcoal) !important; }
+.bg-charcoal  { background-color: var(--charcoal) !important; }
+
+/* Typography helpers */
+.font-serif   { font-family: "Marcellus", Georgia, serif !important; }
+.font-sans    { font-family: "Jost", sans-serif !important; }
+.tracking-widest { letter-spacing: 0.18em !important; }
+.tracking-wider  { letter-spacing: 0.10em !important; }
+.tracking-wide   { letter-spacing: 0.05em !important; }
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  opacity: 0; transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0; transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Dropdown link hover (utility) */
+.nav-dropdown-link { transition: background 0.18s, color 0.18s; }
