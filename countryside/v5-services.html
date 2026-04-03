@@ -339,5 +339,33 @@
         </div>
       </div>
     </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (function () {
+        // ==================== MOBILE MENU ====================
+        var menuPanel   = document.getElementById('mobileMenu');
+        var menuOverlay = document.getElementById('mobileMenuOverlay');
+        var menuOpen    = document.querySelector('.nav-hamburger5');
+        var menuClose   = document.getElementById('mobileMenuClose');
+
+        function openMenu() {
+          menuPanel.classList.add('mmenu-panel--open');
+          menuOverlay.classList.add('mmenu-overlay--visible');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          menuPanel.classList.remove('mmenu-panel--open');
+          menuOverlay.classList.remove('mmenu-overlay--visible');
+          document.body.style.overflow = '';
+        }
+
+        if (menuOpen)    menuOpen.addEventListener('click', openMenu);
+        if (menuClose)   menuClose.addEventListener('click', closeMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+      })();
+    </script>
   </body>
 </html>
