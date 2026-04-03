@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts & Culture - CozyStay Luxury</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
+    <style>
+        :root {
+            --accent-gold: #c5a059;
+            --dark-bg: #0c0c0c;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .marcellus {
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Nav & Top Bar Reused */
+        #top-bar {
+            background: rgba(0,0,0,0.2);
+            padding: 12px 5vw;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #888;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .detail-navbar {
+            padding: 30px 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            z-index: 100;
+        }
+        .nav-links { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; }
+        .nav-links li a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; }
+        .detail-logo { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
+        .detail-logo a { color: #fff; text-decoration: none; font-size: 34px; letter-spacing: 8px; font-weight: 400; text-transform: uppercase; }
+        .check-btn { border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 28px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; transition: 0.3s; }
+        .check-btn:hover { background: #fff; color: #000; }
+
+        /* Hero */
+        .detail-hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-title { font-size: clamp(3rem, 7vw, 74px); margin-bottom: 20px; text-transform: capitalize; }
+        .hero-subtitle { color: rgba(255,255,255,0.7); font-size: 14px; letter-spacing: 2px; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+        /* Listing Grid */
+        .listing-section { padding: 120px 10%; }
+        
+        .listing-card { display: flex; align-items: stretch; margin-bottom: 80px; background: #000; overflow: hidden; }
+        .listing-card.reverse { flex-direction: row-reverse; }
+        
+        .card-text { flex: 1; padding: 60px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+        .card-img { flex: 1.1; min-height: 500px; overflow: hidden; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
+        .listing-card:hover .card-img img { transform: scale(1.1); }
+        
+        .address-tag { color: var(--accent-gold); font-size: 11px; letter-spacing: 2px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+        .card-title { font-size: 40px; margin-bottom: 30px; letter-spacing: 1px; }
+        .card-desc { font-size: 15px; color: #888; line-height: 1.9; font-weight: 300; margin-bottom: 40px; }
+        
+        .opening-hours { padding: 0; list-style: none; margin-bottom: 40px; }
+        .opening-hours li { color: rgba(255,255,255,0.6); font-size: 13px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .opening-hours li span { color: var(--accent-gold); }
+
+        .btn-line { color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); padding: 12px 30px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; width: fit-content; }
+        .btn-line:hover { background: #fff; color: #000; }
+
+        /* Bottom Sections Reused */
+        .bottom-grid { display: flex; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); }
+        .box { flex: 1; position: relative; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px; overflow: hidden; }
+        .box-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: -1; transition: transform 1.2s; filter: brightness(0.35); }
+        .box:hover .box-bg { transform: scale(1.1); }
+        .tag-label { color: var(--accent-gold); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 25px; display: block; }
+        .box-title { font-size: 44px; margin-bottom: 30px; }
+        .box-desc { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 400px; line-height: 1.8; margin-bottom: 40px; }
+
+        .newsletter { padding: 120px 10%; background: #000; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .news-header { font-size: 46px; max-width: 600px; line-height: 1.1; margin: 0; }
+        .news-form { width: 450px; }
+        .input-group-nl { border-bottom: 1px solid rgba(255,255,255,0.15); display: flex; padding-bottom: 12px; margin-bottom: 15px; }
+        .input-group-nl input { background: transparent; border: none; color: #fff; flex: 1; padding: 8px 0; font-size: 14px; }
+        .input-group-nl button { background: transparent; border: none; color: #fff; text-transform: uppercase; font-size: 11px; letter-spacing: 3px; display: flex; align-items: center; gap: 10px; }
+
+        footer { background: #000; padding: 50px 10%; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #555; letter-spacing: 1.5px; }
+
+        @media (max-width: 1100px) {
+            .listing-card, .listing-card.reverse { flex-direction: column; }
+            .card-img { min-height: 400px; }
+            .card-text { padding: 60px 40px; }
+            .newsletter { flex-direction: column; text-align: center; gap: 50px; }
+            .news-form { width: 100%; }
+            .bottom-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div id="top-bar">
+        <div>1250 WEST 6TH AVE, NEW YORK, NY 10036, UNITED STATES</div>
+        <div>
+            <span>TEL: +1 212 555 6688</span>
+            <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="detail-navbar">
+        <ul class="nav-links d-none d-lg-flex">
+            <li><a href="index4.html">Home</a></li>
+            <li><a href="v4-rooms.html">Rooms</a></li>
+        </ul>
+        <div class="detail-logo">
+            <a href="index4.html" class="marcellus">COZYSTAY</a>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <a href="#" class="lang-link text-white text-decoration-none" style="font-size: 11px; letter-spacing: 2.5px;">EN / FR</a>
+            <a href="v4-rooms.html" class="check-btn">Check Availability</a>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="detail-hero marcellus">
+        <div class="hero-content">
+            <h1 class="hero-title">Arts & Culture</h1>
+            <p class="hero-subtitle">Don't miss the excellent art exhibitions coming up. You will always find something you like: traditional paintings, transformative sculptures, interactive art exhibits, and etc.</p>
+        </div>
+    </header>
+
+    <!-- ==================== LISTINGS ==================== -->
+    <section class="listing-section">
+        
+        <!-- Card 1 -->
+        <article class="listing-card">
+            <div class="card-text">
+                <div class="address-tag marcellus">📍 1000 5th Ave, New York, NY 10028</div>
+                <h2 class="card-title marcellus">The Metropolitan Museum of Art</h2>
+                <p class="card-desc">At New York City’s most-visited museum and attraction, you will experience over 5,000 years of art from around the world.</p>
+                <ul class="opening-hours marcellus">
+                    <li>⏲ Sunday to Tuesday: 10:00 am — 5:00 pm</li>
+                    <li>⏲ Friday and Saturday: 10:00 am — 9:00 pm</li>
+                    <li>⏲ Wednesday: Closed</li>
+                </ul>
+                <a href="#" class="btn-line marcellus">Discover More</a>
+            </div>
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=1000&q=80" alt="Metropolitan Museum">
+            </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="listing-card reverse">
+            <div class="card-text">
+                <div class="address-tag marcellus">📍 30 Lincoln Center Plaza, New York, NY 10023</div>
+                <h2 class="card-title marcellus">Metropolitan Opera</h2>
+                <p class="card-desc">The Metropolitan Opera is a vibrant home for the world's most creative and talented artists, including singers, conductors, composers, orchestra members, chorus members, and more.</p>
+                <ul class="opening-hours marcellus">
+                    <li>⏲ Monday — Saturday: 10:00 am — 8:00 pm</li>
+                    <li>⏲ Sunday: 11:00 am — 6:00 pm</li>
+                </ul>
+                <a href="#" class="btn-line marcellus">Discover More</a>
+            </div>
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1000&q=80" alt="Metropolitan Opera">
+            </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="listing-card">
+            <div class="card-text">
+                <div class="address-tag marcellus">📍 11 W 53rd St, New York, NY 10019</div>
+                <h2 class="card-title marcellus">Museum of Modern Art</h2>
+                <p class="card-desc">Located in the heart of Manhattan, The Museum of Modern Art (MoMA) is home to the world's greatest collection of modern and contemporary art. Visitors often find themselves inspired by works that are as thought-provoking as they are aesthetically captivating.</p>
+                <ul class="opening-hours marcellus">
+                    <li>⏲ 10:30 am — 5:30 pm Daily</li>
+                    <li>⏲ Until 8:00 pm on Saturdays</li>
+                </ul>
+                <a href="#" class="btn-line marcellus">Discover More</a>
+            </div>
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?w=1000&q=80" alt="MoMA">
+            </div>
+        </article>
+
+    </section>
+
+    <!-- ==================== BOTTOM GRID ==================== -->
+    <section class="bottom-grid">
+        <div class="box">
+            <div class="box-bg" style="background-image: url('https://images.unsplash.com/photo-1449156001497-cd7c4d242142?w=1200&q=80')"></div>
+            <div class="box-content">
+                <span class="tag-label">Our Location</span>
+                <h2 class="box-title marcellus">Getting Here</h2>
+                <p class="box-desc">CozyStay Aparthotel Times Square 415 6th Avenue, New York, NY, 10018 Tel: +1 212-555-6699 Email: information@cozystay.com</p>
+                <a href="#" class="btn-line marcellus">Get Directions</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-bg" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80')"></div>
+            <div class="box-content">
+                <span class="tag-label">Book A Room</span>
+                <h2 class="box-title marcellus">Spend Your Time With Us</h2>
+                <p class="box-desc">Everything at CozyStay, in its restaurants, bar and spa is designed to make your stay, lunch or dinner unforgettable.</p>
+                <a href="#" class="btn-line marcellus">Reserve Your Stay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="newsletter marcellus">
+        <div class="news-text">
+            <span class="tag-label">Stay Tuned With CozyStay</span>
+            <h2 class="news-header">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+        </div>
+        <div class="news-form">
+            <div class="input-group-nl">
+                <input type="email" placeholder="Your Email Address">
+                <button>Subscribe ➤</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer-v4">
+      <div class="container-xl">
+        <div class="footer-top">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <p class="footer-subtitle">STAY TUNED WITH COZYSTAY</p>
+              <h2 class="footer-title">Sign up for our newsletter to<br>receive our news, deals and<br>special offers.</h2>
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+              <form class="newsletter-form" onsubmit="event.preventDefault();">
+                <div class="nl-input-group">
+                  <input type="email" placeholder="Your Email Address" required />
+                  <button type="submit">
+                    Subscribe
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </button>
+                </div>
+                <label class="nl-checkbox">
+                  <input type="checkbox" required />
+                  <span>I agree to the <a href="#">Privacy Policy</a></span>
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+              <p class="copyright m-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            </div>
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+              <style>
+                .pay-icon-box {
+                  background: #fff;
+                  border-radius: 6px;
+                  width: 54px;
+                  height: 38px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 5px;
+                }
+                .pay-icon-box img {
+                  max-width: 100%;
+                  max-height: 100%;
+                  object-fit: contain;
+                }
+              </style>
+              <div class="payment-icons d-flex justify-content-center align-items-center gap-2">
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/visa.png" alt="VISA"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/stripe.png" alt="Stripe"></div>
+              </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+              <div class="social-icons">
+                <span class="social-label">Stay Connected:</span>
+                <a href="#">
+                   <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+                </a>
+                <a href="#">
+                   <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                </a>
+                <a href="#">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

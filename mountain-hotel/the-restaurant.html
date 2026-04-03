@@ -1,479 +1,377 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Restaurant – CozyStay Resort</title>
-    <meta
-      name="description"
-      content="Fine dining at its best. Savor exquisite dishes made with locally sourced ingredients at CozyStay's signature restaurant."
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Restaurant - CozyStay Luxury</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Reusing style4.css if available, otherwise defining consistent V4 styles -->
+    <link rel="stylesheet" href="../apartment/style4.css">
+    <style>
+        :root {
+            --accent-gold: #c5a059;
+            --dark-bg: #0c0c0c;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style2.css" />
-    <link rel="stylesheet" href="the-restaurant.css" />
-  </head>
-  <body>
+        h1, h2, h3, h4, .marcellus {
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Top Bar & Navbar */
+        #top-bar {
+            background: rgba(0,0,0,0.2);
+            padding: 12px 5vw;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #888;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-weight: 500;
+        }
+
+        .restaurant-navbar {
+            padding: 30px 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav-links { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; }
+        .nav-links li a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; }
+
+        .restaurant-logo { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
+        .restaurant-logo a { color: #fff; text-decoration: none; font-size: 34px; letter-spacing: 8px; font-weight: 400; text-transform: uppercase; }
+        .restaurant-logo .stars { display: block; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); margin-top: 5px; }
+
+        .check-btn { border: 1px solid rgba(255,255,255,0.3); color: #fff; text-decoration: none; padding: 12px 28px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; }
+        .check-btn:hover { background: #fff; color: #000; }
+
+        /* Hero */
+        .restaurant-hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hero-title { font-size: clamp(3rem, 8vw, 84px); font-weight: 400; letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-subtitle { color: rgba(255,255,255,0.8); font-size: 14px; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
+
+        /* General Section */
+        .page-section { padding: 140px 10%; }
+
+        /* Main Info Section */
+        .info-row { display: flex; align-items: center; gap: 80px; }
+        .info-img { flex: 1; height: 600px; overflow: hidden; }
+        .info-img img { width: 100%; height: 100%; object-fit: cover; }
+        .info-text { flex: 0.9; }
+        .tag-label { color: var(--accent-gold); font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 25px; display: block; }
+        .section-heading { font-size: 48px; line-height: 1.1; margin-bottom: 40px; }
+        .section-desc { color: #888; font-size: 16px; line-height: 1.9; font-weight: 300; margin-bottom: 40px; }
+
+        .btn-group-custom { display: flex; gap: 20px; }
+        .btn-custom { border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 14px 35px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .btn-custom:hover { background: #fff; color: #000; }
+
+        /* Card Section */
+        .card-row { display: flex; gap: 40px; margin-top: 100px; }
+        .food-card { flex: 1; text-align: center; }
+        .card-img-box { height: 350px; overflow: hidden; margin-bottom: 35px; }
+        .card-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s; }
+        .food-card:hover .card-img-box img { transform: scale(1.1); }
+        .card-title { font-size: 28px; margin-bottom: 20px; }
+        .card-desc { color: #888; font-size: 14px; margin-bottom: 30px; padding: 0 10%; }
+        .card-link { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding-bottom: 5px; }
+
+        /* Live Music Banner */
+        .live-music {
+            height: 60vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1501612722273-0466beaf2fb5?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner-title { font-size: clamp(3rem, 6vw, 72px); letter-spacing: 3px; }
+
+        /* Menu Section */
+        .menu-section { padding: 120px 10%; text-align: center; }
+        .menu-cats { display: flex; justify-content: center; gap: 40px; list-style: none; margin-bottom: 80px; padding: 0; }
+        .menu-cats li a { color: #888; text-decoration: none; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .menu-cats li a.active, .menu-cats li a:hover { color: #fff; border-bottom-color: var(--accent-gold); }
+
+        .menu-grid { display: flex; flex-wrap: wrap; gap: 60px 100px; text-align: left; }
+        .menu-item { width: calc(50% - 50px); }
+        .price-line { display: flex; align-items: flex-end; gap: 15px; margin-bottom: 8px; }
+        .price-line h4 { font-size: 18px; margin: 0; font-family: 'Marcellus', serif; }
+        .p-dots { flex: 1; border-bottom: 1px dotted rgba(255,255,255,0.15); height: 1px; margin-bottom: 6px; }
+        .p-price { font-size: 18px; color: var(--accent-gold); font-family: 'Marcellus', serif; }
+        .p-desc { font-size: 13px; color: #666; font-weight: 300; }
+
+        /* Bottom Grid Reused */
+        .bottom-grid { display: flex; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); }
+        .box { flex: 1; position: relative; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px; overflow: hidden; }
+        .box-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: -1; transition: transform 1.2s; filter: brightness(0.35); }
+        .box:hover .box-bg { transform: scale(1.1); }
+        .box-content { position: relative; z-index: 1; }
+        .box-title { font-size: 44px; margin-bottom: 30px; }
+        .box-desc { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 400px; line-height: 1.8; margin-bottom: 40px; }
+
+        .newsletter { padding: 120px 10%; background: #000; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .news-header { font-size: 46px; max-width: 600px; line-height: 1.1; margin: 0; }
+        .news-form { width: 450px; }
+        .input-group-nl { border-bottom: 1px solid rgba(255,255,255,0.15); display: flex; padding-bottom: 12px; margin-bottom: 15px; }
+        .input-group-nl input { background: transparent; border: none; color: #fff; flex: 1; padding: 8px 0; font-size: 16px; }
+        .input-group-nl button { background: transparent; border: none; color: #fff; text-transform: uppercase; font-size: 10px; letter-spacing: 3px; font-weight: 600; display: flex; align-items: center; gap: 15px; }
+
+        footer { background: #000; padding: 50px 10%; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #555; letter-spacing: 1.5px; }
+
+        @media (max-width: 1100px) {
+            .info-row, .card-row, .menu-grid, .newsletter, .bottom-grid { flex-direction: column; gap: 50px; }
+            .info-img, .menu-item { width: 100%; height: auto; }
+            .news-header { margin-bottom: 40px; }
+        }
+    </style>
+</head>
+<body>
+
     <!-- ==================== TOP BAR ==================== -->
     <div id="top-bar">
-      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
-      <span class="d-flex align-items-center gap-4">
-        <span>TEL: +41 22 345 67 88</span>
-        <span>FAX: +41 22 345 67 89</span>
-        <a href="mailto:booking@cozystay.com" class="text-white text-decoration-none border-bottom border-white border-opacity-25">BOOKING@COZYSTAY.COM</a>
-      </span>
+        <div>1250 WEST 6TH AVE, NEW YORK, NY 10036, UNITED STATES</div>
+        <div>
+            <span>TEL: +1 212 555 6688</span>
+            <span>FAX: +1 212 555 6699</span>
+            <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+        </div>
     </div>
 
     <!-- ==================== NAVBAR ==================== -->
-    <nav id="navbar-v2">
-      <!-- Left nav links -->
-      <ul class="v2-nav-left">
-        <li class="dropdown">
-          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu">
-            <li><a class="dropdown-item nav-dropdown-link" href="index.html">Home v1</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="index2.html">Home v2</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="rooms.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            STAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu">
-            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details – Top Image</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details-gallery.html">Room Details – Top Gallery</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details-left.html">Room Details – Left Booking Form</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Checkout</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="account.html">My account</a></li>
-          </ul>
-        </li>
-        <li class="dropdown mega-dropdown">
-          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <div class="mega-menu dropdown-menu">
-            <div class="mega-menu-container">
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&auto=format&fit=crop" alt="Overview" /></div>
-                  <span>Overview</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="the-restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
-                  <span>The Restaurant</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="lobby-cafe.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&auto=format&fit=crop" alt="Lobby Cafe" /></div>
-                  <span>Lobby Cafe</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
-                  <span>Rooftop Bar</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
-                  <span>Steakhouse</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
-                  <span>Cigar Lounge</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="dropdown mega-dropdown">
-          <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <div class="mega-menu dropdown-menu play-mega-menu">
-            <div class="mega-play-container">
-              <!-- Left Cols with Links -->
-              <div class="play-links-grid">
-                <div class="play-col">
-                  <h4>LOCAL ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="activities.html">Overview</a></li>
-                    <li><a href="winter-activities.html">Winter Activities</a></li>
-                    <li><a href="summer-activities.html">Summer Activities</a></li>
-                  </ul>
-                  <h4 class="mt-5">WINTER ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="skiing.html">Ski & Snowboard</a></li>
-                    <li><a href="#">Freeriding</a></li>
-                    <li><a href="#">Winter Hiking</a></li>
-                    <li><a href="#">Snowshoeing</a></li>
-                    <li><a href="#">Paraglider Exercises</a></li>
-                    <li><a href="#">Sledding</a></li>
-                  </ul>
-                </div>
-                <div class="play-col">
-                  <h4>SUMMER ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="#">Hiking</a></li>
-                    <li><a href="#">Running & Walking</a></li>
-                    <li><a href="#">Mountain Bike</a></li>
-                    <li><a href="#">Racing Bike</a></li>
-                    <li><a href="#">Golf Courses</a></li>
-                  </ul>
-                  <h4 class="mt-5">OTHERS</h4>
-                  <ul>
-                    <li><a href="#">Art & Museum</a></li>
-                    <li><a href="#">Musics</a></li>
-                  </ul>
-                </div>
-              </div>
-              
-              <!-- Right Part with Promotional Cards -->
-              <div class="play-cards-grid">
-                <a href="winter-activities.html" class="play-card winter-card">
-                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
-                  <div class="play-card-content">
-                    <p class="play-card-label">ADVENTURES</p>
-                    <h5 class="play-card-title">WINTER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </a>
-                <a href="summer-activities.html" class="play-card summer-card">
-                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&h=900&fit=crop" alt="Summer" /></div>
-                  <div class="play-card-content">
-                    <p class="play-card-label">NATURE & WILD</p>
-                    <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="spa.html" class="v2-nav-link">RELAX</a>
-        </li>
-      </ul>
-
-      <!-- Center logo -->
-      <div class="v2-nav-center">
-        <a href="index2.html" class="v2-logo-link">
-          COZYSTAY
-          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
-        </a>
-      </div>
-
-      <!-- Right nav links -->
-      <ul class="v2-nav-right">
-        <li class="dropdown">
-          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            PAGES <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="services.html">Services</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="restaurant.html">Restaurants</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="activities.html">Local Activities</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="spa.html">Wellness</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            EN <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item nav-dropdown-link" href="#">English</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Français</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Deutsch</a></li>
-          </ul>
-        </li>
-        <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
-      </ul>
-      <button id="v3-hamburger" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+    <nav class="restaurant-navbar">
+        <div class="d-flex align-items-center gap-4">
+            <button class="hamburger-btn border-0 bg-transparent text-white">
+                <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h12" /></svg>
+            </button>
+            <ul class="nav-links d-none d-lg-flex">
+                <li><a href="../apartment/index4.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="#">Pages</a></li>
+            </ul>
+        </div>
+        <div class="restaurant-logo">
+            <a href="../apartment/index4.html">COZYSTAY</a>
+            <span class="stars">★ ★ ★ ★ ★</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <a href="#" class="lang-link text-white text-decoration-none" style="font-size: 11px; letter-spacing: 2.5px;">EN / FR</a>
+            <a href="v4-rooms.html" class="check-btn">Check Availability</a>
+        </div>
     </nav>
-    <!-- ==================== MOBILE MENU V2 ==================== -->
-    <div id="mobile-menu-v2">
-      <button id="mobile-menu-close" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="mobile-menu-logo">COZYSTAY</div>
-      <nav class="mobile-menu-nav">
-        <a href="index2.html">Home</a>
-        <a href="rooms.html">Stay</a>
-        <a href="restaurant.html">Dine</a>
-        <a href="activities.html">Play</a>
-        <a href="spa.html">Relax</a>
-        <a href="about.html">About</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="#booking" class="mobile-menu-cta">Reserve Now</a>
-    </div>
-    <div id="mobile-menu-overlay"></div>
-    <!-- ==================== THE RESTAURANT HERO ==================== -->
-    <header class="the-restaurant-hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="container text-center hero-content">
-        <h1 class="hero-title">THE RESTAURANT</h1>
-        <p class="hero-subtitle">Carefully curated menus incorporate locally sourced ingredients into exquisite dishes that reflect the locale and the world.</p>
-      </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="restaurant-hero marcellus">
+        <div class="hero-content">
+            <h1 class="hero-title">The Restaurant</h1>
+            <p class="hero-subtitle">Luxurious lunch menu with home locally fresh ingredients with exceptional dishes.</p>
+        </div>
     </header>
 
-    <!-- ==================== CUISINE SECTION ==================== -->
-    <section class="cuisine-section px-5vw">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 position-relative cuisine-images">
-            <div class="img-tall">
-              <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=900&fit=crop" alt="Dish 1" />
+    <!-- ==================== EXPERIENCE SECTION ==================== -->
+    <section class="page-section">
+        <div class="info-row">
+            <div class="info-img">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80">
             </div>
-            <div class="img-overlap">
-              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=800&fit=crop" alt="Dish 2" />
+            <div class="info-text">
+                <span class="tag-label">Relax With Beauty Treatments</span>
+                <h2 class="section-heading marcellus">Experience exquisite cuisine from all over the world</h2>
+                <p class="section-desc">The experience and choice are yours. International and local cuisines with unique flavors, focus with gourmet cuisine and signature cocktails, or homemade tastes, all surrounded by beautiful music and gorgeous views over the city. Five seasonal menus in dining apartment to satisfy any craving, see what our chefs are preparing for you.</p>
+                <ul class="detail-list list-unstyled mb-5" style="color: #666; font-size: 14px; letter-spacing: 1px;">
+                    <li class="mb-2">⏲ Location: lobby area</li>
+                    <li class="mb-2">⏲ Serves: Breakfast, Brunch, Lunch, Dinner, Dessert</li>
+                    <li class="mb-2">⏲ Dress code: casual chic</li>
+                    <li class="mb-2">⏲ Hours: 7:00 am - 11:30 pm</li>
+                </ul>
+                <div class="btn-group-custom marcellus">
+                    <a href="#" class="btn-custom">Book A Table</a>
+                    <a href="#" class="btn-custom">Dinner Menu</a>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-6 cuisine-content">
-            <p class="section-label">PERFECT CULINARY EXPERIENCE</p>
-            <h2 class="section-title">EXPERIENCE EXQUISITE CUISINE AT THE RESTAURANT</h2>
-            <p class="section-desc">
-              We are committed to providing exceptional experiences for all guests with every item. Carefully curated menus incorporate locally sourced ingredients into exquisite dishes that reflect the locale and the world around them. Wherever you are in the world, we'll take you on a journey you'll never forget. Authentic flavors and culinary skills combine to ensure an unforgettable dining experience.
-            </p>
-            <div class="cuisine-features">
-              <div class="feature-item">
-                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg></div>
-                <div class="feature-text">
-                  <h5>Cuisine</h5>
-                  <p>International and Local Swiss Influence</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7h-9m9 4h-9m9 4h-9M4 7h2m-2 4h2m-2 4h2" /></svg></div>
-                <div class="feature-text">
-                  <h5>Dietary Habits & Allergies</h5>
-                  <p>Vegetarian, Vegan, Lactose-free, Gluten-free</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                <div class="feature-text">
-                  <h5>Serving</h5>
-                  <p>Breakfast, Lunch, Dinner</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ==================== NEW FLAVORS SECTION ==================== -->
-    <section class="flavors-section px-5vw">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-5 flavors-content">
-            <p class="section-label">CHOOSE GOURMET EXPERIENCES</p>
-            <h2 class="section-title">INDULGE YOUR SENSES AND DISCOVER NEW FLAVORS</h2>
-            <p class="section-desc">The restaurant offers elegant international specialties with unique flavors. Relax with gourmet cuisine and signature cocktails in an impeccable host, all enhanced by breathtaking panoramic views over the city. From seasonal menus to dining experiences to satisfy any craving... see what our chefs are preparing for you.</p>
-            
-            <div class="reservation-phone">
-              <p>RESERVATIONS BY PHONE</p>
-              <h3>+41 22 345 66 77</h3>
+        <div class="card-row">
+            <div class="food-card">
+                <div class="card-img-box"><img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80"></div>
+                <h3 class="card-title marcellus">Weekend Brunch</h3>
+                <p class="card-desc">Experience the best weekend brunch with seasonal, locally-fresh ingredients and artisanal selections.</p>
+                <a href="#" class="card-link marcellus">Book a Table</a>
             </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="row g-4">
-              <div class="col-sm-6">
-                <div class="menu-card">
-                  <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=600&fit=crop" alt="Menu" />
-                  <div class="menu-overlay">
-                    <h3>Menu</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="menu-card">
-                  <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&h=600&fit=crop" alt="Wine List" />
-                  <div class="menu-overlay">
-                    <h3>Wine List</h3>
-                  </div>
-                </div>
-              </div>
+            <div class="food-card">
+                <div class="card-img-box"><img src="https://images.unsplash.com/photo-1555243629-7ec14b3c990a?w=600&q=80"></div>
+                <h3 class="card-title marcellus">Host Your Event</h3>
+                <p class="card-desc">Our elegant dining space is perfect for private events, corporate gatherings or celebratory dinners.</p>
+                <a href="#" class="card-link marcellus">Inquire Now</a>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- ==================== INFO STRIP SECTION ==================== -->
-    <section class="info-strip">
-      <div class="strip-bg"></div>
-      <div class="strip-overlay"></div>
-      <div class="container text-center position-relative z-10">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="strip-item">
-              <div class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0M12 9v6M9 12h6" /></svg></div>
-              <h4>Dress Code</h4>
-              <p>Smart Casual & Elegant</p>
+    <!-- ==================== LIVE MUSIC BANNER ==================== -->
+    <section class="live-music">
+        <h2 class="banner-title marcellus text-white">Live Music Nightly</h2>
+    </section>
+
+    <!-- ==================== MENU SECTION ==================== -->
+    <section class="menu-section">
+        <span class="tag-label">Relax With Beauty Treatments</span>
+        <h2 class="section-heading marcellus mb-5">Our Latest Menus</h2>
+        <p class="section-desc mx-auto" style="max-width: 700px; margin-bottom: 60px;">Explore our artisanal menu, meticulously prepared by our chefs using only the finest organic ingredients sourced from local farms.</p>
+        
+        <ul class="menu-cats marcellus">
+            <li><a href="#" class="active">Brunch</a></li>
+            <li><a href="#">Main Courses</a></li>
+            <li><a href="#">Sides</a></li>
+            <li><a href="#">Beverages</a></li>
+            <li><a href="#">Dessert</a></li>
+        </ul>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Purple Corn Tostada</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$36</span>
+                </div>
+                <p class="p-desc">Pear, goat cheese, hazelnut salted caramel</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="strip-item">
-              <div class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M7 11h10M5 11h14M7 11v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8" /></svg></div>
-              <h4>Reservation</h4>
-              <p>Phone call +41 22 345 66 77</p>
-              <a href="#" class="book-now">Book Now &rarr;</a>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Crispy Skin Chicken</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$32</span>
+                </div>
+                <p class="p-desc">Roasted cabbage, apple-walnut salad, molasses</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="strip-item">
-              <div class="strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0M12 7v5l3 3" /></svg></div>
-              <h4>Opening Hours</h4>
-              <p>7:00 am - 11:00 pm daily</p>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Brioche Scramble</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$18</span>
+                </div>
+                <p class="p-desc">Soft scramble, creme fraiche, watercress</p>
             </div>
-          </div>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Flank Steak</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$38</span>
+                </div>
+                <p class="p-desc">Roasted red peppers, celery, romesco sauce</p>
+            </div>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Fresh Oysters Dozen</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$27</span>
+                </div>
+                <p class="p-desc">Selection of fresh oysters, lemon</p>
+            </div>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Lbster Filet Steak</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$22</span>
+                </div>
+                <p class="p-desc">Pear, celery, parmigiano crust</p>
+            </div>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Wild Mushroom Arancini</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$16</span>
+                </div>
+                <p class="p-desc">Porcini puree, parmesan, truffle</p>
+            </div>
+            <div class="menu-item">
+                <div class="price-line">
+                    <h4>Fish & Chips</h4>
+                    <div class="p-dots"></div>
+                    <span class="p-price">$35</span>
+                </div>
+                <p class="p-desc">Artisanal fish filet, chips, salad, tartar sauce</p>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- ==================== PROMO SECTION ==================== -->
-    <section class="dining-promo px-5vw">
-      <div class="container text-center">
-        <p class="promo-label">CHECK OUT ALL RESTAURANTS AND CAFES</p>
-        <h2 class="promo-title">INTERESTED IN AFTERNOON TEA, BAR, CIGAR LOUNGE?</h2>
-        <p class="promo-desc">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        </p>
-        <a href="restaurant.html" class="btn-outline-gold mt-5">View All Restaurants</a>
-      </div>
+    <!-- ==================== BOTTOM GRID ==================== -->
+    <section class="bottom-grid">
+        <div class="box">
+            <div class="box-bg" style="background-image: url('https://images.unsplash.com/photo-1449156001497-cd7c4d242142?w=1200&q=80')"></div>
+            <div class="box-content">
+                <span class="tag-label" style="color: #fff;">Our Location</span>
+                <h2 class="box-title marcellus">Getting Here</h2>
+                <p class="box-desc">CozyStay Aparthotel Times Square 415 6th Avenue, New York, NY, 10018 Tel: +1 212-555-6699 Email: information@cozystay.com</p>
+                <a href="#" class="btn-line marcellus">Get Directions</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-bg" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80')"></div>
+            <div class="box-content">
+                <span class="tag-label" style="color: #fff;">Book A Room</span>
+                <h2 class="box-title marcellus">Spend Your Time With Us</h2>
+                <p class="box-desc">Everything at CozyStay, in its restaurants, bar and spa is designed to make your stay, lunch or dinner unforgettable.</p>
+                <a href="#" class="btn-line marcellus">Reserve Your Stay</a>
+            </div>
+        </div>
     </section>
 
-    <!-- ==================== FOOTER GALLERY ==================== -->
-    <section class="footer-gallery">
-      <div class="gallery-inner">
-        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop" alt="Food 1" />
-        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop" alt="Food 2" />
-        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=400&fit=crop" alt="Food 3" />
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop" alt="Food 4" />
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop" alt="Food 5" />
-      </div>
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="newsletter marcellus">
+        <div class="news-text">
+            <span class="tag-label">Stay Tuned With CozyStay</span>
+            <h2 class="news-header">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+        </div>
+        <div class="news-form">
+            <div class="input-group-nl">
+                <input type="email" placeholder="Your Email Address">
+                <button>Subscribe <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+            </div>
+        </div>
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer id="footer-v2">
-        <div class="footer-container">
-            <div class="row gx-lg-5 gy-5">
-                <div class="col-lg-4">
-                    <h3 class="footer-logo">COZYSTAY</h3>
-                    <p class="footer-desc">Established in 1998, CozyStay Hotel is a boutique hotel in the heart of the Swiss Alps, offering contemporary accommodation and unrivaled access to ski and hiking trails, immersing you in an idyllic setting against pristine skies in search of a truly serene experience.</p>
-                    <div class="payment-icons">
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" alt="Visa"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Reach Out</h4>
-                    <div class="footer-contact-info">
-                        <span>Email: <a href="mailto:booking@cozystay.com" class="footer-email">booking@cozystay.com</a></span>
-                        <span>Tel: +41 22 345 66 77</span>
-                        <span>Fax: +41 22 345 77 89</span>
-                        <span>Rue de Lausanne, 1202 Genève, Switzerland</span>
-                    </div>
-                    <a href="#" class="get-directions">Get Directions</a>
-                </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Sign up for newsletter</h4>
-                    <form class="newsletter-form-premium">
-                        <input type="email" placeholder="Your Email Address" required>
-                        <button type="submit">
-                            Subscribe
-                            <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                        </button>
-                    </form>
-                    <div class="privacy-agree">
-                        <input type="checkbox" id="policy-agree-index">
-                        <label for="policy-agree-index">I agree to the Privacy Policy</label>
-                    </div>
-                    <div class="social-connect">
-                        <span>Stay Connected:</span>
-                        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-                        <a href="#" aria-label="Pinterest"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
-                        <a href="#" aria-label="YouTube"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
-                        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.197-4.347-2.618-6.778-6.98-6.981C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Policy</a>
-                </div>
-                <p class="mb-0">© Copyright CozyStay WordPress Theme for Hotel Booking.</p>
-            </div>
+    <footer>
+        <div>© Copyright CozyStay WordPress Theme for Hotel Booking.</div>
+        <div class="footer-icons d-flex gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="40" alt="PayPal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="30" alt="MasterCard">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" width="40" alt="Visa">
+        </div>
+        <div class="socials d-flex gap-3">
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg></a>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg></a>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Simple dots and active states for gallery demonstration
-      const dots = document.querySelectorAll('.dot');
-      const items = document.querySelectorAll('.gallery-item');
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          dots.forEach(d => d.classList.remove('active'));
-          items.forEach(item => item.classList.remove('active'));
-          dot.classList.add('active');
-          items[index].classList.add('active');
-        });
-      });
-
-      // Mobile menu right drawer
-      (function() {
-        var btn = document.getElementById('v3-hamburger');
-        var menu = document.getElementById('mobile-menu-v2');
-        var overlay = document.getElementById('mobile-menu-overlay');
-        var closeBtn = document.getElementById('mobile-menu-close');
-        if (!btn || !menu) return;
-        function openMenu() { menu.classList.add('open'); if(overlay) overlay.classList.add('open'); document.body.style.overflow='hidden'; }
-        function closeMenu() { menu.classList.remove('open'); if(overlay) overlay.classList.remove('open'); document.body.style.overflow=''; }
-        btn.addEventListener('click', openMenu);
-        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-        if (overlay) overlay.addEventListener('click', closeMenu);
-        menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
-        document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeMenu(); });
-      })();
-    </script>
-  </body>
+</body>
 </html>

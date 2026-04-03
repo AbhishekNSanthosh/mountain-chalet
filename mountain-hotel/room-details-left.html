@@ -3,471 +3,870 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deluxe Room - Left Sidebar | CozyStay</title>
+    <title>Park View Penthouse - CozyStay Luxury</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="room-details.css">
+    <style>
+        :root {
+            --accent-gold: #c5a059;
+            --dark-bg: #0c0c0c;
+            --sidebar-bg: #111111;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .marcellus {
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Gallery Header & Navigation Overlay */
+        .room-gallery-header {
+            width: 100%;
+            height: 95vh;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .gallery-nav-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 40px 50px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+        }
+
+        .gallery-logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .gallery-logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 36px;
+            letter-spacing: 8px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .gallery-logo .stars {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: var(--accent-gold);
+            margin-top: 8px;
+        }
+
+        .gallery-menu {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gallery-menu a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .gallery-menu a:hover {
+            color: #fff;
+        }
+
+        .gallery-track {
+            display: flex;
+            height: 100%;
+            transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .gallery-slide {
+            flex: 0 0 100%;
+            height: 100%;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        .gallery-controls {
+            position: absolute;
+            top: 55%;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .gallery-arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main Content Adjustments */
+        .room-details-main {
+            padding: 100px 10%;
+        }
+
+        .room-category {
+            color: #666;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .room-title {
+            font-size: 54px;
+            margin-bottom: 35px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .room-meta-row {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 35px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .meta-item svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-gold);
+        }
+
+        .room-description {
+            color: #999;
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 35px;
+            letter-spacing: 1.5px;
+            font-weight: 400;
+        }
+
+        /* Amenities Icons */
+        .family-amenities-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .fam-item {
+            background: #151515;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.03);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.4s;
+        }
+
+        .fam-item:hover {
+            background: #1a1a1a;
+            border-color: rgba(197, 160, 89, 0.2);
+        }
+
+        .fam-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--accent-gold);
+        }
+
+        .room-amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .amenity-grid-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .amenity-grid-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-gold);
+        }
+
+        /* Included List */
+        .included-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 80px;
+        }
+
+        .included-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 18px;
+            color: #aaa;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        .included-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        /* Sidebar Card (Left Aligned Specifics) */
+        .booking-sidebar {
+            padding-right: 20px;
+        }
+
+        .reserve-card {
+            background: #111111;
+            padding: 45px;
+            border-radius: 0;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 50px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        }
+
+        .reserve-card .reserve-title {
+            font-size: 22px;
+            font-family: 'Marcellus', serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .reserve-card .reserve-price {
+            color: #666;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .reserve-field label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 10px;
+            margin-top: 25px;
+            letter-spacing: 1.5px;
+        }
+
+        .reserve-field input, .reserve-field select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 12px 0;
+            font-size: 15px;
+            border-radius: 0;
+            appearance: none;
+        }
+
+        .reserve-field select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpolyline points='1,1 5,5 9,1'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+
+        .reserve-field input:focus, .reserve-field select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .extra-services .services-label {
+            font-size: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .service-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--accent-gold);
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+        }
+
+        .service-qty-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qty-input {
+            width: 40px !important;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+        }
+
+        .reserve-total {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-label { font-size: 15px; font-weight: 500; }
+        .total-val { color: #fff; font-size: 24px; font-family: 'Marcellus', serif; }
+
+        .book-now-btn {
+            background: #000000;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 22px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 40px;
+            transition: all 0.4s;
+        }
+
+        .book-now-btn:hover {
+            background: var(--accent-gold);
+            color: #fff;
+        }
+
+        /* Similar Rooms Section */
+        .similar-rooms-section {
+            background: #080808;
+            padding: 100px 8%;
+        }
+
+        .similar-card {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .similar-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s;
+            filter: brightness(0.8);
+        }
+
+        .similar-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .similar-overlay {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            right: 40px;
+            z-index: 2;
+        }
+
+        .similar-tag {
+            background: #fff;
+            color: #000;
+            padding: 3px 10px;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .similar-title {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-family: 'Marcellus', serif;
+        }
+
+        .similar-meta {
+            color: rgba(255,255,255,0.5);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* Bottom Info Grid */
+        .info-grid {
+            display: flex;
+            width: 100%;
+        }
+
+        .info-box {
+            flex: 1;
+            position: relative;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            overflow: hidden;
+        }
+
+        .info-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            transition: transform 1s;
+        }
+
+        .info-box:hover .info-bg { transform: scale(1.08); }
+
+        .info-box.getting-here .info-bg { background-image: url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1000&auto=format&fit=crop'); }
+        .info-box.spend-time .info-bg { background-image: url('https://images.unsplash.com/photo-1549497538-3012954c4477?w=1000&auto=format&fit=crop'); }
+
+        .info-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 0;
+        }
+
+        .info-content { position: relative; z-index: 1; }
+
+        .info-label { color: var(--accent-gold); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        .info-header { font-size: 38px; color: #fff; margin-bottom: 25px; line-height: 1.2; }
+        .info-desc { font-size: 14px; color: rgba(255,255,255,0.7); max-width: 350px; line-height: 1.8; margin-bottom: 30px; }
+        .info-btn { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 5px; transition: border-color 0.3s; }
+        .info-btn:hover { border-color: #fff; }
+
+        /* Newsletter & Footer */
+        .newsletter-bar {
+            padding: 100px 10%;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .news-heading { font-size: 38px; max-width: 500px; line-height: 1.1; letter-spacing: -0.5px; }
+        .news-form-side { width: 450px; }
+        .news-input-group { display: flex; border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: 20px; transition: border-color 0.3s; }
+        .news-input-group:focus-within { border-color: #fff; }
+        .news-input-group input { background: transparent; border: none; color: #fff; flex: 1; padding: 15px 0; font-size: 15px; }
+        .news-input-group input:focus { outline: none; }
+        .news-input-group button { background: transparent; border: none; color: #fff; text-transform: uppercase; font-size: 11px; letter-spacing: 3px; padding: 10px; font-weight: 600; }
+
+        .news-terms { display: flex; align-items: flex-start; gap: 10px; font-size: 11px; color: #555; }
+        .news-terms input { margin-top: 2px; accent-color: var(--accent-gold); }
+
+        .footer-minimal {
+            background: #000;
+            padding: 50px 10%;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        .socials-list a { color: #444; margin-left: 25px; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .socials-list a:hover { color: #fff; }
+
+        @media (max-width: 991px) {
+            .booking-sidebar { padding-right: 0; margin-bottom: 80px; order: 1; }
+            .room-info-col { order: 2; }
+            .info-grid { flex-direction: column; }
+            .newsletter-bar { flex-direction: column; gap: 60px; text-align: center; }
+            .news-form-side { width: 100%; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- ==================== TOP BAR ==================== -->
-    <div id="top-bar">
-      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
-      <span class="d-flex align-items-center gap-4">
-        <span>TEL: +41 22 345 67 88</span>
-        <span>FAX: +41 22 345 67 89</span>
-        <a href="mailto:booking@cozystay.com" class="text-white text-decoration-none border-bottom border-white border-opacity-25">BOOKING@COZYSTAY.COM</a>
-      </span>
-    </div>
-
-    <!-- ==================== NAVBAR ==================== -->
-    <nav id="navbar-v2">
-      <!-- Left nav links -->
-      <ul class="v2-nav-left">
-        <li class="dropdown">
-          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu">
-            <li><a class="dropdown-item nav-dropdown-link" href="index.html">Home v1</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="index2.html">Home v2</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="rooms.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            STAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu">
-            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details – Top Image</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details-gallery.html">Room Details – Top Gallery</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details-left.html">Room Details – Left Booking Form</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Checkout</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="account.html">My account</a></li>
-          </ul>
-        </li>
-        <li class="dropdown mega-dropdown">
-          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <div class="mega-menu dropdown-menu">
-            <div class="mega-menu-container">
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&auto=format&fit=crop" alt="Overview" /></div>
-                  <span>Overview</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="the-restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
-                  <span>The Restaurant</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="lobby-cafe.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&auto=format&fit=crop" alt="Lobby Cafe" /></div>
-                  <span>Lobby Cafe</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
-                  <span>Rooftop Bar</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
-                  <span>Steakhouse</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
-                  <span>Cigar Lounge</span>
-                </a>
-              </div>
+    <!-- ==================== GALLERY HEADER ==================== -->
+    <header class="room-gallery-header">
+        <div class="gallery-nav-overlay">
+            <div class="gallery-logo">
+                <a href="index2.html">COZYSTAY</a>
+                <span class="stars">★ ★ ★ ★ ★</span>
             </div>
-          </div>
-        </li>
-        <li class="dropdown mega-dropdown">
-          <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <div class="mega-menu dropdown-menu play-mega-menu">
-            <div class="mega-play-container">
-              <!-- Left Cols with Links -->
-              <div class="play-links-grid">
-                <div class="play-col">
-                  <h4>LOCAL ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="activities.html">Overview</a></li>
-                    <li><a href="winter-activities.html">Winter Activities</a></li>
-                    <li><a href="summer-activities.html">Summer Activities</a></li>
-                  </ul>
-                  <h4 class="mt-5">WINTER ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="skiing.html">Ski & Snowboard</a></li>
-                    <li><a href="#">Freeriding</a></li>
-                    <li><a href="#">Winter Hiking</a></li>
-                    <li><a href="#">Snowshoeing</a></li>
-                    <li><a href="#">Paraglider Exercises</a></li>
-                    <li><a href="#">Sledding</a></li>
-                  </ul>
-                </div>
-                <div class="play-col">
-                  <h4>SUMMER ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="#">Hiking</a></li>
-                    <li><a href="#">Running & Walking</a></li>
-                    <li><a href="#">Mountain Bike</a></li>
-                    <li><a href="#">Racing Bike</a></li>
-                    <li><a href="#">Golf Courses</a></li>
-                  </ul>
-                  <h4 class="mt-5">OTHERS</h4>
-                  <ul>
-                    <li><a href="#">Art & Museum</a></li>
-                    <li><a href="#">Musics</a></li>
-                  </ul>
-                </div>
-              </div>
-              
-              <!-- Right Part with Promotional Cards -->
-              <div class="play-cards-grid">
-                <a href="winter-activities.html" class="play-card winter-card">
-                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
-                  <div class="play-card-content">
-                    <p class="play-card-label">ADVENTURES</p>
-                    <h5 class="play-card-title">WINTER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </a>
-                <a href="summer-activities.html" class="play-card summer-card">
-                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&h=900&fit=crop" alt="Summer" /></div>
-                  <div class="play-card-content">
-                    <p class="play-card-label">NATURE & WILD</p>
-                    <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </a>
-              </div>
+            <ul class="gallery-menu">
+                <li><a href="index2.html">HOME</a></li>
+                <li><a href="rooms.html">STAY</a></li>
+                <li><a href="restaurant.html">DINE</a></li>
+                <li><a href="activities.html">PLAY</a></li>
+                <li><a href="spa.html">RELAX</a></li>
+                <li><a href="about.html">PAGES</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div class="gallery-track" id="gallery-track">
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&auto=format&fit=crop" alt="Penthouse 1"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&auto=format&fit=crop" alt="Penthouse 2"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&auto=format&fit=crop" alt="Penthouse 3"></div>
+        </div>
+
+        <div class="gallery-controls">
+            <div class="gallery-arrow" id="prev-btn">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
             </div>
-          </div>
-        </li>
-        <li>
-          <a href="spa.html" class="v2-nav-link">RELAX</a>
-        </li>
-      </ul>
-
-      <!-- Center logo -->
-      <div class="v2-nav-center">
-        <a href="index2.html" class="v2-logo-link">
-          COZYSTAY
-          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
-        </a>
-      </div>
-
-      <!-- Right nav links -->
-      <ul class="v2-nav-right">
-        <li class="dropdown">
-          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            PAGES <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="services.html">Services</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="restaurant.html">Restaurants</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="activities.html">Local Activities</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="spa.html">Wellness</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            EN <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item nav-dropdown-link" href="#">English</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Français</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Deutsch</a></li>
-          </ul>
-        </li>
-        <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
-      </ul>
-      <button id="v3-hamburger" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </nav>
-    <!-- ==================== MOBILE MENU V2 ==================== -->
-    <div id="mobile-menu-v2">
-      <button id="mobile-menu-close" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="mobile-menu-logo">COZYSTAY</div>
-      <nav class="mobile-menu-nav">
-        <a href="index2.html">Home</a>
-        <a href="rooms.html">Stay</a>
-        <a href="restaurant.html">Dine</a>
-        <a href="activities.html">Play</a>
-        <a href="spa.html">Relax</a>
-        <a href="about.html">About</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="#booking" class="mobile-menu-cta">Reserve Now</a>
-    </div>
-    <div id="mobile-menu-overlay"></div>
-
-    <!-- ==================== HERO ==================== -->
-    <header class="room-details-header">
-        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&auto=format&fit=crop" alt="Deluxe Room">
+            <div class="gallery-arrow" id="next-btn">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+            </div>
+        </div>
     </header>
 
-    <!-- ==================== ROOM CONTENT ==================== -->
-    <main class="room-details-main py-5 px-5vw">
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="room-details-main">
         <div class="row gx-lg-5">
-            <!-- Left Side: Booking Sidebar -->
-            <div class="col-lg-4 order-last order-lg-first">
-                <div class="booking-sidebar">
-                    <div class="reserve-card shadow-sm">
-                        <div class="reserve-header d-flex justify-content-between mb-4">
-                            <span class="reserve-title">RESERVE:</span>
-                            <span class="reserve-price">From <span class="price-val">$350</span> /night</span>
-                        </div>
-                        <div class="reserve-fields">
-                            <div class="reserve-field">
-                                <label>Check In</label>
-                                <input type="text" id="reserve-checkin" placeholder="2026-10-10">
-                            </div>
-                            <div class="reserve-field">
-                                <label>Check Out</label>
-                                <input type="text" id="reserve-checkout" placeholder="2026-10-15">
-                            </div>
-                            <div class="reserve-field">
-                                <label>Guests</label>
-                                <select>
-                                    <option>2 Adults, 1 Child</option>
-                                    <option>2 Adults</option>
-                                    <option>1 Adult</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="extra-services mt-4">
-                            <p class="services-label">Extra Services</p>
-                            <div class="service-item">
-                                <span><input type="checkbox" checked> Room Clean</span>
-                                <span class="service-price">$22 / Night</span>
-                            </div>
-                            <div class="service-item">
-                                <span><input type="checkbox"> Massage</span>
-                                <span class="service-price">$70 / Person</span>
-                            </div>
-                            <div class="service-item">
-                                <span><input type="checkbox"> Day Spa</span>
-                                <span class="service-price">$45 / Person</span>
-                            </div>
-                        </div>
-
-                        <div class="reserve-total mt-4 d-flex justify-content-between align-items-center">
-                            <span>Total Cost</span>
-                            <span class="price-val" id="total-price">$350</span>
-                        </div>
-
-                        <button class="book-now-btn w-100 mt-4">Book Your Stay Now</button>
+            <!-- Sidebar Left -->
+            <div class="col-lg-4 order-lg-1 booking-sidebar">
+                <div class="reserve-card">
+                    <div class="d-flex justify-content-between align-items-baseline mb-4">
+                        <span class="reserve-title">RESERVE:</span>
+                        <span class="reserve-price">From $799 / night</span>
                     </div>
+                    
+                    <div class="reserve-fields">
+                        <div class="reserve-field">
+                            <label>Check In</label>
+                            <input type="text" id="reserve-checkin" value="2026-04-02">
+                        </div>
+                        <div class="reserve-field">
+                            <label>Check Out</label>
+                            <input type="text" id="reserve-checkout" value="2026-04-05">
+                        </div>
+                        <div class="reserve-field">
+                            <label>Guests</label>
+                            <select>
+                                <option>2 Adults, 1 Child</option>
+                                <option>1 Adult</option>
+                                <option>2 Adults</option>
+                                <option>4 Adults</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="extra-services mt-5">
+                        <p class="services-label marcellus">Extra Services</p>
+                        <div class="service-item">
+                            <div class="service-info">
+                                <input type="checkbox" checked>
+                                <span>Room Clean</span>
+                            </div>
+                            <span>$22 / Night</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-info">
+                                <input type="checkbox">
+                                <span>Massage</span>
+                            </div>
+                            <div class="service-qty-box">
+                                <span>$70 / P</span>
+                                <input type="number" class="qty-input" value="1">
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-info">
+                                <input type="checkbox">
+                                <span>Hairdo</span>
+                            </div>
+                            <div class="service-qty-box">
+                                <span>$45 / P</span>
+                                <input type="number" class="qty-input" value="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reserve-total">
+                        <span class="total-label">Total Cost</span>
+                        <span class="total-val">$799</span>
+                    </div>
+
+                    <button class="book-now-btn">Book Your Stay Now</button>
                 </div>
             </div>
 
-            <!-- Right Side: Room Details -->
-            <div class="col-lg-8">
+            <!-- Content Right -->
+            <div class="col-lg-8 order-lg-2 room-info-col">
                 <div class="room-intro">
-                    <p class="room-category">Home / Rooms & Suites / Deluxe Room</p>
-                    <h1 class="room-title">Deluxe Room</h1>
+                    <p class="room-category">Home / Rooms & Suites / Park View Penthouse</p>
+                    <h1 class="room-title marcellus">Park View Penthouse</h1>
+                    
                     <div class="room-meta-row">
-                        <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path></svg> <span>45 sqm</span></div>
-                        <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path></svg> <span>2 Guests</span></div>
-                        <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3"></path></svg> <span>1 Bed</span></div>
-                        <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg> <span>1 Bathroom</span></div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path></svg>
+                            <span>150 SQM</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span>4 GUESTS</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            <span>1 KING</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                            <span>2 BATHS</span>
+                        </div>
                     </div>
-                    <p class="room-description mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    <p class="room-description">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+
+                    <p class="room-description mt-5">
+                        Our Park View Penthouse offers an exceptional urban living experience with breathtaking views over the city's green heart. Featuring elegant interiors, a private terrace, and bespoke furniture, it's the perfect retreat for discerning travelers.
+                    </p>
+                    <p class="room-description">
+                        Every aspect of this suite has been designed for your comfort, from the plush bedding to the state-of-the-art kitchen. Enjoy a quiet evening by the fire or entertain guests in the large living area.
+                    </p>
                 </div>
 
-                <!-- Family Amenities -->
-                <section class="details-section mt-5">
-                    <h3 class="section-title">Family-friendly Amenities</h3>
+                <!-- Family-friendly Amenities -->
+                <section class="details-section mt-5 pt-4">
+                    <h3 class="section-title marcellus">Family-Friendly Amenities</h3>
                     <div class="family-amenities-row">
                         <div class="fam-item">
-                            <div class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path d="M7 12h10M12 7v10"></path></svg></div>
+                            <div class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path d="M7 12h10M12 7v10"></path></svg></div>
                             <span>Kids Swimming Pool</span>
                         </div>
                         <div class="fam-item">
-                            <div class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"></path></svg></div>
+                            <div class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
                             <span>Extra Baby Bed/Crib</span>
                         </div>
                         <div class="fam-item">
-                            <div class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                            <div class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                             <span>Washing Machine</span>
                         </div>
                     </div>
                 </section>
 
-                <!-- Room Amenities -->
-                <section class="details-section mt-5">
-                    <h3 class="section-title">Room Amenities</h3>
+                <!-- Room Amenities Grid -->
+                <section class="details-section">
+                    <h3 class="section-title marcellus">Room Amenities</h3>
                     <div class="room-amenities-grid">
-                        <div class="amenity-grid-item"><svg width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/></svg> Air Conditioner</div>
-                        <div class="amenity-grid-item">Cable TV</div>
-                        <div class="amenity-grid-item">WiFi Internet</div>
-                        <div class="amenity-grid-item">Towels</div>
-                        <div class="amenity-grid-item">Slippers</div>
-                        <div class="amenity-grid-item">Hair Dryer</div>
-                        <div class="amenity-grid-item">Shampoo</div>
-                        <div class="amenity-grid-item">Espresso Machine</div>
-                        <div class="amenity-grid-item">Mini Bar</div>
-                        <div class="amenity-grid-item">Welcome Drink</div>
-                        <div class="amenity-grid-item">Pet friendly</div>
-                        <div class="amenity-grid-item">In-room Refrigerator</div>
+                        <div class="amenity-grid-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 14l5-5 5 5 5-5"></path></svg> <span>Air Conditioner</span></div>
+                        <div class="amenity-grid-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> <span>Cable TV</span></div>
+                        <div class="amenity-grid-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg> <span>WiFi Internet</span></div>
+                        <div class="amenity-grid-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg> <span>Safe</span></div>
+                        <div class="amenity-grid-item"><span>Slippers</span></div>
+                        <div class="amenity-grid-item"><span>Hair Dryer</span></div>
+                        <div class="amenity-grid-item"><span>Shampoo</span></div>
+                        <div class="amenity-grid-item"><span>Espresso Machine</span></div>
+                        <div class="amenity-grid-item"><span>Mini Bar</span></div>
+                        <div class="amenity-grid-item"><span>Welcome Drink</span></div>
+                        <div class="amenity-grid-item"><span>Pet Friendly</span></div>
+                        <div class="amenity-grid-item"><span>In-room Refrigerator</span></div>
                     </div>
                 </section>
 
-                <!-- What's Included -->
-                <section class="details-section mt-5">
-                    <h3 class="section-title">What's included in this suite?</h3>
+                <section class="details-section">
+                    <h3 class="section-title marcellus">What's included in this suite?</h3>
                     <ul class="included-list">
-                        <li>Private Balcony</li>
-                        <li>140x200 cm The bed</li>
+                        <li>Private balconey</li>
+                        <li>180-degree views of the mountain range</li>
                         <li>Upholstered seating for panoramic window</li>
                         <li>Double shower for relaxing awareness long time</li>
                         <li>Writing desk with USB ports for documenting your adventures</li>
-                        <li>Room safe for your top secret papers</li>
-                        <li>Nespresso coffee engine with coffee machine, tea selection</li>
+                        <li>Room safe for your most precious pieces</li>
+                        <li>Tea & coffee station with Nespresso coffee machine, kettle and tea</li>
                         <li>Bathroom with rain shower</li>
                         <li>Custom-made terry towels and bathrobes</li>
                     </ul>
                 </section>
 
-                <!-- Availability -->
-                <section class="details-section mt-5">
-                    <h3 class="section-title">Availability</h3>
+                <section class="details-section">
+                    <h3 class="section-title marcellus">Availability</h3>
                     <div id="availability-calendar" class="calendar-inline"></div>
                 </section>
             </div>
         </div>
-
-        <!-- Similar Rooms -->
-        <section class="similar-rooms mt-5 pt-5 border-top">
-            <h2 class="section-title mb-5">Similar Rooms</h2>
-            <div class="similar-grid row g-4">
-                <div class="col-md-4">
-                    <div class="similar-card">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop" alt="Grand Deluxe Room">
-                        <div class="similar-content">
-                            <span class="similar-tag">Best Value</span>
-                            <h3 class="similar-title">Grand Deluxe Room</h3>
-                            <p class="similar-meta">55 sqm / Mountain View / 2 Guests</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="similar-card">
-                        <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&auto=format&fit=crop" alt="Premier Room">
-                        <div class="similar-content">
-                            <span class="similar-tag">Nature</span>
-                            <h3 class="similar-title">Premier Room</h3>
-                            <p class="similar-meta">50 sqm / Village View / 2 Guests</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="similar-card">
-                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&auto=format&fit=crop" alt="Double Room">
-                        <div class="similar-content">
-                            <span class="similar-tag">Popular</span>
-                            <h3 class="similar-title">Double Room</h3>
-                            <p class="similar-meta">35 sqm / Garden View / 2 Guests</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer id="footer-v2">
-        <div class="footer-container">
-            <div class="row gx-lg-5 gy-5">
-                <div class="col-lg-4">
-                    <h3 class="footer-logo">COZYSTAY</h3>
-                    <p class="footer-desc">Established in 1998, CozyStay Hotel is a boutique hotel in the heart of the Swiss Alps, offering contemporary accommodation and unrivaled access to ski and hiking trails, immersing you in an idyllic setting against pristine skies in search of a truly serene experience.</p>
-                    <div class="payment-icons">
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" alt="Visa"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe"></div>
+    <!-- Similar Rooms Section -->
+    <section class="similar-rooms-section">
+        <h2 class="section-title marcellus mb-5">Similar Rooms</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <a href="#" class="similar-card">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800" alt="One-Bed Apartment">
+                    <div class="similar-overlay">
+                        <span class="similar-tag">Stay</span>
+                        <h3 class="similar-title">One-Bed Apartment</h3>
+                        <p class="similar-meta">Max 2 / View City / 1 Bed</p>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Reach Out</h4>
-                    <div class="footer-contact-info">
-                        <span>Email: <a href="mailto:booking@cozystay.com" class="footer-email">booking@cozystay.com</a></span>
-                        <span>Tel: +41 22 345 66 77</span>
-                        <span>Fax: +41 22 345 77 89</span>
-                        <span>Rue de Lausanne, 1202 Genève, Switzerland</span>
-                    </div>
-                    <a href="#" class="get-directions">Get Directions</a>
-                </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Sign up for newsletter</h4>
-                    <form class="newsletter-form-premium">
-                        <input type="email" placeholder="Your Email Address" required>
-                        <button type="submit">
-                            Subscribe
-                            <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                        </button>
-                    </form>
-                    <div class="privacy-agree">
-                        <input type="checkbox" id="policy-agree-index">
-                        <label for="policy-agree-index">I agree to the Privacy Policy</label>
-                    </div>
-                    <div class="social-connect">
-                        <span>Stay Connected:</span>
-                        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-                        <a href="#" aria-label="Pinterest"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
-                        <a href="#" aria-label="YouTube"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
-                        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.197-4.347-2.618-6.778-6.98-6.981C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                    </div>
-                </div>
+                </a>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Policy</a>
-                </div>
-                <p class="mb-0">© Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            <div class="col-lg-4 col-md-6">
+                <a href="room-details-gallery.html" class="similar-card">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Deluxe Penthouse">
+                    <div class="similar-overlay">
+                        <span class="similar-tag">Luxury</span>
+                        <h3 class="similar-title">Deluxe Penthouse</h3>
+                        <p class="similar-meta">Max 4 / Avenue View / 1 King</p>
+                    </div>
+                </a>
             </div>
+            <div class="col-lg-4 col-md-6">
+                <a href="#" class="similar-card">
+                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800" alt="Terrace Apartment">
+                    <div class="similar-overlay">
+                        <span class="similar-tag">Stay</span>
+                        <h3 class="similar-title">Terrace Apartment</h3>
+                        <p class="similar-meta">Max 2 / Village View / 2 Guests</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Grid & Footer (Same as Gallery) -->
+    <section class="info-grid">
+        <div class="info-box getting-here">
+            <div class="info-bg"></div><div class="info-overlay"></div>
+            <div class="info-content">
+                <span class="info-label">Our Location</span>
+                <h3 class="info-header marcellus">Getting Here</h3>
+                <p class="info-desc">4150 Green Bay Rd, New York, NY, 10001 Tel: +1 212 345 6677 Email: booking@cozystay.com</p>
+                <a href="#" class="info-btn">Get Directions</a>
+            </div>
+        </div>
+        <div class="info-box spend-time">
+            <div class="info-bg"></div><div class="info-overlay"></div>
+            <div class="info-content">
+                <span class="info-label">About Us</span>
+                <h3 class="info-header marcellus">Spend Your Time With Us</h3>
+                <p class="info-desc">Established in 1998, CozyStay Hotel is a boutique hotel in the heart of the Swiss Alps.</p>
+                <a href="#" class="info-btn">Read Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-bar">
+        <div class="news-text-side">
+            <span class="info-label">Hotel Newsletter</span>
+            <h2 class="news-heading marcellus">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+        </div>
+        <div class="news-form-side">
+            <div class="news-input-group"><input type="email" placeholder="Your Email Address"><button>Subscribe</button></div>
+            <div class="news-terms"><input type="checkbox" id="news-agree"><label for="news-agree">I agree to the Privacy Policy</label></div>
+        </div>
+    </section>
+
+    <footer class="footer-minimal">
+        <div>© Copyright CozyStay WordPress Theme for Hotel Booking.</div>
+        <div class="socials-list">
+            <span>Follow Us:</span>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg></a>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg></a>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-        flatpickr("#reserve-checkin", { dateFormat: "Y-m-d", defaultDate: "2026-10-10" });
-        flatpickr("#reserve-checkout", { dateFormat: "Y-m-d", defaultDate: "2026-10-15" });
+        flatpickr("#reserve-checkin", { dateFormat: "Y-m-d" });
+        flatpickr("#reserve-checkout", { dateFormat: "Y-m-d" });
         flatpickr("#availability-calendar", { inline: true, mode: "range", showMonths: 2 });
+
+        const track = document.getElementById('gallery-track');
+        const slides = document.querySelectorAll('.gallery-slide');
+        const prev = document.getElementById('prev-btn');
+        const next = document.getElementById('next-btn');
+        let index = 0;
+
+        function slide(dir) {
+            index = (index + dir + slides.length) % slides.length;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prev.onclick = () => slide(-1);
+        next.onclick = () => slide(1);
+        setInterval(() => slide(1), 7000);
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities & Services - CozyStay Luxury</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style4.css">
+    <style>
+        :root {
+            --accent-gold: #c5a059;
+            --dark-bg: #0c0c0c;
+            --section-bg: #111111;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .marcellus {
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Navbar & Top Bar Stacks */
+        #top-bar {
+            background: rgba(0,0,0,0.2);
+            padding: 12px 5vw;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #888;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-weight: 500;
+        }
+
+        #top-bar a { color: #888; text-decoration: none; }
+        #top-bar span { margin-right: 30px; }
+
+        .amenities-navbar {
+            padding: 30px 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 45px;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .hamburger-btn { background: transparent; border: none; color: #fff; padding: 0; transition: transform 0.3s; }
+        .nav-links { display: flex; gap: 40px; list-style: none; margin: 0; padding: 0; }
+        .nav-links li a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; }
+
+        .amenities-logo { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
+        .amenities-logo a { color: #fff; text-decoration: none; font-size: 34px; letter-spacing: 8px; font-weight: 400; text-transform: uppercase; }
+        .amenities-logo .stars { display: block; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); margin-top: 5px; }
+
+        .check-btn { border: 1px solid rgba(255,255,255,0.3); color: #fff; text-decoration: none; padding: 12px 28px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; }
+        .check-btn:hover { background: #fff; color: #000; }
+
+        /* Hero */
+        .amenities-hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-title { font-size: clamp(3rem, 8vw, 84px); font-weight: 400; letter-spacing: 3px; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-subtitle { color: rgba(255,255,255,0.8); font-size: 14px; letter-spacing: 4px; text-transform: uppercase; font-weight: 300; }
+
+        /* Shared Sections */
+        .service-section { padding: 140px 10%; }
+        .service-row { display: flex; align-items: center; gap: 80px; }
+        .service-row.reverse { flex-direction: row-reverse; }
+
+        .service-images { flex: 1.1; position: relative; height: 580px; }
+        .img-large { width: 80%; height: 85%; overflow: hidden; }
+        .img-small { position: absolute; bottom: -40px; right: 0; width: 60%; height: 65%; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+        .service-row.reverse .img-small { right: auto; left: 0; }
+        .service-images img { width: 100%; height: 100%; object-fit: cover; }
+
+        .service-text { flex: 0.9; padding: 0 40px; }
+        .tag-label { color: var(--accent-gold); font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 25px; display: block; }
+        .service-heading { font-size: 44px; line-height: 1.2; margin-bottom: 35px; }
+        .service-desc { color: #888; font-size: 16px; line-height: 1.8; margin-bottom: 40px; font-weight: 300; }
+        
+        .opening-hours { padding: 0; list-style: none; color: #888; font-size: 14px; margin-bottom: 40px; }
+        .opening-hours li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px; }
+        .opening-hours li strong { color: var(--accent-gold); font-weight: 500; min-width: 15px; text-align: center; }
+
+        .action-link { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding-bottom: 6px; transition: color 0.3s; }
+        .action-link:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+
+        .action-btns { display: flex; gap: 20px; }
+        .action-btn { border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 14px 40px; font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px; transition: all 0.3s; }
+        .action-btn:hover { background: #fff; color: #000; }
+
+        /* Dark banner */
+        .all-you-need {
+            padding: 140px 10%;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        .banner-content { max-width: 700px; }
+        .banner-heading { font-size: 48px; margin-bottom: 30px; letter-spacing: 1px; }
+        .banner-desc { color: rgba(255,255,255,0.7); font-size: 16px; line-height: 1.9; font-weight: 300; }
+
+        /* Info Grid section (Bottom generic) */
+        .info-grid { display: flex; width: 100%; }
+        .info-box { flex: 1; position: relative; min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px; overflow: hidden; }
+        .info-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: -1; transition: transform 1.2s; filter: brightness(0.35); }
+        .info-box:hover .info-bg { transform: scale(1.1); }
+        .info-content { position: relative; z-index: 1; }
+        .box-title { font-size: 44px; margin-bottom: 30px; }
+        .box-desc { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 400px; line-height: 1.8; margin-bottom: 40px; }
+        .btn-line { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; padding-bottom: 5px; }
+
+        .newsletter { padding: 120px 10%; background: #111; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .news-header { font-size: 46px; max-width: 600px; line-height: 1.1; margin: 0; }
+        .news-form { width: 450px; }
+        .input-group-nl { border-bottom: 1px solid rgba(255,255,255,0.15); display: flex; padding-bottom: 12px; margin-bottom: 15px; }
+        .input-group-nl input { background: transparent; border: none; color: #fff; flex: 1; padding: 8px 0; font-size: 15px; }
+        .input-group-nl input:focus { outline: none; }
+        .input-group-nl button { background: transparent; border: none; color: #fff; text-transform: uppercase; font-size: 10px; letter-spacing: 3px; font-weight: 600; display: flex; align-items: center; gap: 15px; }
+
+        footer { background: #111; padding: 50px 10%; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #555; letter-spacing: 1.5px; }
+        .socials a { color: #555; margin-left: 25px; text-decoration: none; font-size: 14px; }
+        .socials a:hover { color: #fff; }
+
+        @media (max-width: 1100px) {
+            .service-row { flex-direction: column; text-align: center; gap: 50px; }
+            .service-images { height: 450px; width: 100%; }
+            .img-large { margin: 0 auto; }
+            .opening-hours li { justify-content: center; }
+            .action-btns { justify-content: center; }
+            .newsletter { flex-direction: column; text-align: center; }
+            .news-header { margin-bottom: 40px; }
+            .news-form { width: 100%; }
+            .info-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div id="top-bar">
+        <div>1250 WEST 6TH AVE, NEW YORK, NY 10036, UNITED STATES</div>
+        <div>
+            <span>TEL: +1 212 555 6688</span>
+            <span>FAX: +1 212 555 6699</span>
+            <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="amenities-navbar">
+        <div class="d-flex align-items-center gap-4">
+            <button class="hamburger-btn">
+                <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h12" /></svg>
+            </button>
+            <ul class="nav-links d-none d-lg-flex">
+                <li><a href="index4.html">Home</a></li>
+                <li><a href="v4-rooms.html">Rooms</a></li>
+                <li><a href="v4-pages.html">Pages</a></li>
+            </ul>
+        </div>
+        <div class="amenities-logo">
+            <a href="index4.html">COZYSTAY</a>
+            <span class="stars">★ ★ ★ ★ ★</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+            <a href="#" class="lang-link text-white text-decoration-none" style="font-size: 11px; letter-spacing: 2.5px;">EN / FR</a>
+            <a href="v4-rooms.html" class="check-btn">Check Availability</a>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="amenities-hero marcellus">
+        <div class="hero-content">
+            <h1 class="hero-title">Amenities & Services</h1>
+            <p class="hero-subtitle">Welome to provide our guests with luxury, comfort & tailor-made service</p>
+        </div>
+    </header>
+
+    <!-- ==================== CUISINE SECTION ==================== -->
+    <section class="service-section">
+        <div class="service-row">
+            <div class="service-images">
+                <div class="img-large"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"></div>
+                <div class="img-small"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600"></div>
+            </div>
+            <div class="service-text">
+                <span class="tag-label">The Best Coffee & Exceptional Cuisine</span>
+                <h2 class="service-heading marcellus">Experience exquisite cuisine from all over the world</h2>
+                <p class="service-desc">In our vibrant lounge, guests can choose from an array of cocktails, juices and wines, or select from an artisanal menu of light bites. Whether it's a casual drink or a quick snack, our bar provides the perfect setting for relaxation.</p>
+                <ul class="opening-hours marcellus">
+                    <li><strong>⏲</strong> Monday to Friday: 6:30 am — 11:00 pm</li>
+                    <li><strong>⏲</strong> Saturday and Sunday: 6:30 am — 11:30 pm</li>
+                </ul>
+                <a href="../mountain-hotel/the-restaurant.html" class="action-link marcellus">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SALON SECTION ==================== -->
+    <section class="service-section" style="background: #090909;">
+        <div class="service-row reverse">
+            <div class="service-images">
+                <div class="img-large"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800"></div>
+                <div class="img-small"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600"></div>
+            </div>
+            <div class="service-text">
+                <span class="tag-label">Relax With Beauty Treatments</span>
+                <h2 class="service-heading marcellus">Pamper Yourself With a Divine Salon Experience</h2>
+                <p class="service-desc">Enjoy high-end care tailored just for you. From professional styling to revitalizing treatments, our salon offers the highest quality care to make you feel refreshed and beautiful before any event or business meeting.</p>
+                <ul class="opening-hours marcellus">
+                    <li><strong>⏲</strong> Monday to Friday: 11:00 am — 11:30 pm</li>
+                    <li><strong>⏲</strong> Saturday: 10:00 am — 11:00 pm</li>
+                    <li><strong>⏲</strong> Sunday: Closed</li>
+                </ul>
+                <div class="action-btns marcellus">
+                    <a href="v4-salon-price.html" class="action-btn">Price List</a>
+                    <a href="#" class="action-btn">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DARK BANNER ==================== -->
+    <section class="all-you-need">
+        <div class="banner-content">
+            <span class="tag-label" style="color: var(--accent-gold);">Concierge & Security Services</span>
+            <h2 class="banner-heading marcellus text-white">All you need to know to ensure your trip is perfect.</h2>
+            <p class="banner-desc">Everything from amenities like complimentary dry-cleaning to 24/7 security is thought of for you. Discover the peace of mind our concierge service brings to you, and navigate NYC with seamless modern comfort.</p>
+        </div>
+    </section>
+
+    <!-- ==================== WELLNESS SECTION ==================== -->
+    <section class="service-section">
+        <div class="service-row">
+            <div class="service-images">
+                <div class="img-large"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"></div>
+                <div class="img-small"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600"></div>
+            </div>
+            <div class="service-text">
+                <span class="tag-label">Fitness & Wellness Experience</span>
+                <h2 class="service-heading marcellus">Swimming Pool, Yoga Studio & Fitness Center</h2>
+                <p class="service-desc">Our fitness center includes a variety of cardio equipment, yoga space and pool access to ensure you can maintain your fitness routine during the stay or unwind after a busy day in the city.</p>
+                <ul class="opening-hours marcellus">
+                    <li><strong>⏲</strong> Swimming Pool: 24h/Day</li>
+                    <li><strong>⏲</strong> Fitness Center: 24h/Day, 7/7 days</li>
+                    <li><strong>⏲</strong> Yoga Studio: 7:00 am — 10:00 pm</li>
+                </ul>
+                <a href="#" class="action-link marcellus">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MEETINGS SECTION ==================== -->
+    <section class="service-section" style="background: #090909;">
+        <div class="service-row reverse">
+            <div class="service-images">
+                <div class="img-large"><img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800"></div>
+                <div class="img-small"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600"></div>
+            </div>
+            <div class="service-text">
+                <span class="tag-label">Co-Working & Private Meeting Pods</span>
+                <h2 class="service-heading marcellus">Comfortable spaces for host your meetings</h2>
+                <p class="service-desc">With over 20,000 square feet of flexible meeting space, our New York City location can accommodate everything from board meetings to large conventions. Please inquire with our sales team for bespoke food and service.</p>
+                <ul class="opening-hours marcellus">
+                    <li><strong>⏲</strong> Monday to Friday: 8:00 am — 11:30 pm</li>
+                    <li><strong>⏲</strong> Saturday and Sunday: 10:00 am — 11:00 pm</li>
+                </ul>
+                <a href="#" class="btn-line marcellus" style="color: #fff; text-decoration: none;">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BOTTOM GRID ==================== -->
+    <section class="info-grid">
+        <div class="info-box">
+            <div class="info-bg" style="background-image: url('https://images.unsplash.com/photo-1449156001497-cd7c4d242142?w=1200&q=80')"></div>
+            <div class="info-content">
+                <span class="tag-label" style="color: #fff;">Our Location</span>
+                <h2 class="box-title marcellus">Getting Here</h2>
+                <p class="box-desc">CozyStay Aparthotel Times Square 415 6th Avenue, New York, NY, 10018 Tel: +1 212-555-6699 Email: information@cozystay.com</p>
+                <a href="#" class="btn-line marcellus">Get Directions</a>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="info-bg" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80')"></div>
+            <div class="info-content">
+                <span class="tag-label" style="color: #fff;">Book A Room</span>
+                <h2 class="box-title marcellus">Spend Your Time With Us</h2>
+                <p class="box-desc">Everything at CozyStay, in its restaurants, bar and spa is designed to make your stay, lunch or dinner unforgettable.</p>
+                <a href="#" class="btn-line marcellus">Reserve Your Stay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="newsletter">
+        <div class="news-text">
+            <span class="tag-label">Stay Tuned With CozyStay</span>
+            <h2 class="news-header marcellus">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+        </div>
+        <div class="news-form marcellus">
+            <div class="input-group-nl">
+                <input type="email" placeholder="Your Email Address">
+                <button>Subscribe <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+            </div>
+            <label class="d-flex align-items-center gap-2" style="font-size: 11px; color: #555;">
+                <input type="checkbox" style="accent-color: var(--accent-gold);"> I agree to the Privacy Policy
+            </label>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer-v4">
+      <div class="container-xl">
+        <div class="footer-top">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <p class="footer-subtitle">STAY TUNED WITH COZYSTAY</p>
+              <h2 class="footer-title">Sign up for our newsletter to<br>receive our news, deals and<br>special offers.</h2>
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+              <form class="newsletter-form" onsubmit="event.preventDefault();">
+                <div class="nl-input-group">
+                  <input type="email" placeholder="Your Email Address" required />
+                  <button type="submit">
+                    Subscribe
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </button>
+                </div>
+                <label class="nl-checkbox">
+                  <input type="checkbox" required />
+                  <span>I agree to the <a href="#">Privacy Policy</a></span>
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+              <p class="copyright m-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
+            </div>
+            <div class="col-md-4 text-center mb-3 mb-md-0">
+              <style>
+                .pay-icon-box {
+                  background: #fff;
+                  border-radius: 6px;
+                  width: 54px;
+                  height: 38px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 5px;
+                }
+                .pay-icon-box img {
+                  max-width: 100%;
+                  max-height: 100%;
+                  object-fit: contain;
+                }
+              </style>
+              <div class="payment-icons d-flex justify-content-center align-items-center gap-2">
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/visa.png" alt="VISA"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/stripe.png" alt="Stripe"></div>
+              </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+              <div class="social-icons">
+                <span class="social-label">Stay Connected:</span>
+                <a href="#">
+                   <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+                </a>
+                <a href="#">
+                   <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                </a>
+                <a href="#">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

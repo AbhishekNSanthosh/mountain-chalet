@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luxury Dining – CozyStay Resort</title>
+    <title>All Pages – CozyStay Resort</title>
     <meta
       name="description"
       content="CozyStay – Luxury apartment hotel in Times Square."
@@ -66,6 +66,18 @@
               ROOMS
               <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
+            <!-- Dropdown -->
+            <div class="dropdown-container">
+              <ul class="dropdown-list">
+                <li><a href="v4-rooms.html">Rooms Page</a></li>
+                <li><a href="#">Room Details – Top Image</a></li>
+                <li><a href="#">Room Details – Top Gallery</a></li>
+                <li><a href="#">Room Details – Left Booking Form</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Checkout</a></li>
+                <li><a href="#">My account</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a href="v4-pages.html" class="nav-link">
@@ -217,18 +229,18 @@
 
     
     <!-- PAGE HERO -->
-    <section class="position-relative d-flex align-items-end" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:100px;">
+    <section class="position-relative d-flex align-items-end" style="min-height:60vh; background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; padding-top:100px;">
       <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(0,0,0,0.60);"></div>
       <div class="position-relative container-xl px-4 px-lg-0 pb-5">
         <nav aria-label="breadcrumb" class="mb-3">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="index4.html" class="text-white-50 text-decoration-none">Home</a></li>
-            <li class="breadcrumb-item active text-white" aria-current="page">Luxury Dining</li>
+            <li class="breadcrumb-item active text-white" aria-current="page">All Pages</li>
           </ol>
         </nav>
         <p class="text-uppercase fw-semibold tracking-widest mb-2" style="font-size:0.75rem; color: #b89a6a;">Discover</p>
-        <h1 class="font-serif text-white display-4 mb-2">Luxury Dining</h1>
-        <p class="text-white-50 fs-5">Experience exquisite cuisine from all over the world.</p>
+        <h1 class="font-serif text-white display-4 mb-2">All Pages</h1>
+        <p class="text-white-50 fs-5">Explore all the services and options CozyStay has to offer.</p>
       </div>
     </section>
 
@@ -237,14 +249,14 @@
       <div class="container-xl py-5">
         <div class="row g-5 align-items-center">
           <div class="col-md-6">
-            <h2 class="font-serif mb-4" style="font-size:2.2rem;">Experience Luxury Dining</h2>
+            <h2 class="font-serif mb-4" style="font-size:2.2rem;">Experience All Pages</h2>
             <p class="lh-base mb-4" style="color: rgba(255, 255, 255, 0.7); font-weight: 300;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p class="lh-base mb-4" style="color: rgba(255, 255, 255, 0.7); font-weight: 300;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <a href="index4.html#booking" class="btn text-uppercase rounded-0 px-4 py-3 fw-semibold tracking-widest mt-2 border-0" style="background-color: #556247; color: #fff; font-family: 'Jost', sans-serif;">Book Your Experience</a>
           </div>
           <div class="col-md-6">
              <div class="position-relative" style="height: 450px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-               <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="Luxury Dining" />
+               <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" class="w-100 h-100 object-fit-cover" alt="All Pages" />
              </div>
           </div>
         </div>
@@ -283,11 +295,28 @@
               <p class="copyright m-0">&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</p>
             </div>
             <div class="col-md-4 text-center mb-3 mb-md-0">
-              <div class="payment-icons">
-                 <span class="pay-bdg">PayPal</span>
-                 <span class="pay-bdg">MasterCard</span>
-                 <span class="pay-bdg">VISA</span>
-                 <span class="pay-bdg">stripe</span>
+              <style>
+                .pay-icon-box {
+                  background: #fff;
+                  border-radius: 6px;
+                  width: 54px;
+                  height: 38px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 5px;
+                }
+                .pay-icon-box img {
+                  max-width: 100%;
+                  max-height: 100%;
+                  object-fit: contain;
+                }
+              </style>
+              <div class="payment-icons d-flex justify-content-center align-items-center gap-2">
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/visa.png" alt="VISA"></div>
+                 <div class="pay-icon-box"><img src="https://img.icons8.com/color/48/000000/stripe.png" alt="Stripe"></div>
               </div>
             </div>
             <div class="col-md-4 text-center text-md-end">

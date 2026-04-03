@@ -3,397 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account - CozyStay</title>
+    <title>My account - CozyStay Luxury</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <style>
-        /* Account Specifics */
-        #account-hero {
+        :root {
+            --accent-gold: #c5a059;
+            --btn-beige: #b09978;
+            --dark-bg: #0c0c0c;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, .marcellus {
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Top Bar & Navbar */
+        #top-bar {
+            background: rgba(0,0,0,0.2);
+            padding: 10px 5vw;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #888;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-weight: 500;
+        }
+
+        #top-bar a { color: #888; text-decoration: none; }
+        #top-bar span { margin-right: 30px; }
+
+        .account-navbar {
+            padding: 30px 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .hamburger-btn { background: transparent; border: none; color: #fff; padding: 0; }
+        .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+        .nav-links li a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
+
+        .account-logo { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
+        .account-logo a { color: #fff; text-decoration: none; font-size: 32px; letter-spacing: 6px; font-weight: 400; text-transform: uppercase; }
+        .account-logo .stars { display: block; font-size: 10px; letter-spacing: 5px; color: var(--accent-gold); margin-top: 5px; }
+
+        .check-btn { border: 1px solid rgba(255,255,255,0.3); color: #fff; text-decoration: none; padding: 12px 25px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; }
+        .check-btn:hover { background: #fff; color: #000; }
+
+        /* Hero Section */
+        .account-hero {
+            position: relative;
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-            color: #fff;
             text-align: center;
+            overflow: hidden;
         }
-        .account-breadcrumb { font-family: "Jost", sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-        .account-title { font-family: "Marcellus", serif; font-size: 64px; letter-spacing: 4px; }
 
-        .login-section { padding: 100px 5vw; background: #fff; }
-        .login-container { max-width: 1200px; margin: 0 auto; }
-        .login-header { font-family: "Marcellus", serif; font-size: 32px; margin-bottom: 40px; color: #333; }
+        .account-hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1600&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.4);
+            z-index: -1;
+        }
+
+        .breadcrumb { color: rgba(255,255,255,0.6); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .account-title { font-size: 80px; font-weight: 400; letter-spacing: 2px; }
+
+        /* Login Form Section */
+        .login-section {
+            padding: 100px 0;
+            background: var(--dark-bg);
+        }
+
+        .login-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .login-heading { font-size: 32px; margin-bottom: 50px; font-weight: 400; }
         
-        .login-form { max-width: 100%; }
         .form-group { margin-bottom: 30px; }
-        .form-group label { display: block; font-family: "Jost", sans-serif; font-size: 13px; color: #555; margin-bottom: 10px; }
-        .form-group label span { color: #cc0000; }
+        .form-group label { display: block; color: #fff; font-size: 14px; margin-bottom: 15px; font-weight: 500; }
+        .form-group label span { color: #f44336; }
         
-        .form-control-luxury {
+        .form-control-account {
             width: 100%;
-            border: none;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
-            font-family: "Jost", sans-serif;
-            font-size: 15px;
-            color: #333;
             background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 15px;
             border-radius: 0;
-            outline: none;
             transition: border-color 0.3s;
         }
-        .form-control-luxury:focus { border-color: #b89a6a; }
-        
-        .password-wrap { position: relative; }
-        .toggle-pass { position: absolute; right: 0; top: 10px; cursor: pointer; color: #999; }
 
-        .form-actions { display: flex; align-items: center; gap: 30px; margin-top: 40px; }
+        .form-control-account:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .login-actions {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
         .login-btn {
-            background: #b89a6a;
+            background-color: var(--btn-beige);
             color: #fff;
-            padding: 15px 50px;
             border: none;
-            font-family: "Jost", sans-serif;
-            text-transform: capitalize;
-            font-size: 14px;
+            padding: 18px 45px;
+            font-size: 13px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 500;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
-        .login-btn:hover { background: #a3895e; }
-        
-        .remember-me { display: flex; align-items: center; gap: 8px; font-family: "Jost", sans-serif; font-size: 13px; color: #555; cursor: pointer; }
-        .lost-pass { display: block; margin-top: 30px; font-family: "Jost", sans-serif; font-size: 13px; color: #999; text-decoration: none; transition: color 0.3s; }
-        .lost-pass:hover { color: #b89a6a; }
 
-        @media (max-width: 767px) {
-            .account-title { font-size: 42px; }
-            #account-hero { height: 40vh; }
-        }
-        @media (max-width: 575px) {
-            .account-title { font-size: 28px; letter-spacing: 2px; }
-            #account-hero { height: 35vh; }
-            .login-section { padding: 60px 5vw; }
-            .login-header { font-size: 24px; }
-            .form-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
-            .login-btn { width: 100%; padding: 15px; }
+        .login-btn:hover { background-color: var(--accent-gold); }
+
+        .remember-me { display: flex; align-items: center; gap: 10px; color: #888; font-size: 13px; }
+        .remember-me input { accent-color: var(--accent-gold); }
+
+        .lost-pass { color: #888; text-decoration: none; font-size: 13px; transition: color 0.3s; }
+        .lost-pass:hover { color: #fff; }
+
+        /* Same Info Grid & Footer */
+        .info-grid { display: flex; width: 100%; }
+        .info-box { flex: 1; position: relative; min-height: 480px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px; overflow: hidden; }
+        .info-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: -1; transition: transform 1s; filter: brightness(0.35); }
+        .info-box:hover .info-bg { transform: scale(1.08); }
+        .info-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); z-index: 0; }
+        .info-content { position: relative; z-index: 1; }
+        .box-label { color: var(--accent-gold); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; display: block; }
+        .box-header { font-size: 42px; color: #fff; margin-bottom: 30px; line-height: 1.2; }
+        .box-desc { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 380px; line-height: 1.8; margin-bottom: 35px; }
+        .box-btn { color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); padding: 12px 30px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; }
+        .box-btn:hover { background: #fff; color: #000; }
+
+        .getting-here .info-bg { background-image: url('https://images.unsplash.com/photo-1449156001497-cd7c4d242142?w=1200&q=80'); }
+        .spend-time .info-bg { background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80'); }
+
+        .newsletter-section { padding: 120px 10%; background: #000; border-top: 1px solid rgba(255,255,255,0.05); }
+        .news-subtitle { color: var(--accent-gold); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; display: block; }
+        .news-row { display: flex; justify-content: space-between; align-items: flex-end; }
+        .news-title { font-size: 44px; max-width: 600px; line-height: 1.1; margin: 0; }
+        .news-form-container { width: 450px; }
+        .news-input-wrap { display: flex; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 15px; margin-bottom: 25px; align-items: center; }
+        .news-input-wrap input { background: transparent; border: none; color: #fff; flex: 1; padding: 10px 0; font-size: 16px; font-weight: 300; }
+        .news-input-wrap input:focus { outline: none; }
+        .news-input-wrap button { background: transparent; border: none; color: #fff; text-transform: uppercase; font-size: 11px; letter-spacing: 3px; font-weight: 600; display: flex; align-items: center; gap: 12px; }
+        .news-privacy { display: flex; align-items: center; gap: 15px; color: #555; font-size: 11px; }
+        .news-privacy input { accent-color: var(--accent-gold); }
+
+        footer { background: #000; padding: 50px 10%; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #444; letter-spacing: 1px; }
+        .footer-socials a { color: #444; margin-left: 25px; text-decoration: none; font-size: 15px; transition: color 0.3s; }
+        .footer-socials a:hover { color: #fff; }
+
+        @media (max-width: 991px) {
+            .news-row { flex-direction: column; align-items: flex-start; gap: 60px; }
+            .news-form-container { width: 100%; }
+            .info-grid { flex-direction: column; }
+            .account-title { font-size: 60px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ==================== NAVBAR ==================== -->
+    <!-- ==================== TOP BAR ==================== -->
     <div id="top-bar">
-      <span>RUE DE LAUSANNE, 1202 GENÈVE, SWITZERLAND</span>
-      <span class="d-flex align-items-center gap-4">
-        <span>TEL: +41 22 345 67 88</span>
-        <span>FAX: +41 22 345 67 89</span>
-        <a href="mailto:booking@cozystay.com" class="text-white text-decoration-none border-bottom border-white border-opacity-25">BOOKING@COZYSTAY.COM</a>
-      </span>
+        <div>1250 WEST 6TH AVE, NEW YORK, NY 10036, UNITED STATES</div>
+        <div>
+            <span>TEL: +1 212 555 6688</span>
+            <span>FAX: +1 212 555 6699</span>
+            <a href="mailto:booking@cozystay.com">BOOKING@COZYSTAY.COM</a>
+        </div>
     </div>
 
     <!-- ==================== NAVBAR ==================== -->
-    <nav id="navbar-v2">
-      <!-- Left nav links -->
-      <ul class="v2-nav-left">
-        <li class="dropdown">
-          <a href="index2.html" class="v2-nav-link active-nav dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            HOME <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu">
-            <li><a class="dropdown-item nav-dropdown-link" href="index.html">Home v1</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="index2.html">Home v2</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="rooms.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            STAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu">
-            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details.html">Room Details – Top Image</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details-gallery.html">Room Details – Top Gallery</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="room-details-left.html">Room Details – Left Booking Form</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Cart</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="cart.html">Checkout</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="account.html">My account</a></li>
-          </ul>
-        </li>
-        <li class="dropdown mega-dropdown">
-          <a href="restaurant.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            DINE <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <div class="mega-menu dropdown-menu">
-            <div class="mega-menu-container">
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&auto=format&fit=crop" alt="Overview" /></div>
-                  <span>Overview</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="the-restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&auto=format&fit=crop" alt="The Restaurant" /></div>
-                  <span>The Restaurant</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="lobby-cafe.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&auto=format&fit=crop" alt="Lobby Cafe" /></div>
-                  <span>Lobby Cafe</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&h=300&auto=format&fit=crop" alt="Rooftop Bar" /></div>
-                  <span>Rooftop Bar</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&auto=format&fit=crop" alt="Steakhouse" /></div>
-                  <span>Steakhouse</span>
-                </a>
-              </div>
-              <div class="mega-item">
-                <a href="restaurant.html">
-                  <div class="mega-img"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&auto=format&fit=crop" alt="Cigar Lounge" /></div>
-                  <span>Cigar Lounge</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="dropdown mega-dropdown">
-          <a href="activities.html" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            PLAY <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <div class="mega-menu dropdown-menu play-mega-menu">
-            <div class="mega-play-container">
-              <!-- Left Cols with Links -->
-              <div class="play-links-grid">
-                <div class="play-col">
-                  <h4>LOCAL ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="activities.html">Overview</a></li>
-                    <li><a href="winter-activities.html">Winter Activities</a></li>
-                    <li><a href="summer-activities.html">Summer Activities</a></li>
-                  </ul>
-                  <h4 class="mt-5">WINTER ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="skiing.html">Ski & Snowboard</a></li>
-                    <li><a href="#">Freeriding</a></li>
-                    <li><a href="#">Winter Hiking</a></li>
-                    <li><a href="#">Snowshoeing</a></li>
-                    <li><a href="#">Paraglider Exercises</a></li>
-                    <li><a href="#">Sledding</a></li>
-                  </ul>
-                </div>
-                <div class="play-col">
-                  <h4>SUMMER ACTIVITIES</h4>
-                  <ul>
-                    <li><a href="#">Hiking</a></li>
-                    <li><a href="#">Running & Walking</a></li>
-                    <li><a href="#">Mountain Bike</a></li>
-                    <li><a href="#">Racing Bike</a></li>
-                    <li><a href="#">Golf Courses</a></li>
-                  </ul>
-                  <h4 class="mt-5">OTHERS</h4>
-                  <ul>
-                    <li><a href="#">Art & Museum</a></li>
-                    <li><a href="#">Musics</a></li>
-                  </ul>
-                </div>
-              </div>
-              
-              <!-- Right Part with Promotional Cards -->
-              <div class="play-cards-grid">
-                <a href="winter-activities.html" class="play-card winter-card">
-                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=900&fit=crop" alt="Winter" /></div>
-                  <div class="play-card-content">
-                    <p class="play-card-label">ADVENTURES</p>
-                    <h5 class="play-card-title">WINTER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </a>
-                <a href="summer-activities.html" class="play-card summer-card">
-                  <div class="play-card-img"><img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&h=900&fit=crop" alt="Summer" /></div>
-                  <div class="play-card-content">
-                    <p class="play-card-label">NATURE & WILD</p>
-                    <h5 class="play-card-title">SUMMER ACTIVITIES</h5>
-                    <p class="play-card-desc">Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="spa.html" class="v2-nav-link">RELAX</a>
-        </li>
-      </ul>
-
-      <!-- Center logo -->
-      <div class="v2-nav-center">
-        <a href="index2.html" class="v2-logo-link">
-          COZYSTAY
-          <span class="v2-logo-stars">★ ★ ★ ★ ★</span>
-        </a>
-      </div>
-
-      <!-- Right nav links -->
-      <ul class="v2-nav-right">
-        <li class="dropdown">
-          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            PAGES <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item nav-dropdown-link" href="about.html">About</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="services.html">Services</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="rooms.html">Rooms & Suites</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="restaurant.html">Restaurants</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="activities.html">Local Activities</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="spa.html">Wellness</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="contact.html">Contact</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="blog.html">Our Blog</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="v2-nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            EN <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="6"><polyline points="1,1 5,5 9,1"/></svg>
-          </a>
-          <ul class="custom-dropdown-menu dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item nav-dropdown-link" href="#">English</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Français</a></li>
-            <li><a class="dropdown-item nav-dropdown-link" href="#">Deutsch</a></li>
-          </ul>
-        </li>
-        <li><a href="#booking" class="v2-reserve-btn">Reserve Now</a></li>
-      </ul>
-      <button id="v3-hamburger" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+    <nav class="account-navbar">
+        <div class="nav-left d-flex align-items-center gap-4">
+            <button class="hamburger-btn">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h12" /></svg>
+            </button>
+            <ul class="nav-links d-none d-lg-flex">
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="about.html">Pages</a></li>
+            </ul>
+        </div>
+        <div class="account-logo">
+            <a href="index2.html">COZYSTAY</a>
+            <span class="stars">★ ★ ★ ★ ★</span>
+        </div>
+        <div class="nav-right d-flex align-items-center gap-4">
+            <a href="#" class="lang-link">EN / FR</a>
+            <a href="rooms.html" class="check-btn">Check Availability</a>
+        </div>
     </nav>
-    <!-- ==================== MOBILE MENU V2 ==================== -->
-    <div id="mobile-menu-v2">
-      <button id="mobile-menu-close" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="mobile-menu-logo">COZYSTAY</div>
-      <nav class="mobile-menu-nav">
-        <a href="index2.html">Home</a>
-        <a href="rooms.html">Stay</a>
-        <a href="restaurant.html">Dine</a>
-        <a href="activities.html">Play</a>
-        <a href="spa.html">Relax</a>
-        <a href="about.html">About</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="#booking" class="mobile-menu-cta">Reserve Now</a>
-    </div>
-    <div id="mobile-menu-overlay"></div>
 
-    <!-- ==================== HERO ==================== -->
-    <header id="account-hero">
-        <div class="account-breadcrumb">Home / My account</div>
-        <h1 class="account-title">My account</h1>
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="account-hero marcellus">
+        <div class="account-hero-bg"></div>
+        <div class="hero-content">
+            <span class="breadcrumb">Home / My account</span>
+            <h1 class="account-title">My account</h1>
+        </div>
     </header>
 
     <!-- ==================== LOGIN SECTION ==================== -->
-    <section class="login-section">
+    <section class="login-section marcellus">
         <div class="login-container">
-            <h2 class="login-header">Login</h2>
-            <form class="login-form">
-                <div class="form-group">
+            <h2 class="login-heading">Login</h2>
+            <form onsubmit="event.preventDefault();">
+                <div class="form-group marcellus">
                     <label>Username or email address <span>*</span></label>
-                    <input type="text" class="form-control-luxury" required>
+                    <input type="text" class="form-control-account">
                 </div>
-                <div class="form-group">
+                <div class="form-group marcellus">
                     <label>Password <span>*</span></label>
-                    <div class="password-wrap">
-                        <input type="password" class="form-control-luxury" id="pass-input" required>
-                        <span class="toggle-pass">
-                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        </span>
-                    </div>
+                    <input type="password" class="form-control-account">
                 </div>
-                <div class="form-actions">
-                    <button type="submit" class="login-btn">Log in</button>
-                    <label class="remember-me">
+                
+                <div class="login-actions">
+                    <button class="login-btn">Log in</button>
+                    <label class="remember-me marcellus">
                         <input type="checkbox"> Remember me
                     </label>
                 </div>
-                <a href="#" class="lost-pass">Lost your password?</a>
+
+                <a href="#" class="lost-pass marcellus">Lost your password?</a>
             </form>
         </div>
     </section>
 
+    <!-- ==================== INFO GRID ==================== -->
+    <section class="info-grid">
+        <div class="info-box getting-here">
+            <div class="info-bg"></div><div class="info-overlay"></div>
+            <div class="info-content">
+                <span class="box-label">Our Location</span>
+                <h3 class="box-header marcellus">Getting Here</h3>
+                <p class="box-desc">CozyStay Aparthotel Times Square 415 6th Avenue, New York, New York, USA, 10018 Tel: +1 212-555-6699 Email: information@cozystay.com</p>
+                <a href="#" class="box-btn">Get Directions</a>
+            </div>
+        </div>
+        <div class="info-box spend-time">
+            <div class="info-bg"></div><div class="info-overlay"></div>
+            <div class="info-content">
+                <span class="box-label">Book A Room</span>
+                <h3 class="box-header marcellus">Spend Your Time With Us</h3>
+                <p class="box-desc">Everything at CozyStay, in its restaurants, bar and spa is designed to make your stay, lunch or dinner unforgettable. Tel: +1 212-555-6688 Email: reservation@cozystay.com</p>
+                <a href="#" class="box-btn">Reserve Your Stay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER ==================== -->
+    <section class="newsletter-section">
+        <span class="news-subtitle marcellus">Stay tuned with CozyStay</span>
+        <div class="news-row">
+            <h2 class="news-title marcellus">Sign up for our newsletter to receive our news, deals and special offers.</h2>
+            <div class="news-form-container marcellus">
+                <div class="news-input-wrap">
+                    <input type="email" placeholder="Your Email Address">
+                    <button>Subscribe <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+                </div>
+                <div class="news-privacy marcellus">
+                    <input type="checkbox" id="agree-newsletter">
+                    <label for="agree-newsletter">I agree to the Privacy Policy</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== FOOTER ==================== -->
-    <footer id="footer-v2">
-        <div class="footer-container">
-            <div class="row gx-lg-5 gy-5">
-                <div class="col-lg-4">
-                    <h3 class="footer-logo">COZYSTAY</h3>
-                    <p class="footer-desc">Established in 1998, CozyStay Hotel is a boutique hotel in the heart of the Swiss Alps, offering contemporary accommodation and unrivaled access to ski and hiking trails, immersing you in an idyllic setting against pristine skies in search of a truly serene experience.</p>
-                    <div class="payment-icons">
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" alt="Visa"></div>
-                        <div class="payment-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Reach Out</h4>
-                    <div class="footer-contact-info">
-                        <span>Email: <a href="mailto:booking@cozystay.com" class="footer-email">booking@cozystay.com</a></span>
-                        <span>Tel: +41 22 345 66 77</span>
-                        <span>Fax: +41 22 345 77 89</span>
-                        <span>Rue de Lausanne, 1202 Genève, Switzerland</span>
-                    </div>
-                    <a href="#" class="get-directions">Get Directions</a>
-                </div>
-                <div class="col-lg-4">
-                    <h4 class="footer-title">Sign up for newsletter</h4>
-                    <form class="newsletter-form-premium">
-                        <input type="email" placeholder="Your Email Address" required>
-                        <button type="submit">
-                            Subscribe
-                            <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                        </button>
-                    </form>
-                    <div class="privacy-agree">
-                        <input type="checkbox" id="policy-agree-index">
-                        <label for="policy-agree-index">I agree to the Privacy Policy</label>
-                    </div>
-                    <div class="social-connect">
-                        <span>Stay Connected:</span>
-                        <a href="#" aria-label="Facebook"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                        <a href="#" aria-label="Twitter"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-                        <a href="#" aria-label="Pinterest"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
-                        <a href="#" aria-label="YouTube"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
-                        <a href="#" aria-label="Instagram"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.197-4.347-2.618-6.778-6.98-6.981C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Policy</a>
-                </div>
-                <p class="mb-0">© Copyright CozyStay WordPress Theme for Hotel Booking.</p>
-            </div>
+    <footer>
+        <div class="copyright">© Copyright CozyStay WordPress Theme for Hotel Booking.</div>
+        <div class="footer-icons d-flex gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="40" alt="PayPal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="30" alt="MasterCard">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" width="40" alt="Visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" width="40" alt="Stripe">
+        </div>
+        <div class="footer-socials">
+            <span>Stay Connected:</span>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg></a>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/></svg></a>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.563 0-2.386-1.715-4.052-4.163-4.052-2.838 0-4.502 2.128-4.502 4.327 0 .857.33 1.776.741 2.279a.3.3 0 01.069.283l-.275 1.121c-.044.18-.147.218-.34.131-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+            <a href="#"><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/></svg></a>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
