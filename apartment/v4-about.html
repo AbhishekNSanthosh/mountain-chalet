@@ -155,6 +155,43 @@
             .newsletter { flex-direction: column; text-align: center; }
             .news-form { width: 100%; }
         }
+
+        @media (max-width: 768px) {
+            .page-section { padding: 80px 6%; }
+            .apt-grid-section { padding: 80px 6%; }
+            .newsletter { padding: 80px 6%; }
+            footer { padding: 40px 6%; flex-direction: column; text-align: center; gap: 20px; }
+            .lux-row, .legend-row { gap: 40px; }
+            .legend-images, .lux-images { height: 360px; }
+            .lux-text { padding: 0 10px; }
+            .lux-img-front { width: 55%; }
+            .leg-img-front { bottom: 0; }
+            .section-heading { font-size: 36px; }
+            .stat-row { gap: 30px; }
+            .stat-item .stat-num { font-size: 44px; }
+            .apt-card { height: 420px; }
+            .box { padding: 40px 20px; min-height: 380px; }
+            .box-title { font-size: 34px; }
+            .about-hero { background-attachment: scroll; }
+            .video-parallax { height: 60vh; }
+        }
+
+        @media (max-width: 480px) {
+            .page-section { padding: 60px 5%; }
+            .apt-grid-section { padding: 60px 5%; }
+            .newsletter { padding: 60px 5%; }
+            footer { padding: 30px 5%; }
+            .legend-images, .lux-images { height: 280px; }
+            .section-heading { font-size: 28px; }
+            .stat-item .stat-num { font-size: 36px; }
+            .apt-card { height: 300px; }
+            .apt-card-label { bottom: 20px; left: 20px; font-size: 11px; }
+            .box { padding: 30px 15px; }
+            .box-title { font-size: 28px; }
+            .box-desc { font-size: 14px; }
+            .news-header { font-size: 30px; }
+            .bottom-grid { flex-direction: column; }
+        }
     </style>
 </head>
 <body>

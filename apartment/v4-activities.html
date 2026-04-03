@@ -87,12 +87,37 @@
         .socials a { color: #555; margin-left: 20px; text-decoration: none; font-size: 14px; }
 
         @media (max-width: 1100px) {
-            .activity-grid { grid-template-columns: 1fr; }
+            .activity-grid { grid-template-columns: repeat(2, 1fr); }
             .activities-navbar .nav-links { display: none; }
             .activities-logo { position: static; transform: none; }
             .newsletter { flex-direction: column; text-align: center; gap: 50px; }
             .news-form { width: 100%; }
             .bottom-grid { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            .page-section { padding: 80px 6%; }
+            .activity-grid { grid-template-columns: 1fr; gap: 30px; }
+            .act-content { padding: 30px 20px; }
+            .act-title { font-size: 26px; }
+            .act-img-box { height: 260px; }
+            .newsletter { padding: 80px 6%; }
+            .box { padding: 40px 20px; min-height: 380px; }
+            .box-title { font-size: 34px; }
+            footer { padding: 40px 6%; flex-direction: column; text-align: center; gap: 20px; }
+            .activities-hero { background-attachment: scroll; }
+        }
+
+        @media (max-width: 480px) {
+            .page-section { padding: 60px 5%; }
+            .newsletter { padding: 60px 5%; }
+            footer { padding: 30px 5%; }
+            .act-img-box { height: 220px; }
+            .act-title { font-size: 22px; }
+            .box { padding: 30px 15px; }
+            .box-title { font-size: 28px; }
+            .box-desc { font-size: 14px; }
+            .news-header { font-size: 30px; }
         }
     </style>
 </head>

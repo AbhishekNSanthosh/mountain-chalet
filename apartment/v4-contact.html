@@ -96,9 +96,39 @@
 
         @media (max-width: 1100px) {
             .contact-details, .travel-grid, .convo-section, .bottom-grid, .newsletter { flex-direction: column; text-align: center; }
-            .map-box { height: 350px; }
+            .map-box { height: 350px; width: 100%; }
             .travel-item { margin-bottom: 60px; }
             .input-nl { width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .contact-details { padding: 80px 6%; gap: 50px; }
+            .travel-section { padding: 80px 6%; background-attachment: scroll; }
+            .travel-heading { font-size: 34px; margin-bottom: 50px; }
+            .travel-time { font-size: 38px; }
+            .convo-section { padding: 80px 6%; gap: 50px; }
+            .convo-img { height: 380px; }
+            .newsletter { padding: 80px 6%; }
+            .box { padding: 40px 20px; min-height: 380px; }
+            .box-title { font-size: 34px; }
+            footer { padding: 40px 6%; flex-direction: column; text-align: center; gap: 20px; }
+            .contact-hero { background-attachment: scroll; }
+            .map-box { height: 280px; }
+            .info-heading { font-size: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .contact-details { padding: 60px 5%; gap: 40px; }
+            .travel-section { padding: 60px 5%; }
+            .travel-heading { font-size: 26px; }
+            .travel-time { font-size: 30px; }
+            .convo-section { padding: 60px 5%; gap: 40px; }
+            .convo-img { height: 260px; }
+            .newsletter { padding: 60px 5%; }
+            footer { padding: 30px 5%; }
+            .box { padding: 30px 15px; }
+            .box-title { font-size: 28px; }
+            .news-header { font-size: 28px; }
         }
     </style>
 </head>

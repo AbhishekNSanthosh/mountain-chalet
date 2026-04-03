@@ -107,13 +107,46 @@
         .socials a { color: #555; margin-left: 25px; text-decoration: none; font-size: 14px; }
 
         @media (max-width: 1100px) {
-            .restaurant-row, .rooftop-row { flex-direction: column; text-align: center; }
-            .restaurant-img, .rooftop-images { width: 100%; height: 400px; }
+            .restaurant-row, .rooftop-row { flex-direction: column; text-align: center; gap: 50px; }
+            .restaurant-img { width: 100%; height: 400px; }
+            .rooftop-images { width: 100%; }
+            .rooftop-large { height: 350px; }
+            .rooftop-small { height: 240px; }
             .detail-list { display: inline-block; text-align: left; }
             .newsletter { flex-direction: column; text-align: center; }
             .news-header { margin-bottom: 40px; }
             .news-form { width: 100%; }
             .bottom-grid { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            .page-section { padding: 80px 6%; }
+            .in-room-dining { padding: 80px 6%; background-attachment: scroll; min-height: auto; }
+            .newsletter { padding: 80px 6%; }
+            .section-heading { font-size: 34px; }
+            .restaurant-img { height: 300px; }
+            .rooftop-large { height: 280px; }
+            .rooftop-small { height: 200px; }
+            .rooftop-row { gap: 40px; }
+            .restaurant-row { gap: 40px; }
+            .box { padding: 40px 20px; min-height: 380px; }
+            .box-title { font-size: 34px; }
+            footer { padding: 40px 6%; flex-direction: column; text-align: center; gap: 20px; }
+            .dining-hero { background-attachment: scroll; }
+        }
+
+        @media (max-width: 480px) {
+            .page-section { padding: 60px 5%; }
+            .in-room-dining { padding: 60px 5%; }
+            .newsletter { padding: 60px 5%; }
+            footer { padding: 30px 5%; }
+            .section-heading { font-size: 26px; }
+            .restaurant-img { height: 240px; }
+            .rooftop-large { height: 220px; }
+            .rooftop-small { height: 160px; }
+            .box { padding: 30px 15px; }
+            .box-title { font-size: 28px; }
+            .news-header { font-size: 28px; }
         }
     </style>
 </head>

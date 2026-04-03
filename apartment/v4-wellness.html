@@ -100,10 +100,49 @@
         footer { background: #000; padding: 50px 10%; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #555; }
 
         @media (max-width: 1100px) {
-            .wellness-grid, .treatment-section, .pool-section, .train-section, .info-grid, .newsletter { flex-direction: column; text-align: center; }
+            .wellness-grid { flex-direction: column; text-align: center; gap: 30px; }
+            .treatment-section, .pool-section, .train-section { flex-direction: column; text-align: center; gap: 50px; }
+            .info-grid, .newsletter { flex-direction: column; text-align: center; }
             .tr-large, .pool-img, .train-imgs { width: 100%; }
             .well-card { margin-bottom: 60px; }
             .input-group-nl { width: 100%; }
+            .well-text { padding: 0; }
+            .btn-group-custom { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .wellness-intro { padding: 80px 6%; }
+            .treatment-section { padding: 80px 6%; gap: 40px; }
+            .pool-section { padding: 80px 6%; gap: 40px; }
+            .train-section { padding: 80px 6%; gap: 40px; }
+            .newsletter { padding: 80px 6%; }
+            .treatment-imgs { height: 360px; }
+            .tr-small { bottom: 0; }
+            .pool-img { height: 360px; }
+            .tr-row-1, .tr-row-2 { height: 260px; }
+            .well-img { height: 300px; }
+            .section-heading { font-size: 34px; }
+            .info-box { padding: 40px 20px; min-height: 380px; }
+            .box-title { font-size: 34px; }
+            footer { padding: 40px 6%; flex-direction: column; text-align: center; gap: 20px; }
+            .wellness-hero { background-attachment: scroll; }
+        }
+
+        @media (max-width: 480px) {
+            .wellness-intro { padding: 60px 5%; }
+            .treatment-section { padding: 60px 5%; }
+            .pool-section { padding: 60px 5%; }
+            .train-section { padding: 60px 5%; }
+            .newsletter { padding: 60px 5%; }
+            footer { padding: 30px 5%; }
+            .treatment-imgs { height: 260px; }
+            .pool-img { height: 260px; }
+            .tr-row-1, .tr-row-2 { height: 200px; }
+            .well-img { height: 240px; }
+            .section-heading { font-size: 26px; }
+            .info-box { padding: 30px 15px; }
+            .box-title { font-size: 28px; }
+            .news-header { font-size: 28px; }
         }
     </style>
 </head>
