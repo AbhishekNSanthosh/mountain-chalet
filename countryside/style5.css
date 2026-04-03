@@ -1789,6 +1789,14 @@ html, body {
   .footer5-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
   .footer5-bar-links { gap: 20px; }
   .footer5-col-title { font-size: 1.1rem; }
+
+  /* Page Hero (inner pages) */
+  .page-hero5 { min-height: 280px; }
+  .page-title-v5 { font-size: clamp(2rem, 7vw, 3.5rem); }
+  .breadcrumb-v5 { font-size: 0.7rem; letter-spacing: 2px; }
+
+  /* Cart / Account empty state */
+  .empty-cart-section, .account-section { padding: 80px 0; }
 }
 
 /* ==========================================================================
@@ -3329,11 +3337,19 @@ html, body {
   .testi5-heading { margin-bottom: 40px; }
 
   /* Footer */
-  /* Footer */
   .footer5-logo { font-size: 1.3rem; }
   .footer5-body { padding: 50px 5vw 40px; }
   .footer5-bar { padding: 14px 5vw; }
   .newsletter5 { padding: 50px 5vw 44px; }
+
+  /* Page Hero (inner pages) */
+  .page-hero5 { min-height: 220px; }
+  .page-title-v5 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  .breadcrumb-v5 { font-size: 0.65rem; letter-spacing: 1.5px; margin-bottom: 10px; }
+
+  /* Cart / Account empty state */
+  .empty-cart-section, .account-section { padding: 60px 0; }
+  .contact5-submit { padding: 14px 28px; font-size: 0.7rem; }
 }
 
 /* ==========================================================================
