@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout – CozyStay Lodge</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style5.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar5">
+      <div class="nav-left5">
+        <button class="nav-hamburger5"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h12" /></svg></button>
+        <ul class="nav-links5 d-none d-xl-flex">
+          <li><a href="index5.html" class="nav-link5">HOME</a></li>
+          <li class="nav-item-dropdown5">
+            <a href="v5-rooms.html" class="nav-link5 active">ROOMS <svg width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <ul class="dropdown-menu5">
+              <li><a href="v5-rooms.html">Rooms</a></li>
+              <li><a href="v5-rooms-alt.html">Rooms – Alternative</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+              <li><a href="my-account.html">My account</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown5">
+            <a href="v5-pages.html" class="nav-link5">PAGES <svg width="8" height="8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <ul class="dropdown-menu5">
+              <li><a href="v5-about.html">About the hotel</a></li>
+              <li><a href="v5-wellness.html">Spa & Wellness</a></li>
+              <li><a href="v5-events.html">Weddings & Events</a></li>
+              <li><a href="v5-activities.html">Local Activities</a></li>
+              <li><a href="v5-contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li><a href="v5-blog.html" class="nav-link5">BLOG</a></li>
+        </ul>
+      </div>
+      <div class="nav-center5"><a href="index5.html" class="logo-link5">COZYSTAY <span class="logo-stars5">★ ★ ★ ★ ★</span></a></div>
+      <div class="nav-right5">
+        <a href="tel:+41223456788" class="nav-tel5 d-none d-lg-block">Tel: +41 22 345 67 88</a>
+        <a href="#booking5" class="nav-reserve-btn">Reserve Now</a>
+      </div>
+    </nav>
+
+    <header class="page-hero5" style="height: 40vh; background-image: url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=2000&q=80');">
+      <div class="page-hero5-overlay" style="background: rgba(0,0,0,0.3);"></div>
+      <div class="page-hero5-content text-center">
+        <div class="breadcrumb-v5" style="letter-spacing: 5px;">HOME / CHECKOUT</div>
+        <h1 class="page-title-v5" style="font-size: 3.5rem;">Checkout</h1>
+      </div>
+    </header>
+
+    <main class="checkout-section py-5 bg-white">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <h4 class="marcellus mb-4">Billing Details</h4>
+            <form class="row g-4">
+              <div class="col-md-6">
+                <label class="small text-uppercase fw-bold mb-2">First Name *</label>
+                <input type="text" class="contact5-minimal-input" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-md-6">
+                <label class="small text-uppercase fw-bold mb-2">Last Name *</label>
+                <input type="text" class="contact5-minimal-input" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-12">
+                <label class="small text-uppercase fw-bold mb-2">Country / Region *</label>
+                <input type="text" class="contact5-minimal-input" value="Switzerland" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-12">
+                <label class="small text-uppercase fw-bold mb-2">Street Address *</label>
+                <input type="text" class="contact5-minimal-input" placeholder="House number and street name" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-md-6">
+                <label class="small text-uppercase fw-bold mb-2">Town / City *</label>
+                <input type="text" class="contact5-minimal-input" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-md-6">
+                <label class="small text-uppercase fw-bold mb-2">Postcode / ZIP *</label>
+                <input type="text" class="contact5-minimal-input" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-12">
+                <label class="small text-uppercase fw-bold mb-2">Phone *</label>
+                <input type="tel" class="contact5-minimal-input" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-12">
+                <label class="small text-uppercase fw-bold mb-2">Email Address *</label>
+                <input type="email" class="contact5-minimal-input" style="border-bottom-color: #eee; color: #1a1a1a;" />
+              </div>
+              <div class="col-12 mt-5">
+                <h4 class="marcellus mb-4">Additional Information</h4>
+                <label class="small text-uppercase fw-bold mb-2">Order Notes (Optional)</label>
+                <textarea class="contact5-minimal-input" style="height: 100px; border-bottom-color: #eee; color: #1a1a1a;" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+              </div>
+            </form>
+          </div>
+          
+          <div class="col-lg-5">
+            <div class="order-summary p-5 border bg-light">
+              <h4 class="marcellus mb-4 text-center">Your Order</h4>
+              <table class="table table-borderless small mb-4">
+                <tr class="border-bottom">
+                  <th class="py-3">Product</th>
+                  <th class="py-3 text-end">Subtotal</th>
+                </tr>
+                <tr>
+                  <td class="py-3">Your cart is empty</td>
+                  <td class="py-3 text-end">CHF 0.00</td>
+                </tr>
+                <tr class="border-top border-bottom fw-bold">
+                  <td class="py-3 text-uppercase">Total</td>
+                  <td class="py-3 text-end">CHF 0.00</td>
+                </tr>
+              </table>
+              
+              <div class="payment-methods mb-4">
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="payment" id="p1" checked />
+                  <label class="form-check-label fw-bold" for="p1">Direct Bank Transfer</label>
+                  <p class="small text-muted mt-2">Make your payment directly into our bank account. Please use your Order ID as the payment reference.</p>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="payment" id="p2" />
+                  <label class="form-check-label fw-bold" for="p2">Cash on Delivery</label>
+                </div>
+              </div>
+              
+              <p class="small text-muted mb-4">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+              
+              <button class="contact5-submit w-100 py-3 text-uppercase fw-bold" style="letter-spacing: 2px;">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer5">
+      <div class="newsletter5">
+        <div class="newsletter5-bg"></div><div class="newsletter5-overlay"></div>
+        <div class="newsletter5-content">
+          <h2 class="newsletter5-heading">Sign up for our newsletter</h2>
+          <form class="newsletter5-form"><input type="email" placeholder="Your Email Address" class="newsletter5-input" /><button type="submit" class="newsletter5-btn">Subscribe</button></form>
+        </div>
+      </div>
+      <div class="footer5-body">
+        <div class="footer5-body-content">
+          <div class="footer5-col"><h3 class="footer5-logo">COZYSTAY</h3><p>Luxury boutique hotel in Napa Valley.</p></div>
+          <div class="footer5-col"><h4 class="footer5-col-title">Navigate</h4><ul class="footer5-list"><li><a href="v5-rooms.html">Accommodations</a></li><li><a href="v5-contact.html">Contact Us</a></li></ul></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

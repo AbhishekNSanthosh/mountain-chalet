@@ -58,38 +58,42 @@
       </div>
     </nav>
 
-    <header class="page-hero5" style="background-image: url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2000');">
-      <div class="page-hero5-overlay"></div>
-      <div class="page-hero5-content">
-        <div class="breadcrumb-v5">HOME / MY ACCOUNT</div>
-        <h1 class="page-title-v5">My account</h1>
+    <header class="page-hero5" style="height: 60vh; background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000');">
+      <div class="page-hero5-overlay" style="background: rgba(0,0,0,0.3);"></div>
+      <div class="page-hero5-content text-center">
+        <div class="breadcrumb-v5" style="letter-spacing: 5px;">HOME / MY ACCOUNT</div>
+        <h1 class="page-title-v5" style="font-size: 4rem;">My account</h1>
       </div>
     </header>
 
-    <main class="account-section">
-      <div class="container d-flex justify-content-start py-5">
-        <div class="login-form col-lg-6">
-          <h2 class="login-title mb-5">Login</h2>
-          <form onsubmit="return false;">
-            <div class="mb-4">
-              <label class="form-label d-block small text-uppercase fw-bold mb-2">Username or email address <span class="text-danger">*</span></label>
-              <input type="text" class="form-control rounded-0 border py-3" required />
-            </div>
-            
-            <div class="mb-4">
-              <label class="form-label d-block small text-uppercase fw-bold mb-2">Password <span class="text-danger">*</span></label>
-              <div class="position-relative">
-                <input type="password" class="form-control rounded-0 border py-3" required />
+    <main class="account-section" style="background: #fff; padding: 100px 0;">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="login-form col-lg-5 text-center">
+            <h2 class="marcellus display-6 mb-5">Login</h2>
+            <form onsubmit="return false;" class="text-start p-5 border shadow-sm bg-white">
+              <div class="mb-4">
+                <label class="form-label d-block small text-uppercase fw-bold mb-2" style="letter-spacing: 2px;">Username or email address <span class="text-danger">*</span></label>
+                <input type="text" class="form-control rounded-0 border-0 border-bottom py-3 px-0 bg-transparent" placeholder="Enter your email" required />
               </div>
-            </div>
-            
-            <div class="d-flex align-items-center gap-4 mb-4">
-              <button type="submit" class="btn-gold-v5">Log in</button>
-              <label class="small text-muted mb-0 d-flex align-items-center gap-2"><input type="checkbox" /> Remember me</label>
-            </div>
-            
-            <a href="#" class="small text-decoration-none" style="color: #b89a6a;">Lost your password?</a>
-          </form>
+              
+              <div class="mb-4">
+                <label class="form-label d-block small text-uppercase fw-bold mb-2" style="letter-spacing: 2px;">Password <span class="text-danger">*</span></label>
+                <div class="position-relative">
+                  <input type="password" class="form-control rounded-0 border-0 border-bottom py-3 px-0 bg-transparent" placeholder="Enter password" required />
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                <button type="submit" class="contact5-submit w-100 py-3 text-uppercase fw-bold" style="letter-spacing: 2px;">Log in</button>
+              </div>
+              
+              <div class="d-flex justify-content-between align-items-center mt-4">
+                <label class="small text-muted mb-0 d-flex align-items-center gap-2"><input type="checkbox" /> Remember me</label>
+                <a href="#" class="small text-decoration-none text-gold" style="letter-spacing: 1px;">Lost password?</a>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>
