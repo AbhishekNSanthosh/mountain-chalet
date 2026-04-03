@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cottage Room – Room Details – CozyStay Lodge</title>
+    <meta name="description" content="Cottage Room – A cozy room at CozyStay Lodge in Napa Valley wine country." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="style5.css" />
+  </head>
+  <body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar5">
+      <!-- Left: hamburger + nav links -->
+      <div class="nav-left5">
+        <button class="nav-hamburger5" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8h18M3 16h12" />
+          </svg>
+        </button>
+        <ul class="nav-links5 d-none d-xl-flex">
+          <li>
+            <a href="index5.html" class="nav-link5">
+              HOME
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+          <li class="nav-item-dropdown5">
+            <a href="v5-rooms.html" class="nav-link5 active">
+              ROOMS
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="dropdown-menu5">
+              <li><a href="v5-rooms.html">Rooms</a></li>
+              <li><a href="v5-rooms-alt.html">Rooms – Alternative</a></li>
+              <li><a href="v5-room-details-top-image.html">Room Details – Top Image</a></li>
+              <li><a href="v5-room-details-top-gallery.html">Room Details – Top Gallery</a></li>
+              <li><a href="v5-room-details-left-booking.html">Room Details – Left Booking Form</a></li>
+              <li><a href="v5-room-details-booking-rules.html">Room Details – Booking Rules Example</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="cart.html">Checkout</a></li>
+              <li><a href="my-account.html">My account</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown5">
+            <a href="v5-pages.html" class="nav-link5">
+              PAGES
+              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="dropdown-menu5">
+              <li><a href="v5-about.html">About the hotel</a></li>
+              <li><a href="v5-services.html">Premium Services</a></li>
+              <li><a href="v5-dining.html">Restaurants & Bars</a></li>
+              <li><a href="v5-dining.html">The Restaurant</a></li>
+              <li><a href="v5-dining.html">Menu Page</a></li>
+              <li><a href="v5-wellness.html">Spa & Wellness</a></li>
+              <li><a href="v5-events.html">Weddings & Events</a></li>
+              <li><a href="v5-activities.html">Local Activities</a></li>
+              <li><a href="v5-activity-detail.html">Activity Detail Page</a></li>
+              <li><a href="v5-contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="v5-blog.html" class="nav-link5">BLOG</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center5">
+        <a href="index5.html" class="logo-link5">
+          COZYSTAY
+          <span class="logo-stars5">★ ★ ★ ★ ★</span>
+        </a>
+      </div>
+
+      <!-- Right: Tel, Language, Reserve Now -->
+      <div class="nav-right5">
+        <a href="tel:+41223456788" class="nav-tel5 d-none d-lg-block">Tel: +41 22 345 67 88</a>
+        <a href="#" class="nav-lang5 d-none d-lg-block">EN / FR</a>
+        <a href="#booking5" class="nav-reserve-btn">Reserve Now</a>
+      </div>
+    </nav>
+
+    <!-- ==================== MOBILE SLIDE MENU ==================== -->
+    <div id="mobileMenuOverlay" class="mmenu-overlay"></div>
+    <div id="mobileMenu" class="mmenu-panel">
+      <button class="mmenu-close" id="mobileMenuClose" aria-label="Close menu">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <nav class="mmenu-nav">
+        <ul>
+          <li><a href="index5.html" class="mmenu-link">Home</a></li>
+          <li><a href="v5-rooms.html" class="mmenu-link mmenu-link--active">Rooms</a></li>
+          <li><a href="v5-about.html" class="mmenu-link">About The Hotel</a></li>
+          <li><a href="v5-services.html" class="mmenu-link">Premium Services</a></li>
+          <li><a href="v5-dining.html" class="mmenu-link">Restaurants &amp; Bars</a></li>
+          <li><a href="v5-wellness.html" class="mmenu-link">Spa &amp; Wellness</a></li>
+          <li><a href="v5-events.html" class="mmenu-link">Weddings &amp; Events</a></li>
+          <li><a href="v5-activities.html" class="mmenu-link">Local Activities</a></li>
+          <li><a href="v5-blog.html" class="mmenu-link">Blog</a></li>
+          <li><a href="v5-contact.html" class="mmenu-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ==================== TOP IMAGE HERO ==================== -->
+    <section id="room-detail-hero">
+      <div class="room-hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop" alt="Cottage Room Hero" class="room-hero-img" />
+      </div>
+    </section>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <section id="room-detail-main" class="py-5 bg-white">
+      <div class="container-xl py-lg-5">
+        <div class="row g-lg-5">
+          <!-- Sidebar Column (LEFT) -->
+          <div class="col-lg-4 order-2 order-lg-1">
+            <div class="booking-sidebar-card sticky-top" style="top: 100px; z-index: 100;">
+              <div class="reserve-header d-flex justify-content-between align-items-baseline mb-4">
+                <h2 class="reserve-title m-0">RESERVE:</h2>
+                <span class="reserve-price">From <strong class="fs-4">$330</strong>/night</span>
+              </div>
+              
+              <div class="reserve-form">
+                <div class="reserve-field mb-3 p-3 border">
+                  <label class="d-block small text-muted text-uppercase fw-bold mb-2">Check In</label>
+                  <input type="text" id="reserve-checkin" class="form-control border-0 p-0 fs-6 bg-transparent" placeholder="2024-10-03" readonly />
+                </div>
+                <div class="reserve-field mb-3 p-3 border">
+                  <label class="d-block small text-muted text-uppercase fw-bold mb-2">Check Out</label>
+                  <input type="text" id="reserve-checkout" class="form-control border-0 p-0 fs-6 bg-transparent" placeholder="2024-10-10" readonly />
+                </div>
+                <div class="reserve-field mb-4 p-3 border">
+                  <label class="d-block small text-muted text-uppercase fw-bold mb-2">Total</label>
+                  <div class="d-flex align-items-center gap-2 fs-6">
+                    <span id="res-adults">2 adults</span>
+                    <span class="text-muted">·</span>
+                    <span id="res-children">0 children</span>
+                  </div>
+                </div>
+
+                <div class="extra-services mt-4">
+                  <h6 class="small text-uppercase fw-bold mb-3">Extra Services</h6>
+                  <div class="service-check d-flex justify-content-between align-items-center mb-2">
+                    <label class="d-flex align-items-center gap-2 small">
+                      <input type="checkbox" /> Room Clean
+                    </label>
+                    <span class="small">$30 / night</span>
+                  </div>
+                  <div class="service-check d-flex justify-content-between align-items-center mb-2">
+                    <label class="d-flex align-items-center gap-2 small">
+                      <input type="checkbox" /> Massage
+                    </label>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="small">$150 / Person</span>
+                      <select class="form-select form-select-sm py-0 rounded-0" style="width: 50px;"><option>1</option></select>
+                    </div>
+                  </div>
+                  <div class="service-check d-flex justify-content-between align-items-center mb-3">
+                    <label class="d-flex align-items-center gap-2 small">
+                      <input type="checkbox" /> Day Spa
+                    </label>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="small">$80 / Person</span>
+                      <select class="form-select form-select-sm py-0 rounded-0" style="width: 50px;"><option>1</option></select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="total-cost-wrap d-flex justify-content-between align-items-baseline mt-4 mb-4 pt-3 border-top">
+                  <span class="fs-5 fw-bold">Total Cost</span>
+                  <span class="fs-4 fw-bold">$330</span>
+                </div>
+
+                <a href="cart.html" class="btn btn-dark w-100 rounded-0 py-3 text-uppercase fw-bold tracking-widest mt-2 text-decoration-none text-center">Book your stay here</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column (RIGHT) -->
+          <div class="col-lg-8 order-1 order-lg-2">
+            <div class="room-detail-header mb-5">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb custom-breadcrumb">
+                  <li class="breadcrumb-item"><a href="v5-rooms.html">Rooms</a></li>
+                  <li class="breadcrumb-item"><a href="#">Cottage Room</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Details</li>
+                </ol>
+              </nav>
+              <h1 class="room-title">Cottage Room</h1>
+              
+              <div class="room-quick-stats mt-4">
+                <div class="stat-item"><span class="stat-icon">📏</span> 40m²</div>
+                <div class="stat-item"><span class="stat-icon">👥</span> 2 Guests</div>
+                <div class="stat-item"><span class="stat-icon">🏛️</span> Napa Valley View</div>
+                <div class="stat-item"><span class="stat-icon">🛏️</span> King bed</div>
+              </div>
+            </div>
+
+            <div class="room-description mt-5">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+            </div>
+
+            <!-- Family Friendly Amenities -->
+            <div class="family-amenities mt-5">
+              <h4 class="mb-4">Family-friendly Amenities</h4>
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="family-amen-box">
+                    <span class="family-icon">🍼</span>
+                    <span>Baby food tray-Bed</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="family-amen-box">
+                    <span class="family-icon">🧸</span>
+                    <span>Indoor children club</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="family-amen-box">
+                    <span class="family-icon">💆</span>
+                    <span>Wellness Member</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Room Amenities -->
+            <div class="room-amenities-list mt-5 pt-4">
+              <h4 class="mb-4">Room Amenities</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="amenities-grid-list">
+                    <li><span class="icon">❄️</span> Air conditioner</li>
+                    <li><span class="icon">📶</span> WiFi Internet</li>
+                    <li><span class="icon">🪞</span> Slippers</li>
+                    <li><span class="icon">🚿</span> Shampoo</li>
+                    <li><span class="icon">🍸</span> Mini bar</li>
+                    <li><span class="icon">🔐</span> 24h security</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="amenities-grid-list">
+                    <li><span class="icon">📺</span> Color TV</li>
+                    <li><span class="icon">🛁</span> Towels</li>
+                    <li><span class="icon">💨</span> Hair Dryer</li>
+                    <li><span class="icon">🛋️</span> Ottoman mattress</li>
+                    <li><span class="icon">🍹</span> Welcome Drink</li>
+                    <li><span class="icon">☕</span> Teapot-Kettle tray</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- What's Included -->
+            <div class="whats-included mt-5 pt-4">
+              <h4 class="mb-4">What's included in this suite?</h4>
+              <ul class="included-list">
+                <li>Private balcony</li>
+                <li>100x200cm (Mini Bed)</li>
+                <li>Ultra-shredded feathers for panoramic window</li>
+                <li>1 flat LCD screen for watching mountainside view</li>
+                <li>Writing desk with USB ports for documenting your adventures</li>
+                <li>Free use of high-speed internet access</li>
+                <li>Service station with Lavazza coffee machine, kettle and tea</li>
+                <li>Bathroom with rain-shower</li>
+                <li>Comfortable white fluffy towels and bathrobes</li>
+              </ul>
+            </div>
+
+            <!-- Availability -->
+            <div class="availability-section mt-5 pt-4">
+              <h4 class="mb-4">Availability</h4>
+              <div class="calendar-card mt-3">
+                <div class="row g-4">
+                  <!-- April (Sample months from screenshot style) -->
+                  <div class="col-md-6">
+                    <div class="cal-month">
+                      <div class="cal-month-name mb-3">Apr 2026</div>
+                      <div class="cal-grid">
+                        <div class="cal-day-name">Sun</div><div class="cal-day-name">Mon</div><div class="cal-day-name">Tue</div><div class="cal-day-name">Wed</div><div class="cal-day-name">Thu</div><div class="cal-day-name">Fri</div><div class="cal-day-name">Sat</div>
+                        <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day active-start">4</div>
+                        <div class="cal-day active">5</div><div class="cal-day active">6</div><div class="cal-day active-end">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div>
+                        <div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div>
+                        <div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div>
+                        <div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- May -->
+                  <div class="col-md-6">
+                    <div class="cal-month">
+                      <div class="cal-month-name mb-3">May 2026</div>
+                      <div class="cal-grid">
+                        <div class="cal-day-name">Sun</div><div class="cal-day-name">Mon</div><div class="cal-day-name">Tue</div><div class="cal-day-name">Wed</div><div class="cal-day-name">Thu</div><div class="cal-day-name">Fri</div><div class="cal-day-name">Sat</div>
+                        <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day">1</div><div class="cal-day">2</div>
+                        <div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div>
+                        <div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div>
+                        <div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div>
+                        <div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div>
+                        <div class="cal-day">31</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end gap-3 mt-5">
+                   <button class="btn btn-outline-dark rounded-0 px-4 btn-sm">CANCEL</button>
+                   <button class="btn btn-dark rounded-0 px-4 btn-sm">APPLY</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SIMILAR ROOMS ==================== -->
+    <section id="similar-rooms" class="py-5 border-top">
+      <div class="container-xl py-5">
+        <h2 class="main-heading mb-5">Similar Rooms</h2>
+        <div class="row g-4">
+          <!-- Room 1 -->
+          <div class="col-md-4">
+            <div class="similar-room-card">
+              <div class="room-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800" alt="Estate View Suite" class="w-100 h-100 object-fit-cover" />
+                <span class="room-label">ESTATE</span>
+              </div>
+              <div class="room-card-content mt-3">
+                <h4 class="mb-2"><a href="v5-rooms.html" class="text-decoration-none text-dark">Estate View Suite</a></h4>
+                <p class="text-muted small">60m² / Estate View / 4 Persons</p>
+              </div>
+            </div>
+          </div>
+          <!-- Room 2 -->
+          <div class="col-md-4">
+            <div class="similar-room-card">
+              <div class="room-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800" alt="Deluxe Treetop Suite" class="w-100 h-100 object-fit-cover" />
+                <span class="room-label">TREETOP</span>
+              </div>
+              <div class="room-card-content mt-3">
+                <h4 class="mb-2"><a href="v5-rooms.html" class="text-decoration-none text-dark">Deluxe Treetop Suite</a></h4>
+                <p class="text-muted small">45m² / Nature View / 2 Persons</p>
+              </div>
+            </div>
+          </div>
+          <!-- Room 3 -->
+          <div class="col-md-4">
+            <div class="similar-room-card">
+              <div class="room-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=800" alt="Standard Room" class="w-100 h-100 object-fit-cover" />
+                <span class="room-label">STANDARD</span>
+              </div>
+              <div class="room-card-content mt-3">
+                <h4 class="mb-2"><a href="v5-rooms.html" class="text-decoration-none text-dark">Standard Room</a></h4>
+                <p class="text-muted small">35m² / Village View / 2 Persons</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER + FOOTER ==================== -->
+    <footer id="footer5">
+      <!-- Newsletter Banner -->
+      <div class="newsletter5">
+        <div class="newsletter5-bg"></div>
+        <div class="newsletter5-overlay"></div>
+        <div class="newsletter5-content">
+          <h2 class="newsletter5-heading">Sign up for our newsletter</h2>
+          <form class="newsletter5-form" onsubmit="return false;">
+            <input type="email" placeholder="Your Email Address" class="newsletter5-input" />
+            <button type="submit" class="newsletter5-btn">
+              Subscribe
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+            </button>
+          </form>
+          <label class="newsletter5-agree">
+            <input type="checkbox" id="agreeNewsletter" /> I agree to the Privacy Policy
+          </label>
+        </div>
+      </div>
+
+      <!-- Footer Body -->
+      <div class="footer5-body">
+        <div class="footer5-body-bg"></div>
+        <div class="footer5-body-overlay"></div>
+        <div class="footer5-body-content">
+          <div class="footer5-col footer5-col--brand">
+            <h3 class="footer5-logo">COZYSTAY</h3>
+            <p class="footer5-brand-desc">Founded in 1998, CozyStay Lodge is a luxury boutique hotel in the heart of Napa Valley, immersing you in an idyllic setting against the pure sky.</p>
+            <div class="footer5-socials">
+              <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+              <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.55c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .89-.57 2.24-.86 3.48-.25 1.04.51 1.89 1.53 1.89 1.83 0 3.24-1.93 3.24-4.71 0-2.46-1.77-4.18-4.29-4.18-2.92 0-4.63 2.19-4.63 4.45 0 .88.34 1.82.76 2.34a.3.3 0 01.07.29c-.08.31-.25 1.04-.28 1.18-.04.19-.13.23-.31.14-1.17-.55-1.9-2.26-1.9-3.64 0-2.95 2.15-5.67 6.2-5.67 3.25 0 5.78 2.32 5.78 5.41 0 3.23-2.04 5.83-4.86 5.83-.95 0-1.84-.49-2.15-1.07l-.58 2.18c-.21.81-.78 1.83-1.16 2.45.88.27 1.81.42 2.77.42 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+              <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            </div>
+          </div>
+          <div class="footer5-col">
+            <h4 class="footer5-col-title">Reach Out</h4>
+            <ul class="footer5-list">
+              <li>Email: info@cozystay.com</li>
+              <li>Telephone: +41 22 345 66 89</li>
+              <li>Address: 322 Main Street, Napa, CA 94559</li>
+            </ul>
+          </div>
+          <div class="footer5-col">
+            <h4 class="footer5-col-title">Navigate</h4>
+            <ul class="footer5-list footer5-list--links">
+              <li><a href="v5-rooms.html">Accommodations</a></li>
+              <li><a href="v5-about.html">Our Story</a></li>
+              <li><a href="v5-contact.html">Contact Us</a></li>
+              <li><a href="v5-services.html">Services</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer5-bar">
+        <span>&copy; Copyright CozyStay WordPress Theme for Hotel Booking.</span>
+        <div class="footer5-bar-links">
+          <a href="#">PRIVACY</a>
+          <a href="#">TERMS OF USE</a>
+          <a href="#">POLICY</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      (function () {
+        if (typeof flatpickr !== 'undefined') {
+          var today = new Date();
+          var tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
+
+          var reserveCheckin = flatpickr('#reserve-checkin', {
+            minDate: 'today',
+            dateFormat: 'Y-m-d',
+            defaultDate: today,
+            onChange: function (d) {
+              if (d[0]) {
+                var next = new Date(d[0]);
+                next.setDate(next.getDate() + 1);
+                reserveCheckout.set('minDate', next);
+                if (reserveCheckout.selectedDates[0] <= d[0]) {
+                  reserveCheckout.setDate(next);
+                }
+              }
+            }
+          });
+
+          var reserveCheckout = flatpickr('#reserve-checkout', {
+            minDate: tomorrow,
+            dateFormat: 'Y-m-d',
+            defaultDate: tomorrow
+          });
+        }
+
+        // --- MOBILE MENU ---
+        var menuPanel = document.getElementById('mobileMenu');
+        var menuOverlay = document.getElementById('mobileMenuOverlay');
+        var menuOpen = document.querySelector('.nav-hamburger5');
+        var menuClose = document.getElementById('mobileMenuClose');
+
+        function openMenu() {
+          menuPanel.classList.add('mmenu-panel--open');
+          menuOverlay.classList.add('mmenu-overlay--visible');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          menuPanel.classList.remove('mmenu-panel--open');
+          menuOverlay.classList.remove('mmenu-overlay--visible');
+          document.body.style.overflow = '';
+        }
+
+        if (menuOpen) menuOpen.addEventListener('click', openMenu);
+        if (menuClose) menuClose.addEventListener('click', closeMenu);
+        if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+      })();
+    </script>
+  </body>
+</html>

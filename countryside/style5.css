@@ -232,6 +232,88 @@ html, body {
   color: #fff;
 }
 
+/* Dark Navbar Variant for White backgrounds */
+#navbar5--dark {
+  background-color: transparent;
+  color: #1a1a1a;
+}
+
+#navbar5--dark .nav-link5,
+#navbar5--dark .nav-tel5,
+#navbar5--dark .nav-lang5,
+#navbar5--dark .logo-link5 {
+  color: #1a1a1a;
+}
+
+#navbar5--dark .nav-hamburger5 {
+  color: #1a1a1a;
+}
+
+#navbar5--dark .nav-reserve-btn {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+#navbar5--dark .nav-link5:hover,
+#navbar5--dark .nav-link5.active {
+  border-bottom-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+/* Dropdown Menu Styles */
+.nav-item-dropdown5 {
+  position: relative;
+}
+
+.dropdown-menu5 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a1a1a;
+  min-width: 260px;
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#navbar5 .nav-links5 .nav-item-dropdown5:hover .dropdown-menu5 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu5 li {
+  padding: 0;
+  border: none !important;
+}
+
+.dropdown-menu5 a {
+  display: block;
+  padding: 10px 25px;
+  color: #fff;
+  text-decoration: none !important;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-bottom: none !important;
+}
+
+.dropdown-menu5 a:hover {
+  background-color: rgba(200, 169, 110, 0.1);
+  color: var(--gold) !important;
+  padding-left: 30px;
+}
+
 /* Logo */
 .logo-link5 {
   color: #fff;
@@ -1709,6 +1791,449 @@ html, body {
   .footer5-col-title { font-size: 1.1rem; }
 }
 
+/* ==========================================================================
+   ROOMS PAGE (V5) SPECIFIC STYLES
+   ========================================================================== */
+
+#hero5-rooms {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero5-rooms-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero5-rooms-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 2;
+}
+
+.hero5-rooms-inner {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 100px;
+}
+
+.hero5-eyebrow {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero5-rooms-text .hero5-heading {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero5-rooms-text .hero5-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Horizontal Booking Bar */
+.rooms-booking-bar-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 5vw 40px;
+  z-index: 5;
+}
+
+.rooms-booking-bar {
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.r-book-field {
+  flex: 1;
+  padding: 24px 30px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.r-book-field label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b89a6a;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.r-book-field input, 
+.r-guest-row {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: 'Marcellus', serif;
+  font-size: 1.1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.r-guest-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.r-guest-row .dot {
+  opacity: 0.5;
+}
+
+.r-book-btn {
+  background: #b89a6a;
+  color: #fff;
+  border: none;
+  padding: 0 40px;
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.r-book-btn:hover {
+  background: #a3895d;
+}
+
+/* Room Listings */
+#rooms-listing {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.sub-heading {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b89a6a;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.main-heading {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+.intro-text {
+  font-family: 'Jost', sans-serif;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.intro-stats {
+  display: flex;
+  gap: 40px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+
+.room-block {
+  margin-bottom: 120px;
+}
+
+.room-img-slider {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.room-img-slider img {
+  height: 550px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.room-img-slider:hover img {
+  transform: scale(1.03);
+}
+
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.room-img-slider:hover .slider-arrows {
+  opacity: 1;
+}
+
+.slider-arrows button {
+  background: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-arrows button:hover {
+  background: #b89a6a;
+  color: #fff;
+}
+
+.room-price {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #b89a6a;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.room-details-card h3 {
+  font-family: 'Marcellus', serif;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+.room-details-card p {
+  font-family: 'Jost', sans-serif;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.room-feat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.room-feat-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-family: 'Jost', sans-serif;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.room-feat-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #b89a6a;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -2px;
+}
+
+.horizontal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 40px;
+}
+
+.room-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.btn-book-room {
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 36px;
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-book-room:hover {
+  background: #b89a6a;
+  color: #fff;
+}
+
+.view-details-link {
+  color: #1a1a1a;
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(184, 154, 106, 0.3);
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.view-details-link:hover {
+  border-bottom-color: #b89a6a;
+}
+
+.standard-block {
+  margin-top: 100px;
+}
+
+.room-bottom-img {
+  margin-top: 40px;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.room-bottom-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Amenities Grid */
+.bg-olive-dark {
+  background-color: #2d3e34;
+}
+
+.amenities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.amenities-list li {
+  margin-bottom: 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amenities-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #b89a6a;
+  border-radius: 50%;
+}
+
+.amenities-content h2 {
+  font-family: 'Marcellus', serif;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+/* Policies Section */
+#policies5 {
+  border-top: 1px solid #eee;
+}
+
+.policies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policies-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  font-family: 'Jost', sans-serif;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.policies-list li:last-child {
+  border-bottom: none;
+}
+
+/* --- Mobile / Tablet Adjustments --- */
+@media (max-width: 1200px) {
+  .hero5-rooms-inner { padding-bottom: 150px; }
+  .rooms-booking-bar { flex-wrap: wrap; }
+  .r-book-field { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); width: 50%; }
+  .r-book-btn { width: 100%; padding: 24px; }
+}
+
+@media (max-width: 991px) {
+  .hero5-rooms-text .hero5-heading { font-size: 4rem; }
+  .room-img-slider img { height: 400px; }
+  .room-details-card { padding: 50px 0 0 !important; }
+  .room-block { margin-bottom: 80px; }
+  .room-details-card h3 { font-size: 2.2rem; }
+  .intro-stats { flex-direction: column; gap: 15px; }
+  .block-reverse .row { flex-direction: column !important; }
+}
+
+@media (max-width: 767px) {
+  .r-book-field { width: 100%; }
+  .amenities-content h2 { font-size: 2.2rem; }
+  .hero5-rooms-text .hero5-heading { font-size: 3rem; }
+}
+
 /* --- Mobile Portrait (≤ 480px) --- */
 @media (max-width: 480px) {
   /* Navbar */
@@ -1765,8 +2290,709 @@ html, body {
   .testi5-heading { margin-bottom: 40px; }
 
   /* Footer */
+  /* Footer */
   .footer5-logo { font-size: 1.3rem; }
   .footer5-body { padding: 50px 5vw 40px; }
   .footer5-bar { padding: 14px 5vw; }
   .newsletter5 { padding: 50px 5vw 44px; }
+}
+
+/* ==========================================================================
+   ROOM DETAILS (V5) SPECIFIC STYLES
+   ========================================================================== */
+
+#room-detail-hero {
+  position: relative;
+  width: 100%;
+}
+
+.room-hero-img-wrap {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.room-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-breadcrumb {
+  margin-bottom: 2rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  color: #ccc;
+}
+
+.custom-breadcrumb a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.custom-breadcrumb a:hover {
+  color: #b89a6a;
+}
+
+.room-title {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: #1a1a1a;
+  margin-bottom: 0;
+}
+
+.room-quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.room-description p {
+  font-family: 'Jost', sans-serif;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.family-amen-box {
+  background: #fcfaf7;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #f2ece4;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.family-amen-box:hover {
+  transform: translateY(-5px);
+}
+
+.family-icon {
+  font-size: 1.8rem;
+}
+
+.family-amen-box span:not(.family-icon) {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.amenities-grid-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.amenities-grid-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  font-family: 'Jost', sans-serif;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.amenities-grid-list li .icon {
+  font-size: 1.2rem;
+  width: 24px;
+}
+
+.included-list {
+  list-style: none;
+  padding: 0;
+}
+
+.included-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-family: 'Jost', sans-serif;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.included-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #b89a6a;
+  font-weight: bold;
+}
+
+/* Sidebar Card */
+.booking-sidebar-card {
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.reserve-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.reserve-price {
+  font-family: 'Jost', sans-serif;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.reserve-price strong {
+  color: #b89a6a;
+}
+
+.reserve-field label {
+  color: #b89a6a !important;
+}
+
+.extra-services .form-select-sm {
+  font-size: 12px;
+  border-color: #eee;
+}
+
+.extra-services .form-select-sm:focus {
+  box-shadow: none;
+  border-color: #b89a6a;
+}
+
+/* Similar Rooms Cards */
+.similar-room-card {
+  position: relative;
+}
+
+.room-card-img-wrap {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.room-card-img-wrap img {
+  transition: transform 0.6s ease;
+}
+
+.similar-room-card:hover img {
+  transform: scale(1.05);
+}
+
+.room-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #fff;
+  color: #1a1a1a;
+  padding: 4px 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.room-card-content h4 {
+  font-family: 'Marcellus', serif;
+  font-size: 1.4rem;
+}
+
+.room-card-content p {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Calendar Logic */
+.calendar-card {
+  background: #fcfaf7;
+  padding: 40px;
+  border: 1px solid #f2ece4;
+}
+
+.cal-month-name {
+  font-family: 'Marcellus', serif;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.cal-day-name {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #b89a6a;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cal-day:hover:not(.empty) {
+  background: #f0f0f0;
+}
+
+.cal-day.active {
+  background: #b89a6a;
+  color: #fff;
+}
+
+.cal-day.active-start {
+  background: #b89a6a;
+  color: #fff;
+  border-radius: 50% 0 0 50%;
+}
+
+.cal-day.active-end {
+  background: #b89a6a;
+  color: #fff;
+  border-radius: 0 50% 50% 0;
+}
+
+/* Page Title Hero (Cart, My Account, etc.) */
+.page-hero5 {
+  position: relative;
+  height: 45vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-color: #1a1a1a; /* Fallback */
+  background-size: cover;
+  background-position: center;
+  margin-top: 0;
+}
+
+.page-hero5-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.page-hero5-content {
+  position: relative;
+  z-index: 5;
+}
+
+.breadcrumb-v5 {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.page-title-v5 {
+  font-family: 'Marcellus', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Empty State / Account Section Styles */
+.empty-cart-section, .account-section {
+  padding: 120px 0;
+  background-color: #fff; /* Explicitly white */
+}
+
+.empty-cart-text, .login-title {
+  font-family: 'Marcellus', serif;
+  color: #1a1a1a;
+}
+
+.btn-gold-v5 {
+  background-color: #b89a6a;
+  color: #fff;
+  border: none;
+  padding: 16px 45px;
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.3s;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-gold-v5:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* White Hero Variant */
+.page-hero5--light {
+  background-color: #fff !important;
+  background-image: none !important;
+  color: #1a1a1a !important;
+  border-bottom: 1px solid #eee;
+  height: 30vh !important;
+  min-height: 250px !important;
+}
+
+.page-hero5--light .page-hero5-overlay {
+  display: none;
+}
+
+.page-hero5--light .breadcrumb-v5 {
+  color: #888;
+}
+
+/* --- About Page V5 Specifics --- */
+.about5-stats-section {
+  position: relative;
+  padding: 120px 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+
+.about5-stats-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.about5-stats-content {
+  position: relative;
+  z-index: 2;
+}
+
+.stats5-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+
+.stat5-number {
+  font-family: 'Marcellus', serif;
+  font-size: 3.5rem;
+  margin-bottom: 5px;
+}
+
+.stat5-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.benefits5-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.benefits5-text {
+  padding: 100px 8%;
+  background-color: #fff;
+}
+
+.benefit5-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.benefit5-icon {
+  font-size: 1.5rem;
+  color: #b89a6a;
+}
+
+.benefit5-content h5 {
+  font-family: 'Marcellus', serif;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.benefit5-content p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.benefits5-image {
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+}
+
+.team5-section {
+  padding: 120px 0;
+  background-color: #fcfbf8;
+  text-align: center;
+}
+
+.team5-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.team5-card {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+.team5-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.team5-card:hover .team5-img {
+  transform: scale(1.05);
+}
+
+.team5-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 30px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: #fff;
+  text-align: left;
+}
+
+.team5-role {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.team5-name {
+  font-family: 'Marcellus', serif;
+  font-size: 1.5rem;
+  margin: 5px 0 15px;
+}
+
+.team5-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.team5-socials a {
+  color: #fff;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.team5-socials a:hover {
+  opacity: 1;
+}
+
+/* Intro Carousel */
+.intro5-carousel {
+  display: flex;
+  gap: 20px;
+  padding: 60px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.intro5-carousel::-webkit-scrollbar { display: none; }
+
+.intro5-img {
+  flex: 0 0 calc(33.333% - 14px);
+  height: 450px;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 991px) {
+  .stats5-grid { grid-template-columns: repeat(2, 1fr); }
+  .benefits5-grid { grid-template-columns: 1fr; }
+  .team5-grid { grid-template-columns: 1fr; }
+  .intro5-img { flex: 0 0 80%; }
+}
+/* --- Premium Services Page V5 Specifics --- */
+.services5-grid-full {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 80px 0 120px;
+}
+
+.service5-card {
+  background: #fbfaf8;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.service5-card:hover {
+  background: #fff;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.05);
+  border-color: #eee;
+}
+
+.service5-icon-wrap {
+  font-size: 2rem;
+  color: #b89a6a;
+  margin-bottom: 25px;
+}
+
+.service5-card h4 {
+  font-family: 'Marcellus', serif;
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.service5-card p {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* Page Mosaic Section */
+.mosaic5-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 450px);
+  gap: 0;
+}
+
+.mosaic5-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.mosaic5-item--large {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.mosaic5-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+.mosaic5-item:hover .mosaic5-bg {
+  transform: scale(1.05);
+}
+
+.mosaic5-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.mosaic5-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+}
+
+.mosaic5-content span {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.mosaic5-content h3 {
+  font-family: 'Marcellus', serif;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* Green Page Blocks */
+.mosaic5-block-green {
+  background-color: #3b423b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .services5-grid-full { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991px) {
+  .mosaic5-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .mosaic5-item--large { height: 500px; }
+  .mosaic5-item { height: 400px; }
+}
+
+@media (max-width: 575px) {
+  .services5-grid-full { grid-template-columns: 1fr; }
 }
