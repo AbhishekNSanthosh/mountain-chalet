@@ -626,3 +626,1665 @@ body.overlay-open { overflow: hidden; }
   border-color: #2a2620;
 }
 
+/* ============================================================
+   CozyStay – V3 Rooms Page Styles
+   ============================================================ */
+
+/* Hero */
+.rooms-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: #0c1108;
+}
+.rooms-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+}
+.rooms-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.38) 50%,
+    rgba(0,0,0,0.65) 100%
+  );
+  z-index: 1;
+}
+.rooms-hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 140px 24px 110px;
+  color: #fff;
+}
+.rooms-hero-title {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.rooms-hero-title .dot-sep {
+  color: var(--gold);
+  margin: 0 0.35em;
+  font-size: 0.9em;
+}
+.rooms-hero-sub {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* Intro section */
+.rooms-intro {
+  background: #fff;
+  padding: calc(52px + 80px) 5vw 70px;
+  text-align: center;
+}
+.rooms-intro-eyebrow {
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a7060;
+  margin-bottom: 22px;
+  display: block;
+}
+.rooms-intro-heading {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 400;
+  color: #2a2620;
+  line-height: 1.25;
+  max-width: 780px;
+  margin: 0 auto 24px;
+}
+.rooms-intro-body {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #5c5549;
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Room listings */
+.rooms-list {
+  background: #fff;
+  padding-bottom: 80px;
+}
+.rooms-list-container {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
+/* Single room row */
+.room-row {
+  display: flex;
+  align-items: stretch;
+  border-top: 1px solid #f0ece6;
+  min-height: 380px;
+}
+.room-row:last-child { border-bottom: 1px solid #f0ece6; }
+
+/* Image column */
+.room-img-col {
+  position: relative;
+  flex: 0 0 47%;
+  overflow: hidden;
+}
+.room-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.room-row:hover .room-img-col img { transform: scale(1.04); }
+
+/* Badge */
+.room-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: #3a5444;
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  z-index: 2;
+  white-space: nowrap;
+}
+.room-badge.gold { background: #bb9e72; }
+
+/* Content column */
+.room-content-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 5vw;
+}
+@media (max-width: 1199px) {
+  .room-content-col { padding: 40px 5vw; }
+}
+
+.room-category {
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a9080;
+  margin-bottom: 14px;
+}
+.room-name {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 400;
+  color: #2a2620;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Amenity icons row */
+.room-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  margin-bottom: 22px;
+}
+.room-amenity {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5c5549;
+  white-space: nowrap;
+}
+.room-amenity svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #9a9080;
+}
+
+.room-desc {
+  font-family: "Jost", sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #666;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+.room-discover {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2a2620;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(42,38,32,0.3);
+  padding-bottom: 2px;
+  transition: color 0.25s, border-color 0.25s;
+}
+.room-discover:hover { color: var(--forest); border-color: var(--forest); }
+.room-discover svg { width: 14px; height: 14px; }
+
+/* Responsive rooms */
+@media (max-width: 767px) {
+  .room-row {
+    flex-direction: column !important;
+    min-height: unset;
+  }
+  .room-img-col {
+    flex: 0 0 auto;
+    height: 260px;
+  }
+  .room-content-col { padding: 32px 5vw; }
+  .rooms-intro { padding-top: calc(52px + 100px); padding-left: 5vw; padding-right: 5vw; }
+  .rooms-list-container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* Features section */
+.rooms-features {
+  background: #f8f7f4;
+  padding: 80px 5vw;
+}
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 20px;
+}
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  color: #4a4a3e;
+  opacity: 0.7;
+}
+.feature-icon svg { width: 100%; height: 100%; }
+.feature-text {
+  font-family: "Jost", sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #5c5549;
+}
+/* ============================================================
+   CozyStay – V3 Room Detail Page Styles
+   ============================================================ */
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.rd-hero {
+  height: 62vh;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.rd-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Main layout ───────────────────────────────────────────── */
+.rd-main {
+  background: #fff;
+  padding: 60px 0 90px;
+}
+
+/* ── Room header ───────────────────────────────────────────── */
+.rd-meta-tag {
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a9080;
+  display: block;
+  margin-bottom: 10px;
+}
+.rd-title {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 400;
+  color: #2a2620;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+/* ── Stats bar ─────────────────────────────────────────────── */
+.rd-stat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #f0ece6;
+}
+.rd-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5c5549;
+}
+.rd-stat-item svg {
+  width: 17px;
+  height: 17px;
+  color: #9a9080;
+  flex-shrink: 0;
+}
+
+/* ── Body text ─────────────────────────────────────────────── */
+.rd-body-text {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #5c5549;
+  margin-bottom: 18px;
+}
+
+/* ── Section title ─────────────────────────────────────────── */
+.rd-section-title {
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a2620;
+  letter-spacing: 0.01em;
+  margin: 40px 0 20px;
+}
+
+/* ── Family amenity cards ──────────────────────────────────── */
+.rd-fam-grid {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.rd-fam-card {
+  flex: 1 1 160px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #e8e4de;
+  padding: 16px 18px;
+  background: #fff;
+}
+.rd-fam-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #4a4a3e;
+}
+.rd-fam-icon svg { width: 100%; height: 100%; }
+.rd-fam-label {
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #3a3630;
+  line-height: 1.4;
+}
+
+/* ── Room amenities grid ───────────────────────────────────── */
+.rd-amenity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin-bottom: 10px;
+}
+.rd-amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5c5549;
+}
+.rd-amenity-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #8a8070;
+}
+
+/* ── What's included ───────────────────────────────────────── */
+.rd-includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rd-includes-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Jost", sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  color: #5c5549;
+  line-height: 1.5;
+}
+.rd-includes-list li::before {
+  content: "◆";
+  font-size: 7px;
+  color: #9a9080;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* ── Availability calendar ─────────────────────────────────── */
+.rd-avail-wrap {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid #f0ece6;
+}
+.rd-calendar-container {
+  margin-top: 20px;
+}
+/* Override Flatpickr for inline use */
+.rd-calendar-container .flatpickr-calendar {
+  box-shadow: none !important;
+  border: 1px solid #e8e4de !important;
+  border-radius: 0 !important;
+  font-family: "Jost", sans-serif !important;
+  width: 100% !important;
+}
+.rd-calendar-container .flatpickr-months {
+  border-bottom: 1px solid #f0ece6;
+  padding: 12px 0;
+}
+.rd-calendar-container .flatpickr-month {
+  color: #2a2620 !important;
+}
+.rd-calendar-container .flatpickr-current-month {
+  font-family: "Jost", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #2a2620 !important;
+}
+.rd-calendar-container .flatpickr-weekday {
+  font-family: "Jost", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #9a9080 !important;
+}
+.rd-calendar-container .flatpickr-day {
+  font-family: "Jost", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+  color: #2a2620 !important;
+}
+.rd-calendar-container .flatpickr-day.selected,
+.rd-calendar-container .flatpickr-day.startRange,
+.rd-calendar-container .flatpickr-day.endRange {
+  background: #2a2620 !important;
+  border-color: #2a2620 !important;
+  color: #fff !important;
+}
+.rd-calendar-container .flatpickr-day.inRange {
+  background: #f0ece6 !important;
+  border-color: #f0ece6 !important;
+  box-shadow: none !important;
+}
+.rd-calendar-container .flatpickr-day:hover {
+  background: #f8f5f0 !important;
+}
+.rd-cal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+.rd-cal-btn {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border: 1px solid #2a2620;
+  cursor: pointer;
+  background: transparent;
+  color: #2a2620;
+  transition: background 0.2s, color 0.2s;
+}
+.rd-cal-btn.apply {
+  background: #2a2620;
+  color: #fff;
+}
+.rd-cal-btn.apply:hover { background: #3a3630; }
+.rd-cal-btn.cancel:hover { background: #f8f5f0; }
+
+/* ── Reserve sidebar ───────────────────────────────────────── */
+.rd-reserve-card {
+  border: 1px solid #ddd8d0;
+  background: #fff;
+  position: sticky;
+  top: 100px;
+}
+.rd-reserve-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #ddd8d0;
+}
+.rd-reserve-label {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a2620;
+}
+.rd-reserve-price {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2a2620;
+}
+.rd-reserve-price span {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.rd-reserve-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-bottom: 1px solid #ddd8d0;
+  cursor: pointer;
+}
+.rd-reserve-row-label {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7a7060;
+}
+.rd-reserve-row-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2a2620;
+}
+.rd-reserve-row-val svg {
+  width: 14px;
+  height: 14px;
+  color: #9a9080;
+}
+.rd-reserve-row input[type="text"] {
+  border: none;
+  outline: none;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2a2620;
+  background: transparent;
+  text-align: right;
+  width: 90px;
+  cursor: pointer;
+}
+
+/* guests row */
+.rd-guests-row {
+  display: flex;
+  border-bottom: 1px solid #ddd8d0;
+}
+.rd-guests-half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+}
+.rd-guests-half:first-child {
+  border-right: 1px solid #ddd8d0;
+}
+.rd-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rd-counter-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ccc8c0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  color: #5c5549;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.rd-counter-btn:hover { background: #f5f1eb; }
+.rd-counter-num {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2a2620;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Extra Services */
+.rd-extra-head {
+  padding: 14px 22px 8px;
+  border-bottom: none;
+}
+.rd-extra-label {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a7060;
+}
+.rd-extra-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 22px;
+  border-bottom: 1px solid #f0ece6;
+}
+.rd-extra-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #2a2620;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.rd-extra-item-name {
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #3a3630;
+  flex: 1;
+}
+.rd-extra-item-price {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #7a7060;
+  white-space: nowrap;
+}
+.rd-extra-qty {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rd-extra-qty button {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc8c0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  color: #5c5549;
+  cursor: pointer;
+}
+.rd-extra-qty span {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  color: #2a2620;
+  min-width: 14px;
+  text-align: center;
+}
+
+/* Total row */
+.rd-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  border-bottom: 1px solid #ddd8d0;
+}
+.rd-total-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #2a2620;
+}
+.rd-total-label svg { width: 14px; height: 14px; color: #9a9080; }
+.rd-total-amount {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #2a2620;
+}
+
+/* Book button */
+.rd-book-btn {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  background: #1e1c18;
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.rd-book-btn:hover { background: #3a3630; }
+
+/* ── Similar Rooms ─────────────────────────────────────────── */
+.rd-similar {
+  background: #fff;
+  padding: 70px 0 80px;
+  border-top: 1px solid #f0ece6;
+}
+.rd-similar-heading {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: #2a2620;
+  margin-bottom: 36px;
+}
+.rd-similar-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+.rd-similar-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+.rd-similar-card:hover img { transform: scale(1.04); }
+.rd-similar-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #3a5444;
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  z-index: 2;
+}
+.rd-similar-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 55%);
+}
+.rd-similar-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px;
+  z-index: 2;
+}
+.rd-similar-name {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+.rd-similar-cat {
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .rd-reserve-card {
+    position: static;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .rd-amenity-grid { grid-template-columns: 1fr; }
+  .rd-fam-grid { flex-direction: column; }
+  .rd-fam-card { flex: 1 1 auto; }
+  .rd-guests-row { flex-direction: column; }
+  .rd-guests-half:first-child { border-right: none; border-bottom: 1px solid #ddd8d0; }
+}
+/* ============================================================
+   CozyStay – V3 Room Detail Page Styles
+   ============================================================ */
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.rd-hero {
+  height: 62vh;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.rd-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Main layout ───────────────────────────────────────────── */
+.rd-main {
+  background: #fff;
+  padding: 60px 0 90px;
+}
+
+/* ── Room header ───────────────────────────────────────────── */
+.rd-meta-tag {
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a9080;
+  display: block;
+  margin-bottom: 10px;
+}
+.rd-title {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 400;
+  color: #2a2620;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+/* ── Stats bar ─────────────────────────────────────────────── */
+.rd-stat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #f0ece6;
+}
+.rd-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5c5549;
+}
+.rd-stat-item svg {
+  width: 17px;
+  height: 17px;
+  color: #9a9080;
+  flex-shrink: 0;
+}
+
+/* ── Body text ─────────────────────────────────────────────── */
+.rd-body-text {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #5c5549;
+  margin-bottom: 18px;
+}
+
+/* ── Section title ─────────────────────────────────────────── */
+.rd-section-title {
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a2620;
+  letter-spacing: 0.01em;
+  margin: 40px 0 20px;
+}
+
+/* ── Family amenity cards ──────────────────────────────────── */
+.rd-fam-grid {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.rd-fam-card {
+  flex: 1 1 160px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #e8e4de;
+  padding: 16px 18px;
+  background: #fff;
+}
+.rd-fam-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #4a4a3e;
+}
+.rd-fam-icon svg { width: 100%; height: 100%; }
+.rd-fam-label {
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #3a3630;
+  line-height: 1.4;
+}
+
+/* ── Room amenities grid ───────────────────────────────────── */
+.rd-amenity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin-bottom: 10px;
+}
+.rd-amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5c5549;
+}
+.rd-amenity-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #8a8070;
+}
+
+/* ── What's included ───────────────────────────────────────── */
+.rd-includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rd-includes-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Jost", sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  color: #5c5549;
+  line-height: 1.5;
+}
+.rd-includes-list li::before {
+  content: "◆";
+  font-size: 7px;
+  color: #9a9080;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* ── Availability calendar ─────────────────────────────────── */
+.rd-avail-wrap {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid #f0ece6;
+}
+.rd-calendar-container {
+  margin-top: 20px;
+}
+/* Override Flatpickr for inline use */
+.rd-calendar-container .flatpickr-calendar {
+  box-shadow: none !important;
+  border: 1px solid #e8e4de !important;
+  border-radius: 0 !important;
+  font-family: "Jost", sans-serif !important;
+  width: 100% !important;
+}
+.rd-calendar-container .flatpickr-months {
+  border-bottom: 1px solid #f0ece6;
+  padding: 12px 0;
+}
+.rd-calendar-container .flatpickr-month {
+  color: #2a2620 !important;
+}
+.rd-calendar-container .flatpickr-current-month {
+  font-family: "Jost", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #2a2620 !important;
+}
+.rd-calendar-container .flatpickr-weekday {
+  font-family: "Jost", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #9a9080 !important;
+}
+.rd-calendar-container .flatpickr-day {
+  font-family: "Jost", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+  color: #2a2620 !important;
+}
+.rd-calendar-container .flatpickr-day.selected,
+.rd-calendar-container .flatpickr-day.startRange,
+.rd-calendar-container .flatpickr-day.endRange {
+  background: #2a2620 !important;
+  border-color: #2a2620 !important;
+  color: #fff !important;
+}
+.rd-calendar-container .flatpickr-day.inRange {
+  background: #f0ece6 !important;
+  border-color: #f0ece6 !important;
+  box-shadow: none !important;
+}
+.rd-calendar-container .flatpickr-day:hover {
+  background: #f8f5f0 !important;
+}
+.rd-cal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+.rd-cal-btn {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 22px;
+  border: 1px solid #2a2620;
+  cursor: pointer;
+  background: transparent;
+  color: #2a2620;
+  transition: background 0.2s, color 0.2s;
+}
+.rd-cal-btn.apply {
+  background: #2a2620;
+  color: #fff;
+}
+.rd-cal-btn.apply:hover { background: #3a3630; }
+.rd-cal-btn.cancel:hover { background: #f8f5f0; }
+
+/* ── Reserve sidebar ───────────────────────────────────────── */
+.rd-reserve-card {
+  border: 1px solid #ddd8d0;
+  background: #fff;
+  position: sticky;
+  top: 100px;
+}
+.rd-reserve-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #ddd8d0;
+}
+.rd-reserve-label {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2a2620;
+}
+.rd-reserve-price {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2a2620;
+}
+.rd-reserve-price span {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.rd-reserve-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-bottom: 1px solid #ddd8d0;
+  cursor: pointer;
+}
+.rd-reserve-row-label {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7a7060;
+}
+.rd-reserve-row-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2a2620;
+}
+.rd-reserve-row-val svg {
+  width: 14px;
+  height: 14px;
+  color: #9a9080;
+}
+.rd-reserve-row input[type="text"] {
+  border: none;
+  outline: none;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2a2620;
+  background: transparent;
+  text-align: right;
+  width: 90px;
+  cursor: pointer;
+}
+
+/* guests row */
+.rd-guests-row {
+  display: flex;
+  border-bottom: 1px solid #ddd8d0;
+}
+.rd-guests-half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+}
+.rd-guests-half:first-child {
+  border-right: 1px solid #ddd8d0;
+}
+.rd-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rd-counter-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ccc8c0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  color: #5c5549;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.rd-counter-btn:hover { background: #f5f1eb; }
+.rd-counter-num {
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2a2620;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Extra Services */
+.rd-extra-head {
+  padding: 14px 22px 8px;
+  border-bottom: none;
+}
+.rd-extra-label {
+  font-family: "Jost", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a7060;
+}
+.rd-extra-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 22px;
+  border-bottom: 1px solid #f0ece6;
+}
+.rd-extra-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #2a2620;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.rd-extra-item-name {
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #3a3630;
+  flex: 1;
+}
+.rd-extra-item-price {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #7a7060;
+  white-space: nowrap;
+}
+.rd-extra-qty {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.rd-extra-qty button {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc8c0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  color: #5c5549;
+  cursor: pointer;
+}
+.rd-extra-qty span {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  color: #2a2620;
+  min-width: 14px;
+  text-align: center;
+}
+
+/* Total row */
+.rd-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  border-bottom: 1px solid #ddd8d0;
+}
+.rd-total-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Jost", sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #2a2620;
+}
+.rd-total-label svg { width: 14px; height: 14px; color: #9a9080; }
+.rd-total-amount {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #2a2620;
+}
+
+/* Book button */
+.rd-book-btn {
+  display: block;
+  width: 100%;
+  padding: 17px;
+  background: #1e1c18;
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.rd-book-btn:hover { background: #3a3630; }
+
+/* ── Similar Rooms ─────────────────────────────────────────── */
+.rd-similar {
+  background: #fff;
+  padding: 70px 0 80px;
+  border-top: 1px solid #f0ece6;
+}
+.rd-similar-heading {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: #2a2620;
+  margin-bottom: 36px;
+}
+.rd-similar-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+.rd-similar-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+.rd-similar-card:hover img { transform: scale(1.04); }
+.rd-similar-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #3a5444;
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  z-index: 2;
+}
+.rd-similar-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 55%);
+}
+.rd-similar-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px;
+  z-index: 2;
+}
+.rd-similar-name {
+  font-family: "Marcellus", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+.rd-similar-cat {
+  font-family: "Jost", sans-serif;
+  font-size: 10.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .rd-reserve-card {
+    position: static;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .rd-amenity-grid { grid-template-columns: 1fr; }
+  .rd-fam-grid { flex-direction: column; }
+  .rd-fam-card { flex: 1 1 auto; }
+  .rd-guests-row { flex-direction: column; }
+  .rd-guests-half:first-child { border-right: none; border-bottom: 1px solid #ddd8d0; }
+}
+.v3-bm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.v3-bm-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.v3-bm-left {
+  flex: 1;
+  background: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1500&auto=format&fit=crop') center/cover no-repeat;
+}
+.v3-bm-right {
+  flex: 1.1;
+  background: #5d6756;
+  position: relative;
+  overflow-y: auto;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.v3-bm-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.v3-bm-close-btn:hover {
+  transform: scale(1.1);
+}
+.v3-bm-content {
+  text-align: center;
+  color: #fff;
+  max-width: 580px;
+  margin: 0 auto;
+  width: 100%;
+}
+.v3-bm-title {
+  font-family: 'Marcellus', Georgia, serif;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+.v3-bm-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 0.95);
+}
+.v3-bm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+.v3-bm-input-group {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.v3-bm-input-group:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.v3-bm-input-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 14.5px;
+  color: #fff;
+}
+.v3-bm-input-val {
+  font-family: 'Jost', sans-serif;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.v3-bm-input-val svg {
+  width: 14px;
+  height: 14px;
+}
+.v3-bm-btn {
+  width: 100%;
+  padding: 18px;
+  background: #bd9f76;
+  color: #fff;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.v3-bm-btn:hover {
+  background: #a68c5f;
+}
+.v3-bm-footer-rules {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 36px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  flex-wrap: wrap;
+}
+.v3-bm-footer-rules span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.v3-bm-bullet {
+  color: #bd9f76;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .v3-bm-left { display: none; }
+  .v3-bm-right { padding: 40px 20px; }
+  .v3-bm-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+/* ==============================================
+   GLOBAL RESPONSIVE OVERRIDES – All Pages
+   ============================================== */
+
+img { max-width: 100%; }
+
+/* ---- Navbar mobile ---- */
+@media (max-width: 991px) {
+  #navbar-v3 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    height: 80px !important;
+  }
+  .v3-nav-center .v3-logo-link { font-size: 1rem !important; letter-spacing: 0.2em; }
+  .v3-logo-stars { font-size: 9px !important; letter-spacing: 0.1em; }
+}
+
+/* ---- Section padding on mobile ---- */
+@media (max-width: 767px) {
+  section { padding-top: 52px !important; padding-bottom: 52px !important; }
+}
+
+/* ---- Overlay menu on small screens ---- */
+@media (max-width: 575px) {
+  .v3-overlay-nav { gap: 16px !important; padding: 0 24px !important; }
+  .v3-overlay-row { gap: 8px 24px !important; }
+  .v3-overlay-link { font-size: 1.4rem !important; }
+}
+
+/* ---- NEWS PAGE: articles stack on mobile ---- */
+@media (max-width: 767px) {
+  .news-article,
+  .news-article.reverse { flex-direction: column !important; }
+  .news-article-img-wrap { flex: none !important; min-height: 220px !important; width: 100%; }
+  .news-article-text { padding: 28px 20px !important; }
+  .news-article-date-badge { left: 16px !important; right: auto !important; }
+}
+
+/* ---- CONTACT PAGE mobile ---- */
+@media (max-width: 991px) {
+  .contact-left { border-right: none !important; padding: 40px 20px !important; }
+  .contact-form-card { margin: 30px 16px !important; max-width: 100% !important; }
+  .contact-right { min-height: 480px !important; }
+  .dept-grid { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+}
+@media (max-width: 480px) {
+  .dept-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- MENU PAGE: dotted entries on tiny screens ---- */
+@media (max-width: 480px) {
+  .menu-entry { flex-wrap: wrap; gap: 4px; }
+  .menu-entry-img { width: 44px !important; height: 44px !important; }
+  .menu-entry-dots, .menu-list-dots { min-width: 10px; }
+  .menu-divider-img { height: 220px !important; }
+}
+
+/* ---- RESTAURANT: photo grid ---- */
+@media (max-width: 575px) {
+  .rest-photo-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: repeat(3, 160px) !important;
+  }
+}
+
+/* ---- RESTAURANT: chef + info sections ---- */
+@media (max-width: 991px) {
+  .rest-chef-quote-area { padding: 40px 24px !important; min-height: auto !important; }
+  .rest-chef-img { min-height: 260px !important; }
+}
+
+/* ---- DINING: slider on mobile ---- */
+@media (max-width: 575px) {
+  .slider-slide { flex: 0 0 100% !important; height: 220px !important; }
+}
+
+/* ---- WELLNESS PAGE ---- */
+@media (max-width: 767px) {
+  .spa-feature-img { height: 240px !important; }
+  .spa-banner-img { height: 260px !important; }
+  .spa-scenic { height: 260px !important; }
+  .spa-banner-overlay { padding: 24px 20px !important; }
+}
+
+/* ---- EVENTS PAGE ---- */
+@media (max-width: 480px) {
+  .ev-stat-num { font-size: 1.6rem !important; }
+  .ev-pkg-img { height: 180px !important; }
+}
+
+/* ---- ACTIVITY DETAIL: gallery ---- */
+@media (max-width: 575px) {
+  .adet-gallery-grid { grid-template-columns: 1fr !important; }
+  .adet-gallery-grid img { height: 200px !important; }
+}
+
+/* ---- FOOTER: newsletter on mobile ---- */
+@media (max-width: 767px) {
+  #footer h2 { font-size: 1.7rem !important; }
+}
+
+/* ---- BOOKING MODAL: mobile ---- */
+@media (max-width: 575px) {
+  .v3-bm-right { padding: 32px 20px !important; }
+  .v3-bm-title { font-size: 1.5rem !important; }
+}
